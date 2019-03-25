@@ -5,6 +5,6 @@
     * [Docs in Russia](/developers/contracts/system_contracts/system_contracts-ru.md)
   * [Golos smart contracts](/developers/contracts/golos_contracts/golos_contracts.md)  
     * [Docs in English](/developers/contracts/golos_contracts/golos_contracts-en.md)
-    * [Docs in Russia](/developers/contracts/golos_contracts/golos_contracts/golos_contracts-ru.md)
+    * [Docs in Russia](/developers/contracts/golos_contracts/golos_contracts-ru.md)
 
   
