@@ -1,7 +1,14 @@
 # Table of contents
 
-* [Initial page](README.md)
-* [Smart contracts](contracts.md)
-  * [Token](https://github.com/GolosChain/cyberway.contracts/blob/master/docs/ru-RU/cyber.token_contract.md)
-  * [Domain](https://github.com/GolosChain/cyberway.contracts/blob/master/docs/ru-RU/cyber.domain_contract.md)
+* [DEVELOPERS](/developers/)
+  * [Smart Contracts](/developers/contracts/)
+    * [system contracts](/developers/contracts/)
+      * [Docs in English](/developers/contracts/system_contracts-en.md)
+      * [Docs in Russia](/developers/contracts/system_contracts-ru.md)
+    * [golos contracts](/developers/contracts/)  
+      * [Docs in English](/developers/contracts/golos_contracts-en.md)
+      * [Docs in Russia](/developers/contracts/golos_contracts-ru.md)
+  * [Instructions for creating an application](/developers/)  
+
+* [BLOCK PRODUCERS](/producers/instructions.md)
 
