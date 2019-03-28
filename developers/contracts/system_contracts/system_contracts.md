@@ -1,7 +1,7 @@
-# The system smart contracts
+# Смарт-контракты системные
 
+  * [Токены](https://github.com/GolosChain/cyberway.contracts/blob/master/docs/ru-RU/cyber.token_contract.md)
+  * [Доменные имена](https://github.com/GolosChain/cyberway.contracts/blob/master/docs/ru-RU/cyber.domain_contract.md)
 
-* [Docs in English](/developers/contracts/system_contracts/system_contracts-en.md)
-* [Docs in Russia](/developers/contracts/system_contracts/system_contracts-ru.md)
 
   

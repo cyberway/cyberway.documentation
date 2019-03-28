@@ -8,6 +8,6 @@
     * [Смарт-контракты приложения Голос](/developers/contracts/golos_contracts/golos_contracts.md)  
       * [Docs in English](/developers/contracts/golos_contracts/golos_contracts-en.md)
       * [Docs in Russia](/developers/contracts/golos_contracts/golos_contracts-ru.md)
-  * [РУКОВОДСТВА](/developers/creating_app.md)  
+  * [Руководство по созданию приложения](/developers/creating_app.md)  
 * [БЛОК-ПРОДЮСЕРАМ](/producers/producers.md)
 
