@@ -1,11 +1,11 @@
 # Table of contents
 
-* [РАЗРАБОТЧИКАМ](/developers/developers.md)
-  * [Смарт-контракты](/developers/contracts/contracts.md)
-    * [Смарт-контракты системные](/developers/contracts/system_contracts/system_contracts.md)
+* [Р РђР—Р РђР‘РћРўР§РРљРђРњ](/developers/developers.md)
+  * [Г‘Г¬Г Г°ГІ-ГЄГ®Г­ГІГ°Г ГЄГІГ»](/developers/contracts/contracts.md)
+    * [Г‘Г¬Г Г°ГІ-ГЄГ®Г­ГІГ°Г ГЄГІГ» Г±ГЁГ±ГІГҐГ¬Г­Г»ГҐ](/developers/contracts/system_contracts/system_contracts.md)
       * [Docs in English](/developers/contracts/system_contracts/system_contracts-en.md)
       * [Docs in Russia](/developers/contracts/system_contracts/system_contracts-ru.md)
-    * [Смарт-контракты приложения Голос](/developers/contracts/golos_contracts/golos_contracts.md)  
+    * [Г‘Г¬Г Г°ГІ-ГЄГ®Г­ГІГ°Г ГЄГІГ» ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГї ГѓГ®Г«Г®Г±](/developers/contracts/golos_contracts/golos_contracts.md)  
       * [Docs in English](/developers/contracts/golos_contracts/golos_contracts-en.md)
       * [Docs in Russia](/developers/contracts/golos_contracts/golos_contracts-ru.md)
   * [Instructions for creating an application](/developers/creating_app.md)  
