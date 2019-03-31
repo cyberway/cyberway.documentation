@@ -4,7 +4,7 @@
   * [Смарт-контракты](/developers/contracts/contracts.md)
     * [Смарт-контракты системные](/developers/contracts/system_contracts/system_contracts.md)
     * [Смарт-контракты приложения Голос](/developers/contracts/golos_contracts/golos_contracts.md)  
-  * [Руководство по созданию приложения](/developers/create_app.md) 
+  * [Руководство по созданию и развертыванию приложения на CyberWay](/developers/create_app.md) 
     * [1 Общее](/developers/create_contracts/overview.md)
 	* [2 Создание простого контракта](/developers/create_contracts/hello_user.md)
 	* [3 Создание токенов](/developers/create_contracts/create_tokens.md)
