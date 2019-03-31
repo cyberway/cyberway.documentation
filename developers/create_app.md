@@ -1,10 +1,5 @@
-# Table of contents
+# Руководство по созданию приложения 
 
-* [РАЗРАБОТЧИКАМ](/developers/developers.md)
-  * [Смарт-контракты](/developers/contracts/contracts.md)
-    * [Смарт-контракты системные](/developers/contracts/system_contracts/system_contracts.md)
-    * [Смарт-контракты приложения Голос](/developers/contracts/golos_contracts/golos_contracts.md)  
-  * [Руководство по созданию приложения](/developers/create_app.md) 
     * [1 Общее](/developers/create_contracts/overview.md)
 	* [2 Создание простого контракта](/developers/create_contracts/hello_user.md)
 	* [3 Создание токенов](/developers/create_contracts/create_tokens.md)
@@ -14,5 +9,3 @@
 	* [7 Создание встроенных действий](/developers/create_contracts/adding_inline_actions.md)
 	* [8 Обращение к контракту через встроенные действия](/developers/create_contracts/inline_action_to_external_contract.md)
 	* [9 Заключение](/developers/create_contracts/conclusion.md)
-* [БЛОК-ПРОДЮСЕРАМ](/producers/producers.md)
-
