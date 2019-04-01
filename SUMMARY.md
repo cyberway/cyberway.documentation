@@ -15,4 +15,4 @@
 	* [8 Обращение к контракту через встроенные действия](/developers/create_contracts/inline_action_to_external_contract.md)
 	* [9 Заключение](/developers/create_contracts/conclusion.md)
 * [БЛОК-ПРОДЮСЕРАМ](/producers/producers.md)
-
+  * [Руководство по установке Testnet](/developers/producers/testnet_installation.md)
