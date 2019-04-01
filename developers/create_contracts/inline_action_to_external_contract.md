@@ -3,7 +3,7 @@
 
 В этом разделе руководства приведены инструкции по отправке действий во внешний контракт. Примеры выполнения инструкций показаны на контракте, в котором ведется  счет выполняемых действий, написанных в этом контракте.  
 
-**8.1 Контракт счетчика адресной книги addressbook**   
+#### 8.1 Контракт счетчика адресной книги addressbook   
 Войти в `CONTRACTS_DIR` и создать там каталог с именем `abcounter`, а также файл `abcounter.cpp`.
 ```
 cd CONTRACTS_DIR
@@ -64,12 +64,12 @@ EOSIO_DISPATCH( abcounter, (count));
 require_auth( name("addressbook"));
 ```
 
-**8.2 Создать аккаунт для  контракта abcounter**  
+#### 8.2 Создать аккаунт для  контракта abcounter  
 ```
 cleos create account cyber abcounter YOUR_PUBLIC_KEY
 ```
 
-**8.3 Скомпилировать и установить контракт abcounter**  
+#### 8.3 Скомпилировать и установить контракт abcounter  
 ```
 eosio-cpp -o abcounter.wasm abcounter.cpp --abigen
 cleos set contract abcounter CONTRACTS_DIR/abcounter
@@ -228,11 +228,11 @@ eosio-cpp -o addressbook.wasm addressbook.cpp
 cleos set contract addressbook CONTRACTS_DIR/addressbook
  
 ```
-**8.6 Выполнить тестирование отправки действия из контракта addressbook контракту abcounter**  
+### 8.6 Выполнить тестирование отправки действия из контракта addressbook контракту abcounter  
 
 Перед началом тестирования убедиться, что контракты `abcounter` и `addressbook` установлены.  
 
-**8.6.1** Проверить отправку уведомления контракту `abcounter`, а также изменение записи в таблице контракта `addressbook`, исполнив: 
+#### 8.6.1 Проверить отправку уведомления контракту `abcounter`, а также изменение записи в таблице контракта `addressbook`, исполнив: 
 ```
 cleos push action addressbook upsert '["alice", "alice", "liddell", 19, "123 drink me way", "wonderland", "amsterdam"]' -p alice@active
 ```
