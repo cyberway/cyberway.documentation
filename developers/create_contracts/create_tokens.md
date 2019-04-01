@@ -12,7 +12,7 @@ git clone https://github.com/GolosChain/cyberway.contracts --branch <branch name
 cd cyberway.contracts/cyber.token
 ```  
 
-#### 3.2 Создать аккаунт для контракта  
+**3.2 Создать аккаунт для контракта**  
 Перед тем, как развернуть токен-контракт, необходимо создать аккаунт этого контракта (учетную запись контракта), исполнив командную строку вида:  
 ```
 cleos create account account_name cyber.token <буквенно-цифровая запись ключа>
@@ -21,13 +21,13 @@ cleos create account account_name cyber.token <буквенно-цифровая
 account_name — имя аккаунта для создаваемого контракта;
 cyber.token — имя токен-контракта, загруженного с репозитория `cyberway.contracts` с исходными файлами.  
 
-#### 3.3 Скомпилировать контракт  
+**3.3 Скомпилировать контракт**  
 ```
 eosio-cpp -I include -o cyber.token.wasm src/cyber.token.cpp --abigen
 ```
 Контракт компилируется в веб-ассемблеровский файл формата `wasm`. Наличие опции `--abigen` указывает, что будет также сгенерирован файл `abi/cyber.token.abi`.  
 
-#### 3.4 Установить токен-контракт
+**3.4 Установить токен-контракт**
 ```
 cleos set contract cyber.token CONTRACTS_DIR/cyberway.contracts/cyber.token --abi abi/cyber.token.abi -p cyber.token@active
 ```  
@@ -41,7 +41,7 @@ executed transaction:  ...
 #         eosio <= eosio::setabi                {"account":"cyber.token","abi":"<code>
 warning: transaction executed locally, but may not be confirmed by the network yet         ]
 ```   
-#### 3.5 Создать токен  
+**3.5 Создать токен**  
 Для создания нового токена используется операция-действие `create`. В качестве аргумента задается тип токена `symbol_name`, содержащий два значения  — максимальное значения предложения и символ токена. Вызов данного действия имеет вид:
 ```
 cleos push action cyber.token create '{"issuer":"cyber", "maximum_supply":"1000000000.0000 SYS"}' -p cyber.token@active
@@ -55,7 +55,7 @@ executed transaction: <info>
 ```
 В результате будет создан новый токен SYS,имеющий точность четыре десятичных знака. Максимально допустимое количество токенов в обращении должно быть ограничено значением 1000000000. Для создания этого токена требуется разрешение контракта `cyber.token`. Имя `cyber.token@active` будет использоваться для авторизации запроса.  
 
-#### 3.6 Выпуск токенов  
+**3.6 Выпуск токенов**  
 Автор токена может выпускать токены на предварительно созданный аккаунт, например, на аккаунт с именем «alice», исполнив:
 ```
 cleos push action cyber.token issue '[ "alice", "100.0000 SYS", "memo" ]' -p cyber@active
@@ -74,7 +74,7 @@ executed transaction:  ...
 
 Выдача содержит одно действие `issue` и три действия `transfer`. Во время выполнения `issue` дополнительно были сгенерированы три внутренних вызова с уведомлением отправителя и получателя токенов.  
 
-#### 3.6 Трансфер токенов  
+**3.6 Трансфер токенов**  
 Часть токенов может быть переведена с баланса одного аккаунта на баланс другого аккаунта. Например, для перевода суммы 25 токенов с баланса аккаунта «alice» на баланс аккаунта «bob» необходимо использовать командную строку вида:
 ```
 cleos push action cyber.token transfer '[ "alice", "bob", "25.0000 SYS", "m" ]' -p alice@active
