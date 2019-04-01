@@ -138,21 +138,21 @@ using vote_group_index = indexed_by<N(byvoter), eosio::composite_key<structures:
 ### 6.2 Пример добавления индекса в таблицу контракта addressbook
 В предыдущем разделе рассмотрены инструкции по созданию и настройке таблицы `addressbook`. Далее приводятся инструкции по добавлению индекса в данную тавлицу.  
 
-**6.2.1 Удалить существующие записи из таблицы**
+**6.2.1** Удалить существующие записи из таблицы.
 Структура таблицы не может быть изменена, если она содержит данные. Необходимо удалить уже имеющиеся в ней записи пользователей `alice` и `bob`.
 ```
 cleos push action addressbook erase '["alice"]' -p alice@active
 cleos push action addressbook erase '["bob"]' -p bob@active
 ```
 
-**6.2.2 Добавить новое поле для индекса к контракту addressbook.cpp**  
+**6.2.2** Добавить новое поле для индекса к контракту `addressbook.cpp`.  
 Поскольку вторичный индекс должен быть числовым полем, добавляется переменная типа uint64_t.
 
 ```cpp
 uint64_t age;
 ```
 
-**6.2.3  Добавить вторичный индекс для таблицы addresses** 
+**6.2.3** Добавить вторичный индекс для таблицы `addresses`. 
 Поле определено как вторичный индекс. Необходимо переконфигурировать таблицу `address_index`.
   
 ```cpp
@@ -168,7 +168,7 @@ indexed_by<"byage"_n, member<person, uint64_t, &person::get_secondary_1>>
 indexed_by<"byage"_n, member<person, uint64_t, &person::get_secondary_1>>
 ```
 
-**6.2.4 Обновить параметры функции upsert**  
+**6.2.4** Обновить параметры функции `upsert`.  
 С учетом всех изменений функция будет иметь вид:  
 
 ```cpp
@@ -211,12 +211,12 @@ name user, std::string first_name, std::string last_name, uint64_t age, std::str
 ```
 
 
-**6.2.5 Скомпилировать и развернуть контракт addressbook**  
+**6.2.5** Скомпилировать и развернуть контракт `addressbook`.  
 ```
 eosio-cpp -o addressbook.wasm addressbook.cpp --abigen
 cleos set contract addressbook CONTRACTS_DIR/addressbook
 ```
-**6.2.6 Тестирование**
+**6.2.6** Тестирование.
 Вставить записи в таблицу пользователей `alice` и `bob`.
 ```
 cleos push action addressbook upsert '["alice", "alice", "liddell", 9, "123 drink me way", "wonderland", "amsterdam"]' -p alice@active
