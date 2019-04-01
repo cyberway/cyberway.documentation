@@ -6,8 +6,8 @@
 
 Приведенные в руководстве инструкции рассчитаны на персонал, владеющий базовыми навыками работы с компьютерным оборудованием и знакомый с основными понятиями блокчейн-технологии.  
 
-  * [1 Общее](/developers/producers/overview.md)
-  * [2 Конфигурирование Docker-образа](/developers/producers/docker_configuration.md)
-  * [3 Создание контейнера](/developers/producers/run_services.md)
-  * [4 Подключение к узлу сети)](/developers/producers/connect_node.md)
-  * [5 Перечень команд, применяемых к любому виду контейнера](/developers/producers/main_commands.md)
+  * [1 Общее](/producers/overview.md)
+  * [2 Конфигурирование Docker-образа](/producers/docker_configuration.md)
+  * [3 Создание контейнера](/producers/run_services.md)
+  * [4 Подключение к узлу сети](/producers/connect_node.md)
+  * [5 Перечень команд, применяемых к любому виду контейнера](/producers/main_commands.md)
