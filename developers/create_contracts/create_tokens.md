@@ -38,7 +38,7 @@ cleos set contract cyber.token CONTRACTS_DIR/cyberway.contracts/cyber.token --ab
 Токен-контракт будет считаться успешно установленным, если в результирующей выдаче выполняемой команды будет содержаться информация вида:
 ```.
 executed transaction:  ... 
-#         eosio <= eosio::setcode               {"account":"eosio.token","vmtype":0,"vmversion":0,"code":"<code>
+#         eosio <= eosio::setcode               {"account":"cyber.token","vmtype":0,"vmversion":0,"code":"<code>
 #         eosio <= eosio::setabi                {"account":"cyber.token","abi":"<code>
 warning: transaction executed locally, but may not be confirmed by the network yet         ]
 ```   
