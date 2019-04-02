@@ -19,7 +19,7 @@ git clone https://github.com/goloschain/cyberway
 ```
 mkdir -p ~/testnet
 ```
-**2.3 Скопировать файлы docker** В созданную директорию `~/testnet` скопировать файлы `docker-compose.yml` и образец конфигурационного файла `config.ini` из репозитория Cyberway. Используемые для копирования команды:
+**2.3 Скопировать файлы docker**  В созданную директорию `~/testnet` скопировать файлы `docker-compose.yml` и образец конфигурационного файла `config.ini` из репозитория Cyberway. Используемые для копирования команды:
 ```
 cp Docker/config.ini ~/testnet/
 cp Docker/docker-compose.yml ~/testnet/
