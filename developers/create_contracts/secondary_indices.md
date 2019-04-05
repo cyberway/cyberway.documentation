@@ -207,9 +207,14 @@ name user, std::string first_name, std::string last_name, uint64_t age, std::str
 **6.5 Скомпилировать и развернуть контракт addressbook**  
 ```
 eosio-cpp -o addressbook.wasm addressbook.cpp --abigen
-cleos set contract addressbook CONTRACTS_DIR/addressbook
+```  
+
+**6.6** Описать индексы в ABI-файле, после чего исполнить:   
 ```
-**6.6 Тестирование**  
+cleos set contract addressbook CONTRACTS_DIR/addressbook
+```  
+
+**6.7 Тестирование**  
 Вставить записи в таблицу пользователей `alice` и `bob`.
 ```
 cleos push action addressbook upsert '["alice", "alice", "liddell", 9, "123 drink me way", "wonderland", "amsterdam"]' -p alice@active

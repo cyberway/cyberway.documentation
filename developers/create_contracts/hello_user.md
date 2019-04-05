@@ -18,7 +18,7 @@ mkdir hello
 cd hello
 touch hello.cpp
 ```  
-Заполнить файл  hello.cpp следующим текстом, реализующим действие в виде приветствия.
+Заполнить файл  hello.cpp следующим текстом, в котором реализовано действие (action) для отправки сообщения в виде «Hello, user».
 ```cpp
 #include <eosiolib/eosio.hpp>
 
@@ -35,7 +35,6 @@ class [[eosio::contract("hello")]] hello : public contract {
 };
 
 EOSIO_DISPATCH( hello, (hi))
-
 ```  
 Данное действие принимает параметр с именем «user» и в качестве результата выводит на печать сообщение вида «Hello, user».
 EOSIO_DISPATCH — макрос для обработки данного действия.  
@@ -51,16 +50,17 @@ eosio-cpp -o hello.wasm hello.cpp --abigen
 cleos wallet keys
 cleos create account cyber hello <public key> -p cyber@active
 ```   
+Руководство по созданию кошелька (wallet), а также по созданию ключа для разработки можно найти на [сайте](https://cyberway.gitbook.io/ru/v/ru/developers/create_development_wallet) CyberWay.  
 
 **2.4 Установить абсолютный путь к созданному контракту**  
 Указать абсолютный путь `<contracts dir path>` к каталогу контрактов в следующей команде:
 ```
-cleos set contract hello <contracts dir path>/hello -p hello@active
+cleos set contract hello CONTRACTS_DIR/hello -p hello@active
 ```  
 **2.5 Проверить функционирование контракта**
 Для проверки функционирования контракта можно вызвать действие с указанием имени пользователя, например, послать приветствие пользователю «Bob», исполнив: 
 ```
-cleos push action hello hi '["bob"]' -p bob@active
+cleos push action hello hi '["bob"]' -p hello@active
 ```  
 
 Функционирование контракта будет считаться успешным, если на монитор будет выдана информация вида:

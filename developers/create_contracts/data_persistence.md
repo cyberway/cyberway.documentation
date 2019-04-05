@@ -77,6 +77,8 @@ class [[eosio::contract("addressbook")]] addressbook : public eosio::contract {
     };
   
     typedef eosio::multi_index<"people"_n, person> address_index;
+  public:
+  
 };
 ```
 
@@ -86,7 +88,7 @@ class [[eosio::contract("addressbook")]] addressbook : public eosio::contract {
 addressbook(name receiver, name code, datastream<const char*> ds):contract(receiver, code, ds) {}
 ```
 Параметр:  
-`name code` — параметр кода, аккаунт контракта.  
+`name code` — имя аккаунта контракта.  
 
 
 **5.6  Создание записи в таблице**  
@@ -224,7 +226,7 @@ void erase(name user) {
 
 **5.8 Отредактировать ABI-файл**  
 
-Перед тем как скомпилировать контракт необходимо отредактировать ABI-файл.  
+Перед тем как скомпилировать контракт необходимо отредактировать `addressbook.cpp` файл.  
 
 **5.8.1** В конце файла поместить макрос EOSIO_DISPATCH, указав имя контракта, а также действия «upsert» и «erase».  
 
@@ -255,63 +257,66 @@ using namespace eosio;
 
 class [[eosio::contract("addressbook")]] addressbook : public eosio::contract {
 
+private:
+  struct [[eosio::table]] person {
+	name key;
+	std::string first_name;
+	std::string last_name;
+	std::string street;
+	std::string city;
+	std::string state;
+ 
+	uint64_t primary_key() const {return key.value;}
+  };
+  typedef eosio::multi_index<"person"_n, person> address_index;
+
 public:
   using contract::contract;
   
-  addressbook(name receiver, name code,  datastream<const char*> ds): contract(receiver, code, ds) {}
-
+addressbook(name receiver, name code,  datastream<const char*> ds): contract(receiver, code, ds) {}
+ 
   [[eosio::action]]
-  void upsert(name user, std::string first_name, std::string last_name, std::string street, std::string city, std::string state) {
-    require_auth( user );
-    address_index addresses(_code, _code.value);
-    auto iterator = addresses.find(user.value);
-    if( iterator == addresses.end() )
-    {
-      addresses.emplace(user, [&]( auto& row ) {
-       row.key = user;
-       row.first_name = first_name;
-       row.last_name = last_name;
-       row.street = street;
-       row.city = city;
-       row.state = state;
-      });
-    }
-    else {
-      std::string changes;
-      addresses.modify(iterator, user, [&]( auto& row ) {
-        row.key = user;
-        row.first_name = first_name;
-        row.last_name = last_name;
-        row.street = street;
-        row.city = city;
-        row.state = state;
-      });
-    }
+  void upsert(name user, std::string first_name, std::string last_name, std::string street,std::string city, std::string state) {
+        require_auth( user );
+        address_index addresses(_self, _self.value);
+        auto iterator = addresses.find(user.value);
+        if( iterator == addresses.end() )
+        {
+            addresses.emplace(user, [&]( auto& row ) {
+                row.key = user;
+                row.first_name = first_name;
+                row.last_name = last_name;
+                row.street = street;
+                row.city = city;
+                row.state = state;
+            });
+        }
+        else {
+                std::string changes;
+                addresses.modify(iterator, user, [&]( auto& row ) {
+                row.key = user;
+                row.first_name = first_name;
+                row.last_name = last_name;
+                row.street = street;
+                row.city = city;
+                row.state = state;
+        });
+      }
   }
-
+ 
   [[eosio::action]]
   void erase(name user) {
     require_auth(user);
-
-    address_index addresses(_self, _code.value);
-
+ 
+    address_index addresses(_self, _self.value);
+ 
     auto iterator = addresses.find(user.value);
     eosio_assert(iterator != addresses.end(), "Record does not exist");
     addresses.erase(iterator);
   }
-
-private:
-  struct [[eosio::table]] person {
-    name key;
-    std::string first_name;
-    std::string last_name;
-    std::string street;
-    std::string city;
-    std::string state
-  };
-  typedef eosio::multi_index<"people"_n, person> address_index;
+ 
 };
-
+ 
 EOSIO_DISPATCH( addressbook, (upsert)(erase))
 ```
 
@@ -320,21 +325,48 @@ EOSIO_DISPATCH( addressbook, (upsert)(erase))
 eosio-cpp -o addressbook.wasm addressbook.cpp --abigen
 ```
 
-**5.10 Установить контракт**  
-
-**5.10.11** Создать аккаунт для контракта, исполнив:
+**5.10 Описать индекс первичного ключа таблицы в ABI-файле**  
+Во время компиляции ABI-файла, генератор создает таблицу без индексов:
 ```
-cleos create account cyber addressbook <public key>
+  ...
+  "tables": [
+  {
+      "name": "person",
+      "type": "person",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+  }],
+  …
+```
+Необходимо отредактировать таблицу в ABI-файле, сохранив неизменным только `name` и `type` и заменив остальные поля на следующее описание индекса первичного ключа:
+```
+  …
+    "indexes": [
+    {
+        "name": "primary",
+        "unique": "true",
+        "orders": [
+        {"field": "key", "order": "asc"}
+   ]}
+  …
 ```
 
-**5.10.12** Установить addressbook контракт, исполнив: 
+**5.11** Установить контракт**  
+
+**5.11.11** Создать аккаунт для контракта, исполнив:
+```
+cleos create account olga addressbook <public key>
+```
+
+**5.11.12** Установить addressbook контракт, исполнив: 
 ```
 cleos set contract addressbook CONTRACTS_DIR/addressbook -p addressbook@active
 ```
 
-**5.11 Протестировать установленный контракт**   
+**5.12 Протестировать установленный контракт**   
 
-**5.11.1** Проверить добавление строки в таблицу для пользователя с именем `alice`.
+**5.12.1** Проверить добавление строки в таблицу для пользователя с именем `alice`.
 ```
 cleos push action addressbook upsert '["alice", "alice", "liddell", "123 drink me way", "wonderland", "amsterdam"]' -p alice@active
 ```
@@ -344,7 +376,7 @@ executed transaction: ...
 #   addressbook <= addressbook::upsert          {"user":"alice","first_name":"alice","last_name":"liddell","street":"123 drink me way","city":"wonde...
 ```
 
-**5.11.2** Проверить, что пользователь `alice` не может создать запись для другого пользователя, исполнив:
+**5.12.2** Проверить, что пользователь `alice` не может создать запись для другого пользователя, исполнив:
 ```
 cleos push action addressbook upsert '["bob", "bob", "is a loser", "doesnt exist", "somewhere", "someplace"]' -p alice@active
 ```
@@ -355,7 +387,7 @@ Ensure that you have the related authority inside your transaction!;
 If you are currently using 'cleos push action' command, try to add the relevant authority using -p option.
 ```
 
-**5.11.3** Получить запись пользователя с именем Алисы.
+**5.12.3** Получить запись пользователя с именем Алисы.
 ```
 cleos get table addressbook addressbook people --lower alice --limit 1
 ```
@@ -375,7 +407,7 @@ cleos get table addressbook addressbook people --lower alice --limit 1
 }
 ```
 
-**5.11.4** Проверить, что пользователь с именем `alice` может удалить запись из таблицы, исполнив:
+**5.12.4** Проверить, что пользователь с именем `alice` может удалить запись из таблицы, исполнив:
 ```
 cleos push action addressbook erase '["alice"]' -p alice@active
 ```
