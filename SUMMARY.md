@@ -6,7 +6,7 @@
   * [Транзакция](/users/)
   * [Пропускная способность](/users/)
   * [Токены](/users/)
-  * [Словарь](/users/)
+  * [Словарь](/users/glossary.md)
 * [РАЗРАБОТЧИКАМ](/developers/developers.md)
   * [Смарт-контракты](/developers/contracts/contracts.md)
     * [Смарт-контракты системные](/developers/contracts/system_contracts/system_contracts.md)
