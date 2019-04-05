@@ -1,11 +1,11 @@
 # СОДЕРЖАНИЕ
 
 * [ПОЛЬЗОВАТЕЛЯМ](/users/users.md)
-  * [Экономика и управление](/users/)
-  * [Лидеры сообщества](/users/)
-  * [Транзакция](/users/)
+  * [Экономика и управление](/users/economy.md)
+  * [Лидеры сообщества](/users/witness.md)
+  * [Транзакция](/users/transaction.md)
   * [Пропускная способность](/users/)
-  * [Токены](/users/)
+  * [Токены](/users/tokens.md)
   * [Словарь](/users/glossary.md)
 * [РАЗРАБОТЧИКАМ](/developers/developers.md)
   * [Смарт-контракты](/developers/contracts/contracts.md)
