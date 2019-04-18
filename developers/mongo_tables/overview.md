@@ -4,7 +4,7 @@
 
 Приведенные примеры структур объектов получены с использованием shell-команд вида:
 ```
-$ use   _CYBERWAY_<contract_name>   db.<collection_name>.find().pretty()
+$ use _CYBERWAY_<contract_name> db.<collection_name>.find().pretty()
 
 <contract_name> = {cyber_token, golos_charge, golos_ctrl, ...}
 <collection_name> = {accounts, state, balances, restorers, ...}
