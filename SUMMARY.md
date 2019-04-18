@@ -31,6 +31,7 @@
 	* [8 Обращение к контракту через встроенные вызовы действий](/developers/create_contracts/inline_action_to_external_contract.md)
 	* [9 Заключение](/developers/create_contracts/conclusion.md)
   * [Руководство по созданию кошелька и ключей для разработки](/developers/create_development_wallet.md)
+  * [Структура документов \(таблиц\) в MongoDB](/developers/mongo_tables.md)
 * [БЛОК-ПРОДЮСЕРАМ](/producers/producers.md)
   * [Руководство по установке Testnet](/producers/testnet_installation.md)
 	* [1 Общее](/producers/testnet/overview.md)
