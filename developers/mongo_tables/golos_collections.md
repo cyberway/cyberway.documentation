@@ -3,8 +3,6 @@
 <!--toc-->
 
 ## Коллекции контракта golos.charge
-****
-****
 
 ### balances
 Коллекция BALANCES содержит документы с данными о состоянии батареек, выделенных пользователям. Пример документа:
@@ -327,92 +325,92 @@
     "created" : NumberDecimal("1554995760000000"),
     "rules" : {
             "mainfunc" : {
-                    "code" : {
-                            "varssize" : NumberDecimal("1"),
-                            "operators" : [
-                                    NumberDecimal("0")
-                            ],
-                            "values" : [
-                                    {
-                                        "kind" : NumberDecimal("1"),
-                                        "idx" : NumberDecimal("0")
-                                    }
-                            ],
-                            "nums" : [ ],
-                            "consts" : [ ]
-                    },
-                    "maxarg" : NumberLong("9223372036854771712")
+                "code" : {
+                        "varssize" : NumberDecimal("1"),
+                        "operators" : [
+                            NumberDecimal("0")
+                        ],
+                        "values" : [
+                            {
+                            "kind" : NumberDecimal("1"),
+                             "idx" : NumberDecimal("0")
+                            }
+                        ],
+                        "nums" : [ ],
+                        "consts" : [ ]
+                },
+                "maxarg" : NumberLong("9223372036854771712")
             },
             "curationfunc" : {
-                    "code" : {
-                            "varssize" : NumberDecimal("1"),
-                            "operators" : [
-                                    NumberDecimal("0"),
-                                    NumberDecimal("26"),
-                                    NumberDecimal("4"),
-                                    NumberDecimal("4")
-                            ],
-                            "values" : [
-                                    {
-                                        "kind" : NumberDecimal("0"),
-                                        "idx" : NumberDecimal("0")
-                                    },
-                                    {
-                                        "kind" : NumberDecimal("0"),
-                                        "idx" : NumberDecimal("3")
-                                    }
-                            ],
-                            "nums" : [
-                                    NumberLong("9223372036854771712"),
-                                    NumberLong("16384000000000000"),
-                                    NumberLong(409),
-                                    NumberLong(4096)
-                            ],
-                            "consts" : [ ]
-                    },
-                    "maxarg" : NumberLong("9223372036854771712")
+                "code" : {
+                        "varssize" : NumberDecimal("1"),
+                        "operators" : [
+                            NumberDecimal("0"),
+                            NumberDecimal("26"),
+                            NumberDecimal("4"),
+                            NumberDecimal("4")
+                        ],
+                        "values" : [
+                            {
+                            "kind" : NumberDecimal("0"),
+                            "idx" : NumberDecimal("0")
+                            },
+                            {
+                            "kind" : NumberDecimal("0"),
+                            "idx" : NumberDecimal("3")
+                            }
+                        ],
+                        "nums" : [
+                            NumberLong("9223372036854771712"),
+                            NumberLong("16384000000000000"),
+                            NumberLong(409),
+                            NumberLong(4096)
+                        ],
+                        "consts" : [ ]
+                },
+                "maxarg" : NumberLong("9223372036854771712")
             },
             "timepenalty" : {
-                    "code" : {
-                            "varssize" : NumberDecimal("1"),
-                            "operators" : [
-                                    NumberDecimal("0"),
-                                    NumberDecimal("0"),
-                                    NumberDecimal("4")
-                            ],
-                            "values" : [
-                                    {
-                                        "kind" : NumberDecimal("1"),
-                                        "idx" : NumberDecimal("0")
-                                    },
-                                    {
-                                        "kind" : NumberDecimal("0"),
-                                        "idx" : NumberDecimal("0")
-                                    }
-                            ],
-                            "nums" : [
-                                    NumberLong(7372800)
-                            ],
-                            "consts" : [ ]
-                    },
-                    "maxarg" : NumberLong(7372800)
+                "code" : {
+                        "varssize" : NumberDecimal("1"),
+                        "operators" : [
+                            NumberDecimal("0"),
+                            NumberDecimal("0"),
+                            NumberDecimal("4")
+                        ],
+                        "values" : [
+                            {
+                            "kind" : NumberDecimal("1"),
+                            "idx" : NumberDecimal("0")
+                            },
+                            {
+                            "kind" : NumberDecimal("0"),
+                            "idx" : NumberDecimal("0")
+                            }
+                        ],
+                        "nums" : [
+                            NumberLong(7372800)
+                        ],
+                        "consts" : [ ]
+                },
+                "maxarg" : NumberLong(7372800)
             },
             "maxtokenprop" : NumberLong("2305843009213693952")
     },
     "state" : {
             "msgs" : NumberDecimal("0"),
             "funds" : {
-                    "amount" : NumberLong(249427023),
-                    "decs" : NumberDecimal("3"),
-                    "sym" : "GOLOS"
+                "amount" : NumberLong(249427023),
+                "decs" : NumberDecimal("3"),
+                "sym" : "GOLOS"
             },
             "rshares" : {
-                    "binary" : BinData(0,"AQAAAAAAAAAAAAAAAAAAAAA="),
-                    "string" : "0"
+                "binary" : BinData(0,"AQAAAAAAAAAAAAAAAAAAAAA="),
+                "string" : "0"
             },
             "rsharesfn" : {
-                    "binary" : BinData(0,"AQAAAAAAAAAAAAAAAAAAAAA="),
-                    "string" : "0"
+                "binary" : BinData(0,"AQAAAAAAAAAAAAAAAAAAAAA="),
+                "string" : "0"
             }
     },
     "_SERVICE_" : { ... }
