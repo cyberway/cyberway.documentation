@@ -65,10 +65,11 @@ $ use   _CYBERWAY_<contract_name>   db.<collection_name>.find().pretty()
 * `sym` — символ токена, состоящий из набора прописных букв. 
 
 
+## Коллекции контрактов
 
-* [Коллекции контракта cyber.token](/developers/mongo_tables/cyber.token_tables.md)
-* [Коллекции контракта golos.charge](/developers/mongo_tables/golos.charge_tables.md)
-* [Коллекции контракта golos.ctrl](/developers/mongo_tables/golos.ctrl_tables.md)
-* [Коллекции контракта golos.publication](/developers/mongo_tables/golos.publication_tables.md)
-* [Коллекции контракта golos.vesting](/developers/mongo_tables/golos.vesting_tables.md)
+* [cyber.token](/developers/mongo_tables/cyber.token_tables.md)
+* [golos.charge](/developers/mongo_tables/golos.charge_tables.md)
+* [golos.ctrl](/developers/mongo_tables/golos.ctrl_tables.md)
+* [golos.publication](/developers/mongo_tables/golos.publication_tables.md)
+* [golos.vesting](/developers/mongo_tables/golos.vesting_tables.md)
 
