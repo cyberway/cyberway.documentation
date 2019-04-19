@@ -145,7 +145,7 @@ cleos push action addressbook erase '["bob"]' -p bob@active
 uint64_t age;
 ```
 
-**6.3 Добавить вторичный индекс для таблицы addresses** 
+**6.3 Добавить вторичный индекс для таблицы addresses**  
 Поле определено как вторичный индекс. Необходимо переконфигурировать таблицу `address_index`.
   
 ```cpp
@@ -209,7 +209,7 @@ name user, std::string first_name, std::string last_name, uint64_t age, std::str
 eosio-cpp -o addressbook.wasm addressbook.cpp --abigen
 ```  
 
-**6.6** Описать индексы в ABI-файле, после чего исполнить:   
+**6.6 Описать индексы в ABI-файле, после чего исполнить:**  
 ```
 cleos set contract addressbook CONTRACTS_DIR/addressbook
 ```  
