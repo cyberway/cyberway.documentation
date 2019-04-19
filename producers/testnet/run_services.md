@@ -57,7 +57,7 @@ info  2019-03-07T06:57:00.096 thread-0  producer_plugin.cpp:344       on_incomin
 ```
 sudo docker-compose down
 ```
-Для удаления `Docker volume` необходимо испольнить следующую команду:
+Для удаления `Docker volume` необходимо исполнить следующую команду:
 ```
 sudo docker volume rm cyberway-mongodb-data cyberway-nodeos-data
 ```
