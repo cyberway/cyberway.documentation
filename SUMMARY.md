@@ -19,7 +19,7 @@
     * [Публикация](/developers/golos_contracts/golos.publication_contract.md)
     * [Социальный](/developers/golos_contracts/golos.social_contract.md)
     * [Вестинг-токены](/developers/golos_contracts/golos.vesting_contract.md)
-  * [Руководство по созданию и развертыванию приложения на CyberWay](/developers/create_app.md) 
+  * [Руководство по созданию и развертыванию приложения на CyberWay](/developers/create_contracts.md) 
     * [1 Подготовительные работы](/developers/create_contracts/overview.md)
 	* [2 Создание простого контракта](/developers/create_contracts/hello_user.md)
 	* [3 Создание токенов](/developers/create_contracts/create_tokens.md)
