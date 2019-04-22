@@ -35,6 +35,7 @@
     * [Общее о структуре таблиц в MongoDB](/developers/mongo_tables/overview.md)
     * [Структура таблиц, используемых смарт-контрактами системы](/developers/mongo_tables/cyberway_collections.md)
     * [Структура таблиц, используемых смарт-контрактами приложения Голос](/developers/mongo_tables/golos_collections.md)
+  * [Кошелек приложения Голос для биржи Биттрекс](/developers/golos_wallet_for_bittrex.md)
 * [БЛОК-ПРОДЮСЕРАМ](/producers/producers.md)
   * [Руководство по установке Testnet](/producers/testnet_installation.md)
 	* [1 Общее](/producers/testnet/overview.md)
