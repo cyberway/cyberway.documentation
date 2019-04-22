@@ -1,6 +1,6 @@
 # СОДЕРЖАНИЕ
 
-* [СОДЕРЖАНИЕ:](README.md)
+* [ВВЕДЕНИЕ](README.md)
 * [ПОЛЬЗОВАТЕЛЯМ](/users/users.md)
   * [Экономика и управление](/users/economy.md)
   * [Лидеры сообщества](/users/witness.md)
