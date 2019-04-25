@@ -232,7 +232,7 @@
     "parentacc" : "d5gqchmbgrdj",
     "parent_id" : NumberDecimal("3"),
     "tokenprop" : NumberLong(0),
-    "beneficiaries" : [ ],
+    "beneficiaries" : [{"account":"somebody","weight":5000},{"account":"one.percent","weight":100}],
     "rewardweight" : NumberLong("4611686018427387904"),
     "state" : {
         "netshares" : NumberLong("854259561865216"),
