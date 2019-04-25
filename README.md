@@ -5,8 +5,8 @@
 ## PAGES:
 [USERS](/users/users.md)  
 [DEVPORTAL](/devportal/devportal.md)  
-[VALIDATORS](/validators/validators.md)
-[WORKERS](/workers/workers.md) 
+[VALIDATORS](/validators/validators.md)  
+[WORKERS](/workers/workers.md)  
 
 
 
