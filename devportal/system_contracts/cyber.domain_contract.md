@@ -219,18 +219,18 @@ The following additional restrictions are introduced:
   * This implementation does not verify that the accounts specified in `declarenames` exist in other actions. The implementation of validation is difficult because the actual validation process requires a lot of resources to read the ABI file format and deserialize the action. A lack of such control causes a certain risk. That is a sender may add more information to the transaction, so the superfluous part of it will not be checked. As a result, it will have to pay extra for overused `bandwidth` resources.  
   * This implementation does not contain information about positions of the used domain or user names. A transaction may contain an action with several account names as arguments, for example, `someaction(name 1, name 2, name 3, name 4, name 5)`. If user sends an action like `someaction(acc1, one@golos, two@golos, acc1, three@golos)` and it converts to (`someaction(acc1, acc1, acc1, acc1, acc3)` ), then `declarenames` will contain only used user names or domain names. At the same time, it is impossible to determine the positions where user names were used, for example:  
 ```
-declarenames([{
-    domain:"golos",
-    account:N(acc1),
-    users:["one","two","three"]
-}])
+        declarenames([{
+            domain:"golos",
+            account:N(acc1),
+            users:["one","two","three"]
+        }])
 ```
   * Implemented support for the names like `username@@account` ( a presence of the symbols «@@» in the name means that the right side is not a domain, but the account name). For example, if a transaction converts view names `alice@@token`, `bob@@oken`, `admin@@golos.io`, then the `declareames` declaration will contain the following arguments:
 ```
-declarenames([
-    {domain:"", account:N(golos.io), users:["admin"]},
-    {domain:"", account:N(token), users:["alice","bob"]}
-])
+        declarenames([
+            {domain:"", account:N(golos.io), users:["admin"]},
+            {domain:"", account:N(token), users:["alice","bob"]}
+        ])
 ```  
 ## Long domain names
 When an account is created it is assigned a base32-encoded 8-byte identification name, which is a 12.5-character string. 60 bits are allocated for 12 characters. The remaining 4 bits are reserved for an additional symbol from the set {1,2,3,4, a, b, c, d, e, f, g, h, i, j}.  
