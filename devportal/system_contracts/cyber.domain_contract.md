@@ -34,8 +34,8 @@ The actions `checkwin`, `biddomain`, `biddmrefund` and `newdomain` are used to p
     * to create subdomain names from it by adding the «dot» symbol and а name to the domain name on the left (for example, an owner of the domain `golos.io` can create subdomains such as `api.golos.io`, `ws.golos.io` and etc). It should be noted, that unlike account names,  in `cyberway` the names are formed by adding parts to the right of word (for example, the names `cyber.msig`, `cyber.domain` can be formed from `cyber`). In this case the only direct inheritance of domain names is allowed. It means that if the owner has created a domain for the second level, a domain for the third level can’t be created (for example, the name `cyber.msig.a` can’t be formed from `cyber`).
 
 
-**Note:**  
-  *  The actions of the `cyber.domain` smart contract were originally intended for the distribution of domain names at auction. Later to this group of actions were added other actions, including such as creating a domain, transferring a domain, linking (or unlinking) a domain, declaring names used in transactions and creating a user name.  
+> **Note:**  
+>  The actions of the `cyber.domain` smart contract were originally intended for the distribution of domain names at auction. Later to this group of actions were added other actions, including such as creating a domain, transferring a domain, linking (or unlinking) a domain, declaring names used in transactions and creating a user name.  
 
 ### The checkwin action 
 The `checkwin` action is used to register a domain name owner (a winner) at auction. This action does not require a special call and is called automatically with a certain periodic.  
