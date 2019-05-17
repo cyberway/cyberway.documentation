@@ -2,7 +2,7 @@
 # The cyberway_wallet designed for the Bittrex market
 
 ## Annotation
-* This `cyberway_wallet` wallet description is designated to developers of CyberWay platform and applications running on CyberWay platform, as well as users of Golos blockchain interested in maintaining and contributing to Golos application functioning on CyberWay platform. *
+*This `cyberway_wallet` wallet description is designated to developers of CyberWay platform and applications running on CyberWay platform, as well as users of Golos blockchain interested in maintaining and contributing to Golos application functioning on CyberWay platform.*
  
 ## 1 Functional features of cli_wallet operating on Golos blockchain
 The cli_wallet application used in Golos blockchain is a software product — i.e. a wallet running in an interactive console mode.  
@@ -145,9 +145,9 @@ The `get_account_history` operation is used to get the transaction history for a
 ```
 
 Parameters:  
-`account` — the name of the account whose history is being requested;
-`from` — the serial number of the operation. The parameter is arbitrary and it’s default value is «-1» — the last operation number;
-`limit` — the maximum number of operations requested. The value spans from 0 to 1000. The parameter is arbitrary and it’s default value is «100».
+`account` — the name of the account whose history is being requested;  
+`from` — the serial number of the operation. The parameter is arbitrary and it’s default value is «-1» — the last operation number;  
+`limit` — the maximum number of operations requested. The value spans from 0 to 1000. The parameter is arbitrary and it’s default value is «100».  
 
 
 An example of `get_account_history` operation call:
