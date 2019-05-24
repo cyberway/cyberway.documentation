@@ -1,5 +1,5 @@
 
-# 2 Creating a simple contract  
+# 2 Creating a Simple Contract  
 
 When creating a contract you may note that most of the actions are typical. The differences lay in the implementation of the functions performed by the contract, which are implemented directly in the body of the contract. In this section instructions are given for creating a contract whose main function is to issue a greeting that comes in the form of «Hello, user».  
 
