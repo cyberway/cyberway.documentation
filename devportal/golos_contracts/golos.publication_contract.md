@@ -3,10 +3,10 @@
 ## Overview
 
 The `golos.publication` smart contract provides users to perform actions on posts, including: 
-  * publish posts; 
-  * leave comments to posts; 
-  * vote for posts;
-  * close posts.
+  * publishing posts; 
+  * leaving comments to posts; 
+  * voting for posts;
+  * closing posts.
 In addition, this contract contains logic for determining the payments to authors, curators and beneficiaries of posts.
 
 ## The list of actions implemented in the golos.publication smart contract
@@ -15,7 +15,7 @@ The `golos.publication` smart contract supports the following user actions: `set
 
 ## The setlimit action
 
-The `setlimit` action is used to set rules that restrict user operations. The mechanism for restricting user operations is based on interaction of two smart contracts — these are golos.publication and golos.charge. Each action of the `golos.publication` smart contract is linked to a certain battery of the `golos.charge` smart contract. In the `setlimit` parameters, it needs to specify an action (for example, `createmssg` or `upvote`) and a battery to be linked to.  
+The `setlimit` action is used to set rules that restrict user operations. The mechanism for restricting user operations is based on interaction of two smart contracts — precisely golos.publication and golos.charge. Each action of the `golos.publication` smart contract is linked to a certain battery of the `golos.charge` smart contract. In the `setlimit` parameters, it needs to specify an action (for example, `createmssg` or `upvote`) and a battery to be linked to it.  
 
 The `setlimit` action has the following form:  
 ```cpp
@@ -58,7 +58,7 @@ void setrules(
   * `curationfunc` — a function that calculates a fee for each of the curators in accordance with accepted algorithm (similar to calculation for `mainfunc`).  
   * `timepenalty` — a function that calculates a weight of vote, taking into account the time of voting and the penalty time duration.  
   * `curatorsprop` — total amount of fees for all curators.  
-. * `maxtokenprop` — the maximum possible amount of tokens that can be assigned to author of post. This parameter is set by witnesses voting.  
+. * `maxtokenprop` — the maximum amount of tokens possible that can be assigned to author of post. This parameter is set by witnesses voting.  
   * `tokensymbol` — a token type (within the Golos application, only Golos tokens are used).  
 
 To perform the `setrules` action, a user should have a witness authorization. In addition, the transaction must be signed by the `golos.publication` smart contract.  
