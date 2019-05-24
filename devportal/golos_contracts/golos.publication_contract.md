@@ -7,7 +7,7 @@ The `golos.publication` smart contract provides users to perform actions on post
   * leave comments to posts; 
   * vote for posts;
   * close posts.
-In addition, this contract contains logic for determining the fee payment to authors, curators and beneficiaries of posts.
+In addition, this contract contains logic for determining the payments to authors, curators and beneficiaries of posts.
 
 ## The list of actions implemented in the golos.publication smart contract
  
@@ -41,7 +41,7 @@ setlimit(
 The interaction of smart publishing contracts and batteries allows a witness to flexibly configure restrictions on user actions (for example, such actions as voting for posts, publication of post and leaving comments can be correlated with the resources of three separate batteries. In this case, user activity will be limited for each of these actions. Also, all these actions can be linked to only one battery, that is, be limited by resources of the same battery). For each action performed by the user, she/he is charged a value corresponding to cost of the consumed battery recourse. When the `golos.charge` smart contract reaches the threshold value of used battery recourse, user's actions are blocked until necessary resource appears in the battery again.  
 
 ## The setrules action
-The `setrules` action is used for setting rules that apply in application for distribution of fee between authors and curators of posts.  
+The `setrules` action is used for setting rules that apply in application for distribution of rewards between authors and curators of posts.  
 The `setrules` action has the following form:  
 ```cpp
 void setrules(
@@ -54,11 +54,11 @@ void setrules(
 );
 ```  
 **Parameters:**  
-  * `mainfunc` — a function that calculates a total amount of fees for an author and post curators in accordance with accepted algorithm (for example, a linear algorithm or a square root algorithm). The algorithm used in the function is selected by witnesses voting. The function contains two parameters: mathematical expression (the algorithm itself) by which the fee amount is calculated, and maximum allowable value of argument for this function. When setting parameter values for `setrules`, they are checked for correctness (including for monotonous behavior and for non-negative value).  
+  * `mainfunc` — a function that calculates a total amount of rewards for an author and post curators in accordance with accepted algorithm (for example, a linear algorithm or a square root algorithm). The algorithm used in the function is selected by witnesses voting. The function contains two parameters: mathematical expression (the algorithm itself) by which the reward is calculated, and maximum allowable value of argument for this function. When setting parameter values for `setrules`, they are checked for correctness (including for monotonous behavior and for non-negative value).  
   * `curationfunc` — a function that calculates a fee for each of the curators in accordance with accepted algorithm (similar to calculation for `mainfunc`).  
   * `timepenalty` — a function that calculates a weight of vote, taking into account the time of voting and the penalty time duration.  
   * `curatorsprop` — total amount of fees for all curators.  
-. * `maxtokenprop` — the maximum possible fee that can be assigned to author of post. This parameter is set by witnesses voting.  
+. * `maxtokenprop` — the maximum possible amount of tokens that can be assigned to author of post. This parameter is set by witnesses voting.  
   * `tokensymbol` — a token type (within the Golos application, only Golos tokens are used).  
 
 To perform the `setrules` action, a user should have a witness authorization. In addition, the transaction must be signed by the `golos.publication` smart contract.  
@@ -86,8 +86,8 @@ void createmssg(
   * `permlink` — relative address of the message.  
   * `parentacc` — account name of the parent message author to which the response is formed via this `createmssg` action. In case of a zero value of `parentacc`, the created message will be considered as a post.  
   * `parentprmlnk` — relative address of the parent message.  
-  * `beneficiaries` — a structure containing the names of beneficiaries and total amount of their fees. This amount is a percentage of total fees for the message.  
-  * `tokenprop` — a fee amount (amount of tokens). This value cannot exceed the `maxtokenprop` value  specified in `set_rules`.  
+  * `beneficiaries` — a structure containing the names of beneficiaries and total amount of their fees. This amount is a percentage of total reward for the message.  
+  * `tokenprop` — amount of tokens. This value cannot exceed the `maxtokenprop` value  specified in `set_rules`.  
   * `vestpayment` — `true`, if a user gives permission to pay in vestings in case of battery resource exhaustion (the message is sent regardless of battery resource). Default value is `false`.  
   * `headermssg` — title of the message.  
   * `bodymssg` — body of the message.  
@@ -210,7 +210,7 @@ To perform the `unvote` action it is required that the transaction should be sig
 
 ## Other parameters which are used and set in the golos.publication smart contract
  There are other parameters in the `golos.publication` smart contract that can be set by calling `set_params`:  
-  * `cashout_window` — time interval after which payment of a fee for a publication is possible.  
+  * `cashout_window` — time interval after which payment of rewards for a publication is possible.  
   * `max_vote_changes` — maximum possible number of user's re-votes (it shows how many times a user can change her/his vote for the same post).  
   * `max_beneficiaries` — maximum possible number of beneficiaries.
   * `max_comment_depth` — maximum allowable nesting level of comments (it shows the allowed nesting level of child comments relative to parent one).  
