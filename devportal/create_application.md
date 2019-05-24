@@ -8,14 +8,14 @@ The body of the manual may be adjusted within the process of development of Cybe
   
 **Contents:**  
 
-  * [1 Preliminary work](/devportal/create_application/overview.md)  
-  * [2 Creating a simple contract](/devportal/create_application/hello_user.md)  
-  * [3 Creating tokens](/devportal/create_application/create_tokens.md)  
-  * [4 Creating an ABI-file](/devportal/create_application/abi_file.md)  
-  * [5 User data storage](/devportal/create_application/data_persistence.md)  
-  * [6 Secondary indexes](/devportal/create_application/secondary_indexes.md)  
-  * [7 Creating inline calls for action](/devportal/create_application/adding_inline_actions.md)  
-  * [8 Developing a contract with a help of built-in action calls](/devportal/create_application/inline_action_to_external_contract.md)  
+  * [1 Preliminary Work](/devportal/create_application/overview.md)  
+  * [2 Creating a Simple Contract](/devportal/create_application/hello_users.md)  
+  * [3 Creating Tokens](/devportal/create_application/create_tokens.md)  
+  * [4 Understanding ABI Files](/devportal/create_application/abi_file.md)  
+  * [5 Data Persistence](/devportal/create_application/data_persistence.md)  
+  * [6 Secondary Indexes](/devportal/create_application/secondary_indexes.md)  
+  * [7 Adding Inline Actions](/devportal/create_application/adding_inline_actions.md)  
+  * [8 Inline Action to External Contract](/devportal/create_application/inline_action_to_external_contract.md)  
   * [9 Conclusion](/devportal/create_application/conclusion.md)  
 
 ****  

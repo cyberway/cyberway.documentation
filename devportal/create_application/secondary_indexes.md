@@ -1,5 +1,5 @@
 
-# 6 Secondary indexes  
+# 6 Secondary Indexes  
 
 This section describes how tables are sorted by indexes using the example of a `voteinfo` table, as well as instructions on how to add an index to a table using the example of an `addressbook` contract.  
 

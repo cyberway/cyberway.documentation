@@ -1,5 +1,5 @@
 
-# 1 Preparatory work  
+# 1 Preparatory Work  
 
 ## Stages of building and deploying an application on CyberWay    
   * Preliminary organizational work.  

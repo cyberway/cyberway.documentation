@@ -1,5 +1,5 @@
 
-# 7 Adding Inline actions  
+# 7 Adding Inline Actions  
 
 This section provides instructions for creating inline embedded calls (inline) for `actions`. Actions may be called by another action of the same contract. Examples of these instructions are shown on the addressbook address book contract, the creation of which is described in [Section 5](https://cyberway.gitbook.io/ru/v/ru/developers/create_app/data_persistence) of this manual.  
 

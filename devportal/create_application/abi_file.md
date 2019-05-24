@@ -1,5 +1,5 @@
 
-# 4 Understanding ABI files  
+# 4 Understanding ABI Files  
 
 The Application Binary Interface (ABI) is a JSON-description of the methods for transforming user actions between JSON and binary representations. ABI also describes methods for converting database state to JSON-format and vice versa. After describing the contract through ABI, developers and users can easily interact with it via JSON.  
 

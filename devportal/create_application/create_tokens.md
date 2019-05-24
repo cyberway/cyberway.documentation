@@ -1,5 +1,5 @@
 
-# 3 Creating tokens
+# 3 Creating Tokens
 
 In CyberWay everybody can create his/her own type of tokens (In EOS this right applies to block producers only). The tokens of the application should be deployed on a separate account from `cyber.token`. When creating tokens a developer can use a reference implementation of the `cyber.token` contract as a base by loading its contents into developer’s workspace.  
 
