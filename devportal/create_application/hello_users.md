@@ -50,7 +50,7 @@ During the installation of the contract an account of this contract is created, 
 cleos wallet keys
 cleos create account cyber hello <public key> -p cyber@active
 ```   
-A guide for creating a wallet as well as creating a development key can be found on the CyberWay [website] (https://cyberway.gitbook.io/ru/v/ru/developers/create_development_wallet).  
+A guide for creating a wallet as well as creating a development key can be found on the CyberWay [website](https://cyberway.gitbook.io/en/devportal/create_development_wallet).  
 
 #### 2.5 Set the absolute path to the created contract  
 Specify the absolute path `<contracts dir path>` to the contracts’ directory in the following command:
