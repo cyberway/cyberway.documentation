@@ -351,7 +351,7 @@ You must edit the table in the ABI file, keeping only the `name` and `type` unch
   …
 ```
 
-#### 5.11** Install a contract  
+#### 5.11 Install a contract  
 
 **5.11.1** Create an account for the contract by executing:
 ```
