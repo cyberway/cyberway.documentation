@@ -50,7 +50,7 @@ eosio-cpp -o hello.wasm hello.cpp --abigen
 cleos wallet keys
 cleos create account cyber hello <public key> -p cyber@active
 ```   
-Руководство по созданию кошелька (wallet), а также по созданию ключа для разработки можно найти на [сайте](https://cyberway.gitbook.io/ru/v/ru/developers/create_development_wallet) CyberWay.  
+Руководство по созданию кошелька (wallet), а также по созданию ключа для разработки можно найти на [сайте](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_development_wallet) CyberWay.  
 
 **2.4 Установить абсолютный путь к созданному контракту**  
 Указать абсолютный путь `<contracts dir path>` к каталогу контрактов в следующей команде:
