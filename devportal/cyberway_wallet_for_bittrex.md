@@ -37,7 +37,8 @@ The cli_wallet wallet can be used by sending an API request to the rpc port. The
 The block diagram of the interactions of Bittrex with the `cli_wallet` and `cyberway_wallet` applications, as well as the interactions of the `cyberway_wallet` with the components of the blockchain nodes is shown in fig.1  
 
 ![Bitrix interaction with cli_wallet and golos_wallet wallets](./images/cyberway_wallet_for_bittrex.jpg)  
-Fig.1 - Block diagram demonstrating Bitrix interaction with cli_wallet and golos_wallet wallets
+
+Fig.1 - Block diagram demonstrating Bitrix interaction with cli_wallet and golos_wallet wallets  
 
 The interaction between `cli_wallet`, Bittrex and Golos daemon (Golosd) is pictured at the top of the fig.1 (highlighted with a red dotted line). The lower part of the scheme represents a technical solution for `cyberway_wallet` implementation on CyberWay blockchain. The highlighted parts of the scheme in red speak of the new CyberWay components that comprise the wallet.  
  
