@@ -90,7 +90,7 @@ void emission::emit()
 
 На рис.1 приведена диаграмма, демонстрирующая выпуск токенов смарт-контрактом эмиссии на фоне инфляции и вызовов операций-действий `start`, `stop` и `emit`.  
 
-![emit_contract.jpg](./images/emit_contract.jpg)
+![Emitting tokens](./images/emit_contract.jpg)
 
 Рис.1 — Диаграмма выпуска токенов смарт-контрактом эмиссия  
 
