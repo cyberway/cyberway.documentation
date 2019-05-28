@@ -28,3 +28,4 @@ sudo docker start nodeosd mongo
 Команда останова контейнеров  (команда выполняется из директории, в которой находится файл docker-compose.yml):
 ```cpp
 sudo docker stop nodeosd mongo
+```
