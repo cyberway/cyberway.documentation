@@ -4,20 +4,8 @@
 Смарт-контракт `golos.publication` обеспечивает работу с постами, в том числе предоставляет возможность пользователям выполнять следующие действия: публиковать посты, оставлять комментарии, голосовать за посты и закрывать посты, а также обеспечивает выплату вознаграждения авторам постов.  
 
 ## Операции-действия смарт-контракта golos.publication 
-Cмарт-контракт `golos.publication` поддерживает следующие операции-действия пользователей:  
-[setlimit](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setlimit),  
-[setrules](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setrules),  
-[createmssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-createmssg),  
-[updatemssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-updatemssg),  
-[deletemssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-deletemssg),  
-[downvote](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-downvote),  
-[upvote](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-upvote),  
-[closemssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-closemssg),  
-[reblog](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-reblog),  
-[setcurprcnt](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setcurprcnt),  
-[calcrwrdwt](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-calcrwrdwt),  
-[paymssgrwrd](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-paymssgrwrd),  
-[setparams](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setparams).
+Cмарт-контракт `golos.publication` поддерживает следующие операции-действия:  
+[setlimit](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setlimit), [setrules](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setrules), [createmssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-createmssg), [updatemssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-updatemssg), [deletemssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-deletemssg), [downvote](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-downvote), [upvote](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-upvote), [closemssg](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-closemssg), [reblog](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-reblog), [setcurprcnt](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setcurprcnt), [calcrwrdwt](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-calcrwrdwt), [paymssgrwrd](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-paymssgrwrd), [setparams](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.publication_contract#operaciya-deistvie-setparams).
 
 ## Операция-действие setlimit
 
