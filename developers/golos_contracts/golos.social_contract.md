@@ -17,7 +17,7 @@
 
 
 ## Операции-действия, поддерживаемые смарт-контрактом golos.social 
-Смарт-контракт `golos.social` поддерживает следующие операции-действия: [pin](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.social_contract#operaciya-deistvie-pin), [unpin](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.social_contract#operaciya-deistvie-unpin), [block](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.social_contract#operaciya-deistvie-block), [unblock](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.social_contract#operaciya-deistvie-unblock), [updatemeta](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.social_contract#operaciya-deistvie-updatemeta), [deletemeta](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts/golos.social_contract#operaciya-deistvie-deletemeta).
+Смарт-контракт `golos.social` поддерживает следующие операции-действия: [pin](#operaciya-deistvie-pin), [unpin](#operaciya-deistvie-unpin), [block](#operaciya-deistvie-block), [unblock](#operaciya-deistvie-unblock), [updatemeta](#operaciya-deistvie-updatemeta), [deletemeta](#operaciya-deistvie-deletemeta).
  
 ## Объявление accountmeta
 Объявление `accountmeta` используется для описания профиля пользователя и представляет собой структуру следующего вида:  
