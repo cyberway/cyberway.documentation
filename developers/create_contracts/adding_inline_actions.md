@@ -2,12 +2,12 @@
 # 7 Создание встроенных вызовов для действий
 
 В этом разделе приведены инструкции по созданию в контракте встроенных вызовов (inline)  для действий - операций вида `action`. Операция (action) может быть вызвана другой операцией этого же контракта. Примеры выполнения данных инструкций показаны на контракте адресной книги `addressbook`, создание которого изложено в [разделе 5](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_contracts/data_persistence) настоящего руководства.  
-[ссылка 1 на 5](#master-ru/developers/create_contracts/data_persistence)  
-[ссылка 2 на 5](#/master-ru/developers/create_contracts/data_persistence)  
-[ссылка 3 на 5](./master-ru/developers/create_contracts/data_persistence)  
-[ссылка 4 на 5](../data_persistence)  
-[ссылка 5 на 5](#./master-ru/developers/create_contracts/data_persistence)  
-[ссылка 6 на 5](#../data_persistence)  
+[ссылка 1 на 5](master-ru/developers/create_contracts/data_persistence)  
+[ссылка 2 на 5](/master-ru/developers/create_contracts/data_persistence)  
+[ссылка 3 на 5](../../../master-ru/developers/create_contracts/data_persistence)  
+[ссылка 4 на 5](developers/create_contracts/data_persistence)  
+[ссылка 5 на 5](/developers/create_contracts/data_persistence)  
+  
 
 **7.1 Добавить cyber.code для разрешения на действие**   
 Чтобы действие, находящееся в контракте адресной книги могло вызывать другое действие, необходимо аккаунту контракта дать на это разрешение. Для этого необходимо добавить cyber.code, исполнив: 
