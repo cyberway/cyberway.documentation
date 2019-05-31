@@ -40,11 +40,11 @@ setlimit(
 Операция-действие `setrules` имеет следующий вид:  
 ```cpp
 void setrules(
-    const funcparams&   mainfunc,
-    const funcparams&   curationfunc,
-    const funcparams&   timepenalty,
-    int64_t             curatorsprop,
-    symbol              tokensymbol
+    const funcparams& mainfunc,
+    const funcparams& curationfunc,
+    const funcparams& timepenalty,
+    int64_t           curatorsprop,
+    symbol            tokensymbol
 );
 ```
 
