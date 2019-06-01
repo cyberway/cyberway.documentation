@@ -27,7 +27,7 @@
 	* [8 Inline Action to External Contract](/devportal/create_application/inline_action_to_external_contract.md)
 	* [9 Conclusion](/devportal/create_application/conclusion.md)
   * [The cyberway_wallet designed for the Bittrex market](/devportal/cyberway_wallet_for_bittrex.md)
-  * [Creating a Wllet and Keys for Development](/devportal/create_development_wallet.md)
+  * [Creating a Wallet and Keys for Development](/devportal/create_development_wallet.md)
 * [VALIDATORS](/validators/validators.md)
   * [Testnet Installation Guide](/validators/testnet_installation.md)
 	* [1 General](/validators/testnet/overview.md)
