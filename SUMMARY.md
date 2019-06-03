@@ -27,6 +27,13 @@
 	* [8 Inline Action to External Contract](/devportal/create_application/inline_action_to_external_contract.md)
 	* [9 Conclusion](/devportal/create_application/conclusion.md)
   * [The cyberway_wallet designed for the Bittrex market](/devportal/cyberway_wallet_for_bittrex.md)
+  * [Creating a Wallet and Keys for Development](/devportal/create_development_wallet.md)
 * [VALIDATORS](/validators/validators.md)
+  * [Testnet Installation Guide](/validators/testnet_installation.md)
+	* [1 General](/validators/testnet/overview.md)
+	* [2 Configuring the Docker Image](/validators/testnet/docker_configuration.md)
+	* [3 Create Container](/validators/testnet/run_services.md)
+	* [4 Connecting to a Node](/validators/testnet/connect_node.md)
+	* [5 List of Commands Applicable to Any Kind of Container](/validators/testnet/main_commands.md)
 * [WORKERS](/workers/workers.md)
  
