@@ -7,11 +7,11 @@ The `golos.publication` smart contract provides users to perform actions on post
   * leaving comments to posts; 
   * voting for posts;
   * closing posts.
-In addition, this contract contains logic for determining the payments to authors, curators and beneficiaries of posts.
+In addition, this contract contains logic for determining the [payments to authors, curators and beneficiaries of posts](https://cyberway.gitbook.io/en/devportal/golos_contracts/rewards_definition).
 
 ## The list of actions implemented in the golos.publication smart contract
  
-The `golos.publication` smart contract supports the following user actions: [setlimit](#the-setlimit-action), [setrules](#the-setrules-action), [createmssg](#the-createmssg-action), [updatemssg](#the-updatemssg-action), [deletemssg](#the-deletemssg-action), [upvote](#the-upvote-action), [downvote](#the-downvote-action), [unvote](#the-unvote-action), [[closemssg](#the-closemssg-action), [reblog](#the-reblog-action), [setcurprcnt](#the-setcurprcnt-action), {calcrwrdwt}(#the-calcrwrdwt-action), [paymssgrwrd](#the-paymssgrwrd-action) and [setparams](#the-setparams-action).
+The `golos.publication` smart contract supports the following user actions: [setlimit](#the-setlimit-action), [setrules](#the-setrules-action), [createmssg](#the-createmssg-action), [updatemssg](#the-updatemssg-action), [deletemssg](#the-deletemssg-action), [upvote](#the-upvote-action), [downvote](#the-downvote-action), [unvote](#the-unvote-action), [closemssg](#the-closemssg-action), [reblog](#the-reblog-action), [setcurprcnt](#the-setcurprcnt-action), [calcrwrdwt](#the-calcrwrdwt-action), [paymssgrwrd](#the-paymssgrwrd-action) and [setparams](#the-setparams-action).
 
 ## The setlimit action
 
