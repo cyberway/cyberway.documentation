@@ -11,11 +11,11 @@ In addition, this contract contains logic for determining the payments to author
 
 ## The list of actions implemented in the golos.publication smart contract
  
-The `golos.publication` smart contract supports the following user actions: `setlimit`, `setrules`, `createmssg`, `updatemssg`, `deletemssg`, `downvote`, `upvote` and `unvote`.
+The `golos.publication` smart contract supports the following user actions: [setlimit](#the-setlimit-action), [setrules](#the-setrules-action), [createmssg](#the-createmssg-action), [updatemssg](#the-updatemssg-action), [deletemssg](#the-deletemssg-action), [upvote](#the-upvote-action), [downvote](#the-downvote-action), [unvote](#the-unvote-action), [[closemssg](#the-closemssg-action), [reblog](#the-reblog-action), [setcurprcnt](#the-setcurprcnt-action), {calcrwrdwt}(#the-calcrwrdwt-action), [paymssgrwrd](#the-paymssgrwrd-action) and [setparams](#the-setparams-action).
 
 ## The setlimit action
 
-The `setlimit` action is used to set rules that restrict user operations. The mechanism for restricting user operations is based on interaction of two smart contracts — precisely golos.publication and golos.charge. Each action of the `golos.publication` smart contract is linked to a certain battery of the `golos.charge` smart contract. In the `setlimit` parameters, it needs to specify an action (for example, `createmssg` or `upvote`) and a battery to be linked to it.  
+The `setlimit` action is used to set rules that restrict user operations. The mechanism for restricting user operations is based on interaction of two smart contracts — precisely `golos.publication` and `golos.charge`. Each action of the `golos.publication` smart contract is linked to a certain battery of the `golos.charge` smart contract. In the `setlimit` parameters, it needs to specify an action (for example, `createmssg` or `upvote`) and a battery to be linked to it.  
 
 The `setlimit` action has the following form:  
 ```cpp
@@ -45,19 +45,17 @@ The `setrules` action is used for setting rules that apply in application for di
 The `setrules` action has the following form:  
 ```cpp
 void setrules(
-    const funcparams&	  mainfunc,
-    const funcparams&   curationfunc,
-    const funcparams&   timepenalty,
-    int64_t   curatorsprop,
-    int64_t   maxtokenprop,
-    symbol  tokensymbol
+    const funcparams&  mainfunc,
+    const funcparams&  curationfunc,
+    const funcparams&  timepenalty,
+    int64_t            maxtokenprop,
+    symbol             tokensymbol
 );
 ```  
 **Parameters:**  
   * `mainfunc` — a function that calculates a total amount of rewards for an author and post curators in accordance with accepted algorithm (for example, a linear algorithm or a square root algorithm). The algorithm used in the function is selected by witnesses voting. The function contains two parameters: mathematical expression (the algorithm itself) by which the reward is calculated, and maximum allowable value of argument for this function. When setting parameter values for `setrules`, they are checked for correctness (including for monotonous behavior and for non-negative value).  
   * `curationfunc` — a function that calculates a fee for each of the curators in accordance with accepted algorithm (similar to calculation for `mainfunc`).  
   * `timepenalty` — a function that calculates a weight of vote, taking into account the time of voting and the penalty time duration.  
-  * `curatorsprop` — total amount of fees for all curators.  
 . * `maxtokenprop` — the maximum amount of tokens possible that can be assigned to author of post. This parameter is set by witnesses voting.  
   * `tokensymbol` — a token type (within the Golos application, only Golos tokens are used).  
 
@@ -67,13 +65,11 @@ To perform the `setrules` action, a user should have a witness authorization. In
 The `createmssg` action is used to create a message as a response to a previously received (parent) message. The `createmssg` action has the following form:  
 ```cpp
 void createmssg(
-    name          account,
-    std::string   permlink,
-    name          parentacc,
-    std::string   parentprmlnk,
+    mssgid        message_id,
+    mssgid        parent_id,
     std::vector<structures::beneficiary> beneficiaries,
-    int64_t        tokenprop,
-    bool            vestpayment,
+    int64_t       tokenprop,
+    bool          vestpayment,
     std::string   headermssg,
     std::string   bodymssg,
     std::string   languagemssg,
@@ -82,10 +78,8 @@ void createmssg(
 );
 ```  
 **Parameters:**  
-  * `account` — author name of the message.  
-  * `permlink` — relative address of the message.  
-  * `parentacc` — account name of the parent message author to which the response is formed via this `createmssg` action. In case of a zero value of `parentacc`, the created message will be considered as a post.  
-  * `parentprmlnk` — relative address of the parent message.  
+  * `message_id` — identifier of the reply message. The parameter is a structure containing the fields: `author` — author of the message, `permalink` — unique name of the message within publications of this author.  
+  * `parent_id` — identifier of the parent message. The parameter contains the fields: `author` — author of the parent message, `permalink` — unique name of the message within publications of this author.  
   * `beneficiaries` — a structure containing the names of beneficiaries and total amount of their fees. This amount is a percentage of total reward for the message.  
   * `tokenprop` — amount of tokens. This value cannot exceed the `maxtokenprop` value  specified in `set_rules`.  
   * `vestpayment` — `true`, if a user gives permission to pay in vestings in case of battery resource exhaustion (the message is sent regardless of battery resource). Default value is `false`.  
@@ -94,6 +88,7 @@ void createmssg(
   * `languagemssg` — language of the message.  
   * `tags` — tag that is assigned to the message.  
   * `jsonmetadata` — metadata in the JSON format.  
+  * `curators_prcnt` — a share (in percent) of reward deducted to curators from total amount of rewards for the created message. The parameter value is set by the message author within the range of values set by witnesses. By default, this parameter is set to zero `curators_prcnt = std::nullopt`.  
 
 The pair of `parentacc` and `parentprmlnk` parameters identifies the parent message to which a response is created via `createmssg`.
 
@@ -106,19 +101,17 @@ The `updatemsg` action is used to update a message previously sent by user.
 The `updatemssg` action has the following form:  
 ```cpp
 void updatemssg(
-    name           account,
-    std::string    permlink,
-    std::string    headermssg,
-    std::string    bodymssg, 
-    std::string    languagemssg,
+    mssgid       message_id,
+    std::string  headermssg,
+    std::string  bodymssg, 
+    std::string  languagemssg,
     std::vector<structures::tag> tags,
-    std::string    jsonmetadata
+    std::string  jsonmetadata
 );
 ```
 **Parameters:**  
-  * `account` — author name of the message being updated.
-  * `permlink` — relative address of the message.  
-  * `headermssg` — title of the message.
+  * `message_id` — identifier of the message being updated. The parameter contains the fields: `author` — author name of the message being updated, `permalink` — unique name of the message within publications of this author.  
+  * `headermssg` — title of the message.  
   * `bodymssg` — body of the message.  
   * `languagemssg` — language of the message.  
   * `tags` — tag that is assigned to the message.  
@@ -130,15 +123,10 @@ To perform the `updatemssg` action it is required that the transaction should be
 The `deletemssg` action is used to delete a message previously sent by user.  
 The `deletemssg` action has the following form:  
 ```cpp
-void deletemssg(
-    name account,
-    std::string permlink
-);
+void deletemssg(mssgid   message_id);
 ```
-**Parameters:**  
-  * `account` — author name of the message being deleted.  
-  * `permlink` — relative address of the message being deleted.  
-
+**Parameter:**  
+  * `message_id` — identifier of the message to be deleted. The parameter contains the fields: `author` — author of the message to be deleted, `permalink` — unique name of the message within publications of this author.  
  
 The message cannot be deleted in the following cases:  
   * the message has a comment;  
@@ -151,19 +139,15 @@ The `upvote` action is used to cast a vote in the «upvote» form when voting fo
 The `upvote` action has the following form:  
 ```cpp
 void upvote(
-    name voter,
-    name author,
-    std::string permlink,
-    uint16_t weight
+    name      voter,
+    mssgid    message_id,
+    uint16_t  weight
 );
 ```
 **Parameters:**  
   * `voter` — voting account name.  
-  * `author` — author name of the message being voted for.  
-  * `permlink` — relative address of the message for which the `voter` account is voting.  
+  * `message_id` — identifier of the post for which the `voter` account is voting. The parameter contains the fields: `author` — author name of the post being voted for, `permalink` — unique name of the post within publications of this author.  
   * `weight` — the vote weight of the account name `voter`.  
-
-The key that is used to search for a message is bound to the `account` and `permlink` parameters.  
 
 To perform the `upvote` action it is required that the transaction should be signed by the account name `voter`. 
 
@@ -172,41 +156,132 @@ The `downvote` action is used to cast a vote in the «downvote» form when votin
 The `downvote` action has the following form:  
 ```cpp
 void downvote(
-    name voter,
-    name author,
-    std::string permlink,
-    uint16_t weight
+    name      voter,
+    mssgid    message_id,
+    uint16_t  weight
 );
 ```
 **Parameters:**  
   * `voter` — voting account name.  
-  * `author` — author name of the message being voted for.  
-  * `permlink` — relative address of the message for which the `voter` account is voting.   
-  * `weight` — the vote weight of the account name `voter`.  
-
-The key that is used to search for a message is bound to the `author` and `permlink` parameters.    
+  * `message_id` — identifier of the post for which the `voter` account is voting. The parameter contains the fields: `author` — author name of the post being voted for, `permalink` — unique name of the post within publications of this author.   
+  * `weight` — the vote weight of the account name `voter`.    
 
 To perform the `downvote` action it is required that the transaction should be signed by the account name `voter`.  
 
 ## The unvote action
-The `unvote` action is used to revoke user's own vote that was previously cast for the message.  
+The `unvote` action is used to revoke user's own vote that was previously cast for the post.  
 The `unvote` action has the following form:  
 ```cpp
 void unvote(
-    name voter,
-    name author,
-    std::string permlink
+    name     voter,
+    mssgid   message_id
 );
 ```
 
 **Parameters:**  
   * `voter` — account name that revokes her/his own vote previously cast for the message.  
-  * `author` — author name of the message from which the vote is being removed.  
-  * `permlink` — relative address of the message from which the vote is being removed.  
+  * `message_id` — identifier of the post from which the vote is being revoked. The parameter contains the fields: `author` — author name of the post from which the vote is being revoked, `permalink` — unique name of the post within publications of this author.  
 
-The key that is used to search for a message is bound to the `author` and `permlink` parameters.  
- 
 To perform the `unvote` action it is required that the transaction should be signed by the account name `voter`.
+
+
+## The closemssg action
+
+The `closemssg` action is internal and unavailable to a user. Used to close a post.  
+The `closemssg` action has the following form:
+```
+void close_message(mssgid message_id)
+```
+**Parameter:**  
+  * `message_id` — identifier of the post that is closing. The parameter contains the fields: `author` — author name of the post, `permlink` — unique name of the post within publications of this author.  
+
+The `closemssg` action requires fulfillment of conditions:
+  * closing the post should occur after the time `cashout_window:window`;  
+  * transaction should be signed by the account of `golos.publication` smart contract.  
+
+
+## The reblog action
+The `reblog` action is used to place a post adopted from another author under this smart contract, as well as to add rebloger's own text to the post in the form of note or comment.  
+
+Reblog post retains authorship of post-original. Added note to the post-reblog may contain its own title. An operation of deleting the post-original does not affect the post-reblog and keep comments to the post-reblog.  
+   
+The `reblog` action has the following form:  
+```
+void reblog(
+    name rebloger,
+    structures::mssgid message_id,
+    std::string headermssg,
+    std::string bodymssg
+)
+```
+**Parameters:**  
+  * `rebloger` — account name of the reblogger.   
+  * `message_id` — identifier of the post-original. The parameter contains the fields: `author` — author of the post-original, `permalink` — unique name of the post-original within publications of this author.  
+  * `headermssg` —  title of the note to be added. This field can be empty.  
+  * `bodymssg` — body of the note to be added. This field can be empty.  
+
+Restrictions that are imposed on the `reblog` action:  
+  * It is not allowed to perform `reblog` of own post, that is, the author of which is the account` rebloger`.
+  * It is not allowed to `reblog` only one title of post-original. The body of the post-original must be present too.
+  * The title length of the added note should not exceed 256 characters.
+
+To perform the `reblog` action it is required that the transaction should be signed by the account name `rebloger`.
+
+## The setcurprcnt action
+
+The `setcurprcnt` action is used by author of post to set or change previously specified amount (in percent) of reward, allocated to the curators.  
+
+The `setcurprcnt` action has the following form:
+```
+void set_curators_prcnt(
+    structures::mssgid message_id,
+    uint16_t curators_prcnt
+)
+```
+**Parameters:**  
+  * `message_id` — identifier of the post for which amount of fee to curators is setting. The parameter contains the fields: `author` — author of the post, `permalink` — unique name of the post within publications of this author.
+  * `curators_prcnt`— a share (in percent) of reward deducted to curators from total amount of rewards for the post.  
+
+ After the start of voting for a post, any change in the share of payment to curators is unacceptable.  
+
+To perform the `setcurprcnt` action it is required that the transaction should be signed by the post author `message_id.author`.
+
+
+## The calcrwrdwt action
+The `calcrwrdwt` action is internal and unavailable to the user. It is used to calculate a post weight based on number of publications made by its author for a certain time.  
+
+The action has the following form: 
+```
+void calcrwrdwt(
+    name account,
+    int64_t mssg_id,
+    int64_t post_charge
+)
+```
+**Parameters:**  
+  * `account`— account name that is the post author.  
+  * `mssg_id`— internal identifier of the post.  
+  * `post_charge`— current battery life. It is used to limit user activity in posting. Battery charge decreases with increasing number of posting by the author for a certain time. The amount paid for posts is also reduced.
+
+To perform the `calcrwrdwt` action it is required that the transaction should be signed by the `golos.publication` smart contract account. 
+
+
+## The paymssgrwrd action
+The `paymssgrwrd` action is internal and unavailable to the user. It is used to pay remuneration for a post to curators, beneficiaries and author. The action has the following form:
+```
+void paymssgrwrd(mssgid message_id)
+```  
+`message_id` — identifier of the post for which awards are paid. The parameter contains the fields: `author` — author of the post, `permalink` — unique name of the post within publications of this author.
+
+To perform the `paymssgrwrd` action it is required that the transaction should be signed by the `golos.publication` smart contract account. 
+
+## The setparams action
+
+The `setparams` action is used to configure the parameters of `golos.publication` smart contract. The action has the following form:
+```
+void set_params(std::vector<posting_params> params)
+```  
+`params` — value as a structure containing fields with configurable parameters.  
 
 ## Other parameters which are used and set in the golos.publication smart contract
  There are other parameters in the `golos.publication` smart contract that can be set by calling `set_params`:  
@@ -216,5 +291,6 @@ To perform the `unvote` action it is required that the transaction should be sig
   * `max_comment_depth` — maximum allowable nesting level of comments (it shows the allowed nesting level of child comments relative to parent one).  
   * `social_acc` — account name of the `golos.social` smart contract.  
   * `referral_acc` — account name of the `golos.referral` smart contract.  
+  * `curators_prcnt` — a share (in percent) of reward deducted to curators from total amount of rewards for a post. The parameter sets thresholds within which the post author can specify her/his own percentage value of curators fee. 
   
 ****

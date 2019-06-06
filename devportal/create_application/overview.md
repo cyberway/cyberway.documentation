@@ -54,7 +54,7 @@ However, first, it is advisable to do the following:
   * Build thoroughly structural (for instance, block) schemes of the algorithms for successful performance of the application according to its rules. Determine a set of contracts that is required for implementation of the algorithms.  
 
   * Prepare a server (blockchain node) that will be linked to your application. Ensure that the Testnet software is already installed on the server and the developers has a wallet as well as private and public keys. Otherwise, it is necessary to:  
-    * Install the latest testnet version on the server, following the instructions of the [Testnet Installation Guide](https://cyberway.gitbook.io/en/devportal/producers/testnet_installation);  
+    * Install the latest testnet version on the server, following the instructions of the [Testnet Installation Guide](https://cyberway.gitbook.io/en/validators/testnet_installation);  
     * Create a user wallet following our [guidelines for creating a wallet](https://cyberway.gitbook.io/en/devportal/create_development_wallet).  
 
 ****  

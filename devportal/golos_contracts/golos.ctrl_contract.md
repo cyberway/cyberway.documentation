@@ -43,8 +43,9 @@ ctrl_param, types: [
     * `period` — an update period (in seconds). Re-authorization change for account is not performed if specified period has not passed since the last update.  
 
 ## Actions used in the Control smart contract 
+The `golos.publication` smart contract supports the following actions: [setparams](#the-setparams-action), [validateprms](#the-validateprms-action), [regwitness](#the-regwitness-action), [unregwitness](#the-unregwitness-action), [stopwitness](#the-stopwitness-action), [startwitness](#the-startwitness-action), [votewitness](#the-votewitness-action), [unvotewitn](#the-unvotewitn-action), [changevest](#the-changevest-action)
 
-### The setparams action
+## The setparams action
 The `setparams` action is used to configure the `golos.ctrl` smart contract parameters. The action has the following form:
 
 ```cpu
@@ -52,14 +53,14 @@ void control::setparams(vector<ctrl_param> params)
 ```
 `params` — a value in the form of a structure containing fields with the setting parameters. 
 
-### The validateprms action
+## The validateprms action
 The `validateprms` action checks parameters for validity and controls if there are errors or not. The `validateprms` action is called by the smart contract.  It has the following form:
 ```cpu 
 void control::validateprms(vector<ctrl_param> params)
 ```
 `params` — a value in the form of a structure containing the parameters to be checked.
 
-### The regwitness action
+## The regwitness action
 The `regwitness` action is used to register candidates for witnesses. The action has the following form:  
 ```cpu
 void control::regwitness(
@@ -73,16 +74,46 @@ void control::regwitness(
 
 Performing the `regwitness` action requires a signature of the witness candidate.
 
-### The unregwitness action
+## The unregwitness action
 The `unregwitness` action is used to withdraw a user's candidacy from among the registered candidates to the witnesses. The action has the following form:
 ```cpu
 void control::unregwitness(name witness)
 ```
 `witness` — the user name to be removed from the list of witnesses registered as candidates.  
 
-Performing the `regwitness` action requires a signature of a witness candidate. The `regwitness` action can be called either by the candidate (in case of a withdrawal) or by a witness who found a discrepancy of the witness capabilities to desirable witness requirements, and mismatched data published on the web site with her/his relevant data. 
+The `regwitness` action can be called either by the candidate (in case of a withdrawal) or by a witness who found a discrepancy of the witness capabilities to desirable witness requirements, and mismatched data published on the web site with her/his relevant data. 
 
-### The votewitness action
+Conditions for performing the `regwitness` action:  
+  * no votes for this witness candidate. Votes of all users who voted for this witness candidate should be removed;  
+  * the transaction must be signed by the `witness` candidate himself.
+
+## The stopwitness action
+The `stopwitness` action is used to temporarily suspend active actions of a witness (or a witness candidate). The action has the following form:
+```
+void stopwitness(name witness)
+```  
+`witness` — account name of a witness (or a witness candidate) whose activity is temporarily suspended.
+
+Conditions for performing the `stopwitness` action:  
+  * the `witness` account should be active;
+  * a transaction must be signed by the `witness` account.
+
+The `witness` account activity can be continued in case it has performed the `startwitness` action.
+
+
+## The startwitness action
+The `startwitness` action is used to resume suspended witness activity (or a witness candidate activity). The action has the following form:
+```
+void startwitness(name witness)
+```  
+`witness` — account name of a witness (or a witness candidate), whose activity is resumed.
+
+Conditions for performing the `startfitness` action:  
+  * the `witness` account activity should be suspended, that is, the operation `stopwitness` should be performed previously;
+  * a transaction must be signed by the `witness` account.
+
+
+## The votewitness action
 The `votewitness` action is used to vote for a witness candidate. The action has the following form:
 ```cpu
 void control::votewitness(
@@ -98,9 +129,10 @@ Doing the `votewitness` action requires signing the `voter` account.
 
 **Restrictions:**  
   * the `witness` candidate name must first be registered through a call to `regwitness`;  
-  * total number of votes cast by the `voter` account for all candidates should not exceed the `max_witness_votes` parameter value
+  * total number of votes cast by the `voter` account for all candidates should not exceed the `max_witness_votes` parameter value;
+  * it is not allowed to vote for a witness candidate whose activity is suspended (after the candidate has completed the `stopwitness` action).
 
-### The unvotewitn action
+## The unvotewitn action
 The action `unvotewitn` is used to withdraw a previously cast vote for a witness candidate.  
 
 The action has the following form:
@@ -114,9 +146,11 @@ void control::unvotewitn(
   * `voter` —  an account name that intends to withdraw her/his vote which was previously cast for the witness candidate.  
   * `witness` — the witness candidate name from whom the vote is withdrawn.  
 
+It is allowed to withdraw a vote cast for a witness candidate whose activity is suspended (after the candidate has completed the `stopwitness` action).
+
 Doing the `unvotewitn` action requires signing the `voter` account.
 
-### The changevest action
+## The changevest action
 The `changevest` action is internal and unavailable to the user. It is used by `golos.vesting` smart contract to notify the `golos.ctrl` smart contract about a change of the vesting amount on the user's balance. The `changevest` action has the following form:
 ```cpu
 void control::changevest(
