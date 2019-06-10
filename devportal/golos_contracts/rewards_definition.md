@@ -109,12 +109,12 @@ Total amount of fee to curators is a part of the funds as a percentage of the to
 
 To determine the amount of fee to curators it is recommended to use the formula 
 ```
-curation_payout = payout - (sumcuratorsw × payout)        (2)
+curation_payout = curators_prcnt × payout        (2)
 ```
 **Components of the formula:**  
   * `curation_payout` — resulting total amount of fee to curators for the post at the time of receiving data from Event Engine,  
-  * `payout` — total amount of reward for the post, calculated by the formula (1),  
-  * `sumcuratorsw = poststate::sumcuratorsw` — share allocated to curators of the total reward (this is a total weight of all curators votes at the current time).  
+  * `curators_prcnt` — share (in percent), deducted to curators, of the total remuneration for the post;  
+  * `payout` — total amount of reward for the post, calculated by the formula (1).  
 
 Calculated by the formula (2) the total fee amount is distributed between all curators in accordance with the rules accepted in application. Below is recommended method of determining a fee amount for each of the curators.  
 
@@ -146,14 +146,14 @@ The part of funds allocated to author in the form of reward for a post is distri
 To determine the amount of reward to j-th beneficiary, it is recommended to apply the formula
 
 ```
-ben_rewardⱼ = (payout - curation_payout) × deductprcntⱼ       (5)
+ben_rewardⱼ = (payout - curation_payout) × weightⱼ       (5)
 ```
 **Components of the formula:**  
   * `ben_rewardⱼ` — amount of reward to j-th beneficiary.
   * `payout` — total amount of reward for the post, calculated by the formula (1).  
   * `curation_payout` — total amount of fee to curators for the post, calculated by the formula (2). 
   * `(payout - curation_payout)` — total amount of rewards allocated to beneficiaries and author.  
-  * `deductprcnt = post::beneficiary::deductprcnt` — a share of rewards allocated to j-th beneficiary. This percentage value is set by the author at the time of posting.  
+  * `weightⱼ` — a weight of reward allocated to j-th beneficiary. This percentage value is set by the author at the time of posting.  
 
 The award amount should be determined by the formula (5) for each beneficiary. Needed data about beneficiaries can be taken from the field  `beneficiaries` of the table `message`. There is an array containing names and percentage deductions.  
 
