@@ -2,7 +2,7 @@
 ## Назначение смарт-контракта cyber.token  
 Системный смарт-контракт `cyber.token` предоставляет функции по управлению токенами, генерирует новые токены и хранит информацию о созданных токенах, предоставляет возможность проводить взаиморасчеты между аккаунтами.   
 
-В состав смарт-контракта cyber.token входят следующие операции-действия: [create](#operaciya-deistvie-create), [issue](#operaciya-deistvie-issue), [retire](#operaciya-deistvie-retire), [transfer](#operaciya-deistvie-transfer), [bulktransfer](#operaciya-deistvie-bulktransfer), [payment](#operaciya-deistvie-payment), [bulkpayment](#operaciya-deistvie-bulkpayment), [claim](#operaciya-deistvie-claim), [close](#operaciya-deistvie-close). 
+В состав смарт-контракта cyber.token входят следующие операции-действия: [create](#operaciya-deistvie-create), [issue](#operaciya-deistvie-issue), [retire](#operaciya-deistvie-retire), [transfer](#operaciya-deistvie-transfer), [bulktransfer](#operaciya-deistvie-bulktransfer), [payment](#operaciya-deistvie-payment), [bulkpayment](#operaciya-deistvie-bulkpayment), [claim](#operaciya-deistvie-claim), [open](#operaciya-deistvie-open) и [close](#operaciya-deistvie-close). 
 
 ## Операция-действие create
 Операция-действие `create` используется для создания токена для обращения его в системе. Операция-действие `create` имеет следующий вид:
@@ -203,7 +203,7 @@
 `owner` — имя аккаунта, которому была выделена память;  
 `symbol` — символ, для которого удаляется запись.  
 
-###Получение статистической информации по системным токенам
+### Получение статистической информации по системным токенам
 Для получения статистической информации по токенам в смарт-контракте `cyber.token` используются две таблицы `currency_stats` и `account`.  
 
 Таблица `currency_stats` имеет следующий вид:  
