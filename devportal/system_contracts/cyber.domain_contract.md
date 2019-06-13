@@ -4,8 +4,8 @@
 The `cyber.domain` smart contract is designed to create and handle domain names, create or delete a link of domain names to accounts, change domain name owners, as well as to handle a purchase of domain names at auction.  
 
 The `cyber.domain` contract includes:
-* a part of actions used to purchase a domain name at auction, including `checkwin`,` biddomain`, `biddmrefund`, `newdomain` and `declarenames`;
-* a part of internal domain actions, including `passdomain`, ` linkdomain`, `unlinkdomain` and `newusername`. Although a code of these actions is in the blockchain core, they are called up via smart contract;
+* a part of actions used to purchase a domain name at auction, including [checkwin](#the-checkwin-action), [biddomain](#the-biddomain-action), [biddmrefund](#the-biddmrefund-action), [newdomain](#the-newdomain-action) and [declarenames](#the-declarenames-declaration);
+* a part of internal domain actions, including [passdomain](#the-passdomain-declaration), [linkdomain](#the-linkdomain-declaration), [unlinkdomain](#the-unlinkdomain-declaration) and [newusername](#the-newusername-declaration). Although a code of these actions is in the blockchain core, they are called up via smart contract;
 * a list of domain names used in transactions.
 
 
