@@ -40,7 +40,7 @@ This action has the following form:
     * a token symbol. This is a structure value containing fields:
       * the token name, consisting of a set of capital letters;    
       * the field that specifies a token cost accuracy in the form of decimal places number.  
-  * `memo` — memo text that clarifies a meaning (necessity) of the token emission in the system. The text volume should not exceed 256 symbols including blanks.  
+  * `memo` — memo text that clarifies a meaning (necessity) of the token emission in the system. The text volume should not exceed 384 symbols including blanks.  
 
 When the `create` action is performed, the token symbol and the account name `issuer` are put into the table. When executing the `issue` action, the token character is taken from the resulting `quantity` value. The account `issuer` can be determined via using this symbol and table data. The number of supplied tokens should not exceed `maximum_supply` value specified in the `create` action. Use of the `bandwidth` resources (RAM) is charged to the `issuer` account.  
 
@@ -100,7 +100,7 @@ The action `bulktransfer` is used to transfer tokens from one account's balance 
   * `recipients` — array (list) of token recipients. Each array element is a structure containing fields:  
     * `to` — recipient account to balance of which the tokens are transferred;
     * `quantity` — number of tokens to be transferred to account `to`. This value should be greater than zero; 
-    * `memo` — a memo text that clarifies a meaning of the token transfer. The text volume should not exceed 256 symbols including blanks.  
+    * `memo` — a memo text that clarifies a meaning of the token transfer. The text volume should not exceed 384 symbols including blanks.  
 
 The restrictions imposed on the `bulktransfer` action:  
   * transfer of various types tokens is not allowed;  
@@ -127,7 +127,7 @@ The `payment` action like the `transfer` action is used to transfer funds from o
   * `from` — sender account from balance of which the tokens are withdrawn.  
   * `to` — account name which is a recipient token.  
   * `quantity` — number of tokens to be transferred to account name `to`. This value should be greater than zero.  
-  * `memo` — a memo text that clarifies a meaning of the token transfer. The text volume should not exceed 256 symbols including blanks.
+  * `memo` — a memo text that clarifies a meaning of the token transfer. The text volume should not exceed 384 symbols including blanks.
 
 Unlike `transfer`, when performing `payment` action, notifications are not sent and funds are transferred not to the recipient account balance , but to the payment-intermediary balance. To withdraw funds from the `payment` balance, the recipient account `to` should additionally perform the action `claim`.  
 
@@ -146,7 +146,7 @@ The action `bulktransfer` is used to transfer tokens from one account's balance 
   * `recipients` — array (list) of token recipients. Each array element is a structure containing fields:  
     * `to` — account name which is a recipient token;
     * `quantity` — number of tokens to be transferred to account name `to`. This value should be greater than zero; 
-    * `memo` — a memo text that clarifies a meaning of the token transfer. The text volume should not exceed 256 symbols including blanks.  
+    * `memo` — a memo text that clarifies a meaning of the token transfer. The text volume should not exceed 384 symbols including blanks.  
 
 The restrictions imposed on the `bulkpayment` action:  
   * transfer of various types tokens is not allowed;
@@ -186,7 +186,7 @@ The `open` action is used to create a record in database. This entry must contai
   * `symbol` — symbol for which the entry is being created.  
   * `ram_payer` — account name that pays for the used memory.  
 
-Performing the `open` action requires a signature of the `ram_player` account.  
+Performing the `open` action requires a signature of the `ram_payer` account.  
 
 ## The close action 
 The `close` action is an opposite of `open` and is used to free allocated memory in database. The `close` action has the following form:
@@ -200,7 +200,9 @@ The `close` action is an opposite of `open` and is used to free allocated memory
   * `owner` — account name to which the memory was allocated.  
   * `symbol` — a symbol for which the entry is deleted.  
 
-To perform this action, it is necessary to have a zero token balance (determined by the symbol) of the account `owner`.
+To perform this action, it is necessary to have two zero balances of the account `owner`:
+  * zero token balance (determined by the symbol);
+  * zero payment balance (calculated as `payments - balance`).
 
 ### Obtaining statistical information about system tokens
 To obtain statistical information on tokens, two tables, `currency_stats` and `account`, are used in the `cyber.token` smart contract.  
@@ -224,6 +226,7 @@ The `account` table has the following form:
 ```cpp
 struct [[eosio::table]] account {
     asset balance;
+	asset payments;
 };
 ```
 A scope of the table is determined by the account name.  
