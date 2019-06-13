@@ -202,7 +202,7 @@ The `close` action is an opposite of `open` and is used to free allocated memory
 
 To perform this action, it is necessary to have two zero balances of the account `owner`:
   * zero token balance (determined by the symbol);
-  * zero payment balance (calculated as `payments - balance`).
+  * zero payment balance.
 
 ### Obtaining statistical information about system tokens
 To obtain statistical information on tokens, two tables, `currency_stats` and `account`, are used in the `cyber.token` smart contract.  
