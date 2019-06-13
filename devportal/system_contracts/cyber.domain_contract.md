@@ -40,7 +40,7 @@ The actions `checkwin`, `biddomain`, `biddmrefund` and `newdomain` are used to p
 ### The checkwin action 
 The `checkwin` action is used to register a domain name owner (a winner) at auction. This action does not require a special call and is called automatically with a certain periodic.  
 
-The `checkwin` action has the following form:    
+The `checkwin` action has the following form:  
 ```cpp
 [[eosio::action]] void checkwin();  
 ```
@@ -57,10 +57,10 @@ The `biddomain` action allows an account to bid at the auction. The action has t
 ```
 Parameters:  
 `bidder` — an account name which bids at the action;  
-`name` — a domain name (a string value in accordance with the requirements) on which the bid is done;   
-`bid` — a structure value that specifies the bid.
+`name` — a domain name (a string value in accordance with the requirements) on which the bid is done;  
+`bid` — a structure value that specifies the bid.  
   
-To perform this action the `cyber.domain` smart contract account should have the rights of the `bidder` account. If a bid with a bigger value appears at the auction, the bid with a smaller value is returned to the `bidder` account. The refunds are made automatically by internal calling `biddmrefund` from `biddomain`..   
+To perform this action the `cyber.domain` smart contract account should have the rights of the `bidder` account. If a bid with a bigger value appears at the auction, the bid with a smaller value is returned to the `bidder` account. The refunds are made automatically by internal calling `biddmrefund` from `biddomain`.   
 
 ### The biddmrefund action
 The action `biddmrefund` is used to return a bid which was made at the auction to purchase a domain name if a higher bid is made for the same domain name. The action has the following form:  
@@ -74,7 +74,7 @@ Parameters:
 `bidder` —  the account name to which the funds are returned from the auction;   
 `name` — the domain name for which the bid was made.  
 
-In case of exceptional situations (a network failure or an error in the node's operation), the `biddmrefund` action can be called apart from calling `biddomain` (non-standard calling `biddmrefund`)
+In case of exceptional situations (a network failure or an error in the node's operation), the `biddmrefund` action can be called apart from calling `biddomain` (non-standard calling `biddmrefund`).
 
 ### The newdomain action 
 The `newdomain` action is used to create a new domain name. The action has the following form:  
@@ -88,7 +88,7 @@ Parameters:
 `creator` — account name that creates a domain name;  
 `name` — domain name being created.  
 
-The `newdomain` action can be used: 
+The `newdomain` action can be used:  
   * to create domain name by the system account `cyber.domain`;  
   * to create domain name by a winner of the domain name auction;  
   * to create a sub-domain name by the owner of a direct parent domain.  
@@ -96,21 +96,19 @@ The `newdomain` action can be used:
 The smart contract account `cyber.domain` must be privileged or have a permission to transfer funds from `cyber'.namesaccount` (in case of a refund). Upon completion of this action, the `creator` account becomes the owner of the created domain name.
 
 ## Declarations of the names used in transactions  
-It is not enough for one domain name to define a user name. The matter is, the user name is linked to both the owner account and the domain account (usually, it is a smart contract) and has a structure of the form `name@domain`. The domain part defines a scope for the `name`. The accounts with the same name can exist in different scopes. There are several variants that support `username` data and allow a textual representation of a user name to match an account name.
-
+It is not enough for one domain name to define a user name. The matter is, the user name is linked to both the owner account and the domain account (usually, it is a smart contract) and has a structure of the form `name@domain`. The domain part defines a scope for the `name`. The accounts with the same name can exist in different scopes. There are several variants that support `username` data and allow a textual representation of a user name to match an account name.  
 
 **Restrictions imposed on a user name value**  
  The following requirements are imposed on a user name structure:  
-  * a total number of characters in a user name should not exceed 32 pcs;   
+  * a total number of characters in a user name should not exceed 32 pcs;  
   * a user name can consist of individual parts separated by the symbol «dot»;  
   * two «dot» symbols near each other are not allowed;  
-  * the valid characters in a user name should be alphanumeric, a symbol «hyphen» could be used as well ;  
+  * the valid characters in a user name should be alphanumeric, a symbol «hyphen» could be used as well;  
   * the capital letters in a user name are unacceptable;  
   * a symbol «hyphen» should not be at the beginning or end of any user name part.  
 
 ### The declarenames declaration
-The `declarenames` declaration is used to submit a list of structures with information about the domain names (or user names) used in transactions and their respective accounts. The declaration has the following form: 
-
+The `declarenames` declaration is used to submit a list of structures with information about the domain names (or user names) used in transactions and their respective accounts. The declaration has the following form:  
 ```cpp
 [[eosio::action]] void declarenames(
     vector<name_info> domains
@@ -203,7 +201,7 @@ struct name_info {
 Parameters:   
 `domain` — a domain name;  
 `account` — an account name matching to the domain name;  
-`users` — a list of domain name users.
+`users` — a list of domain name users.  
  
 The input to the `declarenames` declaration is an array of structures. A number of accepted structures should not be equal to zero. An error occurs when attempting to send an empty array.  
  
