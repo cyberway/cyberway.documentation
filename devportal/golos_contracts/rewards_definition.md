@@ -21,7 +21,7 @@ Each application can apply its own method of calculating the rewards for a post 
 
 
 ### The rewardweight event 
-The `rewardweight` event structure contains data about current weight of a post.  
+The `rewardweight` event structure contains data about a paid share of reward for a post.  
 ```cpp
 struct reward_weight_event {
     mssgid message_id;
@@ -29,15 +29,18 @@ struct reward_weight_event {
 };
 ```
 **Parameters:**  
-  * `message_id` — identifier of the post.  
-  * `rewardweight` — weight of the post at the current time with taking amount of fees for it. This parameter is an integer value. The weight of the post is calculated to one hundredth of a percent.      
+  * `message_id` — identifier of the post for which the paid share of reward is setting. The parameter contains the fields: `author` — author name of the post, `permlink` — unique name of the post within publications of this author.  
+  * `rewardweight` — the paid share of reward for the post taking into account the imposed fine. This parameter is an integer value. The weight of the paid share is calculated to one hundredth of a percent. The value «10000» corresponds to «100 %».  
+
+The `rewardweight` event shows a share (as a percentage) of reward for a post, which will be paid with taking into account the fine imposed on the author.  
+
+The activity of each author is limited, that is, the author can publish only a certain number of posts within a specified time interval. If the author’s activity does not exceed the limit, this author is not charged a penalty and the parameter `rewardweight` takes the value of 100%. Otherwise, for each extra publication, the author will be dynamically charged a fine in the amount of from 0 to 100%. Accordingly, the value of `rewardweight` for each extra publication will be reduced by the amount of the fine.
 
 ### The poststate event 
 The `poststate` event structure contains data about current state of a post.  
 ```cpp
 struct post_event {
-    name author;
-    std::string permlink;
+    mssgid message_id;
     base_t netshares;
     base_t voteshares;
     base_t sumcuratorsw;
@@ -45,8 +48,7 @@ struct post_event {
 };
 ```
 **Parameters:**  
-  * `author` — author name of the post.  
-  * `permlink` — relative address of the post.  
+  * `message_id` — identifier of the post. The parameter contains the fields: `author` — author name of the post, `permlink` — unique name of the post within publications of this author.  
   * `netshares` — amount of funds, which will be taken from the rewards pool as a total fee for the post (this parameter is calculated as a sum of `voteshares` values of all votes).  
   * `voteshares` — a share of reward for the post is related to a separate voice. The separate voice value is calculated as multiplying a number of vesting by a weight of voting account. This parameter can take both positive and negative values. The sign «-» is assigned to «downvote» voice while the sign «+» is assigned to «upvote» one.
   * `sumcuratorsw` — total weight of all curators votes at the current time.
@@ -75,8 +77,7 @@ The `votestate` event structure contains data about current post voting results.
 ```cpp
 struct vote_event {
     name voter;
-    name author;
-    std::string permlink;
+    mssgid message_id;
     int16_t weight;
     base_t curatorsw;
     base_t rshares;
@@ -84,8 +85,7 @@ struct vote_event {
 ```
 **Parameters:**  
   * `voter` — account name (a user) who votes for the post.  
-  * `author` — author name of the post.  
-  * `permlink` — relative address of the post.  
+  * `message_id` — identifier of the post. The parameter contains the fields: `author` — author name of the post, `permlink` — unique name of the post within publications of this author.  
   * `weight` — a vote weight of the account `voter`. While voting, a vote weight is specified with an accuracy of one hundredth of a percent. This parameter takes an integer value in range from 0 to 10000 (the value 10000 corresponds to 100%). The vote of «downvote» corresponds to a negative value.  
   * `curatorsw` — a share of curator’s fee (the share is a persentage of rewards assigned for all curators. The value of the share depends on curator's weight).  
   * `rshares` — parameter used in calculating rewards for a post. The parameter is calculated as multiplication of voting account's vesting by a vote weight in percentages (`rshares = eff_vesting * weight / 10000`). This parameter can take both positive and negative values.The vote of «downvote» corresponds to a negative value.  
@@ -97,7 +97,7 @@ payout = reward_weight × funds × (sharesfn / rsharesfn)       (1)
 ```
 **Components of the formula:**  
   * `payout` — resulting total amount of reward for the post at the time of receiving data from Event Engine.  
-  * `reward_weight = rewardweight::reward_weight` — a weight of the post.  
+  * `reward_weight = rewardweight::reward_weight` — a weight of reward for a post.  
   * `funds = poolstate::state.funds` — total number of tokens in the reward pool.  
   * `sharesfn = poststate::sharesfn` — a share of tokens that allocated in the rewards pool to be used for reward for the post (this parameter depends on a weight of the post).  
   * `rsharesfn = poolstate::state::rsharesfn` — number of tokens that allocated in the rewards pool to be be spent on reward for all posts (parameter depends on total weight of all posts). 
@@ -109,12 +109,12 @@ Total amount of fee to curators is a part of the funds as a percentage of the to
 
 To determine the amount of fee to curators it is recommended to use the formula 
 ```
-curation_payout = payout - (sumcuratorsw × payout)        (2)
+curation_payout = curators_prcnt × payout        (2)
 ```
 **Components of the formula:**  
   * `curation_payout` — resulting total amount of fee to curators for the post at the time of receiving data from Event Engine,  
-  * `payout` — total amount of reward for the post, calculated by the formula (1),  
-  * `sumcuratorsw = poststate::sumcuratorsw` — share allocated to curators of the total reward (this is a total weight of all curators votes at the current time).  
+  * `curators_prcnt` — share (in percent), deducted to curators, of the total reward for the post;  
+  * `payout` — total amount of reward for the post, calculated by the formula (1).  
 
 Calculated by the formula (2) the total fee amount is distributed between all curators in accordance with the rules accepted in application. Below is recommended method of determining a fee amount for each of the curators.  
 
@@ -146,14 +146,14 @@ The part of funds allocated to author in the form of reward for a post is distri
 To determine the amount of reward to j-th beneficiary, it is recommended to apply the formula
 
 ```
-ben_rewardⱼ = (payout - curation_payout) × deductprcntⱼ       (5)
+ben_rewardⱼ = (payout - curation_payout) × weightⱼ       (5)
 ```
 **Components of the formula:**  
   * `ben_rewardⱼ` — amount of reward to j-th beneficiary.
   * `payout` — total amount of reward for the post, calculated by the formula (1).  
   * `curation_payout` — total amount of fee to curators for the post, calculated by the formula (2). 
   * `(payout - curation_payout)` — total amount of rewards allocated to beneficiaries and author.  
-  * `deductprcnt = post::beneficiary::deductprcnt` — a share of rewards allocated to j-th beneficiary. This percentage value is set by the author at the time of posting.  
+  * `weightⱼ` — a weight of reward allocated to j-th beneficiary. This percentage value is set by the author at the time of posting.  
 
 The award amount should be determined by the formula (5) for each beneficiary. Needed data about beneficiaries can be taken from the field  `beneficiaries` of the table `message`. There is an array containing names and percentage deductions.  
 

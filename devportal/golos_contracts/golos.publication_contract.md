@@ -7,11 +7,11 @@ The `golos.publication` smart contract provides users to perform actions on post
   * leaving comments to posts; 
   * voting for posts;
   * closing posts.
-In addition, this contract contains logic for determining the payments to authors, curators and beneficiaries of posts.
+In addition, this contract contains logic for determining the [payments to authors, curators and beneficiaries of posts](https://cyberway.gitbook.io/en/devportal/golos_contracts/rewards_definition).
 
 ## The list of actions implemented in the golos.publication smart contract
  
-The `golos.publication` smart contract supports the following user actions: [setlimit](#the-setlimit-action), [setrules](#the-setrules-action), [createmssg](#the-createmssg-action), [updatemssg](#the-updatemssg-action), [deletemssg](#the-deletemssg-action), [upvote](#the-upvote-action), [downvote](#the-downvote-action), [unvote](#the-unvote-action), [[closemssg](#the-closemssg-action), [reblog](#the-reblog-action), [setcurprcnt](#the-setcurprcnt-action), {calcrwrdwt}(#the-calcrwrdwt-action), [paymssgrwrd](#the-paymssgrwrd-action) and [setparams](#the-setparams-action).
+The `golos.publication` smart contract supports the following user actions: [setlimit](#the-setlimit-action), [setrules](#the-setrules-action), [createmssg](#the-createmssg-action), [updatemssg](#the-updatemssg-action), [deletemssg](#the-deletemssg-action), [upvote](#the-upvote-action), [downvote](#the-downvote-action), [unvote](#the-unvote-action), [closemssg](#the-closemssg-action), [reblog](#the-reblog-action), [setcurprcnt](#the-setcurprcnt-action), [calcrwrdwt](#the-calcrwrdwt-action), [paymssgrwrd](#the-paymssgrwrd-action) and [setparams](#the-setparams-action).
 
 ## The setlimit action
 
@@ -78,8 +78,8 @@ void createmssg(
 );
 ```  
 **Parameters:**  
-  * `message_id` — identifier of the reply message. The parameter is a structure containing the fields: `author` — author of the message, `permalink` — unique name of the message within publications of this author.  
-  * `parent_id` — identifier of the parent message. The parameter contains the fields: `author` — author of the parent message, `permalink` — unique name of the message within publications of this author.  
+  * `message_id` — identifier of the reply message. The parameter is a structure containing the fields: `author` — author of the message, `permlink` — unique name of the message within publications of this author.  
+  * `parent_id` — identifier of the parent message. The parameter contains the fields: `author` — author of the parent message, `permlink` — unique name of the message within publications of this author.  
   * `beneficiaries` — a structure containing the names of beneficiaries and total amount of their fees. This amount is a percentage of total reward for the message.  
   * `tokenprop` — amount of tokens. This value cannot exceed the `maxtokenprop` value  specified in `set_rules`.  
   * `vestpayment` — `true`, if a user gives permission to pay in vestings in case of battery resource exhaustion (the message is sent regardless of battery resource). Default value is `false`.  
@@ -110,7 +110,7 @@ void updatemssg(
 );
 ```
 **Parameters:**  
-  * `message_id` — identifier of the message being updated. The parameter contains the fields: `author` — author name of the message being updated, `permalink` — unique name of the message within publications of this author.  
+  * `message_id` — identifier of the message being updated. The parameter contains the fields: `author` — author name of the message being updated, `permlink` — unique name of the message within publications of this author.  
   * `headermssg` — title of the message.  
   * `bodymssg` — body of the message.  
   * `languagemssg` — language of the message.  
@@ -126,7 +126,7 @@ The `deletemssg` action has the following form:
 void deletemssg(mssgid   message_id);
 ```
 **Parameter:**  
-  * `message_id` — identifier of the message to be deleted. The parameter contains the fields: `author` — author of the message to be deleted, `permalink` — unique name of the message within publications of this author.  
+  * `message_id` — identifier of the message to be deleted. The parameter contains the fields: `author` — author of the message to be deleted, `permlink` — unique name of the message within publications of this author.  
  
 The message cannot be deleted in the following cases:  
   * the message has a comment;  
@@ -146,7 +146,7 @@ void upvote(
 ```
 **Parameters:**  
   * `voter` — voting account name.  
-  * `message_id` — identifier of the post for which the `voter` account is voting. The parameter contains the fields: `author` — author name of the post being voted for, `permalink` — unique name of the post within publications of this author.  
+  * `message_id` — identifier of the post for which the `voter` account is voting. The parameter contains the fields: `author` — author name of the post being voted for, `permlink` — unique name of the post within publications of this author.  
   * `weight` — the vote weight of the account name `voter`.  
 
 To perform the `upvote` action it is required that the transaction should be signed by the account name `voter`. 
@@ -163,7 +163,7 @@ void downvote(
 ```
 **Parameters:**  
   * `voter` — voting account name.  
-  * `message_id` — identifier of the post for which the `voter` account is voting. The parameter contains the fields: `author` — author name of the post being voted for, `permalink` — unique name of the post within publications of this author.   
+  * `message_id` — identifier of the post for which the `voter` account is voting. The parameter contains the fields: `author` — author name of the post being voted for, `permlink` — unique name of the post within publications of this author.   
   * `weight` — the vote weight of the account name `voter`.    
 
 To perform the `downvote` action it is required that the transaction should be signed by the account name `voter`.  
@@ -180,7 +180,7 @@ void unvote(
 
 **Parameters:**  
   * `voter` — account name that revokes her/his own vote previously cast for the message.  
-  * `message_id` — identifier of the post from which the vote is being revoked. The parameter contains the fields: `author` — author name of the post from which the vote is being revoked, `permalink` — unique name of the post within publications of this author.  
+  * `message_id` — identifier of the post from which the vote is being revoked. The parameter contains the fields: `author` — author name of the post from which the vote is being revoked, `permlink` — unique name of the post within publications of this author.  
 
 To perform the `unvote` action it is required that the transaction should be signed by the account name `voter`.
 
@@ -216,7 +216,7 @@ void reblog(
 ```
 **Parameters:**  
   * `rebloger` — account name of the reblogger.   
-  * `message_id` — identifier of the post-original. The parameter contains the fields: `author` — author of the post-original, `permalink` — unique name of the post-original within publications of this author.  
+  * `message_id` — identifier of the post-original. The parameter contains the fields: `author` — author of the post-original, `permlink` — unique name of the post-original within publications of this author.  
   * `headermssg` —  title of the note to be added. This field can be empty.  
   * `bodymssg` — body of the note to be added. This field can be empty.  
 
@@ -239,7 +239,7 @@ void set_curators_prcnt(
 )
 ```
 **Parameters:**  
-  * `message_id` — identifier of the post for which amount of fee to curators is setting. The parameter contains the fields: `author` — author of the post, `permalink` — unique name of the post within publications of this author.
+  * `message_id` — identifier of the post for which amount of fee to curators is setting. The parameter contains the fields: `author` — author of the post, `permlink` — unique name of the post within publications of this author.
   * `curators_prcnt`— a share (in percent) of reward deducted to curators from total amount of rewards for the post.  
 
  After the start of voting for a post, any change in the share of payment to curators is unacceptable.  
@@ -271,7 +271,7 @@ The `paymssgrwrd` action is internal and unavailable to the user. It is used to 
 ```
 void paymssgrwrd(mssgid message_id)
 ```  
-`message_id` — identifier of the post for which awards are paid. The parameter contains the fields: `author` — author of the post, `permalink` — unique name of the post within publications of this author.
+`message_id` — identifier of the post for which awards are paid. The parameter contains the fields: `author` — author of the post, `permlink` — unique name of the post within publications of this author.
 
 To perform the `paymssgrwrd` action it is required that the transaction should be signed by the `golos.publication` smart contract account. 
 
