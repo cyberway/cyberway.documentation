@@ -15,6 +15,8 @@ referral_param, types:[
     percent_parametrs (uint32_t max_percent),
     delay_parametrs (uint32_t delay_clear_old_ref)
 ]
+```
+
 **Parameters:**  
   * `breakout_parametrs` — value in the structure form (containing fields):
     * `min_breakout` — the minimum allowable number of tokens required for the purchase of a referral account and, accordingly, the termination of the referral program;
@@ -45,6 +47,7 @@ void referral::validateprms(std::vector<referral_params> params)
 The `addreferral` action is used to create a referral account for the invited user. As a referrer, it can be specified a user who directly invited another user, as well as a third-party account. Referrer for the created referral account receives a share in the form of a percentage of the author's fees for referral publications.  
 
 This action comes in the following the form:
+```cpp
 void referral::addreferral(
     name referrer,
     name referral,
@@ -52,6 +55,7 @@ void referral::addreferral(
     uint64_t expire,
     asset breakout
 )
+```
 **Parameters:**  
   * `referral` — referral account name.  
   * `percent` — the percentage of payment to the referrer withdrawn from the referral income. The parameter takes a value from zero to the maximum allowed by the witnesses.  
