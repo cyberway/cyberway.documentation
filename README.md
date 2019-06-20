@@ -11,8 +11,7 @@
 **CyberWay is a EOS fork with some major improvements**  
 
 [![build](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master]()
-[![GitHub](https://img.shields.io/github/license/goloschange/cyberway.svg)](LICENSE.md)
-
+[![GitHub](https://img.shields.io/github/license/goloschain/cyberway.svg)](https://github.com/GolosChain/cyberway/blob/master/LICENSE)
 
 ## Getting Started
 
