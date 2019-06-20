@@ -8,7 +8,7 @@
 **Welcome to the CyberWay source code repository!**  
 **CyberWay is a EOS fork with some major improvements**  
 
-[![buildkite](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master](https://buildkite.com/cyberway)
+[![buildkite](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master)](https://buildkite.com/cyberway)
 [![GitHub](https://img.shields.io/github/license/goloschain/cyberway.svg)](https://github.com/GolosChain/cyberway/blob/master/LICENSE)
 
 ## Getting Started
@@ -24,12 +24,9 @@
 
 ## Community
 
-* Join us on the [CyberWay Discourse]().
+* Join us on the [GolosIO](https://golos.io).
 
 
-## License
-
-[MIT](./LICENSE)
 
 ## Important
 
