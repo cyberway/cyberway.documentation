@@ -102,6 +102,12 @@ payout = reward_weight × funds × (sharesfn / rsharesfn)       (1)
   * `sharesfn = poststate::sharesfn` — a share of tokens that allocated in the rewards pool to be used for reward for the post (this parameter depends on a weight of the post).  
   * `rsharesfn = poolstate::state::rsharesfn` — number of tokens that allocated in the rewards pool to be be spent on reward for all posts (parameter depends on total weight of all posts). 
 
+Component `reward_weight` shows the share of author's fee for  the publication, taking into account possible penalty imposed on this publication. By default, the number of publications per day should not exceed four. For exceeding this amount the author is charged a penalty. By default, the `reward_weight` value  is calculated using the formula
+```  
+ reward_weight = min{100 %, (400 %)² / postbw_charge²}      (1.1) 
+```
+The `postbw_charge` component is the battery charge. Each use of the battery changes the charge by 100 %. The charge is restored completely, if within twenty-four hours from the previous posting no new post is created.  
+
 To calculate `payout` with using the formula (1), it is necessary to use data obtained from Event Engine only at the same time point. 
 
 ### Сalculating the amount of fees to curators for a post
