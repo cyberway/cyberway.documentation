@@ -48,21 +48,21 @@ The `golos.publication` smart contract supports the following actions: [setparam
 ## The setparams action
 The `setparams` action is used to configure the `golos.ctrl` smart contract parameters. The action has the following form:
 
-```cpu
+```cpp
 void control::setparams(vector<ctrl_param> params)
 ```
 `params` — a value in the form of a structure containing fields with the setting parameters. 
 
 ## The validateprms action
 The `validateprms` action checks parameters for validity and controls if there are errors or not. The `validateprms` action is called by the smart contract.  It has the following form:
-```cpu 
+```cpp 
 void control::validateprms(vector<ctrl_param> params)
 ```
 `params` — a value in the form of a structure containing the parameters to be checked.
 
 ## The regwitness action
 The `regwitness` action is used to register candidates for witnesses. The action has the following form:  
-```cpu
+```cpp
 void control::regwitness(
     name witness,
     string url
@@ -76,7 +76,7 @@ Performing the `regwitness` action requires a signature of the witness candidate
 
 ## The unregwitness action
 The `unregwitness` action is used to withdraw a user's candidacy from among the registered candidates to the witnesses. The action has the following form:
-```cpu
+```cpp
 void control::unregwitness(name witness)
 ```
 `witness` — the user name to be removed from the list of witnesses registered as candidates.  
@@ -103,7 +103,7 @@ The `witness` account activity can be continued in case it has performed the `st
 
 ## The startwitness action
 The `startwitness` action is used to resume suspended witness activity (or a witness candidate activity). The action has the following form:
-```
+```cpp
 void startwitness(name witness)
 ```  
 `witness` — account name of a witness (or a witness candidate), whose activity is resumed.
@@ -115,7 +115,7 @@ Conditions for performing the `startfitness` action:
 
 ## The votewitness action
 The `votewitness` action is used to vote for a witness candidate. The action has the following form:
-```cpu
+```cpp
 void control::votewitness(
     name voter,
     name witness
@@ -136,7 +136,7 @@ Doing the `votewitness` action requires signing the `voter` account.
 The action `unvotewitn` is used to withdraw a previously cast vote for a witness candidate.  
 
 The action has the following form:
-```cpu
+```cpp
 void control::unvotewitn(
     name voter,
     name witness
@@ -152,7 +152,7 @@ Doing the `unvotewitn` action requires signing the `voter` account.
 
 ## The changevest action
 The `changevest` action is internal and unavailable to the user. It is used by `golos.vesting` smart contract to notify the `golos.ctrl` smart contract about a change of the vesting amount on the user's balance. The `changevest` action has the following form:
-```cpu
+```cpp
 void control::changevest(
     name who,
     asset diff

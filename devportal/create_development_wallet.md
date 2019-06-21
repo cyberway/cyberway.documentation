@@ -1,4 +1,4 @@
-# Creating a Wllet and Keys for Development
+# Creating Wallet and Keys for Development
 # User Guide
 
 This section provides instructions for creating a wallet for use in developing or maintaining software. Before the user can make a change to the program code of the product, he needs to create a wallet and keys for development.  

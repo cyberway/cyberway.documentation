@@ -1,4 +1,4 @@
-# The cyber.domain contract
+# The cyber.domain Smart Contract
 
 ## Purpose of the cyber.domain smart contract development
 The `cyber.domain` smart contract is designed to create and handle domain names, create or delete a link of domain names to accounts, change domain name owners, as well as to handle a purchase of domain names at auction.  
@@ -31,7 +31,7 @@ The actions `checkwin`, `biddomain`, `biddmrefund` and `newdomain` are used to p
 * the number of domain names purchased at auction during a day should be no more than one;
 * upon completion of auction, a token transfer of the winner is not returned. The winner can take advantage of the following opportunities:
     * to create her/his own domain name using the operation `newdomain` and become its owner;
-    * to create subdomain names from it by adding the «dot» symbol and а name to the domain name on the left (for example, an owner of the domain `golos.io` can create subdomains such as `api.golos.io`, `ws.golos.io` and etc). It should be noted, that unlike account names,  in `cyberway` the names are formed by adding parts to the right of word (for example, the names `cyber.msig`, `cyber.domain` can be formed from `cyber`). In this case the only direct inheritance of domain names is allowed. It means that if the owner has created a domain for the second level, a domain for the third level can’t be created (for example, the name `cyber.msig.a` can’t be formed from `cyber`).
+    * to create subdomain names from it by adding the «dot» symbol and а name to the domain name on the left (for example, an owner of the domain `golos.io` can create subdomains such as `api.golos.io`, `ws.golos.io` and etc). It should be noted, that in `cyberway` the accaunt names are formed by the same way — by adding parts to the left of word (for example, the names `msig.cyber`, `domain.cyber` can be formed from `cyber`). In this case the only direct inheritance of domain names is allowed. It means that if the owner has created a domain for the second level, a domain for the third level can’t be created (for example, the name `a.msig.cyber` can’t be formed from `cyber`).
 
 
 > **Note:**  
