@@ -1,4 +1,4 @@
-<img width="400" src=".logo.jpg" />
+<img width="400" src="logo.jpg" />
 
 *****  
 # CyberWay — the Most Powerful Infrastructure for Decentralized Applications
