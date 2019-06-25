@@ -1,7 +1,4 @@
-
-
-
-<img width="400" src="Logo.jpg" alt="CyberWay Logo" />
+<img width="400" src=".Logo.jpg" />
 
 *****  
 # CyberWay — the Most Powerful Infrastructure for Decentralized Applications
@@ -35,8 +32,6 @@
 ## Community
 
 * Join us on the [GolosIO](https://golos.io)
-
-
 
 ## Important
 
