@@ -4,7 +4,7 @@
 Смарт-контракт `golos.publication` обеспечивает работу с постами, в том числе предоставляет возможность пользователям выполнять следующие действия: публиковать посты, оставлять комментарии, голосовать за посты и закрывать посты, а также обеспечивает выплату вознаграждения авторам постов.  
 
 ## Операции-действия смарт-контракта golos.publication 
-Cмарт-контракт `golos.publication` поддерживает следующие операции-действия: [setlimit](#operaciya-deistvie-setlimit), [setrules](#operaciya-deistvie-setrules), [createmssg](#operaciya-deistvie-createmssg), [updatemssg](#operaciya-deistvie-updatemssg), [deletemssg](#operaciya-deistvie-deletemssg), [downvote](#operaciya-deistvie-downvote), [upvote](#operaciya-deistvie-upvote), [closemssg](#operaciya-deistvie-closemssg), [reblog](#operaciya-deistvie-reblog), [setcurprcnt](#operaciya-deistvie-setcurprcnt), [calcrwrdwt](#operaciya-deistvie-calcrwrdwt), [paymssgrwrd](#operaciya-deistvie-paymssgrwrd), [setparams](#operaciya-deistvie-setparams).
+Cмарт-контракт `golos.publication` поддерживает следующие операции-действия: [setlimit](#operaciya-deistvie-setlimit), [setrules](#operaciya-deistvie-setrules), [createmssg](#operaciya-deistvie-createmssg), [updatemssg](#operaciya-deistvie-updatemssg), [deletemssg](#operaciya-deistvie-deletemssg), [downvote](#operaciya-deistvie-downvote), [upvote](#operaciya-deistvie-upvote), [closemssg](#operaciya-deistvie-closemssg), [reblog](#operaciya-deistvie-reblog), [setcurprcnt](#operaciya-deistvie-setcurprcnt), [setmaxpayout](#operaciya-deistvie-setmaxpayout), [calcrwrdwt](#operaciya-deistvie-calcrwrdwt), [paymssgrwrd](#operaciya-deistvie-paymssgrwrd), [setparams](#operaciya-deistvie-setparams).
 
 ## Операция-действие setlimit
 
@@ -73,7 +73,8 @@ void createmssg(
     std::string     languagemssg,
     std::vector<structures::tag> tags,
     std::string     jsonmetadata,
-    std::optional<uint16_t> curators_prcnt
+    std::optional<uint16_t> curators_prcnt,
+	std::optional<asset> max_payout
 );
 ```
 
@@ -88,7 +89,8 @@ void createmssg(
 `languagemssg` — язык сообщения;  
 `tags` — тэг, который присваивается сообщению;  
 `jsonmetadata` — метаданные в формате JSON;  
-`curators_prcnt` — доля (в процентах), отчисляемая кураторам, от общей суммы вознаграждения за созданное сообщение. Значение параметра задается автором сообщения в рамках диапазона значений, установленного делегатами. По умолчанию данный параметр принимает нулевое значение `curators_prcnt = std::nullopt`.  
+`curators_prcnt` — доля (в процентах), отчисляемая кураторам, от общей суммы вознаграждения за созданное сообщение. Значение параметра задается автором сообщения в рамках диапазона значений, установленного делегатами. По умолчанию данный параметр принимает нулевое значение `curators_prcnt = std::nullopt`;
+`max_payout` —  максимально возможная сумма вознаграждения за сообщение, выплачиваемая из пула, к которому данное сообщение имеет привязку. Сумма устанавливается автором в том виде средств (токенов), которые имеются в данном пуле. Параметр является произвольным (необязательным) и по умолчанию принимает значение `asset::max_amount`. 
 
 Параметры `parentacc`и `parentprmlnk` идентифицируют родительское сообщение, на которое создается ответ с использованием `createmssg` в виде сообщения.  
 
@@ -255,6 +257,28 @@ void set_curators_prcnt(
 
 Операция-действие `setcurprcnt` требует наличия подписи в транзакции автора поста `message_id.author`.
 
+## Операция-действие setmaxpayout
+Операция-действие `setmaxpayout` используется для установки автором максимально возможного вознаграждения за отправленное им сообщение.  
+
+Операция-действие `setmaxpayout` имеет следующий вид:
+```cpp
+void setmaxpayout(
+    mssgid message_id,
+    asset max_payout
+);
+```
+Параметры:  
+`message_id` — идентификатор сообщения, за курирование которого устанавливается выплата. Параметр содержит поля: `author` — автор сообщения, `permlink` — уникальное имя сообщения в рамках публикаций данного автора;  
+`max_payout` —  максимально возможная сумма вознаграждения за сообщение, выплачиваемая из пула, к которому данное сообщение имеет привязку. Сумма устанавливается автором в том виде средств (токенов), которые имеются в данном пуле. 
+
+
+На изменение параметра `max_payout` накладываются следующие ограничения:  
+  * параметр можно изменять только для открытых сообщений;  
+  * параметр можно изменять только для сообщений, которые еще не имеют голосов; 
+  * параметр можно изменять только в сторону уменьшения по отношению к предыдущему его значению. Значение параметра должно быть положительным. Сохранять старое значение параметра также недопустимо.  
+
+
+Операция-действие `setmaxpayout` требует наличия в транзакции подписи автора сообщения.  
 
 ## Операция-действие calcrwrdwt
 
