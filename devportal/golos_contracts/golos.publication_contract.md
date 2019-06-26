@@ -263,6 +263,7 @@ void setmaxpayout(
   * `message_id`— identifier of the message for which amount the payment to curators is setting. The parameter contains the fields: `author` — author of the message, `permlink` — unique name of the message within publications of this author.  
   * `max_payout`— maximum possible reward amount for the message being paid out of the pool to which this message is linked. This amount is set by the author in the form of funds (tokens) that are in this pool.  
 
+
  The following restrictions apply to changing the `max_payout` parameter:  
    * the parameter can only be changed for open messages;  
    * the parameter can only be changed for messages that do not have votes;  
