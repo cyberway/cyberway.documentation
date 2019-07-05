@@ -89,9 +89,7 @@ void emission::emit()
 The `emit` action is called periodically at regular intervals. Each call determines the amount of funds to accrue for each reward pool.  
 Below is the diagram showing the emit of tokens by the `golos.emit` smart contract. This diagram also shows the moments of calling the actions `start`,` stop` and `emit`.  
  
-![Emitting tokens](./images/emit_contract.jpg)  
-
-Fig.1 — Diagram of emitting the tokens by the smart contract  
+![Fig.1 — Diagram of emitting the tokens by the smart contract](./images/emit_contract.jpg)  
  
 Vertical axis shows the annual percentage of a certain type of tokens produced in relation to their total number of this type. Horizontally time is displayed. The blue line conventionally shows the annual inflation of tokens of this type. The red line conditionally indicates the percentage of tokens emitted by the smart contract relative to the total number of tokens of this type.  
  
