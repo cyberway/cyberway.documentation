@@ -1,7 +1,4 @@
-
-
-
-<img width="400" src="Logo.jpg" alt="CyberWay Logo" />
+<img width="400" src="logo.jpg" />
 
 *****  
 # CyberWay — the Most Powerful Infrastructure for Decentralized Applications
@@ -30,13 +27,12 @@
 * [System Smart Contracts](https://cyberway.gitbook.io/en/devportal/system_contracts)
 * [Golos Application Smart Contracts](https://cyberway.gitbook.io/en/devportal/golos_contracts)
 * [The Cyberway Wallet designed for the Bittrex Market](https://cyberway.gitbook.io/en/devportal/cyberway_wallet_for_bittrex)
-  
+* [The Event Model](https://cyberway.gitbook.io/en/devportal/event_engine)
+
 
 ## Community
 
 * Join us on the [GolosIO](https://golos.io)
-
-
 
 ## Important
 

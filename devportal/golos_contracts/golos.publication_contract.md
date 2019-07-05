@@ -11,9 +11,9 @@ In addition, this contract contains logic for determining the [payments to autho
 
 ## The list of actions implemented in the golos.publication smart contract
  
-The `golos.publication` smart contract supports the following user actions: [setlimit](#the-setlimit-action), [setrules](#the-setrules-action), [createmssg](#the-createmssg-action), [updatemssg](#the-updatemssg-action), [deletemssg](#the-deletemssg-action), [upvote](#the-upvote-action), [downvote](#the-downvote-action), [unvote](#the-unvote-action), [closemssg](#the-closemssg-action), [reblog](#the-reblog-action), [setcurprcnt](#the-setcurprcnt-action), [calcrwrdwt](#the-calcrwrdwt-action), [paymssgrwrd](#the-paymssgrwrd-action) and [setparams](#the-setparams-action).
+The `golos.publication` smart contract supports the following user actions: [setlimit](#setlimit), [setrules](#setrules), [createmssg](#createmssg), [updatemssg](#updatemssg), [deletemssg](#deletemssg), [upvote](#upvote), [downvote](#downvote), [unvote](#unvote), [closemssg](#closemssg), [reblog](#reblog), [setcurprcnt](#setcurprcnt), [setmaxpayout](#setmaxpayout), [calcrwrdwt](#calcrwrdwt), [paymssgrwrd](#paymssgrwrd) and [setparams](#setparams).
 
-## The setlimit action
+## setlimit
 
 The `setlimit` action is used to set rules that restrict user operations. The mechanism for restricting user operations is based on interaction of two smart contracts — precisely `golos.publication` and `golos.charge`. Each action of the `golos.publication` smart contract is linked to a certain battery of the `golos.charge` smart contract. In the `setlimit` parameters, it needs to specify an action (for example, `createmssg` or `upvote`) and a battery to be linked to it.  
 
@@ -40,7 +40,7 @@ setlimit(
 
 The interaction of smart publishing contracts and batteries allows a witness to flexibly configure restrictions on user actions (for example, such actions as voting for posts, publication of post and leaving comments can be correlated with the resources of three separate batteries. In this case, user activity will be limited for each of these actions. Also, all these actions can be linked to only one battery, that is, be limited by resources of the same battery). For each action performed by the user, she/he is charged a value corresponding to cost of the consumed battery recourse. When the `golos.charge` smart contract reaches the threshold value of used battery recourse, user's actions are blocked until necessary resource appears in the battery again.  
 
-## The setrules action
+## setrules
 The `setrules` action is used for setting rules that apply in application for distribution of rewards between authors and curators of posts.  
 The `setrules` action has the following form:  
 ```cpp
@@ -61,7 +61,7 @@ void setrules(
 
 To perform the `setrules` action, a user should have a witness authorization. In addition, the transaction must be signed by the `golos.publication` smart contract.  
 
-## The createmssg action
+## createmssg
 The `createmssg` action is used to create a message as a response to a previously received (parent) message. The `createmssg` action has the following form:  
 ```cpp
 void createmssg(
@@ -74,7 +74,9 @@ void createmssg(
     std::string   bodymssg,
     std::string   languagemssg,
     std::vector<structures::tag> tags,
-    std::string   jsonmetadata
+    std::string   jsonmetadata,
+	std::optional<uint16_t> curators_prcnt,
+	std::optional<asset> max_payout
 );
 ```  
 **Parameters:**  
@@ -88,7 +90,8 @@ void createmssg(
   * `languagemssg` — language of the message.  
   * `tags` — tag that is assigned to the message.  
   * `jsonmetadata` — metadata in the JSON format.  
-  * `curators_prcnt` — a share (in percent) of reward deducted to curators from total amount of rewards for the created message. The parameter value is set by the message author within the range of values set by witnesses. By default, this parameter is set to zero `curators_prcnt = std::nullopt`.  
+  * `curators_prcnt` — a share (in percent) of reward deducted to curators from total amount of rewards for the created message. The parameter value is set by the message author within the range of values set by witnesses. By default, this parameter is set to zero `curators_prcnt = std::nullopt`;
+  * `max_payout` — maximum possible reward amount for the message being paid out of the pool to which this message is linked. This amount is set by the author in the form of funds (tokens) that are in this pool. The parameter is optional and defaults to `asset::max_amount`.  
 
 The pair of `parentacc` and `parentprmlnk` parameters identifies the parent message to which a response is created via `createmssg`.
 
@@ -96,7 +99,7 @@ To perform the `createmssg` action it is required that the transaction should be
 
 The key that is used to search for a message is bound to the `account` and `permlink` parameters.  
 
-## The updatemssg action
+## updatemssg
 The `updatemsg` action is used to update a message previously sent by user.  
 The `updatemssg` action has the following form:  
 ```cpp
@@ -119,7 +122,7 @@ void updatemssg(
 
 To perform the `updatemssg` action it is required that the transaction should be signed by the author of the message.
 
-## The deletemssg action
+## deletemssg
 The `deletemssg` action is used to delete a message previously sent by user.  
 The `deletemssg` action has the following form:  
 ```cpp
@@ -134,7 +137,7 @@ The message cannot be deleted in the following cases:
 
 To perform the `deletemssg` action it is required that the transaction should be signed by the author of the message.
 
-## The upvote action
+## upvote
 The `upvote` action is used to cast a vote in the «upvote» form when voting for a message.  
 The `upvote` action has the following form:  
 ```cpp
@@ -151,7 +154,7 @@ void upvote(
 
 To perform the `upvote` action it is required that the transaction should be signed by the account name `voter`. 
 
-## The downvote action
+## downvote
 The `downvote` action is used to cast a vote in the «downvote» form when voting for a message.  
 The `downvote` action has the following form:  
 ```cpp
@@ -168,7 +171,7 @@ void downvote(
 
 To perform the `downvote` action it is required that the transaction should be signed by the account name `voter`.  
 
-## The unvote action
+## unvote
 The `unvote` action is used to revoke user's own vote that was previously cast for the post.  
 The `unvote` action has the following form:  
 ```cpp
@@ -185,7 +188,7 @@ void unvote(
 To perform the `unvote` action it is required that the transaction should be signed by the account name `voter`.
 
 
-## The closemssg action
+## closemssg
 
 The `closemssg` action is internal and unavailable to a user. Used to close a post.  
 The `closemssg` action has the following form:
@@ -200,7 +203,7 @@ The `closemssg` action requires fulfillment of conditions:
   * transaction should be signed by the account of `golos.publication` smart contract.  
 
 
-## The reblog action
+## reblog
 The `reblog` action is used to place a post adopted from another author under this smart contract, as well as to add rebloger's own text to the post in the form of note or comment.  
 
 Reblog post retains authorship of post-original. Added note to the post-reblog may contain its own title. An operation of deleting the post-original does not affect the post-reblog and keep comments to the post-reblog.  
@@ -227,9 +230,9 @@ Restrictions that are imposed on the `reblog` action:
 
 To perform the `reblog` action it is required that the transaction should be signed by the account name `rebloger`.
 
-## The setcurprcnt action
+## setcurprcnt
 
-The `setcurprcnt` action is used by author of post to set or change previously specified amount (in percent) of reward, allocated to the curators.  
+The `setcurprcnt` action is used by author of a post to set or change previously specified amount (in percent) of reward, allocated to the curators.  
 
 The `setcurprcnt` action has the following form:
 ```
@@ -246,8 +249,29 @@ void set_curators_prcnt(
 
 To perform the `setcurprcnt` action it is required that the transaction should be signed by the post author `message_id.author`.
 
+## setmaxpayout
+The `setmaxpayout` action is used by author of a message to set or change maximum possible payment to curators for the message.  
 
-## The calcrwrdwt action
+The `setmaxpayout` action has the following form:
+```cpp
+void setmaxpayout(
+    mssgid message_id,
+    asset max_payout
+);
+```  
+**Parameters:**  
+  * `message_id`— identifier of the message for which amount the payment to curators is setting. The parameter contains the fields: `author` — author of the message, `permlink` — unique name of the message within publications of this author.  
+  * `max_payout`— maximum possible reward amount for the message being paid out of the pool to which this message is linked. This amount is set by the author in the form of funds (tokens) that are in this pool.  
+
+
+ The following restrictions apply to changing the `max_payout` parameter:  
+   * the parameter can only be changed for open messages;  
+   * the parameter can only be changed for messages that do not have votes;  
+   * the parameter can only be decreased in relation to its previous value. It must be positive. Retaining old value of the parameter is unacceptable.  
+ 
+To perform the `setmaxpayout` action it is required that the transaction should be signed by the author of message.  
+
+## calcrwrdwt
 The `calcrwrdwt` action is internal and unavailable to the user. It is used to calculate a post weight based on number of publications made by its author for a certain time.  
 
 The action has the following form: 
@@ -266,7 +290,7 @@ void calcrwrdwt(
 To perform the `calcrwrdwt` action it is required that the transaction should be signed by the `golos.publication` smart contract account. 
 
 
-## The paymssgrwrd action
+## paymssgrwrd
 The `paymssgrwrd` action is internal and unavailable to the user. It is used to pay remuneration for a post to curators, beneficiaries and author. The action has the following form:
 ```
 void paymssgrwrd(mssgid message_id)
@@ -275,7 +299,7 @@ void paymssgrwrd(mssgid message_id)
 
 To perform the `paymssgrwrd` action it is required that the transaction should be signed by the `golos.publication` smart contract account. 
 
-## The setparams action
+## setparams
 
 The `setparams` action is used to configure the parameters of `golos.publication` smart contract. The action has the following form:
 ```
