@@ -10,21 +10,21 @@ Tokens in the smart contract `golos.emit` are emitted according to the algorithm
 The setting parameters have the following forms:  
 ```cpp
 emit_param, types:[
-    struct inflation_rate (
+    struct inflation_rate {
         uint16_t start,
         uint16_t stop,
         uint32_t narrowing
-    ),
-    struct reward_pools (
+    },
+    struct reward_pools {
         name name,
         uint16_t percent
-    ),
-    struct emit_token (
+    },
+    struct emit_token {
         symbol symbol
-    ),
-    struct emit_interval (
+    },
+    struct emit_interval {
         uint16_t value
-    ),
+    },
 ]
 ```
 **Parameters to be set:**  
