@@ -28,7 +28,7 @@
 	* [9 Conclusion](/devportal/create_application/conclusion.md)
   * [The cyberway_wallet designed for the Bittrex market](/devportal/cyberway_wallet_for_bittrex.md)
   * [Creating Wallet and Keys for Development](/devportal/create_development_wallet.md)
-  * [The Event Model]/devportal/event_engine.md)
+  * [The Event Model](/devportal/event_engine.md)
 * [VALIDATORS](/validators/validators.md)
   * [Testnet Installation Guide](/validators/testnet_installation.md)
 	* [1 General](/validators/testnet/overview.md)
