@@ -27,7 +27,8 @@
 * [System Smart Contracts](https://cyberway.gitbook.io/en/devportal/system_contracts)
 * [Golos Application Smart Contracts](https://cyberway.gitbook.io/en/devportal/golos_contracts)
 * [The Cyberway Wallet designed for the Bittrex Market](https://cyberway.gitbook.io/en/devportal/cyberway_wallet_for_bittrex)
-  
+* [The Event Model](https://cyberway.gitbook.io/en/devportal/event_engine)
+
 
 ## Community
 
