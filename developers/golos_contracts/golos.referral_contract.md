@@ -7,10 +7,10 @@
 Параметры смарт-контракта устанавливаются делегатами (лидерами) приложения.
 ```cpp
 referral_param, types:[
-    struct breakout_parametrs (
+    struct breakout_parametrs {
         asset min_breakout,
         asset max_breakout
-    ),
+    },
     expire_parametrs (uint64_t max_expire),
     percent_parametrs (uint32_t max_percent),
     delay_parametrs (uint32_t delay_clear_old_ref)
