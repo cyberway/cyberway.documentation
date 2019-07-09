@@ -17,15 +17,15 @@ ctrl_param, types: [
     symbol_code ctrl_token,
     name multisig_acc,
     uint16_t max_witnesses,
-    struct multisig_perms (
+    struct multisig_perms {
         uint16_t super_majority,
         uint16_t majority,
         uint16_t minority
-    ), 
+    }, 
     uint16_t max_witness_votes,
-    struct update_auth (
+    struct update_auth {
         uint32_t period
-    )
+    }
 ]
 ```
 **Parameters:**  
