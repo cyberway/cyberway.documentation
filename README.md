@@ -15,6 +15,7 @@
 
 ### More information about CyberWay
 
+* [White Paper](/White Paper.md)
 * [Main features of CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
 * [RoadMap](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
 * [Bandwidth implementation](https://docs.google.com/document/d/1Kmlgu8pf8YytpVZajj2Si86ZNegkbZg0QHopdACmv6Q/edit?ts=5cb7079a)
