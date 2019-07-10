@@ -1,7 +1,7 @@
 # Table of contents
 
+* [INTRODUCTION](README.md)  
 
-* [INTRODUCTION](README.md)
 * [USERS](/users/users.md)
   * [White Paper](/users/white_paper.md)
 * [DEVPORTAL](/devportal/devportal.md)
