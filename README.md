@@ -16,7 +16,7 @@
 * [Белая Бумага](https://cyberway.gitbook.io/en/users/white_paper)
 * [Основные особенности CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
 * [Дорожная карта](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
-* [Ресурсы Bandwidth](https://docs.google.com/document/d/1Kmlgu8pf8YytpVZajj2Si86ZNegkbZg0QHopdACmv6Q/edit?ts=5cb7079a)
+* [Ресурсы Bandwidth](https://cyberway.gitbook.io/ru/v/master-ru/users/bandwidth)
 
 ## РАЗРАБОТЧИКАМ
 

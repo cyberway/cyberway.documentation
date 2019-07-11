@@ -1,11 +1,7 @@
 # СОДЕРЖАНИЕ
 
 * [ПОЛЬЗОВАТЕЛЯМ](/users/users.md)
-  * [Экономика и управление](/users/economy.md)
-  * [Лидеры сообщества](/users/witness.md)
-  * [Транзакция](/users/transaction.md)
-  * [Пропускная способность](/users/)
-  * [Токены](/users/tokens.md)
+  * [Отличия в работе подсистем bandwidth на платформах EOS и CyberWay](/users/bandwidth.md)
   * [Словарь](/users/glossary.md)
 * [РАЗРАБОТЧИКАМ](/developers/developers.md)
   * [Смарт-контракты системные](/developers/system_contracts.md)
