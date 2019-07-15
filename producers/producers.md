@@ -1,4 +1,4 @@
-# БЛОК-ПРОДЮСЕРАМ
+# ВАЛИДАТОРАМ
 
   * [Руководство по установке Testnet](/producers/testnet_installation.md)
     * [1 Общее](/producers/testnet/overview.md)
