@@ -1,6 +1,6 @@
 # Testnet Installation Guide
 
-This guide concerns the validators and block-producers of the CyberWay blockchain platform, as well as the personnel involved in its development and maintenance.  
+This guide concerns the validators of the CyberWay blockchain platform, as well as the personnel involved in its development and maintenance.  
 
 The document contains instructions for the initial installation and launch of CyberWay software in a test mode on a server running the Ubuntu 16.04 operating system or another Linux family system using Docker and Docker-compose software.  
 
