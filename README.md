@@ -1,41 +1,36 @@
 
 
-<img width="400" src="Logo.jpg" alt="CyberWay Logo" />
+<img width="400" src="Logo.jpg" />
 
 *****  
-# The Most Powerful Infrastructure for Decentralized Applications
+# CyberWay — самая мощная инфраструктура для децентрализованных приложений
 
-**Welcome to the CyberWay source code repository!**  
-**CyberWay is a EOS fork with some major improvements.**  
+**Добро пожаловать в репозиторий исходного кода CyberWay! CyberWay создан на базе логики EOS, но с некоторыми значительными улучшениями.**  
 
 [![buildkite](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master)](https://buildkite.com/cyberway)
 [![GitHub](https://img.shields.io/github/license/goloschain/cyberway.svg)](https://github.com/GolosChain/cyberway/blob/master/LICENSE)
 
 *****  
-## Getting Started
+## Начало знакомства с CyberWay
 
-### More information about CyberWay
+* [Белая Бумага](https://cyberway.gitbook.io/en/users/white_paper)
+* [Основные особенности CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
+* [Дорожная карта](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
+* [Ресурсы Bandwidth](https://cyberway.gitbook.io/ru/v/master-ru/users/bandwidth)
 
-* [Main features of CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
-* [RoadMap](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
-* [Bandwidth implementation](https://docs.google.com/document/d/1Kmlgu8pf8YytpVZajj2Si86ZNegkbZg0QHopdACmv6Q/edit?ts=5cb7079a)
+## РАЗРАБОТЧИКАМ
 
-### Devportal
+* [Руководство по установке Testnet](https://cyberway.gitbook.io/ru/v/master-ru/producers/testnet_installation)
+* [Руководство по созданию кошелька и ключей для разработки](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_development_wallet)
+* [Руководство по созданию и развертыванию приложения на CyberWay](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_contracts)
+* [Смарт-контракты системные](https://cyberway.gitbook.io/ru/v/master-ru/developers/system_contracts)
+* [Смарт-контракты приложения Голос](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts)
+* [Кошелек приложения Голос для биржи Биттрекс](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_wallet_for_bittrex)
+* [Событийная модель](https://cyberway.gitbook.io/ru/v/master-ru/developers/event_engine)
+* [Структура таблиц в MongoDB](https://cyberway.gitbook.io/ru/v/master-ru/developers/mongo_tables)
 
-* [Testnet. Installation Guide for Block Producers](https://cyberway.gitbook.io/en/validators/testnet_installation)
-* [Creating Wallet and Keys for Development](https://cyberway.gitbook.io/en/devportal/create_development_wallet)
-* [Guide to Creating and Deploying an Application on CyberWay](https://cyberway.gitbook.io/en/devportal/create_application)
-* [System Smart Contracts](https://cyberway.gitbook.io/en/devportal/system_contracts)
-* [Golos Application Smart Contracts](https://cyberway.gitbook.io/en/devportal/golos_contracts)
-* [The Cyberway Wallet designed for the Bittrex Market](https://cyberway.gitbook.io/en/devportal/cyberway_wallet_for_bittrex)
-  
+## Приложение Голос
 
-## Community
-
-* Join us on the [GolosIO](https://golos.io)
+ *Присоединяйтесь к нам в [GolosIO](https://golos.io)*
 
 
-
-## Important
-
-See LICENSE for copyright and license terms. Block.one makes its contribution on a voluntary basis as a member of the CyberWay community and is not responsible for ensuring the overall performance of the software or any related applications. We make no representation, warranty, guarantee or undertaking in respect of the software or any related documentation, whether expressed or implied, including but not limited to the warranties or merchantability, fitness for a particular purpose and noninfringement. In no event shall we be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or documentation or the use or other dealings in the software or documentation.  Any test results or performance figures are indicative and will not reflect performance under all conditions.  Any reference to any third party or third-party product, service or other resource is not an endorsement or recommendation by Block.one.  We are not responsible, and disclaim any and all responsibility and liability, for your use of or reliance on any of these resources. Third-party resources may be updated, changed or terminated at any time, so the information here may be out of date or inaccurate.
