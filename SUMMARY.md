@@ -4,6 +4,7 @@
 
 * [USERS](/users/users.md)
   * [White Paper](/users/white_paper.md)
+  * [Glossary](/users/glossary.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System contracts](/devportal/system_contracts.md)
     * [Tokens](/devportal/system_contracts/cyber.token_contract.md)

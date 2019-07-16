@@ -27,8 +27,8 @@ was literally down with CryptoKitties hype.
 The scalability troubles got up again, so another popular solution was
 rapidly proposed. It’s name was EOS. The solution was to split the
 computable transaction complex behaviour and to process it with the set
-of cluster nodes, which were called “Block producers”. This lead to the
-entrustment of an enourmous responsibility to these “Block producers”.
+of cluster nodes, which were called “Validators”. This lead to the
+entrustment of an enourmous responsibility to these “Validators”.
 They were now not only about data storage providers, but also
 computation providers. Now these guys not only store and process your
 data, but they even define the way your transaction behaves itself,
@@ -217,11 +217,10 @@ Memory Rent
 -----------
 
 Cluster RAM is something the applications require to work. In contrast to EOS,
-CyberWay supposes the RAM to be rented from so-called block
-producers, but not to be owned. The rules are the following:
+CyberWay supposes the RAM to be rented from so-called validators, but not to be owned. The rules are the following:
 
--   Every block producer sets a price for 1Kb memory per month. The
-    price begins from the median price value across all block producers.
+-   Every validator sets a price for 1Kb memory per month. The
+    price begins from the median price value across all validators.
 
 -   Users place their orders for some particular memory amount rent per
     month.
@@ -234,9 +233,9 @@ producers, but not to be owned. The rules are the following:
     proposed memory gets auctioned.
 
 In case the memory rent time is up, but there is still some user data
-stored inside, the archive operation is introduced. Block producers are
+stored inside, the archive operation is introduced. Validators are
 in charge of initiating such an archivation and the restore is available
-for the user for the price median-valued among block producers.
+for the user for the price median-valued among validators.
 
 DBMS-based State Storage
 ------------------------
@@ -299,13 +298,13 @@ datacenter. But for truly distributed protocol, this requires to be
 increased due to increased network latency. CyberWay supposes the
 block replication time to be 3 seconds.
 
-Block Producers
+Validators
 ---------------
 
-Block producers are the key members of a protocol. They keep the
+Validators are the key members of a protocol. They keep the
 database safe and consistent and get rewarded for that.
 
-Inspite of EOS’s 21 default block producers, in CyberWay the number of block producers is to 
+Inspite of EOS’s 21 default validators, in CyberWay the number of validators is to 
 be increased up to 101 in the future. This is required for more decentralization to
 be achieved.
 
@@ -317,23 +316,23 @@ So, active users are rewarded for voting and non-active users are punished for n
 
 Every account is allowed to vote for several validators with staked tokens. 
 
-Block producer’s weigh is determined as follows: 
+Validator’s weigh is determined as follows: 
 w = m / sqrt(S), where m is a number of votes for any particular candidate, 
 S is a total number of votes for any particular candidate (or number of stakes tokens as 1 vote is 1 token)   
 
-A particular block producer receives a reward from the emission 
+A particular validator receives a reward from the emission 
 and redistributes a share of it among his supporters. 
-In case of misbehavior, e.g. a block omission, the block producer as well as his supporters are fined.
-The staked tokens are burned. This novelty makes block producers more responsible, 
+In case of misbehavior, e.g. a block omission, the validator as well as his supporters are fined.
+The staked tokens are burned. This novelty makes block validators more responsible, 
 and voters more careful and thoughtful.
 
-The block producers get a share of emission. The share depends on the total amount of staked tokens. 
+The validators get a share of emission. The share depends on the total amount of staked tokens. 
 The more tokens are staked, the less inflation is. 
 Thus, the CyberWay has in-built incentives for users to participate in governance via voting. 
 Moreover, the passive users are diluted as they do not get any rewards from validators.  
 
 What if some user considers another user to understand better, which
-block producer is the best service provider? This gets covered
+validator is the best service provider? This gets covered
 by CyberWay with a proxy mechanism which ensures that some user could delegate
 his own assets to another user called “Proxy”. The proxy user gets fees for its service.
 

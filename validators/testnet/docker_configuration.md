@@ -40,18 +40,18 @@ The parameter `p2p-peer-address` is configured separately for each connected net
 ```
 p2p-listen-endpoint = 0.0.0.0:9876
 ```
-**2.5.4** If a validator wants to log in as a producer block, it needs to additionally specify the block producer name and the keys that will be used to sign the blocks.  
+**2.5.4** If a user wants to log in as a validator, she/he needs to additionally specify the producer name and the keys that will be used to sign the blocks.  
 
 By default, the `producer-name` parameter is commented out. In this case, the node is used only to connect to `Testnet` without producing blocks. To connect to `Testnet` with the ability to produce blocks, the validator should to additionally set the parameters `producer-name` and `signature-provider`.
 ```
 producer-name = <Producer name>
 signature-provider = <Public key>=KEY:<Private key>
 ```
-These parameters can be set only by the block producer, since it is she/he who has the data about the account name and the keys that must be used to create the blocks. The producer has to generate the values ​​of the private and public keys independently (or use the Golos blockchain keys). The private key of the producer unit is used to sign the blocks.  
+These parameters can be set only by the validator, since it is she/he who has the data about the account name and the keys that must be used to create the blocks. The validator has to generate the values ​​of the private and public keys independently (or use the Golos blockchain keys). The private key of the validator unit is used to sign the blocks.  
 
-The following table provides a recommended list of configuration file parameters used to connect a node to `Testnet`, as well as to configure a block producer node. 
+The following table provides a recommended list of configuration file parameters used to connect a node to `Testnet`, as well as to configure a validator node. 
 
-Parameter | Connecting a node to Testnet | Setting up the block producer  
+Parameter | Connecting a node to Testnet | Setting up the validator  
 :-----------|:-------|:-------  
 producer name | — | +  
 signature provider | — | +  
