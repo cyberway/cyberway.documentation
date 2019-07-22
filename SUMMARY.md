@@ -7,6 +7,7 @@
   * [Смарт-контракты системные](/developers/system_contracts.md)
     * [Токены](/developers/system_contracts/cyber.token_contract.md)
     * [Доменные имена](/developers/system_contracts/cyber.domain_contract.md)
+    * [Стейк-токены](/developers/system_contracts/cyber.stake_contract.md)
   * [Смарт-контракты приложения Голос](/developers/golos_contracts.md)  
     * [Батарейка](/developers/golos_contracts/golos.charge_contract.md)
     * [Управление](/developers/golos_contracts/golos.ctrl_contract.md)
