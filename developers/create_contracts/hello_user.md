@@ -6,7 +6,7 @@
 В созданную директорию с именем CONTRACTS_DIR загрузить компоненты CDT (англ. Contract Development Toolkit), необходимые для компилирования контрактов.
 ```
 cd CONTRACTS_DIR
-git clone --recursive https://github.com/GolosChain/cyberway.cdt --branch <branch name> --single-branch
+git clone --recursive https://github.com/cyberway/cyberway.cdt --branch <branch name> --single-branch
 cd cyberway.cdt
 ./build.sh
 sudo ./install.sh
