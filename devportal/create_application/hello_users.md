@@ -7,7 +7,7 @@ When creating a contract you may note that most of the actions are typical. The 
 Create a directory CONTRACTS_DIR, download the Contract Development Toolkit components necessary for compiling contracts in it.
 ```
 cd CONTRACTS_DIR
-git clone --recursive https://github.com/GolosChain/cyberway.cdt --branch <branch name> --single-branch
+git clone --recursive https://github.com/cyberway/cyberway.cdt --branch <branch name> --single-branch
 cd cyberway.cdt
 ./build.sh
 sudo ./install.sh

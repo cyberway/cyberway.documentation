@@ -4,7 +4,7 @@
 **2.1 Create a cyberway repository in a separate space**  
 Open a command window and enter the `cyberway` directory where the Docker image will be created. Next, execute:
 ```
-git clone https://github.com/goloschain/cyberway
+git clone https://github.com/cyberway/cyberway
 ```
 The space from which the command was executed must copy the `cyberway` directory with its contents. Error messages should not appear during the copy process.  
 
