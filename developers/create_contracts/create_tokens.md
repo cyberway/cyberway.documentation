@@ -7,7 +7,7 @@
 Войти в созданную для контрактов директорию и загрузить в нее копию удаленного репозитория с исходными файлами контрактов.
 ```
 cd CONTRACTS_DIR
-git clone https://github.com/GolosChain/cyberway.contracts --branch <branch name> --single-branch
+git clone https://github.com/cyberway/cyberway.contracts --branch <branch name> --single-branch
 ```
 Репозиторий cyberway.contracts содержит несколько контрактов, но для создания токенов необходим контракт `cyber.token`. 
 
