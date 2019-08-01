@@ -7,7 +7,7 @@ In CyberWay everybody can create his/her own type of tokens (In EOS this right a
 Enter the directory created for the contracts and load a copy of the remote repository with the contract source files into it.
 ```
 cd CONTRACTS_DIR
-git clone https://github.com/GolosChain/cyberway.contracts --branch <branch name> --single-branch
+git clone https://github.com/cyberway/cyberway.contracts --branch <branch name> --single-branch
 ```
 The cyberway.contracts repository contains several contracts, but the `cyber.token` contract is required to create tokens. 
 
