@@ -16,8 +16,8 @@
 ### More information about CyberWay
 
 * [White Paper](https://cyberway.gitbook.io/en/users/white_paper)
-* [Main features of CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
-* [RoadMap](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
+* [Main features of CyberWay](https://cyberway.gitbook.io/en/users/cyberway_features)
+* [RoadMap](https://cyberway.gitbook.io/en/users/roadmap)
 * [Bandwidth implementation](https://docs.google.com/document/d/1Kmlgu8pf8YytpVZajj2Si86ZNegkbZg0QHopdACmv6Q/edit?ts=5cb7079a)
 
 ### Devportal
