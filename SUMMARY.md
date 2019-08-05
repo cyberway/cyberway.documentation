@@ -5,7 +5,6 @@
 * [USERS](/users/users.md)
   * [White Paper](/users/white_paper.md)
   * [Main features of CyberWay](/users/cyberway_features.md)
-  * [RoadMap](https://cyberway.gitbook.io/en/users/roadmap)
   * [Glossary](/users/glossary.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System contracts](/devportal/system_contracts.md)
