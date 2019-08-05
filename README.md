@@ -17,7 +17,7 @@
 
 * [White Paper](https://cyberway.gitbook.io/en/users/white_paper)
 * [Main features of CyberWay](https://cyberway.gitbook.io/en/users/cyberway_features)
-* [Bandwidth implementation](https://docs.google.com/document/d/1Kmlgu8pf8YytpVZajj2Si86ZNegkbZg0QHopdACmv6Q/edit?ts=5cb7079a)
+* [Bandwidth implementation](https://cyberway.gitbook.io/en/users/bandwidth_implementation)
 
 ### Devportal
 
