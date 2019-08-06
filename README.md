@@ -5,17 +5,16 @@
 *****  
 # CyberWay — самая мощная инфраструктура для децентрализованных приложений
 
-**Добро пожаловать в репозиторий исходного кода CyberWay! CyberWay создан на базе логики EOS, но с некоторыми значительными улучшениями.**  
+**Добро пожаловать в репозиторий исходного кода CyberWay! CyberWay создан на базе логики EOS со значительными улучшениями.**  
 
 [![buildkite](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master)](https://buildkite.com/cyberway)
 [![GitHub](https://img.shields.io/github/license/cyberway/cyberway.svg)](https://github.com/cyberway/cyberway/blob/master/LICENSE)
 
 *****  
-## Начало знакомства с CyberWay
+## Знакомство с CyberWay
 
 * [Белая Бумага](https://cyberway.gitbook.io/en/users/white_paper)
-* [Основные особенности CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
-* [Дорожная карта](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
+* [Главные особенности CyberWay](https://cyberway.gitbook.io/ru/v/master-ru/users/cyberway_features)
 * [Ресурсы Bandwidth](https://cyberway.gitbook.io/ru/v/master-ru/users/bandwidth)
 
 ## РАЗРАБОТЧИКАМ
