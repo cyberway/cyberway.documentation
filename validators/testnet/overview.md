@@ -22,8 +22,8 @@ To set the `nodeos` configuration, the `config.ini` file is used.
 To build the Docker container, use the Docker file. To configure a set of services, use `docker-compose.yml` (Testnet requires setting up two services — `nodeosd` and `mongo`).  
 
 The server on which Testnet is installed should have the following characteristics:
-  * объем памяти RAM (не менее):  8 ГБ;
-  * объем дисковой памяти (не менее): 20 ГБ.
+  * RAM memory (not less): 8 GB;  
+  * disk space (not less): 20 GB.  
 
 The following software must also be installed on the server:
   * operating system:
