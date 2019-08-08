@@ -4,6 +4,8 @@
 
 * [USERS](/users/users.md)
   * [White Paper](/users/white_paper.md)
+  * [Main features of CyberWay](/users/cyberway_features.md)
+  * [Bandwidth implementation](/users/bandwidth_implementation.md)
   * [Glossary](/users/glossary.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System contracts](/devportal/system_contracts.md)

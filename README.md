@@ -8,7 +8,7 @@
 **There is public testnet running currently.**  
 
 [![buildkite](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master)](https://buildkite.com/cyberway)
-[![GitHub](https://img.shields.io/github/license/goloschain/cyberway.svg)](https://github.com/GolosChain/cyberway/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/cyberway/cyberway.svg)](https://github.com/cyberway/cyberway/blob/master/LICENSE)
 
 *****  
 ## Getting Started
@@ -16,9 +16,8 @@
 ### More information about CyberWay
 
 * [White Paper](https://cyberway.gitbook.io/en/users/white_paper)
-* [Main features of CyberWay](https://steemit.com/cyberway/@golos/cyberway-need-for-new-platform)
-* [RoadMap](https://steemit.com/cyberway/@golos/cyberway-project-roadmap)
-* [Bandwidth implementation](https://docs.google.com/document/d/1Kmlgu8pf8YytpVZajj2Si86ZNegkbZg0QHopdACmv6Q/edit?ts=5cb7079a)
+* [Main features of CyberWay](https://cyberway.gitbook.io/en/users/cyberway_features)
+* [Bandwidth implementation](https://cyberway.gitbook.io/en/users/bandwidth_implementation)
 
 ### Devportal
 

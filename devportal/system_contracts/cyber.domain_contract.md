@@ -93,7 +93,7 @@ The `newdomain` action can be used:
   * to create domain name by a winner of the domain name auction;  
   * to create a sub-domain name by the owner of a direct parent domain.  
 
-The smart contract account `cyber.domain` must be privileged or have a permission to transfer funds from `cyber'.namesaccount` (in case of a refund). Upon completion of this action, the `creator` account becomes the owner of the created domain name.
+The smart contract account `cyber.domain` must be privileged or have a permission to transfer funds from `cyber.namesaccount` (in case of a refund). Upon completion of this action, the `creator` account becomes the owner of the created domain name.
 
 ## Declarations of the names used in transactions  
 It is not enough for one domain name to define a user name. The matter is, the user name is linked to both the owner account and the domain account (usually, it is a smart contract) and has a structure of the form `name@domain`. The domain part defines a scope for the `name`. The accounts with the same name can exist in different scopes. There are several variants that support `username` data and allow a textual representation of a user name to match an account name.  
