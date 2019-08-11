@@ -8,7 +8,7 @@
   * [Рассылка писем](/developers/golos_services/mail.md)
   * [Хранение мета-данных постов](/developers/golos_services/meta.md)
   * [Рассылка уведомлений для приложений](/developers/golos_services/notify.md)
-  * [Рассылка онлайн-уведомлений для пользователей](/developers/golos_services/online-notify.md)
+  * [Рассылка онлайн-уведомлений для пользователей](/developers/golos_services/online_notify.md)
   * [Хранение настроек и мета-данных для приложения](/developers/golos_services/options.md)
   * [Дисперсии данных блокчейна CyberWay](/developers/golos_services/prism.md)
   * [Рассылка push-уведомлений на мобильные устройства](/developers/golos_services/push.md)
