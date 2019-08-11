@@ -19,6 +19,7 @@
     * [Публикация](/developers/golos_contracts/golos.publication_contract.md)
     * [Социальный](/developers/golos_contracts/golos.social_contract.md)
     * [Вестинг-токены](/developers/golos_contracts/golos.vesting_contract.md)
+  * [Сервисы приложения Голос](/developers/golos_services.md)
   * [Руководство по созданию и развертыванию приложения на CyberWay](/developers/create_contracts.md)
     * [1 Подготовительные работы](/developers/create_contracts/overview.md)
 	* [2 Создание простого контракта](/developers/create_contracts/hello_user.md)
@@ -43,3 +44,6 @@
 	* [3 Создание контейнера](/producers/testnet/run_services.md)
 	* [4 Подключение к узлу сети](/producers/testnet/connect_node.md)
 	* [5 Перечень команд, применяемых к любому виду контейнера](/producers/testnet/main_commands.md)
+* [ВОРКЕРАМ](/workers/workers.md)
+  * [Смарт-контракт Воркер](/workers/worker_contract.md)
+  
