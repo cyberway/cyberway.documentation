@@ -1,9 +1,10 @@
+
 # Сервисы приложения Голос
 
   * [Aвторизации запросов](/developers/golos_services/auth.md)
   * [Создание комьюнити](/developers/golos_services/community.md)
   * [Корневые классы и утилиты](/developers/golos_services/core.md)
-  * [Роутинг запросов между фронтендом и микросервисами](/developers/golos_services/fasade.md)
+  * [Роутинг запросов между фронтендом и микросервисами](/developers/golos_services/facade.md)
   * [Обмен данными между фронтэндом и микросервисами](/developers/golos_services/gate.md)
   * [Рассылка писем](/developers/golos_services/mail.md)
   * [Хранение мета-данных постов](/developers/golos_services/meta.md)
