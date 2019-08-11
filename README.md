@@ -24,9 +24,14 @@
 * [Руководство по созданию и развертыванию приложения на CyberWay](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_contracts)
 * [Смарт-контракты системные](https://cyberway.gitbook.io/ru/v/master-ru/developers/system_contracts)
 * [Смарт-контракты приложения Голос](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts)
+* [Сервисы приложения Голос](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_services)
 * [Кошелек приложения Голос для биржи Биттрекс](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_wallet_for_bittrex)
 * [Событийная модель](https://cyberway.gitbook.io/ru/v/master-ru/developers/event_engine)
 * [Структура таблиц в MongoDB](https://cyberway.gitbook.io/ru/v/master-ru/developers/mongo_tables)
+
+## ВОРКЕРАМ
+
+* [Смарт-контракт Воркер](https://cyberway.gitbook.io/ru/v/master-ru/workers/worker_contract)
 
 ## Приложение Голос
 

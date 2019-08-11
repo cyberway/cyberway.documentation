@@ -1,3 +1,4 @@
+
 # СОДЕРЖАНИЕ
 
 * [ПОЛЬЗОВАТЕЛЯМ](/users/users.md)
@@ -19,6 +20,22 @@
     * [Публикация](/developers/golos_contracts/golos.publication_contract.md)
     * [Социальный](/developers/golos_contracts/golos.social_contract.md)
     * [Вестинг-токены](/developers/golos_contracts/golos.vesting_contract.md)
+  * [Сервисы приложения Голос](/developers/golos_services.md)
+    * [Aвторизации запросов](/developers/golos_services/auth.md)
+    * [Создание комьюнити](/developers/golos_services/community.md)
+    * [Корневые классы и утилиты](/developers/golos_services/core.md)
+    * [Роутинг запросов между фронтендом и микросервисами](/developers/golos_services/facade.md)
+    * [Обмен данными между фронтэндом и микросервисами](/developers/golos_services/gate.md)
+    * [Рассылка писем](/developers/golos_services/mail.md)
+    * [Хранение мета-данных постов](/developers/golos_services/meta.md)
+    * [Рассылка уведомлений для приложений](/developers/golos_services/notify.md)
+    * [Рассылка онлайн-уведомлений для пользователей](/developers/golos_services/online_notify.md)
+    * [Хранение настроек и мета-данных для приложения](/developers/golos_services/options.md)
+    * [Дисперсии данных блокчейна CyberWay](/developers/golos_services/prism.md)
+    * [Рассылка push-уведомлений на мобильные устройства](/developers/golos_services/push.md)
+    * [Регистрация пользователя в приложении](/developers/golos_services/registration.md)
+    * [Генерация карты сайта](/developers/golos_services/sitemap.md)
+    * [Рассылка SMS-сообщений](/developers/golos_services/sms.md)
   * [Руководство по созданию и развертыванию приложения на CyberWay](/developers/create_contracts.md)
     * [1 Подготовительные работы](/developers/create_contracts/overview.md)
 	* [2 Создание простого контракта](/developers/create_contracts/hello_user.md)
@@ -43,3 +60,6 @@
 	* [3 Создание контейнера](/producers/testnet/run_services.md)
 	* [4 Подключение к узлу сети](/producers/testnet/connect_node.md)
 	* [5 Перечень команд, применяемых к любому виду контейнера](/producers/testnet/main_commands.md)
+* [ВОРКЕРАМ](/workers/workers.md)
+  * [Смарт-контракт Воркер](/workers/worker_contract.md)
+  
