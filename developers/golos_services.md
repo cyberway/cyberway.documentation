@@ -1,35 +1,18 @@
+# Сервисы приложения Голос
 
-
-<img width="400" src="Logo.jpg" />
-
-*****  
-# CyberWay — самая мощная инфраструктура для децентрализованных приложений
-
-**Добро пожаловать в репозиторий исходного кода CyberWay! CyberWay создан на базе логики EOS со значительными улучшениями.**  
-
-[![buildkite](https://badge.buildkite.com/f0940b2380542f6c80c1c01aa773d61c1d3470007fa5b9e6c3.svg?branch=master)](https://buildkite.com/cyberway)
-[![GitHub](https://img.shields.io/github/license/cyberway/cyberway.svg)](https://github.com/cyberway/cyberway/blob/master/LICENSE)
-
-*****  
-## Знакомство с CyberWay
-
-* [Белая Бумага](https://cyberway.gitbook.io/en/users/white_paper)
-* [Главные особенности CyberWay](https://cyberway.gitbook.io/ru/v/master-ru/users/cyberway_features)
-* [Ресурсы Bandwidth](https://cyberway.gitbook.io/ru/v/master-ru/users/bandwidth)
-
-## РАЗРАБОТЧИКАМ
-
-* [Руководство по установке Testnet](https://cyberway.gitbook.io/ru/v/master-ru/producers/testnet_installation)
-* [Руководство по созданию кошелька и ключей для разработки](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_development_wallet)
-* [Руководство по созданию и развертыванию приложения на CyberWay](https://cyberway.gitbook.io/ru/v/master-ru/developers/create_contracts)
-* [Смарт-контракты системные](https://cyberway.gitbook.io/ru/v/master-ru/developers/system_contracts)
-* [Смарт-контракты приложения Голос](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_contracts)
-* [Кошелек приложения Голос для биржи Биттрекс](https://cyberway.gitbook.io/ru/v/master-ru/developers/golos_wallet_for_bittrex)
-* [Событийная модель](https://cyberway.gitbook.io/ru/v/master-ru/developers/event_engine)
-* [Структура таблиц в MongoDB](https://cyberway.gitbook.io/ru/v/master-ru/developers/mongo_tables)
-
-## Приложение Голос
-
- *Присоединяйтесь к нам в [GolosIO](https://golos.io)*
-
-
+  * [Aвторизации запросов](https://github.com/GolosChain/auth-service)
+  * [Создание комьюнити](https://github.com/GolosChain/community-service)
+  * [Корневые классы и утилиты](https://github.com/GolosChain/core-service)
+  * [Роутинг запросов между фронтендом и микросервисами](https://github.com/GolosChain/fasade-service)
+  * [Обмен данными между фронтэндом и микросервисами](https://github.com/GolosChain/gate-service)
+  * [Рассылка писем](https://github.com/GolosChain/mail-service)
+  * [Хранение мета-данных постов](https://github.com/GolosChain/meta-service)
+  * [Рассылка уведомлений для приложений](https://github.com/GolosChain/notify-service)
+  * [Рассылка онлайн-уведомлений для пользователей](https://github.com/GolosChain/online-notify-service)
+  * [Хранение настроек и мета-данных для приложения](https://github.com/GolosChain/options-service)
+  * [Дисперсии данных блокчейна CyberWay](https://github.com/GolosChain/prism-service)
+  * [Рассылка push-уведомлений на мобильные устройства](https://github.com/GolosChain/push-service)
+  * [Регистрация пользователя в приложении](https://github.com/GolosChain/registration-service)
+  * [Генерация карты сайта](https://github.com/GolosChain/sitemap-service)
+  * [Рассылка SMS-сообщений](https://github.com/GolosChain/sms-service)
+ 
