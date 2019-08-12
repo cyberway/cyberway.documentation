@@ -1,4 +1,5 @@
-* [ВВЕДЕНИЕ](README.md)
+README.md  
+
 * [ПОЛЬЗОВАТЕЛЯМ](/users/users.md)
   * [Отличия в работе подсистем bandwidth на платформах EOS и CyberWay](/users/bandwidth.md)
   * [Главные особенности CyberWay](/users/cyberway_features.md)
