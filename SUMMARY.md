@@ -1,4 +1,4 @@
-* [](README.md)  
+<img width="400" src="Logo.jpg" />  
 
 * [ПОЛЬЗОВАТЕЛЯМ](/users/users.md)
   * [Отличия в работе подсистем bandwidth на платформах EOS и CyberWay](/users/bandwidth.md)
