@@ -6,4 +6,5 @@
     * [3 Создание контейнера](/producers/testnet/run_services.md)
     * [4 Подключение к узлу сети](/producers/testnet/connect_node.md)
     * [5 Перечень команд, применяемых к любому виду контейнера](/producers/testnet/main_commands.md)
+  * [Руководство валидатора по транзиту](/producers/validator_guide.md)
   
