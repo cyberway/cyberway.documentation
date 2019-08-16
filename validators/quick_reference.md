@@ -66,7 +66,14 @@ Wait a full synchronization and run:
    sudo dockerexec -ti nodeosd /bin/bash
    cleos wallet create --to-console
    cleos wallet import --private-key <active-key>
+```  
 
+If the user has not previously been a validator in the blockchain, then he/she needs to set zero proxy level:  
+```
+   cleos push action cyber.stake setproxylvl {"account" : "bzhnnvqtyzco", "token_code" : "CYBER", "level" : 0} 
+```
+Set the number of staked tokens:
+```
    cleos push action cyber.stake setminstaked '{"account" : "bzhnnvqtyzco", "token_code" : "CYBER", "min_own_staked" : 500000000}' -p bzhnnvqtyzco
 
    cleos push action cyber.stake setkey ‘{“account”:”bzhnnvqtyzco”, “token_code”:”CYBER”, “signing_key”:”GLS7Q3iZkBe4ukfPeeW1iHwaDRu3dh5pzM9KNqDWDHzh5WR9v4wfY”}’ -p bzhnnvqtyzco 
