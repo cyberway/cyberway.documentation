@@ -1,5 +1,4 @@
 
-# How to join CyberWay for those who are interested in being validators  
 # Quick Reference Guide
 
 If you want to register on the CyberWay network as a validator, you should follow these steps.
