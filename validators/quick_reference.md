@@ -24,65 +24,59 @@ Also, the following software must be installed on the machine :
   * docker-compose.  
 
 ## Actions to be taken
-Your docker container must be named as golos-default.  
-
-Create a workspace and execute the commands  
+ 
+**Step_1** Create a workspace and execute the commands: 
 ```
    git clone https://github.com/cyberway/cyberway.launch
    cd cyberway.launch
    sudo ./start_light.sh
-```
-Your docker container must be named as golos-default. If the docker container named differently, then do the following:  
-```
-   nano transit.sh
-```
-Set the variable 
-```
-goloschain_name=”golos-default”
-```
+```  
+
 Check that  
-  * the configuration file has been moved to `/etc/golosd/config.ini` 
-  * the contents of Golos application directory has been moved to `/var/lib/golosd`.
+  * the configuration file has been moved to `/etc/cyberway/config.ini` 
+  * the contents of Golos application directory has been moved to `/var/lib/cyberway`.  
 
-If genesis hash falls, then run:  
+
+**Step_2**  
+Specify yours’ account name and both public and private keys in the configuration file `config.ini`. You can specify the keys that you received during registration, or generate new ones by executing
 ```
-    cd /var/lib/cyberway/genesis-data
-    wget https://download.cyberway.io/genesis.dat
+cleos wallet create_key
 ```
 
-Edit the configuration file:  
+Edit variables in the `config.ini` file:
 ```
-    nano /etc/cyberway/config.ini
+signature-provider=<GLS7  … >=KEY:5j****
+producer-name=<account name>
 ```  
-
-Specify both public and private keys in the configuration file (specify golos keys, if you had them. Take the values from old golos witness_update op. Otherwise, use the keys given to you during the registration.):  
-```
-signature-provider=GLS7Q3iZkBe4ukfPeeW1iHwaDRu3dh5pzM9KNqDWDHzh5WR9v4wfY=KEY:5j****
-producer-name=bzhnnvqtyzco
-```  
-
-Wait a full synchronization and run:  
+ 
+Run the commands:  
 ```
    sudo dockerexec -ti nodeosd /bin/bash
    cleos wallet create --to-console
    cleos wallet import --private-key <active-key>
+
 ```  
 
-Set the number of staked tokens:
+**Step_3**   
+The validator candidate steak must be at least 50 000 0000 CYBER tokens. To set the minimum stake, run the command:  
 ```
-   cleos push action cyber.stake setminstaked '{"account" : "bzhnnvqtyzco", "token_code" : "CYBER", "min_own_staked" : 500000000}' -p bzhnnvqtyzco
-```  
+    cleos push action cyber.stake setminstaked '{"account" : "<account name>", "token_code" : "CYBER", "min_own_staked" : 50000000}' -p <account name>
+```   
 
+The parameter `min_own_staked` is a minimum amount of CYBER tokens required to become a validator.  
+
+**Step_4**  Activate your keys:  
+
+```
+   cleos push action cyber.stake setkey ‘{“account”:”<account name>”, “token_code”:”CYBER”, “signing_key”:”<  … >”}’ -p <account name>  
+```
+
+**Step_5**  
 If the user has not previously been a validator in the blockchain, then he/she needs to set zero proxy level:  
 ```
-   cleos push action cyber.stake setproxylvl {"account" : "bzhnnvqtyzco", "token_code" : "CYBER", "level" : 0} 
+    cleos push action cyber.stake setproxylvl '{"account" : "<account name>", "token_code" : "CYBER", "level" : 0}' -p <account name>
 ```  
 
-Set keys:
-```
-   cleos push action cyber.stake setkey ‘{“account”:”bzhnnvqtyzco”, “token_code”:”CYBER”, “signing_key”:”GLS7Q3iZkBe4ukfPeeW1iHwaDRu3dh5pzM9KNqDWDHzh5WR9v4wfY”}’ -p bzhnnvqtyzco 
-
 ```   
-“min_own_staked" : 500000000  - a minimum amount of CYBER tokens required to become a validator.  
 
 Нaving successfully completed the above steps you become a candidate for validators.
