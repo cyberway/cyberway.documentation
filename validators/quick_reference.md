@@ -60,7 +60,7 @@ Run the commands:
 **Step_3**   
 The validator candidate steak must be at least 50 000.0000 CYBER tokens. To set the minimum stake, run the command:  
 ```
-    cleos push action cyber.stake setminstaked '{"account" : "<account name>", "token_code" : "CYBER", "min_own_staked" : 5000000000}' -p <account name>
+    cleos push action cyber.stake setminstaked '{"account" : "<account name>", "token_code" : "CYBER", "min_own_staked" : 500000000}' -p <account name>
 ```   
 
 The parameter `min_own_staked` is a minimum amount of CYBER tokens required to become a validator.  
