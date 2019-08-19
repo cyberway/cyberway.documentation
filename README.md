@@ -25,14 +25,10 @@
 * [Creating Wallet and Keys for Development](https://cyberway.gitbook.io/en/devportal/create_development_wallet)
 * [Guide to Creating and Deploying an Application on CyberWay](https://cyberway.gitbook.io/en/devportal/create_application)
 * [System Smart Contracts](https://cyberway.gitbook.io/en/devportal/system_contracts)
-* [Golos Application Smart Contracts](https://cyberway.gitbook.io/en/devportal/golos_contracts)
+* [Application Smart Contracts](https://cyberway.gitbook.io/en/devportal/golos_contracts)
 * [The Cyberway Wallet designed for the Bittrex Market](https://cyberway.gitbook.io/en/devportal/cyberway_wallet_for_bittrex)
 * [The Event Model](https://cyberway.gitbook.io/en/devportal/event_engine)
 
-
-## Community
-
-* Join us on the [GolosIO](https://golos.io)
 
 ## Important
 
