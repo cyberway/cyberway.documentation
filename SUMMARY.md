@@ -11,7 +11,7 @@
   * [System Contracts](/devportal/system_contracts.md)
     * [Tokens](/devportal/system_contracts/cyber.token_contract.md)
     * [Domain names](/devportal/system_contracts/cyber.domain_contract.md)
-  * [Application Contracts](/devportal/application_contracts/application_contracts.md)
+  * [Application Contracts](/devportal/application_contracts.md)
     * [Golos Contracts](/devportal/application_contracts/golos_contracts.md)
       * [Charge](/devportal/application_contracts/golos_contracts/golos.charge_contract.md)
       * [Control](/devportal/application_contracts/golos_contracts/golos.ctrl_contract.md)
