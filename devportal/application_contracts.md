@@ -1,4 +1,5 @@
-# Golos Contracts
+
+## Golos Contracts
 
 * [Charge](/devportal/golos_contracts/golos.charge_contract.md)
 * [Control](/devportal/golos_contracts/golos.ctrl_contract.md)
