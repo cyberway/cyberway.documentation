@@ -12,8 +12,7 @@ referral_param, types:[
         asset max_breakout
     },
     expire_parametrs (uint64_t max_expire),
-    percent_parametrs (uint32_t max_percent),
-    delay_parametrs (uint32_t delay_clear_old_ref)
+    percent_parametrs (uint16_t max_percent),
 ]
 ```
 
@@ -23,7 +22,6 @@ referral_param, types:[
     * `max_breakout` — the maximum allowable number of tokens required for the redemption of the referral account and, accordingly, the termination of the referral program.
   * `expire_parametrs `— the maximum allowable time of the referral program.
   * `percent_parametrs` — maximum allowable percentage of deduction to the referrer during the duration of the referral program.
-  * `delay_parametrs` — period of time (mentioned in seconds) after which the action to delete obsolete entries from the table is launched.
 
 
 ## Actions used in golos.referral smart contract
@@ -51,12 +49,13 @@ This action comes in the following the form:
 void referral::addreferral(
     name referrer,
     name referral,
-    uint32_t percent,
+    uint16_t percent,
     uint64_t expire,
     asset breakout
 )
 ```
 **Parameters:**  
+  * `referrer` — referrer account name.
   * `referral` — referral account name.  
   * `percent` — the percentage of payment to the referrer withdrawn from the referral income. The parameter takes a value from zero to the maximum allowed by the witnesses.  
   * `expire` — time (in seconds) of the referral program. The value must not exceed the maximum allowed time set by witnesses.  
@@ -68,9 +67,8 @@ The `closeoldref` action is a service internal function and is used to release o
 
 The action has the following form:
 ```cpp
-void referral::closeoldref(uint64_t hash)
+void referral::closeoldref()
 ```
-The `hash` parameter is a service parameter used to place multiple transactions in a single block.  
 
 To perform the `closeoldref` action, the smart contract account authorization is required. The call is made automatically.
 
