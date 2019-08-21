@@ -12,8 +12,7 @@ referral_param, types:[
         asset max_breakout
     },
     expire_parametrs (uint64_t max_expire),
-    percent_parametrs (uint32_t max_percent),
-    delay_parametrs (uint32_t delay_clear_old_ref)
+    percent_parametrs (uint16_t max_percent)
 ]
 ```
 Параметры:  
@@ -22,8 +21,7 @@ referral_param, types:[
   * `max_breakout` — максимально допустимое количество токенов, необходимое для выкупа аккаунта-реферала и, соответственно, прекращения реферальной программы;  
 
 `expire_parametrs` — максимально допустимое время действия реферальной программы;  
-`percent_parametrs` — максимально допустимый процент отчисления рефереру в течение действия реферальной программы;  
-`delay_parametrs` — период времени (в секундах), через который запускается действие по удалению устаревших записей из таблицы.  
+`percent_parametrs` — максимально допустимый процент отчисления рефереру в течение действия реферальной программы.  
 
 ## Операции-действия, применяемые в смарт-контракте golos.referreal
 В смарт-контракте `golos.referral` реализованы следующие операции-действия: [setparams](#operaciya-deistvie-setparams), [validateprms](#operaciya-deistvie-validateprms), [addreferral](#operaciya-deistvie-addreferral), [closeoldref](#operaciya-deistvie-closeoldref).  
@@ -48,7 +46,7 @@ void referral::validateprms(std::vector<referral_params> params)
 void referral::addreferral(
     name referrer,
     name referral,
-    uint32_t percent,
+    uint16_t percent,
     uint64_t expire,
     asset breakout
 )
@@ -66,9 +64,8 @@ void referral::addreferral(
 ## Операция-действие closeoldref
 Операция-действие `closeoldref` является служебной внутренней функцией и используется для освобождения устаревших записей из таблицы активных реферальных программ смарт-контракта. Удаляются данные реферальных программ, действия которых завершены. Операция-действие имеет вид:
 ```cpp
-void referral::closeoldref(uint64_t hash)
-```
-Параметр `hash` — служебный параметр, используемый для размещения нескольких транзакций в одном блоке.  
+void referral::closeoldref()
+```    
 
 Для выполнения операции-действия `closeoldref` требуется авторизация аккаунта смарт-контракта. Вызов выполняется автоматически.  
 
