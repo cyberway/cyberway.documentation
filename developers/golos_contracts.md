@@ -7,5 +7,6 @@
   * [Публикация](/developers/golos_contracts/golos.publication_contract.md)
   * [Социальный](/developers/golos_contracts/golos.social_contract.md)
   * [Вестинг-токены](/developers/golos_contracts/golos.vesting_contract.md)
+  * [Мемо-ключи](/developers/golos_contracts/golos.memo_contract.md)
 
   
