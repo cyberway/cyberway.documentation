@@ -20,6 +20,7 @@
       * [Referral program](/devportal/application_contracts/golos_contracts/golos.referral_contract.md)
       * [Social](/devportal/application_contracts/golos_contracts/golos.social_contract.md)
       * [Vesting](/devportal/application_contracts/golos_contracts/golos.vesting_contract.md)
+	  * [Memo-keys](/devportal/application_contracts/golos_contracts/golos.memo_contract.md)
       * [Determining Rewards for a Post](/devportal/application_contracts/golos_contracts/rewards_definition.md)
   * [Guide to Creating and Deploying an Application on CyberWay](/devportal/create_application.md)
     * [1 Preliminary Work](/devportal/create_application/overview.md)
