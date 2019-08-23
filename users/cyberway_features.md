@@ -17,9 +17,11 @@ Other reasons for choosing a separate way for CyberWay are given below:
 
 ## Distinctive features of CyberWay and EOS platforms
 ### Differences in platform architecture
-  
+
 
 ![Fig.1 — Structural diagram of EOS platform](./images/Fig_1.jpg)  
+
+
   
 
 ![Fig.2 — Structural diagram of CyberWay platform](./images/Fig_2.jpg)  
