@@ -8,5 +8,5 @@
     * [5 List of Commands Applicable to Any Kind of Container](/validators/testnet/main_commands.md)
   * [Golos Blockchain Transit](/validators/transit_guide.md)
   * [How to join CyberWay for those who are interested in being validators ?](/validators/quick_reference.md)
-  * [How to obtain CyberWay resources ?](/validators/using_cyberway_resources.md)
+  * [Stake Usage Guide](/validators/stake_usage_guide.md)
   

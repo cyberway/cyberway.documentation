@@ -31,11 +31,12 @@ When executing transactions, a user does not have to worry about which specific 
 
 The `transfer` operation is intended to transfer active tokens to the stake. The operation is executed by the `cyber.token` contract. The `cyber.stake` contract should be specified as a recipient of the funds.  
 
-**Option_1.** Transfer tokens to a stake for yourself.
+**Option_1.** Transfer tokens to a stake for yourself.  
+
 ```
     cleos push action cyber.token transfer ‘[<user account>, cyber.stake, “quantity CYBER”] -p <active key> 
 ```  
-Parameters:
+Arguments:
   * `user account` — user transferring tokens to a stake.
   * `quantity CYBER` — number of tokens being transferred.
   * `active key` — user’s active key.  
@@ -52,7 +53,7 @@ User `alice` transfers 100 CYBER tokens to stake, due to which she can increase 
 ```
     cleos push action cyber.token transfer ‘[<user account>, cyber.stake, “quantity CYBER”, <recipient account>] -p <active key> 
 ```  
-Parameter `user account` is a recipient of the staked tokens.  
+The `user account` argument is a recipient of the staked tokens.  
 
 *Example:*   
 ```
@@ -99,7 +100,7 @@ The operation is executed by the smart contract `cyber.stake`.
 ```
     cleos push action cyber.stake delegateuse ‘[<delegator account>, <recipient account>, “quantity CYBER”] -p  <active key>
 ```
-Parameters:  
+Arguments:  
   * `delegator account` — user delegating staked tokens.
   * `quantity CYBER` — number of staked tokens.
   * `active key` — active key of delegator.
