@@ -1,6 +1,7 @@
 
 ## USER MANUAL
 
+
 This manual was developed by GolosCore team for CyberWay blockchain users and can be used as reference material. The manual contains a brief description of the operations performed on the staked tokens, as well as examples with their use.
 
 
@@ -15,7 +16,7 @@ This manual was developed by GolosCore team for CyberWay blockchain users and ca
 
 ## The concept of using system resources
 
-User activity within the network (publish posts, send comments, vote, execute  token operations, etc.) such as system resources are available to him - bandwidth resources (CPU, NET, RAM and Storage). A more active user requires more system resources. Amount of system resources available to the user depends on the number of the user's staked tokens.   
+User activity within the network (publish posts, send comments, vote, execute  token operations, etc.) such as system resources are available to him - bandwidth resources (CPU, NET, RAM and Storage). A more active user requires more system resources. Amount of system resources available to the user depends on the number of the user's staked tokens. 
 
 A stake is a cost (in tokens) of system resources. For example, if the stake is 1000 tokens, of which 50 tokens belong to a user, then this user is allocated a share of the system resources (CPU, NET, RAM and Storage) in the amount of 5 %.  
 
@@ -28,7 +29,6 @@ When executing transactions, a user does not have to worry about which specific 
 ## Stake token operations
 
 ### transfer 
-
 `transfer` operation is intended to transfer active tokens to the stake. This operation is executed by the `cyber.token` contract. `cyber.stake` contract should be specified as a recipient of the funds.  
 
 **Option_1.** Transfer tokens to a stake for yourself.  
@@ -82,6 +82,7 @@ User `alice` transfers 100 CYBER tokens to stake for user` bob`. Unlike `transfe
 
 ### withdraw
 `withdraw` operation is intended to withdraw tokens from the stake to active state. This operation is executed by the smart contract `cyber.stake`.  
+
 ```
 	cleos push action cyber.stake withdraw <account name> “quantity CYBER”
 ```  
@@ -91,6 +92,7 @@ Tokens are withdrawn immediately without any delay. The withdrawal is executed i
 ```
     cleos push action cyber.stake withdraw alice “100.0000 CYBER”
 ```   
+
 After this operation is completed, user `alice` stake will decrease by 100 CYBER tokens. At the same time, active tokens will be credited to the `alice` account balance.  
 
 ### delegateuse
@@ -137,7 +139,6 @@ The operation `undelegatebw ` can also be executed using the specialized cleos c
 ```
     cleos system undelegatebw alice bob “10.0000 CYBER”
 ```
-
 **Stage_2** `claim` operation can be executed to credit the returned amount of staked tokens to a stake:  
 ```
     cleos push action cyber.stake claim ‘[alice, bob, “CYBER”] -p  alice@active
