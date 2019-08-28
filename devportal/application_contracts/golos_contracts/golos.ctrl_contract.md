@@ -35,9 +35,9 @@ ctrl_param, types: [
   * `multisig_acc` — an account name that controls a multisignature authorisation. The authorization of this account changes each time after a change in a list of the top witnesses. 
   * `max_witnesses` — a maximum number of witnesses that can take a decision (for example, sign transactions) on behalf of the application. The `multisig_acc` parameter contains a list of such witnesses.  
   * `multisig_perms` — a required number of signatures from the most rated witnesses that have a permission to perform actions on behalf of the application. To change a parameter value it requires an appropriate level of permission. Different parameters require a different level of permission that is connected to their importance. There are three permission levels:  
-    * `super_majority` — a high level of permission. To get such level it needs to pick up at least «two-thirds plus one» votes of the most rated witnesses;  
-    * `majority` — an average level of permission. To get such level it needs to pick up at least «half plus one» votes of the most rated witnesses;  
-    * `minor_majority` — a low level of permission. To get such level it needs to pick up at least «one-third plus one» votes of the the most rated witnesses. 
+    * `super_majority` — a high level of permission. To get such level it needs to pick up at least «two-thirds plus one» votes of the most rated witnesses (if this parameter is "0", it takes default value — "2/3+1");  
+    * `majority` — an average level of permission. To get such level it needs to pick up at least «half plus one» votes of the most rated witnesses (if this parameter is "0", it takes default value — "1/2+1");  
+    * `minor_majority` — a low level of permission. To get such level it needs to pick up at least «one-third plus one» votes of the the most rated witnesses (if this parameter is "0", it takes default value — "1/3+1"). 
   * `max_witness_votes` — a maximum number of witnesses for which a user can vote.  
   * `update_auth` — a parameter that specifies frequency of updating the authorization for the `multisig_acc` account:  
     * `period` — an update period (in seconds). Re-authorization change for account is not performed if specified period has not passed since the last update.  
