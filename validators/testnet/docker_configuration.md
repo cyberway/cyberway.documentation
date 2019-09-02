@@ -14,7 +14,7 @@ The location of this directory is chosen arbitrarily (hereafter the `~/testnet` 
 mkdir -p ~/testnet
 ```
 **2.3 Copy the docker files**  
-In the newly created directory `~ / testnet` copy the files `docker-compose.yml` and sample configuration file `config.ini` from the Cyberway repository. Used to copy commands:
+In the newly created directory `~/testnet` copy the files `docker-compose.yml` and sample configuration file `config.ini` from the Cyberway repository. Used to copy commands:
 ```
 cp Docker/config.ini ~/testnet/
 cp Docker/docker-compose.yml ~/testnet/
