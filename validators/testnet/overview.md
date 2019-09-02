@@ -38,7 +38,7 @@ The following software must also be installed on the server:
   * graphene library;
   * docker; 
   * docker compose;
-  * compier: eosio-cpp.
+  * compiler: eosio-cpp.
 
 If there is no server with the required operating system, use the server with the operating system of the Linux family. It is possible to install Testnet on such a server using the Docker platform, which ensures the creation of the necessary environment, regardless of the version of the Linux system.
 The installation and operation of Testnet on a server running any other system classes is not supported.  
