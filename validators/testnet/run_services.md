@@ -11,7 +11,7 @@ sudo docker volume create cyberway-nodeos-data
 **3.2 Perform a volume creation check**  
 To do this, execute:
 ```
-docker volume ls
+sudo docker volume ls
 ```
 Creating volumes is considered successful if the issue of the command contains information about the volumes created:
 ```
