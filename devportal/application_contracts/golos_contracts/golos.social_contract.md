@@ -3,7 +3,7 @@
 ## Purpose of golos.social smart contract
 The `golos.social` smart contract provides users the following features:
   * creating and editing user profiles (metadata).
-  * pin-list establishment that allows its owner to receive information about the publications of users thst he/she is interested in.
+  * pin-list establishment that allows its owner to receive information about the publications of users that he/she is interested in.
   * the establishment of a so-called «black» list allowing to block communication between the owner of this list and any unwanted users.  
 
 ## Terminology used in the description of golos.social smart contract

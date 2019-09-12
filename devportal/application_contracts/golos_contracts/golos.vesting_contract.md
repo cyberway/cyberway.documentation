@@ -1,13 +1,13 @@
 # The golos.vesting Smart Contract 
 
 ## Purpose of golos.vesting smart contract
-The `golos.vesting` smart contract provides a link to the token that is created by the `cyber.token` smart contract.  
+The `golos.vesting` smart contract provides binding of the vesting to a token created by the `cyber.token` smart contract.  
 
 ## Overview
 The `golos.vesting` smart contract supports the following operations:
-  * creation / «burning» of the vesting by the user;
-  * delegation of funds in the form of a vesting to another user;
-  * accrual of vesting to authors and curators from the reward pool;
+  * creation/«burning» of the vesting by a user;
+  * delegation of funds in the form of the vesting to another user;
+  * accrual of the vesting to authors and curators from the reward pool;
   * replenishment of the pool with funds received from the `golos.emit` smart contract.  
 
 **Creating (buying) vesting**  
