@@ -7,6 +7,7 @@ The `golos.publication` smart contract provides users to perform actions on post
   * leaving comments to posts; 
   * voting for posts;
   * closing posts.
+
 In addition, this contract contains logic for determining the [payments to authors, curators and beneficiaries of posts](https://cyberway.gitbook.io/en/devportal/application_contracts/golos_contracts/rewards_definition).
 
 ## The list of actions implemented in the golos.publication smart contract
