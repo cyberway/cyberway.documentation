@@ -7,7 +7,7 @@ The Control (or `golos.ctrl`) smart contract implements logic for election of wi
   * a voting procedure for election of a witness;
   * determining a list of the most rated witnesses.
 
-The `golos.ctrl` smart contract contains settings that apply to the Golos application as a whole. These settings can be used to change parameters of any subsystems (for example, emission distribution between pools). Other Golos application smart contracts can access the `golos.ctrl` smart contract and get these settings, percentage ratios of the funds distributed by pools, limits on battery resources. Also, the smart contracts can receive a list of the most rated witnesses with corresponding authority values. This makes it possible to verify the authenticity of actions certified by witnesses.
+The `golos.ctrl` smart contract contains settings that apply to the Golos application as a whole. These settings can be used to the change parameters of any subsystems (for example, emission distribution between pools). Other Golos application smart contracts can access the `golos.ctrl` smart contract and get these settings, percentage ratios of the funds distributed by pools, limits on battery resources. Also, the smart contracts can obtain a list of the most rated witnesses with corresponding authority values. This makes it possible to verify the authenticity of actions certified by witnesses.
 
 ## Parameters set in the Control smart contract
 The `golos.ctrl` smart contract contains a kit of the parameters. To configure the contract, it needs to apply the action `setparams` action. The list of available parameters used by the contract is as follows:
