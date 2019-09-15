@@ -4,21 +4,21 @@
 The `cyber.domain` smart contract is designed to create and handle domain names, create or delete a link of domain names to accounts, change domain name owners, as well as to handle a purchase of domain names at auction.  
 
 The `cyber.domain` contract includes:
-* a part of actions used to purchase a domain name at auction, including [checkwin](#the-checkwin-action), [biddomain](#the-biddomain-action), [biddmrefund](#the-biddmrefund-action), [newdomain](#the-newdomain-action) and [declarenames](#the-declarenames-declaration);
-* a part of internal domain actions, including [passdomain](#the-passdomain-declaration), [linkdomain](#the-linkdomain-declaration), [unlinkdomain](#the-unlinkdomain-declaration) and [newusername](#the-newusername-declaration). Although a code of these actions is in the blockchain core, they are called up via smart contract;
-* a list of domain names used in transactions.
+* a group of actions used to purchase a domain name at auction, including [checkwin](#the-checkwin-action), [biddomain](#the-biddomain-action), [biddmrefund](#the-biddmrefund-action), and [newdomain](#the-newdomain-action).
+* a part of internal domain actions, including [passdomain](#the-passdomain-declaration), [linkdomain](#the-linkdomain-declaration), [unlinkdomain](#the-unlinkdomain-declaration) and [newusername](#the-newusername-declaration). Although a code of these actions is in the blockchain core, but they are called up via smart contract;
+* an action for validating list of domain names when using in transactions - [declarenames](#the-declarenames-declaration).
 
 
 ## Requirements for domain names
 Domain names in CyberWay are formed in accordance with rules and procedures of the Domain Name System (DNS). The following requirements are imposed on the structure of domain names:
   * a total number of characters in domain name should not exceed 253 pcs;
-  * a domain name consists of individual parts, separated by the symbol «dot»;
+  * a domain name consists of individual *parts*, separated by the symbol «dot»;
   * the «dot» characters should not stand side by side in any domain name;
-  * a number of characters in a separate part of domain name should not exceed 63 pcs;
+  * a number of characters in each *part* of domain name should not exceed 63 pcs;
   * the valid characters in the domain name are alphanumeric, plus «hyphen»;
   * the capital letters in the domain name are unacceptable;
-  * a symbol «hyphen» should not be at the beginning or end of any domain name part;
-  * the further right part of domain name must contain at least one alphabetic character. A presence of numeric characters only is not allowed.
+  * a symbol «hyphen» should not be at the beginning or end of any domain name *part*;
+  * the rightest *part* of domain name must contain at least one alphabetic character. A presence of numeric characters only is not allowed.
 
 
 ## Domain name auction in the smart contract
@@ -38,13 +38,13 @@ The actions `checkwin`, `biddomain`, `biddmrefund` and `newdomain` are used to p
 >  The actions of the `cyber.domain` smart contract were originally intended for the distribution of domain names at auction. Later to this group of actions were added other actions, including such as creating a domain, transferring a domain, linking (or unlinking) a domain, declaring names used in transactions and creating a user name.  
 
 ### The checkwin action 
-The `checkwin` action is used to register a domain name owner (a winner) at auction. This action does not require a special call and is called automatically with a certain periodic.  
+The `checkwin` action is used to check a domain name owner (a winner) at auction. This action does not require a special call and is called automatically when someone calls `biddomain` or `biddmrefund`.  
 
 The `checkwin` action has the following form:  
 ```cpp
 [[eosio::action]] void checkwin();  
 ```
-This action has no input parameters. One has to have `cyber.domain` smart contract rights to call this action.  
+This action has no input parameters. This action does not require any rights to call.  
 
 ### The biddomain action
 The `biddomain` action allows an account to bid at the auction. The action has the following form:  
@@ -74,7 +74,7 @@ Parameters:
 `bidder` —  the account name to which the funds are returned from the auction;   
 `name` — the domain name for which the bid was made.  
 
-In case of exceptional situations (a network failure or an error in the node's operation), the `biddmrefund` action can be called apart from calling `biddomain` (non-standard calling `biddmrefund`).
+In case of exceptional situations (a network failure or an error in the node's operation), the `biddmrefund` action can be called apart from calling `biddomain` (non-standard calling `biddmrefund`). This action does not require any rights to call.
 
 ### The newdomain action 
 The `newdomain` action is used to create a new domain name. The action has the following form:  
@@ -93,7 +93,7 @@ The `newdomain` action can be used:
   * to create domain name by a winner of the domain name auction;  
   * to create a sub-domain name by the owner of a direct parent domain.  
 
-The smart contract account `cyber.domain` must be privileged or have a permission to transfer funds from `cyber.namesaccount` (in case of a refund). Upon completion of this action, the `creator` account becomes the owner of the created domain name.
+The smart contract account `cyber.domain` must be privileged or have a permission to transfer funds from `cyber.names` account (in case of a refund). Upon completion of this action, the `creator` account becomes the owner of the created domain name.
 
 ## Declarations of the names used in transactions  
 It is not enough for one domain name to define a user name. The matter is, the user name is linked to both the owner account and the domain account (usually, it is a smart contract) and has a structure of the form `name@domain`. The domain part defines a scope for the `name`. The accounts with the same name can exist in different scopes. There are several variants that support `username` data and allow a textual representation of a user name to match an account name.  
