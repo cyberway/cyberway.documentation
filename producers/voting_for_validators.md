@@ -88,7 +88,7 @@
 
 Чтобы установить размер комиссии, валидатор может воспользоваться следующей командой `cleos`:
 ```
-cleos push action cyber.stake setproxyfee '[<account>, <token_code>, <fee>]' -p <account>
+cleos push action cyber.stake setproxyfee '{“account” : <account>, “token_code” :<token_code>, “fee” : <fee>}' -p <account>
 ```  
 Аргументы командной строки:
   * `account` — аккаунт валидатора.
@@ -97,22 +97,21 @@ cleos push action cyber.stake setproxyfee '[<account>, <token_code>, <fee>]' -p 
 
 Пример с установкой комиссии в размере «7 %» валидатором `alice`:
 ```
-cleos push action cyber.stake setproxyfee '[alice, “CYBER”, 700]' -p alice
+cleos push action cyber.stake setproxyfee '{"account":"alice", "token_code":"CYBER", "fee":700}' -p alice
 ``` 
 
 ### Установка нулевого уровня прокси-аккаунта  
 Валидатор, а также кандидат в валидаторы должны иметь нулевой уровень прокси-аккаунта. Для установки нулевого уровня прокси-аккаунта, можно воспользоваться следующей командой `cleos`: 
 ```
-cleos system setproxylvl <account> <token_code> <level>
+cleos system setproxylvl <account> <level>
 ```
 Аргументы командной строки:
   * `account` — аккаунт валидатора.
-  * `token_code` — символ застейканных токенов.
   * `level` — уровень прокси-аккаунта. Данный параметр должен принимать значение «0».  
 
 Пример с установкой нулевого уровня прокси-аккаунта для пользователя `alice`, у которой имеются токены с символом «4»:
 ```
-cleos system setproxylvl alice "4, CYBER" 0
+cleos system setproxylvl alice 0
 ```
 
 ### Активизация публичного ключа  
@@ -129,19 +128,19 @@ cleos push action cyber.stake setkey ‘{“account”:”<account>”, “token
 Пример активизации публичного ключа для валидатора `alice`:
 
 ```
-cleos push action cyber.stake setkey ‘{“account”:”alice”, “token_code”:”CYBER”, “signing_key”:”PW5Kewn9L...t42S9XCw2”}’ -p alice
+cleos push action cyber.stake setkey ‘{“account”:”alice”, “token_code”:”CYBER”, “signing_key”:”GLS7M53j...6FAx8Y881”}’ -p alice
 ```  
 
 ### Упрощенный способ установки прокси-уровня и активизации публичного ключа  
 Пользователь также имеет возможность одновременно установить нулевой прокси уровень и публичный ключ, используя всего одну команду:
 ```
-cleos system regproducer <account> <signing_key> "4,CYBER" --min-own-stake <value>
+cleos system regproducer <account> <signing_key> --min-own-stake <value>
 ```
 В отличие от предыдущей команды здесь задается аргумент  “--min-own-stake <value>”, который устанавливает минимально допустимое количество застейканных токенов, которое должен иметь пользователь, чтобы быть кандидатом в валидаторы. Этот аргумент является произвольным и может быть опущен.
 
 Пример объявления пользователя `alice` кандидатом в валидаторы:
 ```
-cleos system regproducer alice PW5Kewn9L...t42S9XCw2 "4,CYBER" --min-own-stake 500000000
+cleos system regproducer alice GLS7M53j...6FAx8Y881 --min-own-stake 500000000
 ```
 
 ## Голосование за валидаторов
@@ -181,16 +180,15 @@ cleos system voteproducer prods alice bob “100.0000 CYBER”
 
 Для установки уровня прокси-аккаунта можно воспользоваться следующей командой cleos:
 ```
-cleos system setproxylvl <account> <token_code> <level>
+cleos system setproxylvl <account> <level>
 ```
 Аргументы командной строки:
   * `account` — имя аккаунта, для которого устанавливается уровень прокси-аккаунта.
-  * `token_code` — символ токенов пользователя, находящихся в состоянии стейка.
   * `level` — устанавливаемый прокси-уровень.  
 
-Пример с установкой прокси-уровня «1» пользователю с именем `alice`, у которой имеются токены с символом «4»:
+Пример с установкой прокси-уровня «1» пользователю с именем `alice`:
 ```
-cleos system setproxylvl alice "4, CYBER" 1
+cleos system setproxylvl alice 1
 ```
 
 ### Перевод токенов в состояние стейка
@@ -230,7 +228,7 @@ cleos push action cyber.stake withdraw ‘[<account>, <unstake quantity>]’ -p 
 
 Пример с конвертацией 100 токенов CYBER Stake в токены CYBER пользователем `alice`:
 ```
-cleos push action cyber.stake withdraw ‘[alice, 100.0000]’ -p alice
+cleos push action cyber.stake withdraw ‘[alice, “100.0000 CYBER”]’ -p alice
 ```
 
 ## Заключение
