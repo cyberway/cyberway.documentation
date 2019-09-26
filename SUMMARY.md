@@ -10,6 +10,7 @@
     * [Стейк-токены](/developers/system_contracts/cyber.stake_contract.md)
     * [Токены](/developers/system_contracts/cyber.token_contract.md)
     * [Управление](/developers/system_contracts/cyber.govern_contract.md)
+    * [BIOS](/developers/system_contracts/cyber.bios_contract.md)
   * [Смарт-контракты приложения Голос](/developers/golos_contracts.md)  
     * [Батарейка](/developers/golos_contracts/golos.charge_contract.md)
     * [Управление](/developers/golos_contracts/golos.ctrl_contract.md)
