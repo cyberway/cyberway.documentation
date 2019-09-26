@@ -9,4 +9,5 @@
   * [Golos Blockchain Transit](/validators/transit_guide.md)
   * [How to join CyberWay for those who are interested in being validators ?](/validators/quick_reference.md)
   * [Stake Usage Guide](/validators/stake_usage_guide.md)
+  * [Regulations for CyberWay validators. Voting for Validators](/validators/voting_for_validators.md)
   
