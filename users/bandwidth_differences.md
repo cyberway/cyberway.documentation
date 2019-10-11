@@ -14,7 +14,7 @@ Account №1 allocates (i.e. delegates) a share of its funds (see shaded parts o
 
 Proceeding the delegation of reserved funds can be executed in two versions:
 
-  *  **allocation in option 1** (allocation of own bandwidth resources). Funds allocated can be used by account 2 for the acquisition of bandwidth resources of account 1 only. The delegated share of bandwidth (CPU, NET) will be added to the 2 bandwidth resources already held by the account. Account 2 after a certain time may refuse to use the bandwidth resources delegated to it. In that case, account 2 cannot transfer funds delegated to it from the state of reserved (staked) to normal system tokens. These funds will be returned back to the account 1 balance after three days;
+  * **allocation in option 1** (allocation of own bandwidth resources). Funds allocated can be used by account 2 for the acquisition of bandwidth resources of account 1 only. The delegated share of bandwidth (CPU, NET) will be added to the 2 bandwidth resources already held by the account. Account 2 after a certain time may refuse to use the bandwidth resources delegated to it. In that case, account 2 cannot transfer funds delegated to it from the state of reserved (staked) to normal system tokens. These funds will be returned back to the account 1 balance after three days;
   * **allocation in option 2** (allocation of third-party bandwidth resources). Funds allocated can be used by account 2 to purchase bandwidth resources from the system from shared resources. Upon completion of the use of bandwidth resources, account 2 can remove these funds from the state of reserved (staked) to normal system tokens. These tokens will be credited to the account 2 balance after three days. Account 1 buys the resources of CPU and NET account 2 and gives it system tokens reserved for the purchase of these funds.  
 
 Allocation operation can be performed under the circumstance that the total number of tokens reserved for acquiring bandwidth resources to the system is not less than the established threshold value. The fulfillment of this condition is controlled by the network. If this condition is not met, the delegation operation is blocked. If this condition becomes impracticable after the delegation operation, the return of tokens will also be blocked until the condition becomes fulfilled again.  
@@ -30,8 +30,6 @@ A distributed application can encompass a single bandwidth on its balance and us
  
  
 ![Fig. 2 — Structural diagram of the allocation of bandwidth resources by shared bandwidth principle](./images/bandwidth-fig_2.jpg)
-
-Fig. 2 — Structural diagram of the allocation of bandwidth resources by shared bandwidth principle  
  
 Allocation of the bandwidth share to the user (from the space of application's common resources) is carried out by demand meaning it happens when the user is proceeding a transaction. This achievement is available courtesy double-signature transaction implemented specifically for the bandwidth use. A transaction will fall to the blockchain only in the presence of two key signatures (the user and the application private keys). The user cannot perform any action without the application presence as well as the application cannot perform any action without the presence of the user.
  
@@ -77,7 +75,8 @@ Parameters:
 The bandwidth resources required to complete the transaction are debited from the balance of the provider's smart contract.  
 In case the smart contract does not have the required number of reserved tokens, this smart contract generates a similar request for the next smart contract with which it has an agreement to allocate bandwidth resources, requests bandwidth resources from the next smart contract, indicating the account names and provider. In the absence of the necessary funds for the next smart contract, a similar request is generated for the next smart contract. The next specific smart contract is selected in accordance with the logic of the previous smart contract and their agreement on the allocation of resources. As soon as a smart contract with the available means to allocate bandwidth resources is detected in the request chain, this smart contract sends a confirmation message of `confirmbw`.  
 
-The bandwidth resource allocation algorithm in the form of a block diagram is shown in Fig. 3.
+The bandwidth resource allocation algorithm in the form of a block diagram is shown in Fig. 3.  
+
 
 ![Fig. 3 — Structural diagram of the bandwidth resource allocation request processing algorithm](./images/bandwidth-fig_3.jpg)
 
