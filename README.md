@@ -17,6 +17,7 @@
 
 * [White Paper](https://cyberway.gitbook.io/en/users/white_paper)
 * [Main features of CyberWay](https://cyberway.gitbook.io/en/users/cyberway_features)
+* [Bandwidth differences between EOS and CyberWay](https://cyberway.gitbook.io/en/users/bandwidth_differences.md)
 * [Bandwidth implementation](https://cyberway.gitbook.io/en/users/bandwidth_implementation)
 
 ### Devportal
