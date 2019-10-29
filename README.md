@@ -40,9 +40,14 @@
 * [Vesting](/devportal/application_contracts/golos_contracts/golos.vesting_contract.md)
 * [Determining Rewards for a Post](/devportal/application_contracts/golos_contracts/rewards_definition.md)
 
-## Community
+### Community
 
-* Join us on the [GolosIO](https://golos.io)
+## Telegram:
+CyberWay - https://t.me/cyberway_en (for general questions and inquiries)
+CyberWay Validators - https://t.me/cyberway_validators_en (for questions and inquiries concerning validators of CyberWay platform)
+CyberWay Dev - https://t.me/cyberway_dev (for instant technical feedback from our Dev team)
+## Twitter:
+We'll keep you updated over https://twitter.com/cyberwayio
 
 ## Important
 
