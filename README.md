@@ -43,11 +43,12 @@
 ### Community
 
 ## Telegram:
-CyberWay - https://t.me/cyberway_en (for general questions and inquiries)
-CyberWay Validators - https://t.me/cyberway_validators_en (for questions and inquiries concerning validators of CyberWay platform)
-CyberWay Dev - https://t.me/cyberway_dev (for instant technical feedback from our Dev team)
+* CyberWay - https://t.me/cyberway_en (for general questions and inquiries)
+* CyberWay Validators - https://t.me/cyberway_validators_en (for questions and inquiries concerning validators of CyberWay platform)
+* CyberWay Dev - https://t.me/cyberway_dev (for instant technical feedback from our Dev team)
+
 ## Twitter:
-We'll keep you updated over https://twitter.com/cyberwayio
+* We'll keep you updated over https://twitter.com/cyberwayio
 
 ## Important
 
