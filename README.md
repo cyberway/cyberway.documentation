@@ -36,7 +36,7 @@
 ## Присоединяйтесь к нам
 
 **Telegram канал:**
-* https://t.me/cyberway_ru — для задания и обсуждения основных вопросов по CyberWay
+* https://t.me/cyberway_ru — для задания и обсуждения любых вопросов по CyberWay
 * https://t.me/cyberway_validators — для обсуждения вопросов, касающихся работы валидаторов CyberWay
 
  
