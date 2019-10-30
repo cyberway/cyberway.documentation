@@ -37,7 +37,7 @@
 
 **Telegram-каналы:**
 * https://t.me/cyberway_ru — здесь можно задать и обсудить любые вопросы по CyberWay
-* https://t.me/cyberway_validators — десь можно обсудить вопросы, касающиеся работы валидаторов CyberWay
+* https://t.me/cyberway_validators — здесь можно обсудить вопросы, касающиеся работы валидаторов CyberWay
 
  
 
