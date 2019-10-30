@@ -33,8 +33,12 @@
 
 * [Смарт-контракт Воркер](https://cyberway.gitbook.io/ru/v/master-ru/workers/worker_contract)
 
-## Приложение Голос
+## Присоединяйтесь к нам
 
- *Присоединяйтесь к нам в [GolosIO](https://golos.io)*
+**Telegram канал:**
+* https://t.me/cyberway_ru — для задания и обсуждения основных вопросов по CyberWay
+* https://t.me/cyberway_validators — для обсуждения вопросов, касающихся работы валидаторов CyberWay
+
+ 
 
 
