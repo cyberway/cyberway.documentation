@@ -55,17 +55,17 @@ The script runs the current version of CyberWay with the genesis data uploaded w
 
 However, after the script finishes, it is recommended to check whether all operations for deploying CyberWay on the server and connecting this server to Mainnet have been successfully completed or not. All process information is logged by Docker. The procedure for checking the successful connection of the node to Mainnet is given in [Appendix A](https://cyberway.gitbook.io/en/validators/mainnet_connection/appendix_a).  
 
-If you followed all the instructions given in appendix A and made sure that your server is fully synchronized with Mainnet, that meant that the server connected to Mainnet as a seed-node. Congratulations!!!
+If you followed all the instructions given in appendix A and made sure that your server is fully synchronized with Mainnet, that meant that the server connected to Mainnet as a seed-node. Our congratulations!!!
 
 ## 5 Registration as a validator
 The following instructions are for those users who want their node to be not only connected to Mainnet, but also able to produce blocks. To do this, you can follow the section 5 instructions to get the status of a validator. No error messages should appear when the commands are executed.  
 
 ### 5.1 Deposit the minimal amount of staked tokens
-The validator should have a certain amount of staked tokens on his/her balance sheet. The minimum number of staked tokens should be not less than 50000. If such an amount is not on your balance sheet, you have to get the tokens first. To deposit the minimum amount of tokens on your balance, you can use the following command:
+The validator should have a certain amount of staked tokens on his/her balance sheet. The minimum number of staked tokens should be not less than 50000.0000 CYBER. If such an amount is not on your balance sheet, you have to get the tokens first. To convert an amount of tokens to CYBER you can use the following command: 
 ```
-cleos system regproducer <your account> < key digital signature> --min-own-stake 500000000
+cleos transfer <your account> cyber.stake <quantity>
 ```
-The argument `min_own_staked` is a minimum amount of CYBER tokens required to become a validator.  
+`quantity` — number of tokens being converted to CYBER ones.  
 
 ### 5.2 Specify the public and private keys in configuration file
 Specify your account name and both public and private keys in the configuration file `config.ini`. You can specify the keys that you received during registration, or generate new ones by executing the command:
@@ -87,12 +87,20 @@ sudo docker-compose up -d
 The argument `-t ` sets the time required to complete all processes.
 
 ### 5.4 Block producing
-A seed-node needs to get on the schedule list so it can produce blocks. The validator has to register as a block producer and gain required number of votes to be in the top-validator list. 
+A seed-node needs to get on the schedule list so it can produce blocks. The validator has to register as a block producer and gain required number of votes to be in the top-validator list.  
+
+To register as a validator in the system, you can use the following command:
+To deposit the minimum amount of tokens on your staked-balance, you can use the following command:
+```
+cleos system regproducer <your account> <key digital signature> --min-own-stake 500000000
+```
+The argument `min_own_staked` is a minimum amount of CYBER tokens required to become a validator.  
+
 
 ### 5.5 Control the creation and signing of blocks
 The procedure for checking the creation and signing of blocks by your node has been connected to Mainnet is given in [Appendix B](https://cyberway.gitbook.io/en/validators/mainnet_connection/appendix_b).
 
-If you followed all the instructions given in Appendix B and made sure that your node produces blocks signed by you, that meant that the server connected to Mainnet as a validator node and you become a validator. Congratulations!!!
+If you followed all the instructions given in Appendix B and made sure that your node produces blocks signed by you, that meant that the server connected to Mainnet as a validator node and you become a validator. Our congratulations!!!
 
 ## 6 Recommendation  
 In case of errors when the container is running, it is recommended to stop the services, remove `Docker volume` and run `start_light.sh` again.  

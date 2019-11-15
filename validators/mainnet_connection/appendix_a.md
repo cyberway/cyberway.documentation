@@ -24,7 +24,7 @@ Make sure that the `nodeosd` and `mongo` containers are successfully installed. 
 ```sh
 sudo docker ps
 ```
-Containers are considered to be successfully installed if there are:
+Containers are considered to be successfully installed if the following conditions are met:
   * no error messages in the log file;
   * the messages about installing containers with the names `nodeosd` and `mongo`;
   * the containers are in running state. 
@@ -33,16 +33,16 @@ Containers are considered to be successfully installed if there are:
 
 Make sure that the node has initiated block synchronization. The node is considered to have started this process if the log information contains a piece of text like this one:
 ```
-info  2019-09-30T13:27:09.764 nodeos    producer_plugin.cpp:763       plugin_startup       ] producer plugin:  plugin_startup() end
-info  2019-09-30T13:27:10.043 nodeos    controller.cpp:1265           start_block          ] promoting proposed schedule (set in block 2) to pending; current block: 17 lib: 8 schedule: {"version":1,"producers":[{"producer_name":"rwwcend22url","block_signing_key":"GLS7uzmFDtxzc2r5cRvGXpQiVqqA69Dft87KyaypKBpNGbAKqz5XG"},{"producer_name":"bybfe2vsirl2","block_signing_key":"GLS7XhfTB5DqVV8iNktr2b1PZwWo2BMHczdb95tsnNmppdDDB9ZpL"},{"producer_name":"rtvmqvz3i1vt","block_signing_key":"GLS73iFm8tkE3VoHvYobUjMvN4vvuBK6CCtpDWcK3KmS7dxdfsS2D"},{"producer_name":"zhm555xmzkd3","block_signing_key":"GLS7By5wbmKToGAHkDcGgjKrFza78MATZhLpCZyGrfrFhxRgFvt9s"},{"producer_name":"qwm3tgmbeog5","block_signing_key":"GLS8MYhxyuh4rvBuG37iMC3ECWHeeoHNp5UxiwzzwsBf3HcmYEVRs"},{"producer_name":"ggfpapchob2e","block_signing_key":"GLS6CsEcVW4owTqxv4164ivCpX6eLsK9HiaRDzpoJvhisFXpvgw9H"},{"producer_name":"brx1i1bbvwgj","block_signing_key":"GLS8J7W5dgPR2mPGvFnZXTiZW5V4tg5DT2n8iQbT3FRefzoY1E7ZC"}]}
-info  2019-09-30T13:27:10.403 nodeos    controller.cpp:1265           start_block          ] promoting proposed schedule (set in block 30) to pending; current block: 42 lib: 33 schedule: {"version":2,"producers":[{"producer_name":"rwwcend22url","block_signing_key":"GLS7uzmFDtxzc2r5cRvGXpQiVqqA69Dft87KyaypKBpNGbAKqz5XG"},{"producer_name":"bybfe2vsirl2","block_signing_key":"GLS7XhfTB5DqVV8iNktr2b1PZwWo2BMHczdb95tsnNmppdDDB9ZpL"},{"producer_name":"rtvmqvz3i1vt","block_signing_key":"GLS73iFm8tkE3VoHvYobUjMvN4vvuBK6CCtpDWcK3KmS7dxdfsS2D"},{"producer_name":"zhm555xmzkd3","block_signing_key":"GLS7By5wbmKToGAHkDcGgjKrFza78MATZhLpCZyGrfrFhxRgFvt9s"},{"producer_name":"qwm3tgmbeog5","block_signing_key":"GLS8MYhxyuh4rvBuG37iMC3ECWHeeoHNp5UxiwzzwsBf3HcmYEVRs"},{"producer_name":"ggfpapchob2e","block_signing_key":"GLS6CsEcVW4owTqxv4164ivCpX6eLsK9HiaRDzpoJvhisFXpvgw9H"},{"producer_name":"brx1i1bbvwgj","block_signing_key":"GLS8J7W5dgPR2mPGvFnZXTiZW5V4tg5DT2n8iQbT3FRefzoY1E7ZC"}]}
+info  2019-10-01T00:28:39.752 nodeos    producer_plugin.cpp:339       on_incoming_block    ] Received block d7f859397b3f1220... #1214805 @ 2019-10-01T00:28:36.000 signed by kk5oxqhb2ird [trxs: 0, lib: 1214765, conf: 13, latency: 3752 ms]
+info  2019-10-01T00:28:39.771 nodeos    producer_plugin.cpp:339       on_incoming_block    ] Received block 9f560026df0a3394... #1214806 @ 2019-10-01T00:28:39.000 signed by yzpsff4dxom4 [trxs: 0, lib: 1214767, conf: 20, latency: 771 ms]
+info  2019-10-01T00:28:42.038 nodeos    producer_plugin.cpp:339       on_incoming_block    ] Received block b2141be6f9c671a3... #1214807 @ 2019-10-01T00:28:42.000 signed by 3ukodagt5qrc [trxs: 0, lib: 1214767, conf: 18, latency: 38 ms]
 ```
 The `start_block` field in the text indicates that the node has started processing blocks.
 
 ### A3 Monitoring the node working state
 Node synchronization process can take a long time. Therefore, you should monitor this process from time to time.  
 
-Make sure that the node is not hanging. To get node status information, you can use the following command:
+Make sure that the node does not hang. To get node status information, you can use the following command:
 ```
 cleos get info
 ```
