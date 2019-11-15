@@ -23,6 +23,7 @@
 ### Devportal
 
 * [Testnet. Installation Guide for Block Producers](https://cyberway.gitbook.io/en/validators/testnet_installation)
+* [Mainnet Connection Guide](https://cyberway.gitbook.io/en/validators/mainnet_connection)
 * [Creating Wallet and Keys for Development](https://cyberway.gitbook.io/en/devportal/create_development_wallet)
 * [Guide to Creating and Deploying an Application on CyberWay](https://cyberway.gitbook.io/en/devportal/create_application)
 * [System Smart Contracts](https://cyberway.gitbook.io/en/devportal/system_contracts)
