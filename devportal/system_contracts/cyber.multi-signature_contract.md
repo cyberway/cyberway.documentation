@@ -39,7 +39,7 @@ void multisig::propose(
 ```
 **Parameters:**  
   * `proposer` — name of account, author of a multi-signature transaction.
-  * `proposal_nam`e — the unique name assigned to the multi-signature transaction when it is created. This parameter, in conjunction with the proposer parameter, uniquely identifies a multi-signature transaction.
+  * `proposal_name` — the unique name assigned to the multi-signature transaction when it is created. This parameter, in conjunction with the proposer parameter, uniquely identifies a multi-signature transaction.
   * `requested` — the unique name assigned to the multi-signature transaction when it is created. This parameter, in conjunction with the proposer parameter, uniquely identifies a multi-signature transaction.
   * `trx` — proposed transaction.  
 
