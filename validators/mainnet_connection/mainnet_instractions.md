@@ -53,7 +53,7 @@ The script executes all the instructions required to connect the server to Mainn
 
 The script runs the current version of CyberWay with the genesis data uploaded which is used as input. Successful completion of the script means a successful server connection to Mainnet.  
 
-However, after the script finishes, it is recommended to check whether all operations for deploying CyberWay on the server and connecting this server to Mainnet have been successfully completed or not. All process information is logged by Docker. The procedure for checking the successful connection of the node to Mainnet is given in [Appendix A](https://docs.cyberway.io/validators/mainnet_connection/appendix_a).  
+However, after the script finishes, it is recommended to check whether all operations for deploying CyberWay on the server and connecting this server to Mainnet have been successfully completed or not. All process information is logged by Docker. The procedure for checking the successful connection of the node to Mainnet is given in [Appendix A](https://cyberway.gitbook.io/en/validators/mainnet_connection/appendix_a).  
 
 If you followed all the instructions given in appendix A and made sure that your server is fully synchronized with Mainnet, that meant that the server connected to Mainnet as a seed-node. Congratulations!!!
 
@@ -90,7 +90,7 @@ The argument `-t ` sets the time required to complete all processes.
 A seed-node needs to get on the schedule list so it can produce blocks. The validator has to register as a block producer and gain required number of votes to be in the top-validator list. 
 
 ### 5.5 Control the creation and signing of blocks
-The procedure for checking the creation and signing of blocks by your node has been connected to Mainnet is given in [Appendix B](https://docs.cyberway.io/validators/mainnet_connection/appendix_b).
+The procedure for checking the creation and signing of blocks by your node has been connected to Mainnet is given in [Appendix B](https://cyberway.gitbook.io/en/validators/mainnet_connection/appendix_b).
 
 If you followed all the instructions given in Appendix B and made sure that your node produces blocks signed by you, that meant that the server connected to Mainnet as a validator node and you become a validator. Congratulations!!!
 
