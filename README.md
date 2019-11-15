@@ -15,31 +15,22 @@
 
 ### More information about CyberWay
 
-* [White Paper](https://cyberway.gitbook.io/en/users/white_paper)
-* [Main features of CyberWay](https://cyberway.gitbook.io/en/users/cyberway_features)
-* [Bandwidth differences between EOS and CyberWay](https://cyberway.gitbook.io/en/users/bandwidth_differences)
-* [Bandwidth implementation](https://cyberway.gitbook.io/en/users/bandwidth_implementation)
+* [White Paper](https://docs.cyberway.io/users/white_paper)
+* [Main features of CyberWay](https://docs.cyberway.io/users/cyberway_features)
+* [Bandwidth differences between EOS and CyberWay](https://docs.cyberway.io/users/bandwidth_differences)
+* [Bandwidth implementation](https://docs.cyberway.io/users/bandwidth_implementation)
 
 ### Devportal
 
-* [Testnet. Installation Guide for Block Producers](https://cyberway.gitbook.io/en/validators/testnet_installation)
-* [Mainnet Connection Guide](https://cyberway.gitbook.io/en/validators/mainnet_connection)
-* [Creating Wallet and Keys for Development](https://cyberway.gitbook.io/en/devportal/create_development_wallet)
-* [Guide to Creating and Deploying an Application on CyberWay](https://cyberway.gitbook.io/en/devportal/create_application)
-* [System Smart Contracts](https://cyberway.gitbook.io/en/devportal/system_contracts)
-* [Application Smart Contracts](https://cyberway.gitbook.io/en/devportal/application_contracts)
-* [The Cyberway Wallet designed for the Bittrex Market](https://cyberway.gitbook.io/en/devportal/cyberway_wallet_for_bittrex)
-* [The Event Model](https://cyberway.gitbook.io/en/devportal/event_engine)
+* [Testnet. Installation Guide for Block Producers](https://docs.cyberway.io/validators/testnet_installation)
+* [Mainnet Connection Guide](https://docs.cyberway.io/validators/mainnet_connection)
+* [Creating Wallet and Keys for Development](https://docs.cyberway.io/devportal/create_development_wallet)
+* [Guide to Creating and Deploying an Application on CyberWay](https://docs.cyberway.io/devportal/create_application)
+* [System Smart Contracts](https://docs.cyberway.io/devportal/system_contracts)
+* [Application Smart Contracts](https://docs.cyberway.io/devportal/application_contracts)
+* [The Cyberway Wallet designed for the Bittrex Market](https://docs.cyberway.io/devportal/cyberway_wallet_for_bittrex)
+* [The Event Model](https://docs.cyberway.io/devportal/event_engine)
 
-### Here are you can find smart contracts for the blogging platform, Golos ([golos.io](https://golos.io)), built on top of CyberWay
-* [Charge](/devportal/application_contracts/golos_contracts/golos.charge_contract.md)
-* [Control](/devportal/application_contracts/golos_contracts/golos.ctrl_contract.md)
-* [Emission](/devportal/application_contracts/golos_contracts/golos.emit_contract.md)
-* [Publication](/devportal/application_contracts/golos_contracts/golos.publication_contract.md)
-* [Referral program](/devportal/application_contracts/golos_contracts/golos.referral_contract.md)
-* [Social](/devportal/application_contracts/golos_contracts/golos.social_contract.md)
-* [Vesting](/devportal/application_contracts/golos_contracts/golos.vesting_contract.md)
-* [Determining Rewards for a Post](/devportal/application_contracts/golos_contracts/rewards_definition.md)
 
 ## Community
 
