@@ -48,7 +48,7 @@
     * [4 Connecting to a Node](/validators/testnet/connect_node.md)
     * [5 List of Commands Applicable to Any Kind of Container](/validators/testnet/main_commands.md)
   * [Mainnet Connection Guide](/validators/mainnet_connection.md)
-    * [Docker-Compose Start-up Instructions](/validators/mainnet_instractions.md)
+    * [Docker-Compose Start-up Instructions](/validators/mainnet_connection/mainnet_instractions.md)
     * [APPENDIX A](/validators/mainnet_connection/appendix_a.md)
     * [APPENDIX B](/validators/mainnet_connection/appendix_b.md)
   * [Golos Blockchain Transit](/validators/transit_guide.md)
