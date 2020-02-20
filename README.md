@@ -1,4 +1,4 @@
-<img width="400" src="logo.jpg" />
+<img width="128" src="logo.jpg" />
 
 *****  
 # CyberWay — the Most Powerful Infrastructure for Decentralized Applications
@@ -21,9 +21,21 @@
 * [Bandwidth implementation](https://docs.cyberway.io/users/bandwidth_implementation)
 * [The best blockchain for user-friendly dApps](https://cyberway.io)
 
+### Advantages
+
+* Free Registration (Free Resource as Bonuse for Inviting other Peoples)
+* Free Transactions (Resource Credits)
+* Fast Block Confirmations (three seconds)
+* Delegated Proof-of-Stake Consensus (DPOS)
+* Creating your own dApps with your own Tokens (https://docs.cyberway.io/devportal/create_application)
+* First dApps already built on CyberWay and many more to come
+* Transferring Funds between dApps without Reducing their Cost
+* Decentralized management, No any Supervisory Authority
+* Migration of your Blockchain to CyberWay and using it as a Separate dApp
+
 ### Devportal
 
-* [Testnet. Installation Guide for Block Producers](https://docs.cyberway.io/validators/testnet_installation)
+* [Testnet. Installation Guide for Validators](https://docs.cyberway.io/validators/testnet_installation)
 * [Mainnet Connection Guide](https://docs.cyberway.io/validators/mainnet_connection)
 * [Creating Wallet and Keys for Development](https://docs.cyberway.io/devportal/create_development_wallet)
 * [Guide to Creating and Deploying an Application on CyberWay](https://docs.cyberway.io/devportal/create_application)
