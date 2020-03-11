@@ -138,7 +138,7 @@ User's opinion about an entity presented for discussion. Opinion can be expresse
 
 ---  
 
-### Genesis** (Greek genesis)
+### Genesis (Greek genesis)
 The beginning of the formation of any object or subject and the subsequent process of its development, which led to a certain state.  
 
 ---  
@@ -173,7 +173,7 @@ A block is considered irreversible (i.e. immutable) on blockchain when (2/3rd + 
 
 ---  
 
-### Keosd (key + eos = keosd)
+### Keosd
 (`key` + `eos` = `keosd`) A component that securely stores keys in wallets.  
 
 ---  
