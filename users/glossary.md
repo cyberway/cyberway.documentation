@@ -1,8 +1,5 @@
 # Terminology Used
 
-
-## A
-
 ### ABI
 The Application Binary Interface (ABI) is a JSON-based description on how to convert user actions between their JSON and binary representations. The ABI may also describe how to convert the database state to/from JSON. Once you have described your contract via an ABI this allows developers and users to interact with your contract seamlessly via JSON.  
 
@@ -17,8 +14,6 @@ A user account stored in the system for his identification (authentication) and 
 Functionality exposed by a smart contract that is exercised by passing the correct parameters via an approved transaction to an EOSIO network.  
 
 ---  
-
-## B
 
 ### Block
 A special structure for recording a group of transactions in the Bitcoin system and similar ones. A block consists of a header and a list of transactions. The block header includes its own hash, the hash of the previous block, transaction hashes, and additional overhead information.  
@@ -39,8 +34,6 @@ A blockchain application is a software application that has integrated a blockch
 The block log is an append only log of blocks written to disk and contains all the irreversible blocks.  
 
 ---  
-
-## C
 
 ### Community
 A group of persons formed around some point of interest. Community can be created by any user or group of users. Each community has its own point and parameters.  
@@ -84,8 +77,6 @@ On completion of the transaction, a transaction receipt is generated. Receiving 
 A cryptographic hash function is a hash function which takes an input (or `message`) and returns a fixed-size alphanumeric string. The alphanumeric string is called the `hash value`, `message digest`, `digital fingerprint`, `digest` or `checksum`.  
 
 ---  
-
-## D
 
 ### Daemon
 A program on Linux systems, launched by the system itself and running in the background without direct user interaction.  
@@ -137,12 +128,6 @@ DPoS stands for "Delegated Proof of Stake" and is a consensus algorithm initiall
 
 ---  
 
-## E
-
-## F
-
-## G
-
 ### Gallery
 A collection of mosaics united by the same theme. Each community has its own gallery.  
 
@@ -168,14 +153,10 @@ The genesis node is the first node in the blockchain network. The genesis node i
 
 ---  
 
-## H
-
 ### Head Block
 The head block is the last block written to the blockchain, stored in reversible_blocks.  
 
 ---  
-
-## I
 
 ### Indices
 In the context of a multiple index table, an index is a particular ordering of the elements in the table. Multiple index indices allow the same data in one table to be viewed as different data structures by specifying the specific index on the table.  
@@ -192,10 +173,6 @@ A block is considered irreversible (i.e. immutable) on blockchain when (2/3rd + 
 
 ---  
 
-## J
-
-## K
-
 ### Keosd
 (`key` + `eos` = `keosd`) A component that securely stores keys in wallets.  
 
@@ -205,8 +182,6 @@ A block is considered irreversible (i.e. immutable) on blockchain when (2/3rd + 
 A string of characters (bit string) used by the cryptographic algorithm for encrypting and decrypting messages, setting and verifying a digital signature, as well as identification. Keys are symmetric (the same key is used for encryption and decryption) and asymmetric (public and private).  
 
 ---  
-
-## L
 
 ### Mosaic
 Data table of the entity discussion process from the moment of its publication to the reward completion moment to all participants in this process. An author at the time of publication creates a mosaic and inserts the first gem into it. Each user, leaving a comment or voting for the post, contributes a gem to this mosaic. Once the discussion and payments are terminated, this mosaic collapses.  
@@ -223,8 +198,6 @@ CyberWay wraps the boost multi-index library to provide in memory data persisten
 
 ---  
 
-## N
-
 ### Node
 A separate (software) device that is connected to the blockchain network according to the client-server scheme. Nodes are active elements and form the basis of the blockchain network technology.  
 
@@ -235,14 +208,10 @@ A separate (software) device that is connected to the blockchain network accordi
 
 ---  
 
-## O
-
 ### Opus
 Mosaic description type. It indicates what the mosaic describes, such as a post or comment.  
 
 ---  
-
-## P
 
 ### Packed Transaction
 In order to transfer transaction content between nodes faster and to save storage space when storing transaction content in database, the transactions are `converted` from `json` into a packed form which is smaller in size. To get the packed version of a transaction one can use the `cleos` convert command.  
@@ -299,16 +268,10 @@ A peer-to-peer computer network in which all participants (nodes) are equal in r
 
 ---  
 
-## Q
-
-## R
-
 ### Reversible Block
 Any block on blockchain with a block number greater than the last irreversible block. Reversible blocks are blocks that are not currently guaranteed to be on the blockchain.  
 
 ---  
-
-## S
 
 ### Safe
 Functionality allowing a user to manipulate funds in order to preserve them, namely to lock funds and withdrawal operations on them, including transfer, selling points to buy tokens. Access to funds is possible only after they are unlocked by the safe owner.  
@@ -345,8 +308,6 @@ The design of the CyberWay blockchain calls for a number of smart contracts that
 
 ---  
 
-## T
-
 ### Test Network
 A test network or `testnet` is an instantiation of the CyberWay platform that is intended for testing purposes. Generally, the native token has no value and is given away to developers so they can test. Some features of a testnet may be disabled such as consensus and governance.  
 
@@ -372,14 +333,10 @@ A person appointed by commun leaders to make decisions within the dApp applicati
 
 ---  
 
-## U
-
 ### Unconfirmed Transaction
 A transaction is considered unconfirmed as long as no `nodeos` instance has received, processed, and written it to a block on the blockchain, i.e. it is not in the head block or a block earlier than the head block.  
 
 ---  
-
-## V
 
 ### Validator
 A blockchain user who checks transactions for validity and signs them. Using its (leased) equipment, it ensures the functioning of the Nodes of the network, creates and signs new blocks, ensuring the safety of the network.  
@@ -389,9 +346,7 @@ A blockchain user who checks transactions for validity and signs them. Using its
 ### Validator Schedule
 The list of validators who currently have the possibility of being selected to produce the next block. This list changes with every new block.  
 
-----  
-
-## W
+---  
 
 ### WASM (Web-Assembly Machine)
 WASM stands for WebAssembly. WASM is an emerging web standard with widespread support of Google, Microsoft, Apple, and others.  
@@ -407,12 +362,3 @@ WIF stands for Wallet Import Format and is an encoding for a private key. The fo
 Wallets are clients that store keys that may or may not be associated with the permissions of one or more accounts. Ideally a wallet has a locked (encrypted) and unlocked (decrypted) state that is protected by a high entropy password.  
 
 ---  
-
-## X
-
-## Y
-
-## Z
-
----  
-
