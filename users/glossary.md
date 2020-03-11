@@ -138,7 +138,9 @@ DPoS stands for "Delegated Proof of Stake" and is a consensus algorithm initiall
 ---  
 
 ## E
+
 ## F
+
 ## G
 
 ### Gallery
@@ -387,7 +389,7 @@ A blockchain user who checks transactions for validity and signs them. Using its
 ### Validator Schedule
 The list of validators who currently have the possibility of being selected to produce the next block. This list changes with every new block.  
 
----  
+----  
 
 ## W
 
@@ -405,6 +407,7 @@ WIF stands for Wallet Import Format and is an encoding for a private key. The fo
 Wallets are clients that store keys that may or may not be associated with the permissions of one or more accounts. Ideally a wallet has a locked (encrypted) and unlocked (decrypted) state that is protected by a high entropy password.  
 
 ---  
+
 ## X
 
 ## Y
