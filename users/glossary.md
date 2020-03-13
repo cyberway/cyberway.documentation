@@ -21,7 +21,7 @@ A special structure for recording a group of transactions in the Bitcoin system 
 ---  
 
 ### Blockchain
-a strictly structured database with certain rules for building chains of transactions and access to information that excludes data theft, fraud, violation of property rights, etc.  
+A strictly structured database with certain rules for building chains of transactions and access to information that excludes data theft, fraud, violation of property rights, etc.  
 
 ---  
 
@@ -51,7 +51,7 @@ A person is considered a community user if the person is registered in the Commu
 ---  
 
 ### Container
-an object created using a Docker image and containing all the necessary components for the operation of the application. The container is a secure platform for the operation of the application.  
+An object created using a Docker image and containing all the necessary components for the operation of the application. The container is a secure platform for the operation of the application.  
 
 ---  
 
@@ -79,7 +79,7 @@ A cryptographic hash function is a hash function which takes an input (or `messa
 ---  
 
 ### Daemon
-a program on Linux systems, launched by the system itself and running in the background without direct user interaction.  
+A program on Linux systems, launched by the system itself and running in the background without direct user interaction.  
 
 ---  
 
@@ -114,7 +114,7 @@ Command line tool for managing multiple Docker multi-container applications.
 ---  
 
 ### Docker-file
-a file containing instructions and parameters for creating a Docker image for specific tasks.  
+A file containing instructions and parameters for creating a Docker image for specific tasks.  
 
 ---  
 
@@ -179,7 +179,7 @@ A block is considered irreversible (i.e. immutable) on blockchain when (2/3rd + 
 ---  
 
 ### Key
-a string of characters (bit string) used by the cryptographic algorithm for encrypting and decrypting messages, setting and verifying a digital signature, as well as identification. Keys are symmetric (the same key is used for encryption and decryption) and asymmetric (public and private).  
+A string of characters (bit string) used by the cryptographic algorithm for encrypting and decrypting messages, setting and verifying a digital signature, as well as identification. Keys are symmetric (the same key is used for encryption and decryption) and asymmetric (public and private).  
 
 ---  
 
@@ -199,7 +199,7 @@ CyberWay wraps the boost multi-index library to provide in memory data persisten
 ---  
 
 ### Node
-a separate (software) device that is connected to the blockchain network according to the client-server scheme. Nodes are active elements and form the basis of the blockchain network technology.  
+A separate (software) device that is connected to the blockchain network according to the client-server scheme. Nodes are active elements and form the basis of the blockchain network technology.  
 
 ---  
 
@@ -258,6 +258,16 @@ A code string with which you can access your wallet or bitcoin address. Required
 
 ---  
 
+### Proxy account
+An account empowered with a specific voting authorization during the voting process. A proxy account can be declared by any user who is ready to accept votes from other users and vote for the validators on their behalf.
+
+---  
+
+### Proxy account level
+A conditional division of users into categories. The highest level of proxy account is zero, which is assigned only to validators. The first and further levels in ascending order are assigned to users who have declared themselves proxy accounts. The number of levels (categories) of proxy accounts is not limited. The number of proxy accounts of the same level is also not limited. The last level of proxy account is assigned to the ordinary user.
+
+---  
+
 ### Public key
 A code string to which there is open access. Used along with the private key to send transactions. The public key corresponds to a bitcoin address.  
 
@@ -298,8 +308,13 @@ A smart contract is a computer protocol intended to facilitate, verify, or enfor
 
 ---  
 
-### Staking
-Staking is the act of locking tokens for resources on a CyberWay network. This includes but is not limited to, CPU time, RAM, and on-chain governance.  
+### Stake
+A share of bandwidth resources (RAM, NET, CPU and Storage) allocated to a user. The user can manage the share of resources allocated to him both independently and entrust its use to another user (delegate the share of resources).
+
+---  
+
+### Staked tokens
+Tokens allocated for a stake acquisition that can’t be used for anything else in this state. The user can stake active tokens listed on his/her balance or deposit them. Also, the user can perform the reverse operation — withdraw tokens from the staked state to active.
 
 ---  
 
@@ -338,6 +353,16 @@ A transaction is considered unconfirmed as long as no `nodeos` instance has rece
 
 ---  
 
+### Validator
+A blockchain user who checks transactions for validity and signs them. Using its (leased) equipment, it ensures the functioning of the Nodes of the network, creates and signs new blocks, ensuring the safety of the network.  
+
+---  
+
+### Validator Schedule
+The list of validators who currently have the possibility of being selected to produce the next block. This list changes with every new block.  
+
+---  
+
 ### WASM (Web-Assembly Machine)
 WASM stands for WebAssembly. WASM is an emerging web standard with widespread support of Google, Microsoft, Apple, and others.  
 
@@ -352,14 +377,3 @@ WIF stands for Wallet Import Format and is an encoding for a private key. The fo
 Wallets are clients that store keys that may or may not be associated with the permissions of one or more accounts. Ideally a wallet has a locked (encrypted) and unlocked (decrypted) state that is protected by a high entropy password.  
 
 ---  
-
-### Validator
-A blockchain user who checks transactions for validity and signs them. Using its (leased) equipment, it ensures the functioning of the Nodes of the network, creates and signs new blocks, ensuring the safety of the network.  
-
----  
-
-### Validator Schedule
-The list of validators who currently have the possibility of being selected to produce the next block. This list changes with every new block.  
-
----  
-
