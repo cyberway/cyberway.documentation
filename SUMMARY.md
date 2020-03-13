@@ -4,11 +4,18 @@
 
 * [USERS](/users/users.md)
   * [White Paper](/users/white_paper.md)
+  * [Core Concepts](/users/core_concepts.md)
   * [Main features of CyberWay](/users/cyberway_features.md)
   * [Bandwidth differences between EOS and CyberWay](/users/bandwidth_differences.md)
   * [Bandwidth implementation](/users/bandwidth_implementation.md)
   * [How to Launch EOS dApps on CyberWay](/users/how_to_launch_eos_dapps_on_cyberway.md)
   * [Glossary](/users/glossary.md)
+* [DEVELOPMENT ENVIRONMENT](/development_environment/development_environment.md)
+  * [Core Concepts](/development_environment/core_concepts.md)
+  * [Before You Begin](/development_environment/before_you_begin.md)
+  * [Install the CDT](/development_environment/install_cdt.md)
+  * [Create Development Wallet](/development_environment/create_development_wallet.md)
+  * [Create Test Accounts](/development_environment/create_test_accounts.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System Contracts](/devportal/system_contracts.md)
     * [BIOS](/devportal/system_contracts/cyber.bios_contract.md)
@@ -39,7 +46,6 @@
     * [8 Inline Action to External Contract](/devportal/create_application/inline_action_to_external_contract.md)
     * [9 Conclusion](/devportal/create_application/conclusion.md)
   * [The cyberway_wallet designed for the Bittrex market](/devportal/cyberway_wallet_for_bittrex.md)
-  * [Creating Wallet and Keys for Development](/devportal/create_development_wallet.md)
   * [The Event Model](/devportal/event_engine.md)
 * [VALIDATORS](/validators/validators.md)
   * [Testnet Installation Guide](/validators/testnet_installation.md)
@@ -57,4 +63,4 @@
   * [Stake Usage Guide](/validators/stake_usage_guide.md)
   * [Regulations for CyberWay validators. Voting for Validators](/validators/voting_for_validators.md)
 * [WORKERS](/workers/workers.md)
- 
+

@@ -258,6 +258,16 @@ A code string with which you can access your wallet or bitcoin address. Required
 
 ---  
 
+### Proxy account
+An account empowered with a specific voting authorization during the voting process. A proxy account can be declared by any user who is ready to accept votes from other users and vote for the validators on their behalf.
+
+---  
+
+### Proxy account level
+A conditional division of users into categories. The highest level of proxy account is zero, which is assigned only to validators. The first and further levels in ascending order are assigned to users who have declared themselves proxy accounts. The number of levels (categories) of proxy accounts is not limited. The number of proxy accounts of the same level is also not limited. The last level of proxy account is assigned to the ordinary user.
+
+---  
+
 ### Public key
 A code string to which there is open access. Used along with the private key to send transactions. The public key corresponds to a bitcoin address.  
 
@@ -298,8 +308,13 @@ A smart contract is a computer protocol intended to facilitate, verify, or enfor
 
 ---  
 
-### Staking
-Staking is the act of locking tokens for resources on a CyberWay network. This includes but is not limited to, CPU time, RAM, and on-chain governance.  
+### Stake
+A share of bandwidth resources (RAM, NET, CPU and Storage) allocated to a user. The user can manage the share of resources allocated to him both independently and entrust its use to another user (delegate the share of resources).
+
+---  
+
+### Staked tokens
+Tokens allocated for a stake acquisition that can’t be used for anything else in this state. The user can stake active tokens listed on his/her balance or deposit them. Also, the user can perform the reverse operation — withdraw tokens from the staked state to active.
 
 ---  
 
