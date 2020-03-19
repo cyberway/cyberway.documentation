@@ -15,6 +15,7 @@
   * [Before You Begin](/development_environment/before_you_begin.md)
   * [Install the CDT](/development_environment/install_cdt.md)
   * [Create Development Wallet](/development_environment/create_development_wallet.md)
+  * [Start keosd and nodeos](/development_environment/start_keosd_nodeos.md)
   * [Create Test Accounts](/development_environment/create_test_accounts.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System Contracts](/devportal/system_contracts.md)
