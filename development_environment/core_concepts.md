@@ -14,8 +14,6 @@ Wallets are clients that store keys (only keys, not tokens) that may or may not 
 
 Permissions are arbitrary names used to define the requirements for a transaction sent on behalf of that permission. Permissions can be assigned for authority over specific contract actions by linking authorization or linkauth.
 
-For more information about these concepts, see the [Accounts and Permissions](!!!!) documentation.
-
 ## Smart Contracts
 A smart contract is a piece of program code that can executed on a blockchain and keep the state of contract execution as a part of the immutable history of that blockchain instance. It is a self-executing set of functions (algorithms) with the terms of the agreement between parties being directly written into lines of code. The code and the agreements contained therein exist across a distributed, decentralized blockchain network. The code controls the execution, and transactions are trackable and irreversible. Developers can rely on that blockchain as a trusted computation environment in which inputs, execution, and the results of a smart contract are independent and free of external influence.
 

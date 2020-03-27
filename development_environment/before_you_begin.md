@@ -1,4 +1,4 @@
-# Before You Begin
+# 1: Before You Begin
 
 We appreciate your interest in contributing to the CyberWay platform! We always welcome contributions from our community to make our code and docs better.  
 
@@ -33,7 +33,7 @@ git clone https://github.com/cyberway/cyberway.launch  ~/cyberway.launch
 ```
 
 ## Step 3: Run the shell-script:
-Go to the created CyberWay space and run the start_light.sh script:  (start_testnet.sh)
+Go to the created CyberWay space and run the `start_light.sh` script:  (!!! start_testnet.sh !!!)
 ```sh
 cd ~/cyberway.launch
  ./start_light.sh

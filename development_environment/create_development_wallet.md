@@ -1,4 +1,4 @@
-# 1.3: Create Development Wallet
+# 3: Create Development Wallet
 
 This section provides instructions for creating a wallet for use in developing or maintaining software. Before a user can make a change to program code of the product, he/she needs to create a wallet and keys for development.  
 

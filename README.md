@@ -35,9 +35,9 @@
 
 ### Devportal
 
-* [Testnet. Installation Guide for Validators](https://docs.cyberway.io/validators/testnet_installation)
 * [Mainnet Connection Guide](https://docs.cyberway.io/validators/mainnet_connection)
-* [Creating Wallet and Keys for Development](https://docs.cyberway.io/devportal/create_development_wallet)
+* [Install the CDT](https://docs.cyberway.io/development_environment/install_cdt)
+* [Create Development Wallet](https://docs.cyberway.io/development_environment/create_development_wallet)
 * [Guide to Creating and Deploying an Application on CyberWay](https://docs.cyberway.io/devportal/create_application)
 * [System Smart Contracts](https://docs.cyberway.io/devportal/system_contracts)
 * [Application Smart Contracts](https://docs.cyberway.io/devportal/application_contracts)

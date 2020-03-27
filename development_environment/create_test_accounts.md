@@ -1,4 +1,4 @@
-# 1.5: Create Test Accounts
+# 5: Create Test Accounts
 
 This section provides guidance on how to create an account name using a public key. 
 
@@ -8,15 +8,14 @@ An account is a collection of authorizations stored on the blockchain and used t
 
 This tutorial series uses two "user" accounts, `bob` and `alice`, as well as the default `cyberway` account for configuration. Additionally accounts are made for various contracts throughout this tutorial series.
 
-## Step 1: Create Test Accounts
+## Create Test Accounts
 
 > **Public Key Persistence**  
->  In section [1.3 Create Development Wallet](!!!), you created a development key pair and pasted the public key in the *Development Public Key* field for the value to persist throughout the tutorial.  
+>  In section [Create Development Wallet](https://docs.cyberway.io/development_environment/create_development_wallet), you created a development key pair and pasted the public key in the *Development Public Key* field for the value to persist throughout the tutorial.  
 
-In the following steps, if you see `YOUR_PUBLIC_KEY` instead of the public key value, you can either go back to section [1.3 Create Development Wallet](!!!) and persist the value or replace `YOUR_PUBLIC_KEY` with the public key value manually.
+In the following steps, if you see `YOUR_PUBLIC_KEY` instead of the public key value, you can either go back to section [Create Development Wallet](https://docs.cyberway.io/development_environment/create_development_wallet) and persist the value or replace `YOUR_PUBLIC_KEY` with the public key value manually.
 
-Throughout these tutorials the accounts `bob` and `alice` are used. Create two accounts using [cleos create account](!!!!):
-
+Throughout these tutorials the accounts `bob` and `alice` are used. Create two accounts using `cleos create account`
 ```sh
 cleos create account cyberway bob YOUR_PUBLIC_KEY
 cleos create account cyberway alice YOUR_PUBLIC_KEY
@@ -30,12 +29,12 @@ executed transaction: 40c605006de...  200 bytes  153 us
 warning: transaction executed locally, but may not be confirmed by the network yet    ]
 ```
 
-## Step 2: Public Key
+## Public Key
 Note in `cleos` command a public key is associated with account `alice`. Each CyberWay account is associated with a public key.  
 
 Be aware that the account name is the only identifier for ownership. You can change the public key but it would not change the ownership of your CyberWay account.  
 
-Check which public key is associated with `alice` using [cleos get account](!!!):
+Check which public key is associated with `alice` using `cleos get account`):
 ```sh
 cleos get account alice
 ```
