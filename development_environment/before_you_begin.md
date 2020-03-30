@@ -21,7 +21,8 @@ One of the following operating systems must also be installed on the server:
  - Fedora 25 (or later versions)
  - Mint 18
 
-**WARNING !!!** If you have a private key,iIt is strongly recommended to **save your private key** before proceeding.  
+> **WARNING**  
+> If you have a private key, it is strongly recommended to **save your private key** before proceeding.  
 
 If you have previous version of CyberWay installed on your system, please uninstall it before proceeding.
 
@@ -32,8 +33,12 @@ mkdir ~/cyberway.launch
 git clone https://github.com/cyberway/cyberway.launch  ~/cyberway.launch
 ```
 
-## Step 3: Run the shell-script:
-Go to the created CyberWay space and run the `start_light.sh` script:  (!!! start_testnet.sh !!!)
+## Step 3: Run the shell-script
+
+> **Please, NOTE**  
+> The script performs an installation and deployment of CyberWay on your server in automatic mode. By running the script, you connect your server to running block chain.  
+
+Go to the created CyberWay space and run the `start_light.sh` script:
 ```sh
 cd ~/cyberway.launch
  ./start_light.sh
@@ -54,7 +59,7 @@ During the script execution, the following operations are done:
 
 The script runs the current version of CyberWay with the genesis data uploaded which is used as input. Successful completion of the script means a successful server connection to Mainnet as a seed-node.  
 
-The procedure for checking a connection of your server to Mainnet as a seed-node is given [here](https://docs.cyberway.io/validators/mainnet_connection/appendix_a).  
+The procedure for checking a connection of your server to Mainnet as a seed-node is given in [Appendix A](https://docs.cyberway.io/validators/mainnet_connection/appendix_a).  
 
-If you followed all the instructions given in that appendix A and made sure that your server is fully synchronized with Mainnet, that meant that the server connected to Mainnet as a seed-node.
+If you followed all the instructions given in that Appendix A and made sure that your server is fully synchronized with Mainnet, that meant that the server connected to Mainnet as a seed-node.
 
