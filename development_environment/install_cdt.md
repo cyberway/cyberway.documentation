@@ -68,6 +68,7 @@ The following tools will be installed to your local machine:
   - llvm-readobj
   - llvm-strip
 
+
 #### Uninstall
 ```sh
  $ cd cyberway.cdt

@@ -62,4 +62,3 @@ The script runs the current version of CyberWay with the genesis data uploaded w
 The procedure for checking a connection of your server to Mainnet as a seed-node is given in [Appendix A](https://docs.cyberway.io/validators/mainnet_connection/appendix_a).  
 
 If you followed all the instructions given in that Appendix A and made sure that your server is fully synchronized with Mainnet, that meant that the server connected to Mainnet as a seed-node.
-

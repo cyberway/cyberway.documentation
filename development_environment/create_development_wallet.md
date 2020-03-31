@@ -88,8 +88,6 @@ $ cleos wallet unlock --password PW5...w2
 You can get a list of open wallets by re-executing: 
 ```
 $ cleos wallet list
-or
-$ cleos wallet list --name second-wallet
 ```
 
 It should return:  
@@ -121,7 +119,7 @@ Created new private key with a public key of: "GLS8PE...,X6P..."
 > Unlike EOS, in CyberWay the public key code actually starts with the `GLS` characters.
 
 ## Step 5: Import the Development Key
-Every new CyberWay chain has a default "system" user called "cyberway". This account is used to setup the chain by loading system contracts that dictate the governance and consensus of the CyberWay chain. Every new CyberWay chain comes with a development key, and this key is the same. Load this key to sign transactions on behalf of the system user (cyberway)
+Every new CyberWay chain has a default "system" user called "cyber". This account is used to setup the chain by loading system contracts that dictate the governance and consensus of the CyberWay chain. Every new CyberWay chain comes with a development key, and this key is the same. Load this key to sign transactions on behalf of the system user (cyberway)
 
 ```sh
 $ cleos wallet import

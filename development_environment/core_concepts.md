@@ -19,7 +19,6 @@ A smart contract is a piece of program code that can executed on a blockchain an
 
 More details about smart contracts being used on CyberWay can be found [here](https://docs.cyberway.io/devportal/system_contracts).
 
-
 ## Delegated Proof of Stake (DPOS)
 The CyberWay platform implements a decentralized consensus algorithm capable of meeting the performance requirements of applications on the blockchain called the Delegated Proof of Stake. Under this algorithm, a user who holds tokens on CyberWay blockchain, can select validators through a continuous approval voting system. Anyone can choose to participate in the block production and will be given an opportunity to produce blocks, provided this person can persuade token holders to vote for him/her.
 
