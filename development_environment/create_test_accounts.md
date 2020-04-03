@@ -16,7 +16,6 @@ This tutorial series uses two "user" accounts, `bob` and `alice`, as well as the
 In the following steps, if you see `YOUR_PUBLIC_KEY` instead of the public key value, you can either go back to section [Create Development Wallet](https://docs.cyberway.io/development_environment/create_development_wallet) and persist the value or replace `YOUR_PUBLIC_KEY` with the public key value manually.
 
 Throughout these tutorials the accounts `bob` and `alice` are used. Create two accounts using `cleos create account`:
-
 ```sh
 cleos create account cyberway bob YOUR_PUBLIC_KEY
 cleos create account cyberway alice YOUR_PUBLIC_KEY

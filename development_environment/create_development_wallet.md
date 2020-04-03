@@ -22,8 +22,9 @@ The `cleos` application will return a password to save. Further information appe
 
 ```sh
 Creating wallet: default
-Save password to use in the future to unlock this wallet.
-Without password imported keys will not be retrievable."PW5Kewn9L76X8Fpd....................t42S9XCw2"
+Save password to use in the future to unlock this wallet.  
+Without password imported keys will not be retrievable.  
+"PW5HuQcBBqb...............................kEiE36gweSxy"
 ```
 
 Running the default command creates a wallet named «default». If you want to create a wallet with a different name (for example, when creating more than one wallet) you can use the `--name` option (or `-n`).
