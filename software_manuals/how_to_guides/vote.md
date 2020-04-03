@@ -19,8 +19,8 @@ Vote for a validator.
 $ cleos system voteproducer prods alice bob “50.0000 CYBER”
 ```
 
-**Option_2:** Vote via a proxy account.
-If you are unable to vote, you can entrust your vote to a proxy account that will vote for you. To do this, you need to delegate the staked tokens to a proxy account.
+*Option_2:* Vote via a proxy account.
+If you are unable to vote, you can entrust your vote to a proxy account that will vote for you. To do this, you need to delegate the staked tokens to a proxy account.  
 
 `alice` delegates  50 CYBER tokens to `bob` that is a proxy account:
 ```sh
