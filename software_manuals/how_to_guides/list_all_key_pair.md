@@ -29,4 +29,5 @@ You can enter the password directly on the command line by adding the `--passwor
 $ cleos wallet unlock --password PW5...3RwP2
 ```
 
-> Be careful, never use your private keys in a production enviroment.
+> **Be careful**  
+> Never use your private keys in a production enviroment!
