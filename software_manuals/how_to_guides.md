@@ -6,6 +6,7 @@
  * [How To Create A Wallet](/software_manuals/how_to_guides/create_wallet.md)
  * [How To Delegate Resources](/software_manuals/how_to_guides/delegate_resources.md)
  * [How To Create An Account](/software_manuals/how_to_guides/create_account.md)
+ * [How To Create A Proxy Account](/software_manuals/how_to_guides/create_proxy_account.md)
  * [How To Create Key Pair](/software_manuals/how_to_guides/create_key_pair.md)
  * [How To Deploy A Smart Contract](/software_manuals/how_to_guides/deploy_smart_contract.md)
  * [How To Get Account Information](/software_manuals/how_to_guides/get_account_information.md)
