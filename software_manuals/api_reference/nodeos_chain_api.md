@@ -383,7 +383,7 @@ The request returns an object containing rows from the specified table.
 
 **Params:**
   * `(name) account_name` — Account on which the contract is based.
-  * `optional<sha256> abi_hash`.
+  * `(sha256) abi_hash` — ABI hash. This field is optional.
 
 **Request example:**  
 ```
@@ -396,10 +396,10 @@ curl --request POST  -d '{"account_name": "string"}' node/v1/chain/get_raw_abi
 **Value:**
 ```
 {
-    "account_name": "string", // Account on which the contract is based
-    "code_hash": "string",    // Code hash
-    "abi_hash": "string",     // ABI hash 
-    "abi": "string"           // base64 encoded ABI.  
+  "account_name": "string", // Account on which the contract is based
+  "code_hash": "string",    // Code hash
+  "abi_hash": "string",     // ABI hash 
+  "abi": "string"           // base64 encoded ABI.  
 }
 ```
 
@@ -412,8 +412,8 @@ The request returns an object containing rows from the specified table as well a
   * `(string) scope` — The account to which this data belongs.
   * `(name) table` — The name of the table to query.
   * `(string) table_key` — Type of key specified by index_position.
-  * `(variant) lower_bound`.
-  * `(variant) upper_bound`.
+  * `(variant) lower_bound` — Lower bound of search.
+  * `(variant) upper_bound` — Upper bound of search.
   * `(uint32_t) limit` — Total number of table rows to retrieve. Default is `10`.
   * `(name) index` — Position of the index used.
   * `(string) encode_type{"dec"}` — The field takes the values `dec`, `hex`. Default is `dec`.
