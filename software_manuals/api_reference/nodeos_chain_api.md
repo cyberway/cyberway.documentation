@@ -32,7 +32,7 @@ Return code *200* indicates successful operation.
 The request returns an object containing various details about a specific account on the blockchain.
 
 **Params:**
-  * `(name)   account_name` — An account that data is being requested for.
+  * `(name) account_name` — An account that data is being requested for.
   * `(symbol) expected_core_symbol` — A token name, consisting of a set of capital letters. This field is optional.
 
 
@@ -261,57 +261,57 @@ The request retrieves the block header state. This query can only be applied to 
 **Value:**
 ```
 {
-    "id":"006762...9c283",                         // Block ID
-    "block_num":6775398,                           // Block number
-    "header":{
-        "timestamp":"2020-04-23T05:21:39.000",     // Time when the block appeared
-        "producer":"string",                       // Account of the validator who created the block
-        "confirmed":38,                            // Number of validators confirming the block
-        "previous":"006762...860fd5",              // Previous block ID
-        "transaction_mroot":"0000...0000",         // Parent transaction ID
-        "action_mroot":"97ee40...98a8",            // Parent action ID
-        "schedule_version":59678,                  // Schedule version
-        "header_extensions":[],                    // Additional information
-        "producer_signature":"SIG_K1_J...e9N"      // A signature of the validator who created the block
-    },
-    "dpos_proposed_irreversible_blocknum":6775366,
-    "dpos_irreversible_blocknum":6775334,
-    "bft_irreversible_blocknum":0,
-    "pending_schedule_lib_num":6775337,
-    "scheduled_shuffle_slot":213644813,
-    "pending_schedule_hash":"d55bd...f4b6",
-    "pending_schedule":{
-        "version":59679,
-        "producers":[                              // Validators that are in the pending schedule
-            {"producer_name":"string","block_signing_key":"GLS7X...9ZpL"},
-            {...}
-        ]
-    },
-    "active_schedule":{
-        "version":59678,
-        "producers":[                              // Validators that are in the active schedule
-            {"producer_name":"string","block_signing_key":"GLS7By...vt9s"},
-            {...}
-        ]
-    },
-    "blockroot_merkle":{
-        "_active_nodes":[                          // Active node list
-            "006762...60fd5",
-            "..."
-        ],
-        "_node_count":6775397
-    },
-    "producer_to_last_produced":[
-        ["string",6775384],                        // Account of a validator and the last block it produced
-        [...]
+  "id":"006762...9c283",                         // Block ID
+  "block_num":6775398,                           // Block number
+  "header":{
+    "timestamp":"2020-04-23T05:21:39.000",     // Time when the block appeared
+    "producer":"string",                       // Account of the validator who created the block
+    "confirmed":38,                            // Number of validators confirming the block
+    "previous":"006762...860fd5",              // Previous block ID
+    "transaction_mroot":"0000...0000",         // Parent transaction ID
+    "action_mroot":"97ee40...98a8",            // Parent action ID
+    "schedule_version":59678,                  // Schedule version
+    "header_extensions":[],                    // Additional information
+    "producer_signature":"SIG_K1_J...e9N"      // A signature of the validator who created the block
+  },
+  "dpos_proposed_irreversible_blocknum":6775366,
+  "dpos_irreversible_blocknum":6775334,
+  "bft_irreversible_blocknum":0,
+  "pending_schedule_lib_num":6775337,
+  "scheduled_shuffle_slot":213644813,
+  "pending_schedule_hash":"d55bd...f4b6",
+  "pending_schedule":{
+    "version":59679,
+    "producers":[                              // Validators that are in the pending schedule
+      {"producer_name":"string","block_signing_key":"GLS7X...9ZpL"},
+      {...}
+    ]
+  },
+  "active_schedule":{
+    "version":59678,
+    "producers":[                              // Validators that are in the active schedule
+      {"producer_name":"string","block_signing_key":"GLS7By...vt9s"},
+      {...}
+    ]
+  },
+  "blockroot_merkle":{
+    "_active_nodes":[                          // Active node list
+      "006762...60fd5",
+      "..."
     ],
-    "producer_to_last_implied_irb":[
-        ["string",6775356],                        // Account of a validator and the last irreversible block it implied
-        [...]
-    ],
-    "block_signing_key":"GLS8...QU2u",
-    "confirm_count":[1,1,2,2,2,3,...,21,22,23,24], // Number of confirmed blocks
-    "confirmations":[]
+    "_node_count":6775397
+  },
+  "producer_to_last_produced":[
+    ["string",6775384],                        // Account of a validator and the last block it produced
+    [...]
+  ],
+  "producer_to_last_implied_irb":[
+    ["string",6775356],                        // Account of a validator and the last irreversible block it implied
+    [...]
+  ],
+  "block_signing_key":"GLS8...QU2u",
+  "confirm_count":[1,1,2,2,2,3,...,21,22,23,24], // Number of confirmed blocks
+  "confirmations":[]
 }
 ```
 
@@ -382,8 +382,8 @@ curl --request POST  -d '{"account_name": "string"}' node/v1/chain/get_raw_code_
 The request returns an object containing rows from the specified table.
 
 **Params:**
-  * `(name)               account_name` — Account on which the contract is based.
-  * `optional<sha256>   abi_hash`.
+  * `(name) account_name` — Account on which the contract is based.
+  * `optional<sha256> abi_hash`.
 
 **Request example:**  
 ```
@@ -407,18 +407,18 @@ curl --request POST  -d '{"account_name": "string"}' node/v1/chain/get_raw_abi
 The request returns an object containing rows from the specified table as well as containing values of the table fields specified in the parameters.  
 
 **Params:**
-  * `(bool)            json`               — Whether the object is converted to JSON. Default is `false`.  
-  * `(name)            code`               — The name of the smart contract that controls the provided table.  
-  * `(string)          scope`              — The account to which this data belongs.  
-  * `(name)            table`              — The name of the table to query.  
-  * `(string)          table_key`          — Type of key specified by index_position.  
-  * `(variant)         lower_bound`.  
-  * `(variant)         upper_bound`.  
-  * `(uint32_t)        limit`              — Total number of table rows to retrieve. Default is `10`.  
-  * `(name)            index`              — Position of the index used.  
-  * `(string)          encode_type{"dec"}` — The field takes the values `dec`, `hex`. Default is `dec`.  
-  * `(optional<bool>)  reverse`            — `true` if the search is in the reverse order. Default is `false`.  
-  * `(optional<bool>)  show_payer`         — Display a RAM payer. Default is `false`.  
+  * `(bool) json` — Whether the object is converted to JSON. Default is `false`.
+  * `(name) code` — The name of the smart contract that controls the provided table.
+  * `(string) scope` — The account to which this data belongs.
+  * `(name) table` — The name of the table to query.
+  * `(string) table_key` — Type of key specified by index_position.
+  * `(variant) lower_bound`.
+  * `(variant) upper_bound`.
+  * `(uint32_t) limit` — Total number of table rows to retrieve. Default is `10`.
+  * `(name) index` — Position of the index used.
+  * `(string) encode_type{"dec"}` — The field takes the values `dec`, `hex`. Default is `dec`.
+  * `(optional<bool>) reverse` — `true` if the search is in the reverse order. Default is `false`.
+  * `(optional<bool>) show_payer` — Display a RAM payer. Default is `false`.
 
 
 **Request example:**  
@@ -450,9 +450,9 @@ curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" 
 The request retrieves the current balance.  
 
 **Params:**
-  * `(name)             code`     — Token code.
-  * `(name)             account`  — Account for which balance is requested.
-  * `(optional<string>) symbol`   — A string representation of a token symbol, composed of a float with a precision of 4, and a symbol composed of capital letters, for example `1.0000 SYS`.
+  * `(name) code` — Token code.
+  * `(name) account` — Account for which balance is requested.
+  * `(optional<string>) symbol` — A string representation of a token symbol, composed of a float with a precision of 4, and a symbol composed of capital letters, for example `1.0000 SYS`.
 
 **Request example:**  
 ```
@@ -473,7 +473,7 @@ curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SY
 The request retrieves currency stats of a certain type of tokens in the system.  
 
 **Params:**
-  * `(name)   code`   — Token code.
+  * `(name) code` — Token code.
   * `(string) symbol` — A string representation of a token symbol, composed of a float with a precision of 4, and a symbol composed of capital letters between 1-7 letters separated by a space, example `1.0000 SYS`.
 
 **Request example:**  
@@ -497,9 +497,9 @@ curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SY
 The request retrieves producers (validators) list.  
 
 **Params:**
-  * `(bool)     json`        — Whether the producers list is converted to JSON. Default is `false`.
-  * `(string)   lower_bound` — In conjunction with limit can be used to paginate through the results. For example, `limit=10` and `lower_bound=10` would be page `2`.
-  * `(uint32_t) limit`       — Total number of producers to retrieve. Default is `50`.
+  * `(bool) json` — Whether the producers list is converted to JSON. Default is `false`.
+  * `(string) lower_bound` — In conjunction with limit can be used to paginate through the results. For example, `limit=10` and `lower_bound=10` would be page `2`.
+  * `(uint32_t) limit` — Total number of producers to retrieve. Default is `50`.
 
 **Request example:**  
 ```
@@ -565,9 +565,9 @@ curl --request POST --data ''  node/v1/chain/get_producer_schedule
 The request retrieves deferred transactions.  
 
 **Params:**
-  * `(bool)      json`        — Whether the packed transaction is converted to JSON. Default is `false`.
-  * `(string)    lower_bound` — Date/time string in the format `YYYY-MM-DDTHH:MM:SS.sss` OR transaction ID.
-  * `(uint32_t)  limit`       — Total number of transactions to retrieve. Default is `50`.
+  * `(bool) json` — Whether the packed transaction is converted to JSON. Default is `false`.
+  * `(string) lower_bound` — Date/time string in the format `YYYY-MM-DDTHH:MM:SS.sss` OR transaction ID.
+  * `(uint32_t) limit` — Total number of transactions to retrieve. Default is `50`.
 
 **Request example:**  
 ```
@@ -591,9 +591,9 @@ curl --request POST  -d '{"json" : false, "limit" : 10 }' node/v1/chain/get_sche
 The request returns an object containing rows from the specified table.  
 
 **Params:**
-  * `(name)      code`  — A name of row.
-  * `(name)     action` — Action name.
-  * `(variant)  args`   — Arguments in JSON form.
+  * `(name) code` — A name of row.
+  * `(name) action` — Action name.
+  * `(variant) args` — Arguments in JSON form.
 
 **Request example:**  
 ```
@@ -614,8 +614,8 @@ curl --request POST  -d '{"code" : "rows", "action" : "filltable", "args" : {"fi
 The request returns an object containing rows from the specified table.  
 
 **Params:**
-  * `(name)         code`    — A name of row.
-  * `(name)         action`  — Action name.
+  * `(name) code` — A name of row.
+  * `(name) action` — Action name.
   * `(vector<char>) binargs` — String containing binary arguments.
 
 **Request example:**  
@@ -638,17 +638,17 @@ The request returns the required keys needed to sign a transaction.
 
 **Params:**
   * (object) transaction:
-    * `(string)                     expiration`             — Time in format of `YYYY-MM-DDTHH:MM:SS.sss` that transaction must be confirmed by.  
-    * `(integer)                    ref_block_num`          — Block number containing the transaction.
-    * `(integer)                    ref_block_prefix`       — Prefix of block containing the transaction.
-    * `(string/integer)             max_net_usage_words`    — Network resource allocated for the transaction.
-    * `(string/integer)             max_cpu_usage_ms`       — CPU resource allocated for the transaction.
-    * `(integer)                    max_ram_kbytes`         — RAM resource allocated for the transaction.
-    * `(integer)                    max_storage_kbytes`     — Storage resource allocated for the transaction.
-    * `(integer)                    delay_sec`              — Delay time (in seconds).
-    * `(array of objects)           actions`                — Actions composed of transaction.
-    * `(array of integers/strings)  transaction_extensions` — Objects included in the transaction.
-  * `(string)                     available_keys` — Provide the available keys.
+    * `(string) expiration` — Time in format of `YYYY-MM-DDTHH:MM:SS.sss` that transaction must be confirmed by.  
+    * `(integer) ref_block_num` — Block number containing the transaction.
+    * `(integer) ref_block_prefix` — Prefix of block containing the transaction.
+    * `(string/integer)  max_net_usage_words` — Network resource allocated for the transaction.
+    * `(string/integer) max_cpu_usage_ms` — CPU resource allocated for the transaction.
+    * `(integer) max_ram_kbytes` — RAM resource allocated for the transaction.
+    * `(integer) max_storage_kbytes` — Storage resource allocated for the transaction.
+    * `(integer) delay_sec` — Delay time (in seconds).
+    * `(array of objects) actions` — Actions composed of transaction.
+    * `(array of integers/strings) transaction_extensions` — Objects included in the transaction.
+  * `(string) available_keys` — Provide the available keys.
 
 **Request example:**  
 ```
@@ -694,7 +694,7 @@ The request returns a key needed to sign a transaction if such key is in chain D
 
 **Params:**
   * `(account_name) account` — An agent for which the key is requested. An agent is a potentially active account who has the staked tokens.
-  * `(symbol) symbol`        — Identifier of a staked token, that is a token cost accuracy in the form of decimal places number and a token name, consisting of a set of capital letters.
+  * `(symbol) symbol` — Identifier of a staked token, that is a token cost accuracy in the form of decimal places number and a token name, consisting of a set of capital letters.
 
 **Request example:**  
 ```
@@ -716,10 +716,10 @@ The request returns the resolved domain and user names retrieved from the JSON f
 
 **Params:**
   * Kinds of supported names:
-    * `(string)  domain`           — A domain name.
-    * `(string)  @domain`          — A domain name.
-    * `(string)  username@domain`  — A username is in a domain scope.
-    * `(string)  username@@domain` — A username is directly in a domain scope.
+    * `(string) domain` — A domain name.
+    * `(string) @domain` — A domain name.
+    * `(string) username@domain` — A username is in a domain scope.
+    * `(string) username@@domain` — A username is directly in a domain scope.
 
 **Request example:**  
 ```
@@ -743,7 +743,7 @@ The request retrieves an information for specified proxy account.
 
 **Params:**
   * `(account_name) account` — A proxy account name.
-  * `(symbol) symbol`        — Identifier of a token (provided by grantors), that is a token cost accuracy in the form of decimal places number and a token name, consisting of a set of capital letters.
+  * `(symbol) symbol`  — Identifier of a token (provided by grantors), that is a token cost accuracy in the form of decimal places number and a token name, consisting of a set of capital letters.
 
 **Request example:**  
 ```
