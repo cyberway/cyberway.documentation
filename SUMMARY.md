@@ -4,7 +4,6 @@
 
 * [USERS](/users/users.md)
   * [White Paper](/users/white_paper.md)
-  * [Core Concepts](/users/core_concepts.md)
   * [Main features of CyberWay](/users/cyberway_features.md)
   * [Bandwidth differences between EOS and CyberWay](/users/bandwidth_differences.md)
   * [Bandwidth implementation](/users/bandwidth_implementation.md)
@@ -41,6 +40,8 @@
     * [How To Unlink Permission](/software_manuals/how_to_guides/unlink_permission.md)
     * [How To Unstake Tokens](/software_manuals/how_to_guides/unstake_tokens.md)
     * [How To Vote](/software_manuals/how_to_guides/vote.md)
+  * [API Reference](/software_manuals/api_reference.md)
+    * [Nodeos Chain API](/software_manuals/api_reference/nodeos_chain_api.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System Contracts](/devportal/system_contracts.md)
     * [BIOS](/devportal/system_contracts/cyber.bios_contract.md)

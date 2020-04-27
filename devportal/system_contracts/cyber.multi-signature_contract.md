@@ -3,8 +3,15 @@
 ## Purpose of the cyber.msig smart contract
  
 The `cyber.msig` system smart contract is used to both sign and send multi-signature transactions to the blockchain, as well as to offer the transaction to another user for signing.  
- 
-The `cyber.msig` smart contract includes such actions as [propose](#propose), [approve](#approve), [unapprove](#unapprove), [cancel](#cancel), [exec](#exec) and [invalidate](#invalidate).
+
+The actions supported:
+  * [propose](#propose)
+  * [approve](#approve)
+  * [unapprove](#unapprove)
+  * [cancel](#cancel)
+  * [schedule](#schedule)
+  * [exec](#exec)
+  * [invalidate](#invalidate)
 
 ## Terminology used
 
@@ -34,14 +41,16 @@ void multisig::propose(
    name proposer,
    name proposal_name,
    std::vector<permission_level> requested,
-   transaction trx
+   transaction trx,
+   binary_extension<std::string> description
 )
 ```
 **Parameters:**  
   * `proposer` — name of account, author of a multi-signature transaction.
   * `proposal_name` — the unique name assigned to the multi-signature transaction when it is created. This parameter, in conjunction with the proposer parameter, uniquely identifies a multi-signature transaction.
   * `requested` — the unique name assigned to the multi-signature transaction when it is created. This parameter, in conjunction with the proposer parameter, uniquely identifies a multi-signature transaction.
-  * `trx` — proposed transaction.  
+  * `trx` — proposed transaction.
+  * `description` — a field to describe a proposal.  
 
 For calling the propose action the authorization of proposer user is obligatory.  
 
@@ -134,6 +143,23 @@ Any user can cancel an expired transaction, thereby restoring STORAGE himself:
 ```cpp
 cyber.msig::cancel(alice, sendtofund, anybody)
 ```
+
+### schedule
+The `schedule` action is intended to record a fact of reaching a consensus. The transaction will need to be executed using `exec` after a delay. Proposal signers can withdraw their signature while waiting. In this case, proposed transaction can not be executed if it does not have enough permissions to perform all operations.
+
+```cpp
+void multisig::schedule(
+   name proposer,
+   name proposal_name,
+   name actor
+)
+```
+**Parameters:**  
+  * `proposer` — account, author of a multi-signature transaction.
+  * `proposal_name` — unique name assigned to multi-signature transaction when it is created.
+  * `actor` — account whose signature is required to execute multi-signature transaction.
+
+This action allows users to cancel a proposal previously scheduled for execution, that is, users can manage the proposal during a delay period after reaching a consensus.
 
 ### exec
 The `exec` action is called to execute a multi-signature transaction.

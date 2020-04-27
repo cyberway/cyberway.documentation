@@ -25,7 +25,32 @@ The proxy accounts’ separation by levels was introduced in order to avoid the 
 **Staked tokens** — the tokens allocated for a stake acquisition that can’t be used for anything else in this state. The user can stake active tokens listed on his/her balance or deposit them. Also, the user can perform the reverse operation — withdraw tokens from the staked state to active.
 
 ## cyber.stake smart contract actions
-The following actions are assemble the `cyber.stake` smart contract: [create](#create), [enable](#enable), [open](#open), [delegatevote](#delegatevote), [setgrntterms](#setgrntterms), [recallvote](#recallvote), [withdraw](#withdraw), [setproxylvl](#setproxylvl), [setproxyfee](#setproxyfee), [setminstaked](#setminstaked), [setkey](#setkey), [updatefunds](#updatefunds), [reward](#reward), [pick](#pick), [delegateuse](#delegateuse), [recalluse](#recalluse) and [claim](#claim). Additionally, the following inline functions can be found in this smart contract: [get_votes_sum](#get_votes_sum) and [get_top](#get_top).
+The actions supported:
+  * [create](#create)
+  * [enable](#enable)
+  * [open](#open)
+  * [delegatevote](#delegatevote)
+  * [setgrntterms](#setgrntterms)
+  * [recallvote](#recallvote)
+  * [withdraw](#withdraw)
+  * [setproxylvl](#setproxylvl)
+  * [setproxyfee](#setproxyfee)
+  * [setminstaked](#setminstaked)
+  * [setkey](#setkey)
+  * [updatefunds](#updatefunds)
+  * [reward](#reward)
+  * [pick](#pick)
+  * [delegateuse](#delegateuse)
+  * [recalluse](#recalluse)
+  * [claim](#claim)
+  * [suspendcand](#suspendcand)
+  * [setautorcmode](#setautorcmode)
+  * [setautorc](#setautorc)
+  * [setinfo](#setinfo)
+
+The inline functions supported:
+  * [get_votes_sum](#get_votes_sum)
+  * [get_top](#get_top)
 
 ## create
 The create action is used to create a stake for a separate type (symbol) of tokens. After creating the stake, tokens of this type can be transferred by users to the state of the stake.
@@ -137,7 +162,7 @@ void setgrntterms(
   * `grantor_name` — name of the account that delegates the extra share of stake.
   * `recipient_name` — name of the proxy account, recipient of the extra share of staked tokens.
   * `token_code` — staked token symbol.
-  * `pc`t — share (in percent) of additional votes received, which will be given for the `recipient_name` candidate.
+  * `pct` — share (in percent) of additional votes received, which will be given for the `recipient_name` candidate.
   * `break_fee` — the parameter that controls the change in the fee set by the candidate. The value of this parameter is the percentage of commission charged by the `grantor_name` account for the `recipient_name` candidate. If the candidate during the voting process sets the value of fee greater than `break_fee`, the recall operation will be automatically called to recall the votes of this candidate.
   * `break_min_own_staked` — the parameter that controls the availability of secured tokens in the `recipient_name` candidate. The value of this parameter is set by the `grantor_name` account. By default, this change is set to the current `min_own_staked` value. If the candidate reduces `min_own_staked` (in order to withdraw funds to a liquid state), the next time the balance of the `grantor_name` account is updated, the recall operation will be automatically called to revoke the allocated tokens from this candidate.  
 
@@ -342,6 +367,81 @@ The delegator can again return the withdrawn funds (or part of the funds) back t
   
 
 To perform the action, authorization of the funds delegator is required.
+
+## suspendcand
+The `suspendcand` action allows a user to set maximum proxy level (lowest) for a validator if this validator has not been active for a long time (30 days).
+
+```cpp
+void suspendcand(
+   name account,
+   symbol_code token_code
+)
+```
+**Parameters:**
+  * `account` — account of a validator whose activity is checked.
+  * `token_code` — a symbol of staked tokens of the validator.
+
+Transaction including the action can be signed by any user. However, it will be executed only if specified validator does really not fulfill his obligations.
+
+## setautorcmode
+The `setautorcmode` action allows a token issuer (excluding CYBER tokens) to enable/disable automatic reset of votes. This action is paired with `setautorc`. When the mode is on, the votes will not be reset automatically until a voter sets parameters with the action `setautorc`.
+
+
+```cpp
+void setautorcmode(
+   symbol_code token_code,
+   bool enabled
+)
+```
+
+**Parameters:**
+  * `token_code` — a token code of an issuer.
+  * `enabled` — `true` enables auto recall mode (reset of votes).
+
+Automatic reset of votes for a validator is cancelled if he reduces a percentage of deductions or obligation by minimum number of a stake.  
+
+To perform the action, authorization of the token issuer is required.
+
+## setautorc
+Using the action `setautorc`, a user indicates conditions under which his vote for validator should be reset. This action is paired with `setautorcmode`.
+
+```cpp
+void setautorc(
+   name account,
+   symbol_code token_code,
+   bool break_fee_enabled,
+   bool break_min_stake_enabled
+)
+```
+
+**Parameters:**
+  * `account` — account of a validator.
+  * `token_code` — a symbol of staked tokens held by the validator.
+  * `break_fee_enabled` — `true` controls change in fee set by the validator.
+  * `break_min_stake_enabled` — `true` controls availability of staked tokens of the validator.
+
+Parameters `break_fee` and `break_min_own_staked` are set using [setgrntterms](#setgrntterms).
+To perform the action, authorization of the validator is required.
+
+## setinfo
+The `setinfo` action allows a validator to provide a link to his page and to announce any info about himself on-chain.
+
+```cpp
+void setinfo(
+   name account,
+   symbol_code token_code,
+   string url,
+   binary_extension<string> info
+)
+```
+
+**Parameters:**  
+  * `account` — account of the validator.
+  * `token_code` — symbol of staked tokens.
+  * `url` — a link to validator's page (the url string is limited to 2048 characters).
+  * `info` — additional information about the validator (the info string is limited to 2048 characters).
+
+To perform the action, authorization of the validator is required.
 
 ## get_votes_sum
 The `get_votes_sum` inline function returns the total number of votes available to validator candidates who received the most votes by validator candidates who received the most votes.

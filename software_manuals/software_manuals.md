@@ -24,3 +24,6 @@
  * [How To Unlink Permission](/software_manuals/how_to_guides/unlink_permission.md)
  * [How To Unstake Tokens](/software_manuals/how_to_guides/unstake_tokens.md)
  * [How To Vote](/software_manuals/how_to_guides/vote.md)
+
+## API Reference
+ * [Nodeos Chain API](/software_manuals/api_reference/nodeos_chain_api.md)
