@@ -3,8 +3,15 @@
 ## Purpose of the cyber.msig smart contract
  
 The `cyber.msig` system smart contract is used to both sign and send multi-signature transactions to the blockchain, as well as to offer the transaction to another user for signing.  
- 
-The `cyber.msig` smart contract includes such actions as [propose](#propose), [approve](#approve), [unapprove](#unapprove), [cancel](#cancel), [schedule](#schedule), [exec](#exec) and [invalidate](#invalidate).
+
+The actions supported:
+  * [propose](#propose)
+  * [approve](#approve)
+  * [unapprove](#unapprove)
+  * [cancel](#cancel)
+  * [schedule](#schedule)
+  * [exec](#exec)
+  * [invalidate](#invalidate)
 
 ## Terminology used
 
