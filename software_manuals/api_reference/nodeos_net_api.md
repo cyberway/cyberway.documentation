@@ -18,7 +18,7 @@ The request initiates a connection to a specified peer.
 
 **Request examples:**  
 ```
-curl --request POST  --data '{"endpoint": "string"}' <node>/v1/net/connect
+curl --request POST  --data '{"endpoint": "string"}' http://<node>/v1/net/connect
 ```
 
 ### Responses
@@ -39,7 +39,7 @@ The request initiates disconnection from a specified peer.
 
 **Request example:**  
 ```
-curl --request POST  --data '{"endpoint": "string"}' <node>/v1/net/disconnect
+curl --request POST  --data '{"endpoint": "string"}' http://<node>/v1/net/disconnect
 ```
 
 ### Responses
@@ -60,7 +60,7 @@ The request retreives the connection status for a specified peer.
 
 **Request example:**  
 ```
-curl --request POST  --data '{"endpoint": "string"}' <node>/v1/net/status
+curl --request POST  --data '{"endpoint": "string"}' http://<node>/v1/net/status
 ```
 
 ### Responses
@@ -102,7 +102,7 @@ No params required.
 
 **Request example:**  
 ```
-curl --request POST --data '' <node>/v1/net/connections
+curl --request POST --data '' http://<node>/v1/net/connections
 ```
 
 ### Responses
