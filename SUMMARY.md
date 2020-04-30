@@ -42,6 +42,8 @@
     * [How To Vote](/software_manuals/how_to_guides/vote.md)
   * [API Reference](/software_manuals/api_reference.md)
     * [Nodeos Chain API](/software_manuals/api_reference/nodeos_chain_api.md)
+    * [Nodeos Producer API](/software_manuals/api_reference/nodeos_producer_api.md)
+    * [Nodeos Net API](/software_manuals/api_reference/nodeos_net_api.md)
 * [DEVPORTAL](/devportal/devportal.md)
   * [System Contracts](/devportal/system_contracts.md)
     * [BIOS](/devportal/system_contracts/cyber.bios_contract.md)
