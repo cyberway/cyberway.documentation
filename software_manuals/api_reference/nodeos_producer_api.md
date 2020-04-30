@@ -21,7 +21,7 @@ No params required.
 
 **Request examples:**
 ```
-curl --request POST  --data '' <node>/v1/producer/pause
+curl --request POST  --data '' http://<node>/v1/producer/pause
 ```
 
 ### Responses
@@ -38,7 +38,7 @@ No params required.
 
 **Request example:**  
 ```
-curl --request POST  --data '' <node>/v1/producer/resume
+curl --request POST  --data '' http://<node>/v1/producer/resume
 ```
 
 ### Responses
@@ -58,7 +58,7 @@ No params required.
 
 True if producer is paused, false otherwise
 
-curl --request POST  --data '' <node>/v1/producer/paused
+curl --request POST  --data '' http://<node>/v1/producer/paused
 ```
 
 ### Responses
@@ -79,7 +79,7 @@ No params required.
 
 **Request example:**  
 ```
-curl --request POST --data '' <node>/v1/producer/get_runtime_options
+curl --request POST --data '' http://<node>/v1/producer/get_runtime_options
 ```
 
 ### Responses
@@ -110,11 +110,11 @@ Each of parameters specified in the operation is optional.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"max_transaction_time": 1500, "last_block_time_offset_us": 5}' <node>/v1/producer/update_runtime_options
+curl --request POST  -d '{"max_transaction_time": 1500, "last_block_time_offset_us": 5}' http://<node>/v1/producer/update_runtime_options
 ```
 
 ```
-curl --request POST  -d '{"max_transaction_time": 1500, "max_irreversible_block_age": 5, "produce_time_offset_us": 10, "last_block_time_offset_us": 10, "max_scheduled_transaction_time_per_block_ms": 1000, "incoming_defer_ratio": 1.2}' <node>/v1/producer/update_runtime_options
+curl --request POST  -d '{"max_transaction_time": 1500, "max_irreversible_block_age": 5, "produce_time_offset_us": 10, "last_block_time_offset_us": 10, "max_scheduled_transaction_time_per_block_ms": 1000, "incoming_defer_ratio": 1.2}' http://<node>/v1/producer/update_runtime_options
 ```
 
 ### Responses

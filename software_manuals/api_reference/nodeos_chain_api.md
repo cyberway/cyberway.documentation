@@ -38,13 +38,13 @@ The request returns an object containing various details about a specific accoun
 
 **Request examples:**  
 ```
-curl --request POST  -d '{"account_name" : "rows"}' <node>/v1/chain/get_account
+curl --request POST  -d '{"account_name" : "rows"}' http://<node>/v1/chain/get_account
 ```
 ```
-curl --request POST  -d '{"account_name" : "cyber"}' <node>/v1/chain/get_account
+curl --request POST  -d '{"account_name" : "cyber"}' http://<node>/v1/chain/get_account
 ```
 ```
-curl --request POST  -d '{"account_name":"alice", "symbol":"SYS"}' <node>/v1/chain/get_account
+curl --request POST  -d '{"account_name":"alice", "symbol":"SYS"}' http://<node>/v1/chain/get_account
 ```
 
 ### Responses
@@ -90,7 +90,7 @@ The request returns an object containing various details about a specific block 
 
 **Request example:**  
 ```
-curl --request POST  -d '{"block_num_or_id": "6707315"}' <node>/v1/chain/get_block
+curl --request POST  -d '{"block_num_or_id": "6707315"}' http://<node>/v1/chain/get_block
 ```
 
 ### Responses
@@ -152,7 +152,7 @@ The request returns an object containing rows from the table for a specified acc
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account_name": "string", "code_as_wasm": 1}' <node>/v1/chain/get_block
+curl --request POST  -d '{"account_name": "string", "code_as_wasm": 1}' http://<node>/v1/chain/get_block
 ```
 
 ### Responses
@@ -197,7 +197,7 @@ No params required.
 
 **Request example:**  
 ```
-curl --request POST --data '' <node>/v1/chain/get_info' 
+curl --request POST --data '' http://<node>/v1/chain/get_info' 
 ```
 
 ### Responses
@@ -230,7 +230,7 @@ The request returns hash code of an object containing rows from the table for a 
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account_name": "cyber.stake"}' <node>/v1/chain/get_code_hash
+curl --request POST  -d '{"account_name": "cyber.stake"}' http://<node>/v1/chain/get_code_hash
 ```
 
 ### Responses
@@ -252,7 +252,7 @@ The request retrieves the block header state. This query can only be applied to 
 
 **Request example:**  
 ```
- curl --request POST -d '{"block_num_or_id" : "006762...9c283"}' <node>/v1/chain/get_block_header_state
+ curl --request POST -d '{"block_num_or_id" : "006762...9c283"}' http://<node>/v1/chain/get_block_header_state
 ```
 
 ### Responses
@@ -323,7 +323,7 @@ The request retrieves the ABI for a contract based on its account name.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account_name": "string"}' <node>/v1/chain/get_abi
+curl --request POST  -d '{"account_name": "string"}' http://<node>/v1/chain/get_abi
 ```
 
 ### Responses
@@ -363,7 +363,7 @@ The request retrieves raw code and ABI for a contract based on account name.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account_name": "string"}' <node>/v1/chain/get_raw_code_and_abi
+curl --request POST  -d '{"account_name": "string"}' http://<node>/v1/chain/get_raw_code_and_abi
 ```
 
 ### Responses
@@ -387,7 +387,7 @@ The request returns an object containing rows from the specified table.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account_name": "string"}' <node>/v1/chain/get_raw_abi
+curl --request POST  -d '{"account_name": "string"}' http://<node>/v1/chain/get_raw_abi
 ```
 
 ### Responses
@@ -423,13 +423,13 @@ The request returns an object containing rows from the specified table as well a
 
 **Request example:**  
 ```
-curl --request POST  -d '{"json": false, "code":"cyber.token", "scope":"cyber", "table" : "accounts", "table_key" : "", "lower_bound" : "", "upper_bound" : "", "limit" : "7", "key_type" : "int64", "index" : "primary", "encode_type" : "dec", "reverse" : false, "show_payer" : true}' <node>/v1/chain/get_table_rows
+curl --request POST  -d '{"json": false, "code":"cyber.token", "scope":"cyber", "table" : "accounts", "table_key" : "", "lower_bound" : "", "upper_bound" : "", "limit" : "7", "key_type" : "int64", "index" : "primary", "encode_type" : "dec", "reverse" : false, "show_payer" : true}' http://<node>/v1/chain/get_table_rows
 ```
 ```
-curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" : "values", "table_key" : "", "upper_bound" : {"secondary" : 252, "forth" : 18}, "limit" : "20", "key_type" : "int64", "index" : "multy", "encode_type" : "dec", "reverse" : false, "show_payer" : true}' <node>/v1/chain/get_table_rows
+curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" : "values", "table_key" : "", "upper_bound" : {"secondary" : 252, "forth" : 18}, "limit" : "20", "key_type" : "int64", "index" : "multy", "encode_type" : "dec", "reverse" : false, "show_payer" : true}' http://<node>/v1/chain/get_table_rows
 ```
 ```
-curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" : "values", "table_key" : "", "limit" : "5", "key_type" : "", "index" : "primary", "upper_bound" : {"key" : 14}, "encode_type" : "dec", "reverse" : false, "show_payer" : false}' <node>/v1/chain/get_table_rows
+curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" : "values", "table_key" : "", "limit" : "5", "key_type" : "", "index" : "primary", "upper_bound" : {"key" : 14}, "encode_type" : "dec", "reverse" : false, "show_payer" : false}' http://<node>/v1/chain/get_table_rows
 ```
 
 ### Responses
@@ -456,7 +456,7 @@ The request retrieves the current balance.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SYS"}' <node>/v1/chain/get_currency_balance
+curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SYS"}' http://<node>/v1/chain/get_currency_balance
 ```
 
 ### Responses
@@ -478,7 +478,7 @@ The request retrieves currency stats of a certain type of tokens in the system.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SYS"}' <node>/v1/chain/get_currency_stats
+curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SYS"}' http://<node>/v1/chain/get_currency_stats
 ```
 
 ### Responses
@@ -503,7 +503,7 @@ The request retrieves producers (validators) list.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"json" : false, "lower_bound" : 2, "limit" : 10 }' <node>/v1/chain/get_producers
+curl --request POST  -d '{"json" : false, "lower_bound" : 2, "limit" : 10 }' http://<node>/v1/chain/get_producers
 ```
 
 ### Responses
@@ -528,7 +528,7 @@ No params required.
 
 **Request example:**  
 ```
-curl --request POST --data ''  <node>/v1/chain/get_producer_schedule
+curl --request POST --data ''  http://<node>/v1/chain/get_producer_schedule
 ```
 
 ### Responses
@@ -571,7 +571,7 @@ The request retrieves deferred transactions.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"json" : false, "limit" : 10 }' <node>/v1/chain/get_scheduled_transactions
+curl --request POST  -d '{"json" : false, "limit" : 10 }' http://<node>/v1/chain/get_scheduled_transactions
 ```
 
 ### Responses
@@ -597,7 +597,7 @@ The request returns an object containing rows from the specified table.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"code" : "rows", "action" : "filltable", "args" : {"fildltable" : 30} }' <node>/v1/chain/abi_json_to_bin
+curl --request POST  -d '{"code" : "rows", "action" : "filltable", "args" : {"fildltable" : 30} }' http://<node>/v1/chain/abi_json_to_bin
 ```
 
 ### Responses
@@ -620,7 +620,7 @@ The request returns an object containing rows from the specified table.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"code" : "rows", "action" : "filltable", "binargs" : "1e00000000000000" }' <node>/v1/chain/abi_bin_to_json
+curl --request POST  -d '{"code" : "rows", "action" : "filltable", "binargs" : "1e00000000000000" }' http://<node>/v1/chain/abi_bin_to_json
 ```
 
 ### Responses
@@ -652,7 +652,7 @@ The request returns the required keys needed to sign a transaction.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"transaction" : {"trx_id":"d48b...90ee8","sender":"","sender_id": "308457...031097", "payer":"cyber.token", "delay_until":"2019-03-29T05:42:03.000", "expiration":"2019-03-29T05:52:03.000", "published":"2019-03-29T05:32:03.000", "transaction":"eead9d5...59530000000000"}, "available_keys" : ["GLS62zK8V5V...YUHM3YeLZg"] }' <node>/v1/chain/get_required_keys
+curl --request POST  -d '{"transaction" : {"trx_id":"d48b...90ee8","sender":"","sender_id": "308457...031097", "payer":"cyber.token", "delay_until":"2019-03-29T05:42:03.000", "expiration":"2019-03-29T05:52:03.000", "published":"2019-03-29T05:32:03.000", "transaction":"eead9d5...59530000000000"}, "available_keys" : ["GLS62zK8V5V...YUHM3YeLZg"] }' http://<node>/v1/chain/get_required_keys
 ```
 
 ### Responses
@@ -673,10 +673,10 @@ Optional set params is used.
 
 **Request examples:**  
 ```
-curl --request POST  -d '{"context_free_actions":[],"actions":[{"account":"cyber.token","name":"create","authorization":[{"actor":"cyber.token","permission":"active"}],"data":{"issuer":"cyber","maximum_supply":{"amount":1000000000000,"decs":4,"sym":"SYS"}},"hex_data":"0000000080ab8e470010a5d4e80000000453595300000000"}],"transaction_extensions":[]}' <node>/v1/chain/get_transaction_id
+curl --request POST  -d '{"context_free_actions":[],"actions":[{"account":"cyber.token","name":"create","authorization":[{"actor":"cyber.token","permission":"active"}],"data":{"issuer":"cyber","maximum_supply":{"amount":1000000000000,"decs":4,"sym":"SYS"}},"hex_data":"0000000080ab8e470010a5d4e80000000453595300000000"}],"transaction_extensions":[]}' http://<node>/v1/chain/get_transaction_id
 ```
 ```
-curl --request POST  -d '{"context_free_actions":[],"actions":[{"account":"cyber.token","name":"create","authorization":[{"actor":"cyber.token","permission":"active"}],"data":"0000000080ab8e470010a5d4e80000000453595300000000"}],"transaction_extensions":[]}' <node>/v1/chain/get_transaction_id
+curl --request POST  -d '{"context_free_actions":[],"actions":[{"account":"cyber.token","name":"create","authorization":[{"actor":"cyber.token","permission":"active"}],"data":"0000000080ab8e470010a5d4e80000000453595300000000"}],"transaction_extensions":[]}' http://<node>/v1/chain/get_transaction_id
 ```
 
 ### Responses
@@ -698,7 +698,7 @@ The request returns a key needed to sign a transaction if such key is in chain D
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account" : "alice", "symbol" : "4,CYBER"}' <node>/v1/chain/get_agent_public_key
+curl --request POST  -d '{"account" : "alice", "symbol" : "4,CYBER"}' http://<node>/v1/chain/get_agent_public_key
 ```
 
 ### Responses
@@ -723,7 +723,7 @@ The request returns the resolved domain and user names retrieved from the JSON f
 
 **Request example:**  
 ```
-curl --request POST --data '["@alice","alice@golos","bob@@gls"]'  <node>/v1/chain/resolve_names
+curl --request POST --data '["@alice","alice@golos","bob@@gls"]'  http://<node>/v1/chain/resolve_names
 ```
 
 ### Responses
@@ -747,7 +747,7 @@ The request retrieves an information for specified proxy account.
 
 **Request example:**  
 ```
-curl --request POST  -d '{"account" : "alice", "symbol" : "4,CYBER"}' <node>/v1/chain/get_proxy_status
+curl --request POST  -d '{"account" : "alice", "symbol" : "4,CYBER"}' http://<node>/v1/chain/get_proxy_status
 ```
 
 
