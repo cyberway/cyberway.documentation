@@ -197,7 +197,7 @@ No params required.
 
 **Request example:**  
 ```
-curl --request POST --data '' <node>/v1/chain/get_info' 
+curl --request POST --data '' <node>/v1/chain/get_info
 ```
 
 ### Responses
