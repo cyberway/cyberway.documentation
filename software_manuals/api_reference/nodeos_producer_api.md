@@ -55,9 +55,6 @@ No params required.
 
 **Request example:**  
 ```
-
-True if producer is paused, false otherwise
-
 curl --request POST  --data '' http://<node>/v1/producer/paused
 ```
 
