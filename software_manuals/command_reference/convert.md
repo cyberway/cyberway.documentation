@@ -4,10 +4,10 @@
 The subcommands are required to pack and unpack transactions as well as to convert data from JSON format to digital code and vice versa  
 
 **Subcommands**
- * [Pack Action Data](#Pack-Action-Data) — From JSON action data to packed form.
- * [Pack Transaction](#Pack-Transaction) — From plain signed JSON to packed form.
- * [Unpack Action Data](#Unpack-Action-Data) — From packed to JSON action data form.
- * [Unpack Transaction](#Unpack-Transaction) — From packed to plain signed JSON form.
+ * [Pack Action Data](#pack-action-data) — From JSON action data to packed form.
+ * [Pack Transaction](#pack-transaction) — From plain signed JSON to packed form.
+ * [Unpack Action Data](#unpack-action-data) — From packed to JSON action data form.
+ * [Unpack Transaction](#unpack-transaction) — From packed to plain signed JSON form.
 
 *****
 # Pack Action Data
@@ -16,9 +16,14 @@ The subcommands are required to pack and unpack transactions as well as to conve
 The subcommand converts action data from JSON format to packed form.
 
 ### Positional Parameters
- * `(string) account` — The name of the account that hosts the contract.
- * `(string) name` — The name of the function that's called by this action.
- * `(string) unpacked_action_data` — The action data expressed as JSON.
+ * `(string) account` — The name of the account that hosts the contract (required).
+ * `(string) name` — The name of the function that's called by this action (required).
+ * `(string) unpacked_action_data` — The action data expressed as JSON (required).
+
+### Command
+```
+$ cleos convert pack_action_data <account> <name> <unpacked_action_data>
+```
 
 ### Options
 No options required for this subcommand.
@@ -37,10 +42,15 @@ $ cleos convert pack_action_data c.gallery unlinkauth '{"account":"test1", "code
 The subcommand converts a transaction from plain signed JSON to packed form.
 
 ### Positional Parameters
- * `(string) transaction` — The plain signed JSON.
+ * `(string) transaction` — The plain signed JSON (required).
 
 ### Options
  * `--pack-action-data` — Pack all action data within transaction, needs interaction with `nodeos`.
+
+### Command
+```
+$ cleos convert pack_transaction <transaction> [OPTIONS]
+```
 
 ### Examples
 ```
@@ -84,12 +94,17 @@ $ cleos convert pack_transaction '{
 The subcommand converts action data from packed to JSON format.
 
 ### Positional Parameters
- * `(string) account` — The name of the account that hosts the contract.
- * `(string) name` — The name of the function that's called by this action.
- * `(string) packed_action_data` — The action data expressed as packed hex string.
+ * `(string) account` — The name of the account that hosts the contract (required).
+ * `(string) name` — The name of the function that's called by this action (required).
+ * `(string) packed_action_data` — The action data expressed as packed hex string (required).
 
 ### Options
- * `--json`, `-j` — Output in JSON format.
+No options required for this subcommand.
+
+### Command
+```
+$ cleos convert pack_action_data <account> <name> <unpacked_action_data>
+```
 
 ### Examples
 ```
@@ -110,11 +125,16 @@ $ cleos convert unpack_action_data c.gallery unlinkauth 000000003500b1be00000000
 The subcommand converts a transaction from packed to plain signed JSON form.
 
 ### Positional Parameters
- * `(string) transaction` — The packed transaction JSON (string containing packed_trx and optionally compression fields).
+ * `(string) transaction` — The packed transaction JSON (string containing packed_trx and optionally compression fields) (required).
 
 
 ### Options
  * `--unpack-action-data` — Unpack all action data within transaction, needs interaction with `nodeos`.
+
+### Command
+```
+$ cleos convert unpack_transaction <transaction> [OPTIONS]
+```
 
 ### Examples
 ```
