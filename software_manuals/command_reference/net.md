@@ -1,6 +1,6 @@
 # Net
 
-**Descriptions**  
+**Description**  
 The subcommands can be used to interact with local p2p network connections.  
 
 **Subcommands**
@@ -10,7 +10,7 @@ The subcommands can be used to interact with local p2p network connections.
  * [Peers](#peers) — Status of all existing peers.
 
 *****
-# Connect
+## Connect
 
 ### Description
 Start a new connection to a peer.
@@ -32,7 +32,7 @@ Connect to 'hostname:port'.
 $ cleos net connect hostname:port
 ```
 
-# Disconnect
+## Disconnect
 
 ### Description
 Close an existing connection.
@@ -54,7 +54,7 @@ Disconnect from 'hostname:port'.
 $ cleos net disconnect hostname:port
 ```
 
-# Status
+## Status
 
 ### Description
 Status of existing connection.
@@ -87,7 +87,7 @@ Given, a valid, existing 'hostname:port' parameter the above command returns a J
 }
 ```
 
-# Peers
+## Peers
 
 ### Description
 Status of all existing peers.
