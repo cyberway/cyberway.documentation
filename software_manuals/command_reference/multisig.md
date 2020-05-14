@@ -32,14 +32,14 @@ Propose action.
  * `(string) description` — Optional proposal description.
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'proposer@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -50,7 +50,7 @@ Propose action.
 
 ### Command
 ```
-$ cleos multisig propose <proposal_name> <requested_permissions> <trx_permissions> <contract> <action> <data> [<proposer>] [<proposal_expiration>] [<description>] [OPTIONS]
+$ cleos multisig propose [OPTIONS] <proposal_name> <requested_permissions> <trx_permissions> <contract> <action> <data> [<proposer>] [<proposal_expiration>] [<description>]
 ```
 
 # Multisig Propose Transaction
@@ -66,14 +66,14 @@ Propose transaction.
  * `(string) description` — Optional proposal description.
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'proposer@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -101,7 +101,7 @@ Review transaction.
 
 ### Command
 ```
-$ cleos multisig review <proposer> <proposal_name> [OPTIONS]
+$ cleos multisig review [OPTIONS] <proposer> <proposal_name>
 ```
 
 
@@ -117,14 +117,14 @@ Approve proposed transaction.
  * `(string) proposal_hash` — Hash of proposed transaction (i.e. transaction ID) to optionally enforce as a condition of the approval.
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'proposer@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -135,7 +135,7 @@ Approve proposed transaction.
 
 ### Command
 ```
-$ cleos multisig approve <proposer> <proposal_name> <permissions> [<proposal_hash>] [OPTIONS]
+$ cleos multisig approve [OPTIONS] <proposer> <proposal_name> <permissions> [<proposal_hash>]
 ```
 
 
@@ -150,14 +150,14 @@ Unapprove proposed transaction.
  * `(string) permissions` — The JSON string of filename defining approving permissions (required).
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'proposer@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -168,7 +168,7 @@ Unapprove proposed transaction.
 
 ### Command
 ```
-$ cleos multisig unapprove <proposer> <proposal_name> <permissions> [OPTIONS]
+$ cleos multisig unapprove [OPTIONS] <proposer> <proposal_name> <permissions>
 ```
 
 
@@ -181,14 +181,14 @@ Invalidate all multisig approvals of an account. Revoke all permissions previous
  * `(string) invalidator` — Invalidator name whose previously issued permissions to perform multisig transactions must be invalidated (required).
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'invalidator@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -199,7 +199,7 @@ Invalidate all multisig approvals of an account. Revoke all permissions previous
 
 ### Command
 ```
-$ cleos multisig invalidate <invalidator> [OPTIONS]
+$ cleos multisig invalidate [OPTIONS] <invalidator>
 ```
 
 # Multisig Cancel
@@ -213,14 +213,14 @@ Cancel proposed transaction.
  * `(string) canceler` — Canceler name that cancels the execution.
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'canceler@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -231,7 +231,7 @@ Cancel proposed transaction.
 
 ### Command
 ```
-$ cleos multisig cancel <proposer> <proposal_name> [<canceler>] [OPTIONS]
+$ cleos multisig cancel [OPTIONS] <proposer> <proposal_name> [<canceler>]
 ```
 
 # Multisig Exec
@@ -245,14 +245,14 @@ Execute proposed transaction.
  * `(string) executer` — account paying for execution.
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout`).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'executer@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -263,7 +263,7 @@ Execute proposed transaction.
  
 ### Command
 ```
-$ cleos multisig exec <proposer> <proposal_name> [<executer>] [OPTIONS]
+$ cleos multisig exec [OPTIONS] <proposer> <proposal_name> [<executer>]
 ```
 
 
@@ -278,14 +278,14 @@ Schedule delayed proposed transaction.
  * `(string) actor` — account paying for scheduling.
 
 ### Options
- * `-x,--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
- * `-f,--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
- * `-s,--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
- * `-j,--json` — Print result as JSON.
- * `-d,--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout` ).
+ * `-x`, `--expiration` *TEXT* — Set the time (in seconds) before a transaction expires, defaults to *30* s.
+ * `-f`, `--force-unique` — Force the transaction to be unique. This will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times.
+ * `-s`, `--skip-sign` — Specify if unlocked wallet keys should be used to sign transaction.
+ * `-j`, `--json` — Print result as JSON.
+ * `-d`, `--dont-broadcast` — Do not broadcast transaction to the network (just print to `stdout` ).
  * `--return-packed` — Used in conjunction with `--dont-broadcast` to get the packed transaction.
- * `-r,--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
- * `-p,--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'account@active').
+ * `-r`, `--ref-block` *TEXT* — Set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake).
+ * `-p`, `--permission` *TEXT* — An account and permission level to authorize, as in 'account@permission' (defaults to 'actor@active').
  * `--max-cpu-usage-ms` *UINT* — Set an upper limit on the milliseconds of CPU usage budget, for the execution of the transaction (defaults to *0* which means no limit).
  * `--max-net-usage` *UINT* — Set an upper limit on the net usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
  * `--max-ram-usage` *UINT* — Set an upper limit on the ram usage budget (in bytes) for the transaction (defaults to *0* which means no limit).
@@ -296,5 +296,5 @@ Schedule delayed proposed transaction.
 
 ### Command
 ```
-$ cleos multisig schedule <proposer> <proposal_name> [<actor>] [OPTIONS]
+$ cleos multisig schedule [OPTIONS] <proposer> <proposal_name> [<actor>]
 ```
