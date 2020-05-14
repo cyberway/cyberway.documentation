@@ -1,24 +1,24 @@
 # Get
 
 **Descriptions**  
-Retrieves various items and information from the blockchain  
+The subcommands can be used to retrieve various items and information from the blockchain.  
 
 **Subcommands**
- * [Abi](#abi) — Retrieve the ABI for an account
- * [Account](#account) — Retrieve an account from the blockchain
- * [Accounts](#accounts) — Retrieve accounts associated with a public key
- * [Actions](#actions) — Retrieve all actions with specific account name referenced in authorization or receiver
- * [Block](#block) — Retrieve a full block from the blockchain
- * [Code](#code) — Retrieve the code and ABI for an account
- * [Currency Balance](#currency-balance) — Retrieve the balance of an account for a given currency
- * [Currency Stats](#currency-stats) — Retrieve the stats of for a given currency
- * [Info](#info) — Get current blockchain information
- * [Schedule](#schedule) — Retrieve the producer schedule
- * [Scope](#scope) — Retrieve a list of scopes and tables owned by a contract
- * [Servants](#servants) — Retrieve accounts which are servants of a given account
- * [Table](#table) — Retrieve the contents of a database table
- * [Transaction](#transaction) — Retrieve a transaction from the blockchain
- * [Transaction ID](#transaction-id) — Get transaction id given transaction object
+ * [Abi](#abi) — Retrieve the ABI for an account.
+ * [Account](#account) — Retrieve an account from the blockchain.
+ * [Accounts](#accounts) — Retrieve accounts associated with a public key.
+ * [Actions](#actions) — Retrieve all actions with specific account name referenced in authorization or receiver.
+ * [Block](#block) — Retrieve a full block from the blockchain.
+ * [Code](#code) — Retrieve the code and ABI for an account.
+ * [Currency Balance](#currency-balance) — Retrieve the balance of an account for a given currency.
+ * [Currency Stats](#currency-stats) — Retrieve the stats of for a given currency.
+ * [Info](#info) — Get current blockchain information.
+ * [Schedule](#schedule) — Retrieve the producer schedule.
+ * [Scope](#scope) — Retrieve a list of scopes and tables owned by a contract.
+ * [Servants](#servants) — Retrieve accounts which are servants of a given account.
+ * [Table](#table) — Retrieve the contents of a database table.
+ * [Transaction](#transaction) — Retrieve a transaction from the blockchain.
+ * [Transaction ID](#transaction-id) — Get transaction id given transaction object.
 
 *****
 # Abi
@@ -34,7 +34,7 @@ The subcommand retrieves the ABI for an account.
 
 ### Command
 ```
-$ cleos get abi <name> [OPTIONS]
+$ cleos get abi [OPTIONS] <name>
 ```
 
 ### Examples
@@ -61,7 +61,7 @@ The subcommand retrieves an account from the blockchain.
 
 ### Command
 ```
-$ cleos get account <name> [<core-symbol>] [OPTIONS]
+$ cleos get account [OPTIONS] <name> [<core-symbol>]
 ```
 
 ### Examples
@@ -90,7 +90,7 @@ The subcommand retrieves accounts associated with a public key.
 
 ### Command
 ```
-$ cleos get accounts <public_key> [OPTIONS]
+$ cleos get accounts [OPTIONS] <public_key>
 ```
 
 ### Examples
@@ -123,7 +123,7 @@ The subcommand retrieves all actions with specific account name referenced in au
 
 ### Command
 ```
-$ cleos get actions <account_name> [<pos>] [<offset>] [OPTIONS]
+$ cleos get actions [OPTIONS] <account_name> [<pos>] [<offset>]
 ```
 
 ### Examples
@@ -154,7 +154,7 @@ The subcommand retrieves a full block from the blockchain.
 
 ### Command
 ```
-$ cleos get block <block> [OPTIONS]
+$ cleos get block [OPTIONS] <block>
 ```
 
 ### Examples
@@ -201,7 +201,7 @@ The subcommand retrieves the code and ABI for an account
 
 ### Command
 ```
-$ cleos get code <name> [OPTIONS]
+$ cleos get code [OPTIONS] <name>
 ```
 
 ### Examples
@@ -245,7 +245,7 @@ No options required for this subcomand.
 
 ### Command
 ```
-$ cleos get balance <contract> <account> [<symbol>] 
+$ cleos get balance <contract> <account> [<symbol>]
 ```
 
 ### Examples
@@ -373,7 +373,7 @@ The subcommand retrieves a list of scopes and tables owned by a contract
 
 ### Command
 ```
-$ cleos get scope <contract> [OPTIONS]
+$ cleos get scope [OPTIONS] <contract>
 ```
 
 # Servants
@@ -421,7 +421,7 @@ The subcommand retrieves the contents of a database table.
  * `-l`, `--limit` — The maximum number of rows to return.
  * `-k`, `--key` — Deprecated.
  * `-L`, `--lower` — JSON representation of lower bound value of key, defaults to first.
- * `-U,--upper` — JSON representation of upper bound value of key, defaults to last.
+ * `-U`, `--upper` — JSON representation of upper bound value of key, defaults to last.
  * `--key-type` — Deprecated.
  * `--encode-type` — The encoding type of key_type (*i64* , *i128* , *float64*, *float128*) only support decimal encoding (e.g. 'dec').
                      *i256* - supports both 'dec' and 'hex', *ripemd160* and *sha256* is 'hex' only.
@@ -430,7 +430,7 @@ The subcommand retrieves the contents of a database table.
 
 ### Command
 ```
-$ cleos get table <account> <scope> <table> [OPTIONS]
+$ cleos get table [OPTIONS] <account> <scope> <table>
 ```
 
 ### Examples
@@ -452,7 +452,7 @@ The subcommand retrieves a transaction from the blockchain.
 
 ### Command
 ```
-$ cleos get transaction <id> [OPTIONS]
+$ cleos get transaction [OPTIONS] <id>
 ```
 
 ### Examples
