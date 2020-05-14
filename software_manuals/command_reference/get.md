@@ -1,6 +1,6 @@
 # Get
 
-**Descriptions**  
+**Description**  
 The subcommands can be used to retrieve various items and information from the blockchain.  
 
 **Subcommands**
@@ -21,7 +21,7 @@ The subcommands can be used to retrieve various items and information from the b
  * [Transaction ID](#transaction-id) — Get transaction id given transaction object.
 
 *****
-# Abi
+## Abi
 
 ### Description
 The subcommand retrieves the ABI for an account.
@@ -47,7 +47,7 @@ $ cleos get abi cyber.stake -f cyber.stake.abi
 saving abi to cyber.stake.abi
 ```
 
-# Account
+## Account
 
 ### Description
 The subcommand retrieves an account from the blockchain.
@@ -77,7 +77,7 @@ $ cleos get account cyberio --json
 ```
 
 
-# Accounts
+## Accounts
 
 ### Description
 The subcommand retrieves accounts associated with a public key.
@@ -104,7 +104,7 @@ $ cleos get accounts GLS7w...NuSPAfXJHAhWt
 ```
 
 
-# Actions
+## Actions
 
 ### Description
 The subcommand retrieves all actions with specific account name referenced in authorization or receiver.
@@ -141,7 +141,7 @@ $ cleos get actions cyber.token
 ...
 ```
 
-# Block
+## Block
 
 ### Description
 The subcommand retrieves a full block from the blockchain.
@@ -186,7 +186,7 @@ Result output is a block object similar to the following
 }
 ```
 
-# Code
+## Code
 
 ### Description
 The subcommand retrieves the code and ABI for an account
@@ -257,7 +257,7 @@ $ cleos get currency balance cyber.token cyberio SYS
   10000.0000 SYS
 ```
 
-# Currency Stats
+## Currency Stats
 
 ### Description
 The subcommand retrieves the stats of for a given currency.
@@ -289,7 +289,7 @@ $ cleos get currency stats eosio.token SYS
 }
 ```
 
-# Info
+## Info
 
 ### Description
 The subcommand gets current blockchain information.
@@ -324,7 +324,7 @@ $ cleos get info
 ```
 
 
-# Schedule
+## Schedule
 
 ### Description
 The subcommand retrieves the producer schedule.
@@ -356,7 +356,7 @@ pending schedule empty
 proposed schedule empty
 ```
 
-# Scope
+## Scope
 
 ### Description
 The subcommand retrieves a list of scopes and tables owned by a contract
@@ -376,7 +376,7 @@ The subcommand retrieves a list of scopes and tables owned by a contract
 $ cleos get scope [OPTIONS] <contract>
 ```
 
-# Servants
+## Servants
 
 ### Description
 The subcommand retrieves accounts which are servants of a given account.
@@ -405,7 +405,7 @@ Output
 }
 ```
 
-# Table
+## Table
 
 ### Description
 The subcommand retrieves the contents of a database table.
@@ -439,7 +439,7 @@ Get the data from the *accounts* table for the *eosio.token* contract, for user 
 $ cleos get table cyber.token cyberio accounts
 ```
 
-# Transaction
+## Transaction
 
 ### Description
 The subcommand retrieves a transaction from the blockchain.
@@ -461,7 +461,7 @@ $ cleos get transaction w234b9...dd76brt5
 ```
 
 
-# Transaction ID
+## Transaction ID
 
 ### Description
 The subcommand gets transaction id given transaction object.

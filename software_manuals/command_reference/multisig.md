@@ -1,6 +1,6 @@
 # Multisig
 
-**Descriptions**  
+**Description**  
 Multisig contract commands.  
 
 **Subcommands**
@@ -15,7 +15,7 @@ Multisig contract commands.
  * [Multisig Schedule](#multisig-schedule) — Schedule delayed proposed transaction.
 
 *****
-# Multisig Propose
+## Multisig Propose
 
 ### Description
 Propose action.
@@ -53,7 +53,7 @@ Propose action.
 $ cleos multisig propose [OPTIONS] <proposal_name> <requested_permissions> <trx_permissions> <contract> <action> <data> [<proposer>] [<proposal_expiration>] [<description>]
 ```
 
-# Multisig Propose Transaction
+## Multisig Propose Transaction
 
 ### Description
 Propose transaction.
@@ -87,7 +87,7 @@ Propose transaction.
 $ cleos multisig propose_trx <proposal_name> <requested_permissions> <transaction> [<proposer>] [<description>] [OPTIONS]
 ```
 
-# Multisig Review
+## Multisig Review
 
 ### Description
 Review transaction.
@@ -105,7 +105,7 @@ $ cleos multisig review [OPTIONS] <proposer> <proposal_name>
 ```
 
 
-# Multisig Approve
+## Multisig Approve
 
 ### Description
 Approve proposed transaction.
@@ -139,7 +139,7 @@ $ cleos multisig approve [OPTIONS] <proposer> <proposal_name> <permissions> [<pr
 ```
 
 
-# Multisig Unapprove
+## Multisig Unapprove
 
 ### Description
 Unapprove proposed transaction.
@@ -172,7 +172,7 @@ $ cleos multisig unapprove [OPTIONS] <proposer> <proposal_name> <permissions>
 ```
 
 
-# Multisig Invalidate
+## Multisig Invalidate
 
 ### Description
 Invalidate all multisig approvals of an account. Revoke all permissions previously issued by the account for performing multisig transactions. The action applies to all proposed transactions that are at the voting stage.
@@ -202,7 +202,7 @@ Invalidate all multisig approvals of an account. Revoke all permissions previous
 $ cleos multisig invalidate [OPTIONS] <invalidator>
 ```
 
-# Multisig Cancel
+## Multisig Cancel
 
 ### Description
 Cancel proposed transaction.
@@ -234,7 +234,7 @@ Cancel proposed transaction.
 $ cleos multisig cancel [OPTIONS] <proposer> <proposal_name> [<canceler>]
 ```
 
-# Multisig Exec
+## Multisig Exec
 
 ### Description
 Execute proposed transaction.
@@ -267,7 +267,7 @@ $ cleos multisig exec [OPTIONS] <proposer> <proposal_name> [<executer>]
 ```
 
 
-# Multisig Schedule
+## Multisig Schedule
 
 ### Description
 Schedule delayed proposed transaction.

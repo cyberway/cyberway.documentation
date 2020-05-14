@@ -1,6 +1,6 @@
 # Set
 
-**Descriptions**  
+**Description**  
 The subcommands can be required to set or update the blockchain state.  
 
 **Subcommands**
@@ -11,7 +11,7 @@ The subcommands can be required to set or update the blockchain state.
  * [Set Action](#set-action) — Set or update blockchain action state.
 
 *****
-# Set Code
+## Set Code
 
 ### Description
 Create or update the code on an account.
@@ -50,7 +50,7 @@ $ cleos set code [OPTIONS] <account> [<code-file>]
 $ cleos set code alice ./path/to/wasm
 ```
 
-# Set Abi
+## Set Abi
 
 ### Description
 Create or update the contract on an account.
@@ -88,7 +88,7 @@ $ cleos set abi [OPTIONS] <account> [<abi-file>]
 $ cleos set abi alice ./path/to/abi.abi
 ```
 
-# Set Contract
+## Set Contract
 
 ### Description
 Create or update the contract on an account.
@@ -129,7 +129,7 @@ Deployind the stake contract.
 $ cleos set contract currency ../contracts/cyber.stake/stake.wasm ../contracts/cyber.stake/stake.abi
 ```
 
-# Set Account
+## Set Account
 
 ### Description
 Set parameters dealing with account permissions.
@@ -184,7 +184,7 @@ Demonstrates how to setup permissions for multisig.
 cleos set account permission test active '{"threshold" : 100, "keys" : [{"permission":{"key":"GLS7...L6T2s","permission":"active"},"weight":25}], "accounts" : [{"permission":{"account":"@sandwich","permission":"active"},"weight":75}]}' owner
 ```
 
-# Set Action
+## Set Action
 
 ### Description
 Set parmaters dealing with account permissions.
