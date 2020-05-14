@@ -1,6 +1,6 @@
 # Push
 
-**Descriptions**  
+**Description**  
 The subcommands can be used to push arbitrary transactions to the blockchain.  
 
 **Subcommands**
@@ -9,7 +9,7 @@ The subcommands can be used to push arbitrary transactions to the blockchain.
  * [Push Transactions](#push-transactions) — Retrieve accounts associated with a public key.
 
 *****
-# Push Action
+## Push Action
 
 ### Description
 Push a transaction with a single action.
@@ -42,7 +42,7 @@ $ cleos push [OPTIONS] <account> <action> <data>
 ```
 
 
-# Push Transaction
+## Push Transaction
 
 ### Description
 Push an arbitrary JSON transaction.
@@ -73,7 +73,7 @@ $ cleos push transaction [OPTIONS] <transaction>
 ```
 
 
-# Push Transactions
+## Push Transactions
 
 ### Description
 Push an array of arbitrary JSON transactions.

@@ -1,6 +1,6 @@
 # Convert
 
-**Descriptions**  
+**Description**  
 The subcommands can be required to pack and unpack transactions as well as to convert data from JSON format to digital code and vice versa.  
 
 **Subcommands**
@@ -10,7 +10,7 @@ The subcommands can be required to pack and unpack transactions as well as to co
  * [Unpack Transaction](#unpack-transaction) — From packed to plain signed JSON form.
 
 *****
-# Pack Action Data
+## Pack Action Data
 
 ### Description
 The subcommand converts action data from JSON format to packed form.
@@ -36,7 +36,7 @@ $ cleos convert pack_action_data c.gallery unlinkauth '{"account":"test1", "code
 000000003500b1be00000000008fa1ca0000a47deaea2903
 ```
 
-# Pack Transaction
+## Pack Transaction
 
 ### Description
 The subcommand converts a transaction from plain signed JSON to packed form.
@@ -88,7 +88,7 @@ $ cleos convert pack_transaction '{
 ```
 
 
-# Unpack Action Data
+## Unpack Action Data
 
 ### Description
 The subcommand converts action data from packed to JSON format.
@@ -119,7 +119,7 @@ $ cleos convert unpack_action_data c.gallery unlinkauth 000000003500b1be00000000
 ```
 
 
-# Unpack Transaction
+## Unpack Transaction
 
 ### Description
 The subcommand converts a transaction from packed to plain signed JSON form.

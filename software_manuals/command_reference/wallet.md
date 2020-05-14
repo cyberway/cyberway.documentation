@@ -1,6 +1,6 @@
 # Wallet
 
-**Descriptions**  
+**Description**  
 The subcommands can be used to interact with local wallet.  
 
 **Subcommands**
@@ -16,7 +16,7 @@ The subcommands can be used to interact with local wallet.
   * [Wallet Keys](#wallet-keys) — List of public keys from all unlocked wallets.
   * [Wallet Private Keys](#wallet-private-keys) — List of private keys from an unlocked wallet in WIF or PVT_R1 format.
 
-# Wallet Create
+## Wallet Create
 
 ### Description
 This subcommand creates a wallet with the specified name. If no name is given, the wallet will be created with the name 'default'.
@@ -39,7 +39,7 @@ $ cleos wallet create [OPTIONS]
 $ cleos wallet create --name=walletname1 --to-console
 ```
 
-# Wallet Open
+## Wallet Open
 
 ### Description
 This subcommand can be used to open an existing wallet.
@@ -71,7 +71,7 @@ $ cleos wallet open --name=walletname1
 Opened: walletname1
 ```
 
-# Wallet Lock
+## Wallet Lock
 
 ### Description
 This subcommand can be used to lock wallet.
@@ -103,7 +103,7 @@ $ cleos wallet lock --name=walletname1
 Locked: walletname1
 ```
 
-# Wallet Lock All
+## Wallet Lock All
 
 ### Description
 This subcommand can be used to lock all unlocked wallets.
@@ -124,7 +124,7 @@ $ cleos wallet lock_all
 Locked All Wallets
 ```
 
-# Wallet Unlock
+## Wallet Unlock
 
 ### Description
 This subcommand can be used to unlock wallet.
@@ -152,7 +152,7 @@ $ cleos wallet unlock --name=walletname1 --password=XXXXXXXX
 Unlocked: walletname1
 ```
 
-# Wallet Import
+## Wallet Import
 
 ### Description
 This subcommand can be used to import private key into wallet.
@@ -174,7 +174,7 @@ $ cleos wallet import [OPTIONS]
 $ cleos wallet import --name=walletname1 --private-key=3Rft...Uh6
 ```
 
-# Wallet Remove Key
+## Wallet Remove Key
 
 ### Description
 This subcommand can be used to remove key from wallet.
@@ -196,7 +196,7 @@ $ cleos wallet remove_key <key> [OPTIONS]
 $ cleos wallet remove_key GLS8PE...rS3T --name=walletname1 --password=XXXXXXXX
 ```
 
-# Wallet Create Key
+## Wallet Create Key
 
 ### Description
 This subcommand can be used to creates a key pair within the wallet so that you don't need to manually import it like you would with cleos create key. By default, this will create a key with the type "favored" by the wallet, which is a "K1" key. This subcommand also lets you create a key in "R1" format.
@@ -220,7 +220,7 @@ $ cleos wallet create_key K1 --name-walletname1
 Created new private key with a public key of: "GLS8PE...6tR, X6P...5EfG"
 ```
 
-# Wallet List
+## Wallet List
 
 ### Description
 The subcommand can be used to list opened wallets ("*" means "unlocked").
@@ -252,7 +252,7 @@ Wallets:
 ]
 ```
 
-# Wallet Keys
+## Wallet Keys
 
 ### Description
 The subcommand can be used to list of public keys from all unlocked wallets. These are the keys that could be used to sign transactions.
@@ -281,7 +281,7 @@ $ cleos wallet keys
 $ cleos wallet 
 ```
 
-# Wallet Private Keys
+## Wallet Private Keys
 
 ### Description
 The subcommand can be used to list of private keys from an unlocked wallet in WIF or PVT_R1 format.  

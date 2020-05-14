@@ -1,6 +1,6 @@
 # System
 
-**Descriptions**  
+**Description**  
 The subcommands can be used to send cyber.system contract action to the blockchain.  
 
 **Subcommands**
@@ -23,7 +23,7 @@ The subcommands can be used to send cyber.system contract action to the blockcha
   * [System Canceldelay](#system-canceldelay) — Cancel a delayed transaction.
 
 *****
-# System Newaccount
+## System Newaccount
 
 ### Description
 Create a new account on the blockchain with initial resources.
@@ -64,7 +64,7 @@ $ cleos system newaccount [OPTIONS] <creator> <name> <OwnerKey> [<ActiveKey>]
 $ cleos system newaccount --stake=50.0000,CYBER --transfer alice bob XXX...XXX
 ```
 
-# System Regproducer
+## System Regproducer
 
 ### Description
 Register a new producer.
@@ -97,7 +97,7 @@ Register a new producer.
 $ cleos system regproducer [OPTIONS] <account> <producer_key>
 ```
 
-# System Unregprod
+## System Unregprod
 
 ### Description
 Unregister an existing producer.
@@ -128,7 +128,7 @@ Unregister an existing producer.
 $ cleos system unregprod [OPTIONS] <account>
 ```
 
-# System Voteproducer Proxy
+## System Voteproducer Proxy
 
 ### Description
 This subcommand can be used to vote your stake through a proxy.
@@ -161,7 +161,7 @@ This subcommand can be used to vote your stake through a proxy.
 $ cleos system voteproducer proxy [OPTIONS] <voter> <proxy> <quantity>
 ```
 
-# System Voteproducer Prods
+## System Voteproducer Prods
 
 ### Description
 This subcommand can be used to vote for a producer.
@@ -193,7 +193,7 @@ This subcommand can be used to vote for a producer.
 $ cleos system voteproducer prods [OPTIONS] <voter> <producer> <quantity>
 ```
 
-# System Listproducers
+## System Listproducers
 
 ### Description
 This subcommand can be used to obtain a list of producers.
@@ -211,7 +211,7 @@ No parameters required for this subcommand.
 $ cleos system listproducers [OPTIONS]
 ```
 
-# System Delegatebw
+## System Delegatebw
 
 ### Description
 This subcommand can be used to delegate bandwidth.
@@ -251,7 +251,7 @@ $ cleos system delegatebw [OPTIONS] <from> <receiver> <stake_quantity>
 cleos system delegatebw alice bob “10.0000 CYBER”
 ```
 
-# System Undelegatebw
+## System Undelegatebw
 
 ### Description
 This subcommand can be used to undelegate bandwidth.
@@ -283,7 +283,7 @@ This subcommand can be used to undelegate bandwidth.
 $ cleos system undelegatebw [OPTIONS] <from> <receiver> <unstake_quantity>
 ```
 
-# System Claimbw
+## System Claimbw
 
 ### Description
 This subcommand can be used to claim undelegated bandwidth.  
@@ -307,7 +307,7 @@ $ cleos system claimbw <from> <receiver> <token_code>
 $ cleos system claimbw alice bob “CYBER”
 ```
 
-# System Listbw
+## System Listbw
 
 ### Description
 This subcommand can be used to list delegated bandwidth.
@@ -324,12 +324,12 @@ $ cleos system listbw [OPTIONS] <account>
 ```
 
 ### Examples
-'alicea receives a list of users to whom she delegated bandwidth (staked tokens).
+'alice` receives a list of users to whom she delegated bandwidth (staked tokens).
 ```
 $ cleos system listbw alice
 ```
 
-# System Bidname
+## System Bidname
 
 ### Description
 Name bidding subcommand.
@@ -367,7 +367,7 @@ $ cleos system bidname [OPTIONS] <bidder> <newname> <bid>
 $ cleos system bidname accountname1 alice "100.0000 CYBER"
 ```
 
-# System Bidnameinfo
+## System Bidnameinfo
 
 ### Description
 This subcommand can be used to get bidname info.
@@ -387,7 +387,7 @@ $ cleos system [OPTIONS] <newname>
 $ cleos system bidnameinfo alice
 ```
 
-# System Setproxylvl
+## System Setproxylvl
 
 ### Description
 This subcommand can be used to set an account proxy level.
@@ -419,7 +419,7 @@ This subcommand can be used to set an account proxy level.
 $ cleos system setproxylvl [OPTIONS] <account> <level>
 ```
 
-# System Regproxy
+## System Regproxy
 
 ### Description
 This subcommand can be used to register an account as a proxy (for voting).
@@ -458,7 +458,7 @@ $ cleos system regproxy [OPTIONS] <proxy>
 $ cleos system regproxy --symbol=4,CYBER --level=1 --fee=5000 alice
 ```
 
-# System Unregproxy
+## System Unregproxy
 
 ### Description
 Unregister an account as a proxy (for voting).
@@ -495,7 +495,7 @@ $ cleos system unregproxy [OPTIONS] <proxy>
 $ cleos system unregproxy --symbol=4,CYBER alice
 ```
 
-# System Stake
+## System Stake
 
 ### Description
 This subcommand can be used to stake assets to gain resources.
@@ -518,7 +518,7 @@ $ cleos system stake [OPTIONS] <account> <quantity>
 ```
 
 
-# System Canceldelay
+## System Canceldelay
 
 ### Description
 This subcommand can be used to cancel a delayed transaction.
