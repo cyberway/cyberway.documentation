@@ -12,21 +12,21 @@ The subcommands can be used to interact with local p2p network connections.
 *****
 ## Connect
 
-### Description
+#### Description
 Start a new connection to a peer.
 
-### Positional Parameters
+#### Positional Parameters
  * `(string) host`— The hostname:port to connect to (required).
 
-### Options
+#### Options
 No options required for this subcommand.
 
-### Command
+#### Command
 ```
 $ cleos net connect <host>
 ```
 
-### Examples
+#### Examples
 Connect to 'hostname:port'.
 ```
 $ cleos net connect hostname:port
@@ -34,21 +34,21 @@ $ cleos net connect hostname:port
 
 ## Disconnect
 
-### Description
+#### Description
 Close an existing connection.
 
-### Positional Parameters
+#### Positional Parameters
  * `(string) host`— The hostname:port to disconnect from (required).
 
-### Options
+#### Options
 No options required for this subcommand.
 
-### Command
+#### Command
 ```
 $ cleos net disconnect <host>
 ```
 
-### Examples
+#### Examples
 Disconnect from 'hostname:port'.
 ```
 $ cleos net disconnect hostname:port
@@ -56,21 +56,21 @@ $ cleos net disconnect hostname:port
 
 ## Status
 
-### Description
+#### Description
 Status of existing connection.
 
-### Positional Parameters
+#### Positional Parameters
  * `(string) host`— The hostname:port to query status of connection (required).
 
-### Options
+#### Options
 No options required for this subcommand.
 
-### Command
+#### Command
 ```
 $ cleos net status <host> 
 ```
 
-### Examples
+#### Examples
 ```
 $ cleos net status hostname:port
 ```
@@ -89,16 +89,16 @@ Given, a valid, existing 'hostname:port' parameter the above command returns a J
 
 ## Peers
 
-### Description
+#### Description
 Status of all existing peers.
 
-### Positional Parameters
+#### Positional Parameters
 No parameters required fot this subcommand.
 
-### Options
+#### Options
 No options required for this subcommand.
 
-### Command
+#### Command
 ```
 $ cleos net peers
 ```
