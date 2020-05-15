@@ -47,8 +47,12 @@ When inflation is reduced to its minimum `stop` parameter, tokens continue to be
 > **Restrictions:**  
 > The total percentage of all tokens distributed in pools must be no more than 100 (or 10 000 tokens). For example, 25 (pool of vesting) + 25 (pool of publications) + 49 (some other pool) + 0 (control pool) = 99 (%).  
 
-## List of actions supported in golos.emit smart-contract
-The `golos.emitl` smart contract supports the following actions: [setparams](#setparams), [validateprms](#validateprms), [start](#start), [stop](#stop) and [emit](#emit).  
+## Actions supported by the golos.emit smart contract
+  * [setparams](#setparams)
+  * [validateprms](#validateprms)
+  * [start](#start)
+  * [stop](#stop)
+  * [emit](#emit)
 
 ## setparams
 The `setparams` action is used to set the parameters of the smart contract (to configure the smart contract). The action has the following form:
