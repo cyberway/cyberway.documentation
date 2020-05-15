@@ -42,25 +42,37 @@ ctrl_param, types: [
   * `update_auth` — a parameter that specifies frequency of updating the authorization for the `multisig_acc` account:  
     * `period` — an update period (in seconds). Re-authorization change for account is not performed if specified period has not passed since the last update.  
 
-## Actions used in the Control smart contract 
-The `golos.publication` smart contract supports the following actions: [setparams](#the-setparams-action), [validateprms](#the-validateprms-action), [regwitness](#the-regwitness-action), [unregwitness](#the-unregwitness-action), [stopwitness](#the-stopwitness-action), [startwitness](#the-startwitness-action), [votewitness](#the-votewitness-action), [unvotewitn](#the-unvotewitn-action), [changevest](#the-changevest-action)
+## Actions supported by the golos.ctrl smart contract
+  * [setparams](#setparams)
+  * [validateprms](#validateprms)
+  * [regwitness](#regwitness)
+  * [unregwitness](#unregwitness)
+  * [stopwitness](#stopwitness)
+  * [startwitness](#startwitness)
+  * [votewitness](#votewitness)
+  * [unvotewitn](#unvotewitn)
+  * [changevest](#changevest)
+  * [ban](#ban)
+  * [unban](#unban)
 
-## The setparams action
+## setparams
 The `setparams` action is used to configure the `golos.ctrl` smart contract parameters. The action has the following form:
 
 ```cpp
 void control::setparams(vector<ctrl_param> params)
 ```
-`params` — a value in the form of a structure containing fields with the setting parameters. 
+**Parameters**
+  * `params` — a value in the form of a structure containing fields with the setting parameters. 
 
-## The validateprms action
+## validateprms
 The `validateprms` action checks parameters for validity and controls if there are errors or not. The `validateprms` action is called by the smart contract.  It has the following form:
 ```cpp 
 void control::validateprms(vector<ctrl_param> params)
 ```
-`params` — a value in the form of a structure containing the parameters to be checked.
+**Parameters**
+  * `params` — a value in the form of a structure containing the parameters to be checked.
 
-## The regwitness action
+## regwitness
 The `regwitness` action is used to register candidates for witnesses. The action has the following form:  
 ```cpp
 void control::regwitness(
@@ -74,12 +86,13 @@ void control::regwitness(
 
 Performing the `regwitness` action requires a signature of the witness candidate.
 
-## The unregwitness action
+## unregwitness
 The `unregwitness` action is used to withdraw a user's candidacy from among the registered candidates to the witnesses. The action has the following form:
 ```cpp
 void control::unregwitness(name witness)
 ```
-`witness` — the user name to be removed from the list of witnesses registered as candidates.  
+**Parameters**
+  * `witness` — the user name to be removed from the list of witnesses registered as candidates.  
 
 The `unregwitness` action can be called either by the candidate (in case of a withdrawal) or by a witness who found a discrepancy of the witness capabilities to desirable witness requirements, and mismatched data published on the web site with her/his relevant data. 
 
@@ -87,12 +100,13 @@ Conditions for performing the `unregwitness` action:
   * no votes for this witness candidate. Votes of all users who voted for this witness candidate should be removed;  
   * the transaction must be signed by the `witness` candidate himself.
 
-## The stopwitness action
+## stopwitness
 The `stopwitness` action is used to temporarily suspend active actions of a witness (or a witness candidate). The action has the following form:
 ```
 void stopwitness(name witness)
-```  
-`witness` — account name of a witness (or a witness candidate) whose activity is temporarily suspended.
+```
+**Parameters**
+  * `witness` — account name of a witness (or a witness candidate) whose activity is temporarily suspended.
 
 Conditions for performing the `stopwitness` action:  
   * the `witness` account should be active;
@@ -101,19 +115,19 @@ Conditions for performing the `stopwitness` action:
 The `witness` account activity can be continued in case it has performed the `startwitness` action.
 
 
-## The startwitness action
+## startwitness
 The `startwitness` action is used to resume suspended witness activity (or a witness candidate activity). The action has the following form:
 ```cpp
 void startwitness(name witness)
-```  
-`witness` — account name of a witness (or a witness candidate), whose activity is resumed.
+```
+**Parameters**
+  * `witness` — account name of a witness (or a witness candidate), whose activity is resumed.
 
 Conditions for performing the `startfitness` action:  
   * the `witness` account activity should be suspended, that is, the operation `stopwitness` should be performed previously;
   * a transaction must be signed by the `witness` account.
 
-
-## The votewitness action
+## votewitness
 The `votewitness` action is used to vote for a witness candidate. The action has the following form:
 ```cpp
 void control::votewitness(
@@ -132,7 +146,7 @@ Doing the `votewitness` action requires signing the `voter` account.
   * total number of votes cast by the `voter` account for all candidates should not exceed the `max_witness_votes` parameter value;
   * it is not allowed to vote for a witness candidate whose activity is suspended (after the candidate has completed the `stopwitness` action).
 
-## The unvotewitn action
+## unvotewitn
 The action `unvotewitn` is used to withdraw a previously cast vote for a witness candidate.  
 
 The action has the following form:
@@ -150,7 +164,7 @@ It is allowed to withdraw a vote cast for a witness candidate whose activity is 
 
 Doing the `unvotewitn` action requires signing the `voter` account.
 
-## The changevest action
+## changevest
 The `changevest` is an internal and unavailable to the user action. It is used by `golos.vesting` smart contract to notify the `golos.ctrl` smart contract about a change of the vesting amount on the user's balance. The `changevest` action has the following form:
 ```cpp
 void control::changevest(
@@ -164,7 +178,30 @@ void control::changevest(
 
 The `changevest` action is called automatically each time in case the vesting amount is changed on a user's balance. The `golos.vesting` smart contract informs the `golos.ctrl` smart contract about this change. Because changing the vesting amount on the user's balance changes the weight of this user's vote, the witness rating that the user voted for will also be changed. The `golos.ctrl` smart contract corrects the rating of each witness based on received information about the change. The data of the smart contract table is not modified.  
 
-In case a list of the most rated witnesses is changed, `multisig_acc` authorization will automatically be changed too.  
+In case a list of the most rated witnesses is changed, `multisig_acc` authorization will automatically be changed too.
+
+## ban
+The `ban` action bans a user from publishing and curating any posts. Any account can be banned if the content of its publication or comment poses a direct threat to the life of the application or the blockchain as a whole (for example, a statement in a harsh negative form that could affect the reputation of application, campaigning or calling users, etc.).
+
+```cpp
+void ban(name account)
+```
+**Parameters:**
+  * `account` — the account to be banned.
+
+The action requires authorization of the account on which dApp is deployed.
+
+## unban
+The `unban` action cancels the ban for a user to publish and curate posts.
+
+```cpp
+void unban(name account)
+```
+**Parameters:**
+  * `account` — the account to be unbanned.
+
+The action requires authorization of the account on which dApp is deployed.
+
 ****
 
 
