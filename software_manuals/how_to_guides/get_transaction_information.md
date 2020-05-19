@@ -6,7 +6,7 @@ Query infomation of a transaction.
 ### Before you begin
   * Install the currently supported version of `cleos`.
   * Understand the following:
-    * What is a transaction.
+    * What is a [transaction](https://docs.cyberway.io/users/glossary#transaction).
 
 ### Steps
 Execute the command below:

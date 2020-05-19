@@ -6,12 +6,22 @@ The Application Binary Interface (ABI) is a JSON-based description on how to con
 ---  
 
 ### Account
-A user account stored in the system for his identification (authentication) and provision of access to his personal data and settings.
+An account is a unique identifier and a requirement to interact with CyberWay blockchain. Unlike most other cryptocurrencies, transfers are sent to a human readable account name instead of a public key, while keys attributed to the account are used to sign transactions.  
+
+---  
+
+### Account Name
+An account name is a human-readable identifier that is stored on the blockchain. Account names can consist of individual parts separated by the symbol "dot". Wherein, two "dot" symbols near each other are not allowed. Account names can only contain the alphanumeric characters, the "hyphen" symbol can be used as well, but should not be at the beginning or end of any account name part. Capital letters in an account user name are unacceptable.  
 
 ---  
 
 ### Action
-Functionality exposed by a smart contract that is exercised by passing the correct parameters via an approved transaction to an EOSIO network.  
+Functionality exposed by a smart contract that is exercised by passing the correct parameters via an approved transaction to CyberWay network.  
+
+---  
+
+### Bandwidth
+Bandwidth represents resources allocated to an account for performing a transaction, as well as for storing its personal information. Bandwidth resources include CPU, RAM, NET, and Storage.  
 
 ---  
 
@@ -198,6 +208,11 @@ CyberWay wraps the boost multi-index library to provide in memory data persisten
 
 ---  
 
+### NET
+NET required to store transactions on CyberWay blockchain. The amount of NET an account has is measured in bytes, representing the amount of transaction storage an account has at its disposal when creating a new transaction. NET is recalculated after each block is produced, based on the system tokens staked for NET bandwidth by the account. NET measures the size of the transactions and not contract state.  
+
+---  
+
 ### Node
 A separate (software) device that is connected to the blockchain network according to the client-server scheme. Nodes are active elements and form the basis of the blockchain network technology.  
 
@@ -224,7 +239,7 @@ The pending block is the block currently being built by each node. Transactions 
 ---  
 
 ### Permission
-A weighted security mechanism that determines whether or not a message is properly authorized by evaluating its signature(s) authority. Every account has two default permissions, `owner` and `active`, but can also have custom permissions to further secure communications from an account to contracts. Every permission name has a "parent". Parents possess the authority to change any of the permissions settings for any and all of their children.
+A weighted security mechanism that determines whether or not a message is properly authorized by evaluating its signature(s) authority. Every account has two default permissions, `owner` and `active`, but can also have custom permissions to further secure communications from an account to contracts. Every permission name has a "parent". Parents possess the authority to change any of the permissions settings for any and all of their children.  
 
 ---  
 
@@ -255,26 +270,32 @@ Main payment unit used for payments within a separate community. Point is not a 
 
 ### Private key
 A code string with which you can access your wallet or bitcoin address. Required for transactions.  
+A private key is a secret key used to sign transactions. In CyberWay, a private key's authority is determined by it's mapping to a CyberWay account name.  
 
 ---  
 
 ### Proxy account
-An account empowered with a specific voting authorization during the voting process. A proxy account can be declared by any user who is ready to accept votes from other users and vote for the validators on their behalf.
+An account empowered with a specific voting authorization during the voting process. A proxy account can be declared by any user who is ready to accept votes from other users and vote for the validators on their behalf.  
 
 ---  
 
 ### Proxy account level
-A conditional division of users into categories. The highest level of proxy account is zero, which is assigned only to validators. The first and further levels in ascending order are assigned to users who have declared themselves proxy accounts. The number of levels (categories) of proxy accounts is not limited. The number of proxy accounts of the same level is also not limited. The last level of proxy account is assigned to the ordinary user.
+A conditional division of users into categories. The highest level of proxy account is zero, which is assigned only to validators. The first and further levels in ascending order are assigned to users who have declared themselves proxy accounts. The number of levels (categories) of proxy accounts is not limited. The number of proxy accounts of the same level is also not limited. The last level of proxy account is assigned to the ordinary user.  
 
 ---  
 
 ### Public key
-A code string to which there is open access. Used along with the private key to send transactions. The public key corresponds to a bitcoin address.  
+A publicly available key that can be authorized to permissions of an account and can be used to identify the origin transaction. A public key can be inferred from a signature.  
 
 ---  
 
 ### P2P
 A peer-to-peer computer network in which all participants (nodes) are equal in rights and can interact with each other, being a client and server simultaneously.  
+
+---  
+
+### RAM
+RAM is a part of the bandwidth resources allocated to an account for the duration of a transaction for storing consensus information.  
 
 ---  
 
@@ -309,17 +330,27 @@ A smart contract is a computer protocol intended to facilitate, verify, or enfor
 ---  
 
 ### Stake
-A share of bandwidth resources (RAM, NET, CPU and Storage) allocated to a user. The user can manage the share of resources allocated to him both independently and entrust its use to another user (delegate the share of resources).
+A share of bandwidth resources (RAM, NET, CPU and Storage) allocated to a user. The user can manage the share of resources allocated to him both independently and entrust its use to another user (delegate the share of resources).  
 
 ---  
 
 ### Staked tokens
-Tokens allocated for a stake acquisition that can’t be used for anything else in this state. The user can stake active tokens listed on his/her balance or deposit them. Also, the user can perform the reverse operation — withdraw tokens from the staked state to active.
+Tokens allocated for a stake acquisition that can’t be used for anything else in this state. The user can stake active tokens listed on his/her balance or deposit them. Also, the user can perform the reverse operation — withdraw tokens from the staked state to active.  
+
+---  
+
+### Storage
+Storage is a part of the bandwidth resources allocated to an account for storing personal account information.  
 
 ---  
 
 ### System Contract
 The design of the CyberWay blockchain calls for a number of smart contracts that are run at a privileged permission level in order to support functions such as validator registration and voting, token staking for CPU and network bandwidth, RAM purchasing, multi-sig, etc. These smart contracts are referred to as the system contracts and are the following, `bios`, `domain-names` `govern`, `multi-signature`, `stake` and `tokens` contracts.  
+
+---  
+
+### Tables
+Tables in CyberWay blockchain are achieved via Multiple Index Table.
 
 ---  
 
@@ -354,7 +385,7 @@ A transaction is considered unconfirmed as long as no `nodeos` instance has rece
 ---  
 
 ### Validator
-A blockchain user who checks transactions for validity and signs them. Using its (leased) equipment, it ensures the functioning of the Nodes of the network, creates and signs new blocks, ensuring the safety of the network.  
+A validator (or a block producer) is an identifiable entity composed of one or more individuals that express interest in participating in running CyberWay network. By participating it is meant these entities will provide a full node, gather transactions, verify their validity, add them into blocks, and propose and confirm these blocks. A block producer is generally required to have experience with system administration and security as it is expected that their full-node have constant availability.  
 
 ---  
 

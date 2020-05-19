@@ -7,8 +7,8 @@ Vote for a validator.
   * Install the currently supported version of `cleos`.
   * Ensure the reference system contracts from `cyberway.contracts` repository is deployed and used to manage system resources.
   * Understand the following:
-    * What is a validator;
-    * What is a proxy account;
+    * What is a [validator](https://docs.cyberway.io/users/glossary#validator);
+    * What is a [proxy account](https://docs.cyberway.io/users/glossary#proxy-account);
     * How does voting works.
   * Unlock your wallet.
 
@@ -26,3 +26,7 @@ If you are unable to vote, you can entrust your vote to a proxy account that wil
 ```sh
 $ cleos system voteproducer prods alice bob “50.0000 CYBER”
 ```
+
+### Useful links
+  * [Validators in CyberWay](https://docs.cyberway.io/validators/voting_for_validators#the-role-and-objectives-of-validators-in-the-system)
+  * [Voting for validators](https://docs.cyberway.io/validators/voting_for_validators#voting-for-validators)

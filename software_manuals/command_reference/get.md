@@ -423,8 +423,7 @@ The subcommand retrieves the contents of a database table.
  * `-L`, `--lower` — JSON representation of lower bound value of key, defaults to first.
  * `-U`, `--upper` — JSON representation of upper bound value of key, defaults to last.
  * `--key-type` — Deprecated.
- * `--encode-type` — The encoding type of key_type (*i64* , *i128* , *float64*, *float128*) only support decimal encoding (e.g. 'dec').
-                     *i256* - supports both 'dec' and 'hex', *ripemd160* and *sha256* is 'hex' only.
+ * `--encode-type` — The encoding type of key_type (*i64* , *i128* , *float64*, *float128*) only support decimal encoding (e.g. 'dec'). *i256* - supports both 'dec' and 'hex', *ripemd160* and *sha256* is 'hex' only.
  * `-r`, `--reverse` — Iterate in reverse order.
  * `--show-payer` — show RAM payer.
 
@@ -434,7 +433,7 @@ $ cleos get table [OPTIONS] <account> <scope> <table>
 ```
 
 ### Examples
-Get the data from the *accounts* table for the *eosio.token* contract, for user *cyberio*,
+Get the data from the *accounts* table for the *cyber.token* contract, for user *cyberio*,
 ```
 $ cleos get table cyber.token cyberio accounts
 ```
