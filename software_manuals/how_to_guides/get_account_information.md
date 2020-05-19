@@ -6,7 +6,7 @@ Query infomation of an CyberWay account.
 ### Before you begin
   * Install the currently supported version of `cleos`.
   * Understand the following:
-    * What is an account.
+    * What is an [account](https://docs.cyberway.io/users/glossary#account).
 
 ### Steps
 Execute the command below:

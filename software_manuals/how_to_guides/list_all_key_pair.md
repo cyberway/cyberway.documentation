@@ -6,7 +6,7 @@ List all key pairs.
 ### Before you begin
   * Install the currently supported version of `cleos`.
   * Understand the following:
-    * What is a public and private key pair.
+    * What is a [public](https://docs.cyberway.io/users/glossary#public-key) and [private](https://docs.cyberway.io/users/glossary#private-key) key pair.
 
 ### Steps
 Unlock your wallet
