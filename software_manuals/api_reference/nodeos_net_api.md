@@ -16,8 +16,8 @@ The request initiates a connection to a specified peer.
 **Params:**
   * `(string) endpoint` — The endpoint to connect to expressed as either IP address or URL.
 
-**Request examples:**  
-```
+**Request example:**  
+```sh
 curl --request POST  --data '{"endpoint": "string"}' http://<node>/v1/net/connect
 ```
 
@@ -38,7 +38,7 @@ The request initiates disconnection from a specified peer.
   * `(string) endpoint` — The endpoint to disconnect from, expressed as either IP address or URL.
 
 **Request example:**  
-```
+```sh
 curl --request POST  --data '{"endpoint": "string"}' http://<node>/v1/net/disconnect
 ```
 
@@ -59,7 +59,7 @@ The request retreives the connection status for a specified peer.
   * `(string) endpoint` — The endpoint to get the status for, to expressed as either IP address or URL.
 
 **Request example:**  
-```
+```sh
 curl --request POST  --data '{"endpoint": "string"}' http://<node>/v1/net/status
 ```
 
@@ -101,7 +101,7 @@ The request returns an array of all peer connection statuses.
 No params required.  
 
 **Request example:**  
-```
+```sh
 curl --request POST --data '' http://<node>/v1/net/connections
 ```
 

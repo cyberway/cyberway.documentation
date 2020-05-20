@@ -22,13 +22,13 @@ Start a new connection to a peer.
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos net connect <host>
 ```
 
 ### Examples
 Connect to 'hostname:port'.
-```
+```sh
 $ cleos net connect hostname:port
 ```
 
@@ -44,13 +44,13 @@ Close an existing connection.
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos net disconnect <host>
 ```
 
 ### Examples
 Disconnect from 'hostname:port'.
-```
+```sh
 $ cleos net disconnect hostname:port
 ```
 
@@ -66,12 +66,12 @@ Status of existing connection.
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos net status <host> 
 ```
 
 ### Examples
-```
+```sh
 $ cleos net status hostname:port
 ```
 
@@ -99,6 +99,6 @@ No parameters required fot this subcommand.
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos net peers
 ```

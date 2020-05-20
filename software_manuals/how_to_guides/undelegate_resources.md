@@ -20,22 +20,22 @@ This operation is performed in two steps.
 
 *Step_1:* Request for a return of delegated staked tokens.
 ```sh
-$ cleos push action cyber.stake recalluse ‘[alice, bob, “10.0000 CYBER”]' -p alice@active
+$ cleos push action cyber.stake recalluse '[alice, bob, "10.0000 CYBER"]' -p alice@active
 ```
 
 or using specialized cleos system command `undelegatebw`:
 ```sh
-$ cleos system undelegatebw alice bob “10.0000 CYBER”
+$ cleos system undelegatebw alice bob "10.0000 CYBER"
 ```
 
 *Step_2:* Crediting withdrawn tokens to a stake.
 ```sh
-$ cleos push action cyber.stake claim ‘[alice, bob, “CYBER”]' -p  alice@active
+$ cleos push action cyber.stake claim '[alice, bob, “CYBER”]' -p  alice@active
 ```
 
 or using specialized cleos system command `claimbw`:
 ```sh
-$ cleos system claimbw alice bob “CYBER”
+$ cleos system claimbw alice bob "CYBER"
 ```
 
 > **Note**  

@@ -16,12 +16,12 @@ Withdraw tokens from the stake to active state for your account.
 
 Unstake 100 CYBER tokens for `alice` account:
 ```sh
-$  cleos push action cyber.stake withdraw alice “100.0000 CYBER”
+$  cleos push action cyber.stake withdraw alice "100.0000 CYBER"
 ```
 
 or using "system withdraw" operation:
 ```sh
-$ cleos system withdraw alice “100.0000 CYBER”
+$ cleos system withdraw alice "100.0000 CYBER"
 ```
 
 Tokens are withdrawn immediately without any delay. After this operation is completed, the `alice` stake will decrease by 100 CYBER tokens and her active tokens will be credited to the `alice` account balance.

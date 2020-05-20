@@ -20,7 +20,7 @@ If you want to deploy the dApp on a separate server, we recommend that you read 
 
 **Step_5** Create an account for your smart contract:
 ```
-cleos  system newaccount <Creator> <contractAccount> <contractAccountOwnerKey> <contractAccountActiveKey> --stake “100.0000 CYBER”
+cleos  system newaccount <Creator> <contractAccount> <contractAccountOwnerKey> <contractAccountActiveKey> --stake "100.0000 CYBER"
 ```
 
 **Step_6** Deploy your smart contract:
