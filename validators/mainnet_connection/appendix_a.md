@@ -5,13 +5,13 @@
 
 As soon as the `start_light.sh` script finishes, you have to make sure that docker-composer and services are working properly on your server. Docker-compose logs process information into its internal file. To get and analyze the logged information you can use the following commands:
 ```sh
-sudo docker logs -f nodeosd
-sudo docker logs -f mongo
+$ sudo docker logs -f nodeosd
+$ sudo docker logs -f mongo
 ```
 or (to get a partial information)
 ```sh
-sudo docker logs --tail 100 -f nodeosd
-sudo docker logs --tail 100 -f mongo
+$ sudo docker logs --tail 100 -f nodeosd
+$ sudo docker logs --tail 100 -f mongo
 ```
 The options:  
 `--tail` — takes the last lines of text;  
@@ -22,7 +22,7 @@ No error messages should be in the logged information.
 ### A1 Monitoring the successful installation
 Make sure that the `nodeosd` and `mongo` containers are successfully installed. It is recommended to run the following command:
 ```sh
-sudo docker ps
+$ sudo docker ps
 ```
 Containers are considered to be successfully installed if the following conditions are met:
   * no error messages in the log file;
@@ -44,7 +44,7 @@ Node synchronization process can take a long time. Therefore, you should monitor
 
 Make sure that the node does not hang. To get node status information, you can use the following command:
 ```
-cleos get info
+$ cleos get info
 ```
 The node is considered to be in working state if the received text contains information about  processing `head_block_num`, like this one:
 ```

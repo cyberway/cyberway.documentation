@@ -34,7 +34,7 @@ When executing transactions, a user does not have to worry about which specific 
 **Option_1.** Transfer tokens to a stake for yourself.  
 
 ```sh
-$ cleos push action cyber.token transfer ‘[<user account>, cyber.stake, “quantity CYBER”] -p <active key> 
+$ cleos push action cyber.token transfer '[<user account>, cyber.stake, "quantity CYBER"]' -p <active key> 
 ```  
 Arguments:
   * `user account` — user transferring tokens to a stake.
@@ -45,7 +45,7 @@ The liquid balance of user tokens in `cyber.token` contract is reduced by the `q
 
 *Example:*   
 ```sh
-$ cleos push action cyber.token transfer '[alice, cyber.stake, "100.0000 CYBER"] -p alice@active
+$ cleos push action cyber.token transfer '[alice, cyber.stake, "100.0000 CYBER"]' -p alice@active
 ```  
 User `alice` transfers 100 CYBER tokens to stake, due to which she can increase her activity on the network. The command is signed with the active key `alice@active`.  
 
@@ -130,7 +130,7 @@ $ cleos push action cyber.stake recalluse '[<delegator account>, <delegated stak
 ```
 *Example_1:*   
 ```sh
-$ cleos push action cyber.stake recalluse ‘[alice, bob, “10.0000 CYBER”] -p  alice@active
+$ cleos push action cyber.stake recalluse '[alice, bob, "10.0000 CYBER"]' -p  alice@active
 ```
 User `alice` revokes 10 tokens that were delegated to user` bob.` The operation is signed by the `alice` active key.  
 
