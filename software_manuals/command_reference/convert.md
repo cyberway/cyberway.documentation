@@ -24,12 +24,12 @@ The subcommand converts action data from JSON format to packed form.
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos convert pack_action_data <account> <name> <unpacked_action_data>
 ```
 
 ### Examples
-```
+```sh
 $ cleos convert pack_action_data c.gallery unlinkauth '{"account":"test1", "code":"test2", "type":"cybertype"}'
 ```
 ```
@@ -48,12 +48,12 @@ The subcommand converts a transaction from plain signed JSON to packed form.
  * `--pack-action-data` — Pack all action data within transaction, needs interaction with `nodeos`.
 
 ### Command
-```
+```sh
 $ cleos convert pack_transaction [OPTIONS] <transaction>
 ```
 
 ### Examples
-```
+```sh
 $ cleos convert pack_transaction '{
   "expiration": "2020-02-02T18:01:32",
   "ref_block_num": 22654,
@@ -102,12 +102,12 @@ The subcommand converts action data from packed to JSON format.
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos convert pack_action_data <account> <name> <unpacked_action_data>
 ```
 
 ### Examples
-```
+```sh
 $ cleos convert unpack_action_data c.gallery unlinkauth 000000003500b1be00000000008fa1ca0000a47deaea2903
 ```
 ```
@@ -132,12 +132,12 @@ The subcommand converts a transaction from packed to plain signed JSON form.
  * `--unpack-action-data` — Unpack all action data within transaction, needs interaction with `nodeos`.
 
 ### Command
-```
+```sh
 $ cleos convert unpack_transaction [OPTIONS] <transaction>
 ```
 
 ### Examples
-```
+```sh
 $ cleos convert unpack_transaction '{
   "signatures": [
     "SIG_K1_K6gS7...YE596eh"

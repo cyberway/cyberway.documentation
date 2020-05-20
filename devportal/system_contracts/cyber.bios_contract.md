@@ -3,7 +3,21 @@
 
 The `cyber.bios` smart contract is used as a link between operations, executed both directly in smart contracts and the node core. 
 
-`cyber.bios` includes the following actions: [newaccount](#newaccount), [setprods](#setprods), [setparams](#setparams), [reqauth](#reqauth), [setabi](#setabi), [setcode](#setcode), [onblock](#onblock), [checkwin](#checkwin), [bidname](#bidname), [bidrefund](#bidrefund), [canceldelay](#canceldelay),  [updateauth](#updateauth),  [deleteauth](#deleteauth),  [linkauth](#linkauth) and [unlinkauth](#unlinkauth).
+The actions supported:
+  * [newaccount](#newaccount)
+  * [setprods](#setprods)
+  * [setparams](#setparams)
+  * [reqauth](#reqauth), [setabi](#setabi)
+  * [setcode](#setcode)
+  * [onblock](#onblock)
+  * [checkwin](#checkwin)
+  * [bidname](#bidname)
+  * [bidrefund](#bidrefund)
+  * [canceldelay](#canceldelay)
+  * [updateauth](#updateauth)
+  * [deleteauth](#deleteauth)
+  * [linkauth](#linkauth)
+  * [unlinkauth](#unlinkauth)
 
 
 ## newaccount

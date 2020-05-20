@@ -37,13 +37,13 @@ The request returns an object containing various details about a specific accoun
 
 
 **Request examples:**  
-```
+```sh
 curl --request POST  -d '{"account_name" : "rows"}' http://<node>/v1/chain/get_account
 ```
-```
+```sh
 curl --request POST  -d '{"account_name" : "cyber"}' http://<node>/v1/chain/get_account
 ```
-```
+```sh
 curl --request POST  -d '{"account_name":"alice", "symbol":"SYS"}' http://<node>/v1/chain/get_account
 ```
 
@@ -89,7 +89,7 @@ The request returns an object containing various details about a specific block 
   * `(string) block_num_or_id` — A block number or a block id.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"block_num_or_id": "6707315"}' http://<node>/v1/chain/get_block
 ```
 
@@ -151,7 +151,7 @@ The request returns an object containing rows from the table for a specified acc
   * `(bool) code_as_wasm` — Binary code. Default is `false`.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account_name": "string", "code_as_wasm": 1}' http://<node>/v1/chain/get_block
 ```
 
@@ -196,7 +196,7 @@ The request returns an object containing various details about the blockchain.
 No params required.  
 
 **Request example:**  
-```
+```sh
 curl --request POST --data '' http://<node>/v1/chain/get_info
 ```
 
@@ -229,7 +229,7 @@ The request returns hash code of an object containing rows from the table for a 
   * `(name) account_name` — An account for which information in form of hash code is requested.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account_name": "cyber.stake"}' http://<node>/v1/chain/get_code_hash
 ```
 
@@ -251,7 +251,7 @@ The request retrieves the block header state. This query can only be applied to 
   * `string block_num_or_id` — A block_number or a block_id.
 
 **Request example:**  
-```
+```sh
  curl --request POST -d '{"block_num_or_id" : "006762...9c283"}' http://<node>/v1/chain/get_block_header_state
 ```
 
@@ -322,7 +322,7 @@ The request retrieves the ABI for a contract based on its account name.
   * `(name) account_name` — Account on which the contract is based.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account_name": "string"}' http://<node>/v1/chain/get_abi
 ```
 
@@ -362,7 +362,7 @@ The request retrieves raw code and ABI for a contract based on account name.
   * `(name) account_name` — Account on which the contract is based.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account_name": "string"}' http://<node>/v1/chain/get_raw_code_and_abi
 ```
 
@@ -386,7 +386,7 @@ The request returns an object containing rows from the specified table.
   * `(sha256) abi_hash` — ABI hash. This field is optional.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account_name": "string"}' http://<node>/v1/chain/get_raw_abi
 ```
 
@@ -422,13 +422,13 @@ The request returns an object containing rows from the specified table as well a
 
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"json": false, "code":"cyber.token", "scope":"cyber", "table" : "accounts", "table_key" : "", "lower_bound" : "", "upper_bound" : "", "limit" : "7", "key_type" : "int64", "index" : "primary", "encode_type" : "dec", "reverse" : false, "show_payer" : true}' http://<node>/v1/chain/get_table_rows
 ```
-```
+```sh
 curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" : "values", "table_key" : "", "upper_bound" : {"secondary" : 252, "forth" : 18}, "limit" : "20", "key_type" : "int64", "index" : "multy", "encode_type" : "dec", "reverse" : false, "show_payer" : true}' http://<node>/v1/chain/get_table_rows
 ```
-```
+```sh
 curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" : "values", "table_key" : "", "limit" : "5", "key_type" : "", "index" : "primary", "upper_bound" : {"key" : 14}, "encode_type" : "dec", "reverse" : false, "show_payer" : false}' http://<node>/v1/chain/get_table_rows
 ```
 
@@ -436,13 +436,13 @@ curl --request POST  -d '{"json": false, "code":"rows", "scope":"rows", "table" 
 **Code:** 200 OK  
 
 **Value:**
-```
+```sh
 {
     vector<fc::variant> "rows": [ // One row per item, either encoded as hex String or JSON object.
         null
     ],
-    "more": false,                // `true` if the next element is not finite and if the condition 'sizeof data() < limit' is fulfilled. By default is "false".
-    "next": false                 // If `more` field is `true`, this field contains an element located after the last in the rows field.
+    "more": false,                // "true" if the next element is not finite and if the condition 'sizeof data() < limit' is fulfilled. By default is "false".
+    "next": false                 // If "more" field is "true", this field contains an element located after the last in the rows field.
 }
 ```
 
@@ -455,7 +455,7 @@ The request retrieves the current balance.
   * `(optional<string>) symbol` — A string representation of a token symbol, composed of a float with a precision of 4, and a symbol composed of capital letters, for example `1.0000 SYS`.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SYS"}' http://<node>/v1/chain/get_currency_balance
 ```
 
@@ -477,7 +477,7 @@ The request retrieves currency stats of a certain type of tokens in the system.
   * `(string) symbol` — A string representation of a token symbol, composed of a float with a precision of 4, and a symbol composed of capital letters between 1-7 letters separated by a space, example `1.0000 SYS`.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"code":"cyber.token", "account":"bob" , "symbol" : "SYS"}' http://<node>/v1/chain/get_currency_stats
 ```
 
@@ -502,7 +502,7 @@ The request retrieves producers (validators) list.
   * `(uint32_t) limit` — Total number of producers to retrieve. Default is `50`.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"json" : false, "lower_bound" : 2, "limit" : 10 }' http://<node>/v1/chain/get_producers
 ```
 
@@ -527,7 +527,7 @@ The request retrieves producers (validators) list.
 No params required.  
 
 **Request example:**  
-```
+```sh
 curl --request POST --data ''  http://<node>/v1/chain/get_producer_schedule
 ```
 
@@ -570,7 +570,7 @@ The request retrieves deferred transactions.
   * `(uint32_t) limit` — Total number of transactions to retrieve. Default is `50`.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"json" : false, "limit" : 10 }' http://<node>/v1/chain/get_scheduled_transactions
 ```
 
@@ -596,7 +596,7 @@ The request returns an object containing rows from the specified table.
   * `(variant) args` — Arguments in JSON form.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"code" : "rows", "action" : "filltable", "args" : {"fildltable" : 30} }' http://<node>/v1/chain/abi_json_to_bin
 ```
 
@@ -619,7 +619,7 @@ The request returns an object containing rows from the specified table.
   * `(vector<char>) binargs` — String containing binary arguments.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"code" : "rows", "action" : "filltable", "binargs" : "1e00000000000000" }' http://<node>/v1/chain/abi_bin_to_json
 ```
 
@@ -651,7 +651,7 @@ The request returns the required keys needed to sign a transaction.
   * `(string) available_keys` — Provide the available keys.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"transaction" : {"trx_id":"d48b...90ee8","sender":"","sender_id": "308457...031097", "payer":"cyber.token", "delay_until":"2019-03-29T05:42:03.000", "expiration":"2019-03-29T05:52:03.000", "published":"2019-03-29T05:32:03.000", "transaction":"eead9d5...59530000000000"}, "available_keys" : ["GLS62zK8V5V...YUHM3YeLZg"] }' http://<node>/v1/chain/get_required_keys
 ```
 
@@ -672,10 +672,10 @@ The request returns ID of a transaction using specified parameters if such trans
 Optional set params is used.  
 
 **Request examples:**  
-```
+```sh
 curl --request POST  -d '{"context_free_actions":[],"actions":[{"account":"cyber.token","name":"create","authorization":[{"actor":"cyber.token","permission":"active"}],"data":{"issuer":"cyber","maximum_supply":{"amount":1000000000000,"decs":4,"sym":"SYS"}},"hex_data":"0000000080ab8e470010a5d4e80000000453595300000000"}],"transaction_extensions":[]}' http://<node>/v1/chain/get_transaction_id
 ```
-```
+```sh
 curl --request POST  -d '{"context_free_actions":[],"actions":[{"account":"cyber.token","name":"create","authorization":[{"actor":"cyber.token","permission":"active"}],"data":"0000000080ab8e470010a5d4e80000000453595300000000"}],"transaction_extensions":[]}' http://<node>/v1/chain/get_transaction_id
 ```
 
@@ -697,7 +697,7 @@ The request returns a key needed to sign a transaction if such key is in chain D
   * `(symbol) symbol` — Identifier of a staked token, that is a token cost accuracy in the form of decimal places number and a token name, consisting of a set of capital letters.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account" : "alice", "symbol" : "4,CYBER"}' http://<node>/v1/chain/get_agent_public_key
 ```
 
@@ -722,7 +722,7 @@ The request returns the resolved domain and user names retrieved from the JSON f
     * `(string) username@@domain` — A username is directly in a domain scope.
 
 **Request example:**  
-```
+```sh
 curl --request POST --data '["@alice","alice@golos","bob@@gls"]'  http://<node>/v1/chain/resolve_names
 ```
 
@@ -746,7 +746,7 @@ The request retrieves an information for specified proxy account.
   * `(symbol) symbol`  — Identifier of a token (provided by grantors), that is a token cost accuracy in the form of decimal places number and a token name, consisting of a set of capital letters.
 
 **Request example:**  
-```
+```sh
 curl --request POST  -d '{"account" : "alice", "symbol" : "4,CYBER"}' http://<node>/v1/chain/get_proxy_status
 ```
 

@@ -19,8 +19,8 @@ The request puts a producer node in pause state and returns nothing.
 **Params:**  
 No params required.  
 
-**Request examples:**
-```
+**Request example:**
+```sh
 curl --request POST  --data '' http://<node>/v1/producer/pause
 ```
 
@@ -37,7 +37,7 @@ The request switches a producer node from "pause" state to "resume" state and re
 No params required.  
 
 **Request example:**  
-```
+```sh
 curl --request POST  --data '' http://<node>/v1/producer/resume
 ```
 
@@ -54,7 +54,7 @@ The request retreives paused status for producer node.
 No params required.  
 
 **Request example:**  
-```
+```sh
 curl --request POST  --data '' http://<node>/v1/producer/paused
 ```
 
@@ -75,7 +75,7 @@ The request retreives run time options for producer node.
 No params required.  
 
 **Request example:**  
-```
+```sh
 curl --request POST --data '' http://<node>/v1/producer/get_runtime_options
 ```
 
@@ -105,12 +105,12 @@ Each of parameters specified in the operation is optional.
   * `(integer) max_scheduled_transaction_time_per_block_ms` — Maximum wall-clock time (in milliseconds) spent retiring scheduled transactions in any block before returning to normal transaction processing. Defaults to *1000*.
   * `(integer) incoming_defer_ratio` — Ratio between incoming transations and deferred transactions when both are exhausted. Defaults to *1.0* that  means *1:1*.
 
-**Request example:**  
-```
+**Request examples:**  
+```sh
 curl --request POST  -d '{"max_transaction_time": 1500, "last_block_time_offset_us": 5}' http://<node>/v1/producer/update_runtime_options
 ```
 
-```
+```sh
 curl --request POST  -d '{"max_transaction_time": 1500, "max_irreversible_block_age": 5, "produce_time_offset_us": 10, "last_block_time_offset_us": 10, "max_scheduled_transaction_time_per_block_ms": 1000, "incoming_defer_ratio": 1.2}' http://<node>/v1/producer/update_runtime_options
 ```
 

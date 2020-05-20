@@ -49,7 +49,7 @@ Propose action.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig propose [OPTIONS] <proposal_name> <requested_permissions> <trx_permissions> <contract> <action> <data> [<proposer>] [<proposal_expiration>] [<description>]
 ```
 
@@ -83,7 +83,7 @@ Propose transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig propose_trx <proposal_name> <requested_permissions> <transaction> [<proposer>] [<description>] [OPTIONS]
 ```
 
@@ -100,7 +100,7 @@ Review transaction.
  * `--show-approvals` — Show the status of the approvals requested within the proposal.
 
 ### Command
-```
+```sh
 $ cleos multisig review [OPTIONS] <proposer> <proposal_name>
 ```
 
@@ -134,7 +134,7 @@ Approve proposed transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig approve [OPTIONS] <proposer> <proposal_name> <permissions> [<proposal_hash>]
 ```
 
@@ -167,7 +167,7 @@ Unapprove proposed transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig unapprove [OPTIONS] <proposer> <proposal_name> <permissions>
 ```
 
@@ -198,7 +198,7 @@ Invalidate all multisig approvals of an account. Revoke all permissions previous
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig invalidate [OPTIONS] <invalidator>
 ```
 
@@ -230,7 +230,7 @@ Cancel proposed transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig cancel [OPTIONS] <proposer> <proposal_name> [<canceler>]
 ```
 
@@ -262,7 +262,7 @@ Execute proposed transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
  
 ### Command
-```
+```sh
 $ cleos multisig exec [OPTIONS] <proposer> <proposal_name> [<executer>]
 ```
 
@@ -295,6 +295,6 @@ Schedule delayed proposed transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos multisig schedule [OPTIONS] <proposer> <proposal_name> [<actor>]
 ```

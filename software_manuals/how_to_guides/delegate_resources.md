@@ -16,11 +16,11 @@ Delegate resource for an account.
 
 `alice`  delegates 100 tokens to `bob`. This operation is signed by the alice's active key:
 ```sh
-$ cleos push action cyber.stake delegateuse ‘[alice, bob, “10.0000 CYBER”]` -p alice@active
+$ cleos push action cyber.stake delegateuse '[alice, bob, "10.0000 CYBER"]' -p alice@active
 ```
 or using specialized cleos system command `delegatebw`:
 ```sh
-$ cleos system delegatebw alice bob “100.0000 CYBER”
+$ cleos system delegatebw alice bob "100.0000 CYBER"
 ```
 
 > **Note**  

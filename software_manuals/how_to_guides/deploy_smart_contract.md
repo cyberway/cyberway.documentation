@@ -10,6 +10,6 @@ Deploy dApp contract.
 ### Steps
 Execute:
 ```sh
-$cleos set contract contract_account contract_directory_path
+$ cleos set contract contract_account contract_directory_path
 ```
 Replace the `contract_directory_path` with the path points to your contract folder.

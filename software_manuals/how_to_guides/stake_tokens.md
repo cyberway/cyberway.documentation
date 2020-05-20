@@ -16,12 +16,12 @@ Stake tokens for your account.
 
 Stake 100 CYBER tokens for `alice` account:
 ```sh
-$ cleos push action cyber.token transfer ‘[alice, cyber.stake, “100.0000 CYBER”]' -p alice@active
+$ cleos push action cyber.token transfer '[alice, cyber.stake, "100.0000 CYBER"]' -p alice@active
 ```
 
 or using "system stake" operation:
 ```sh
-$ cleos system stake alice “100.0000 CYBER”
+$ cleos system stake alice "100.0000 CYBER"
 ```
 
 > **Note**  

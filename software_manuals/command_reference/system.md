@@ -54,13 +54,13 @@ Create a new account on the blockchain with initial resources.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system newaccount [OPTIONS] <creator> <name> <OwnerKey> [<ActiveKey>]
 ```
 
 ### Examples
 'alice' creates 'bob' and transfers him *50* tokens irrevocably.
-```
+```sh
 $ cleos system newaccount --stake=50.0000,CYBER --transfer alice bob XXX...XXX
 ```
 
@@ -93,7 +93,7 @@ Register a new producer.
 
 
 ### Command
-```
+```sh
 $ cleos system regproducer [OPTIONS] <account> <producer_key>
 ```
 
@@ -124,7 +124,7 @@ Unregister an existing producer.
 
 
 ### Command
-```
+```sh
 $ cleos system unregprod [OPTIONS] <account>
 ```
 
@@ -157,7 +157,7 @@ This subcommand can be used to vote your stake through a proxy.
 
 
 ### Command
-```
+```sh
 $ cleos system voteproducer proxy [OPTIONS] <voter> <proxy> <quantity>
 ```
 
@@ -189,7 +189,7 @@ This subcommand can be used to vote for a producer.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system voteproducer prods [OPTIONS] <voter> <producer> <quantity>
 ```
 
@@ -207,7 +207,7 @@ No parameters required for this subcommand.
  * `-L`, `--lower` *TEXT* — Lower bound value of key, defaults to first.
 
 ### Command
-```
+```sh
 $ cleos system listproducers [OPTIONS]
 ```
 
@@ -241,14 +241,14 @@ This subcommand can be used to delegate bandwidth.
 
 
 ### Command
-```
+```sh
 $ cleos system delegatebw [OPTIONS] <from> <receiver> <stake_quantity>
 ```
 
 ### Examples
 'alice' delegates *10* tokens to 'bob'
-```
-cleos system delegatebw alice bob “10.0000 CYBER”
+```sh
+cleos system delegatebw alice bob "10.0000 CYBER"
 ```
 
 ## System Undelegatebw
@@ -279,7 +279,7 @@ This subcommand can be used to undelegate bandwidth.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system undelegatebw [OPTIONS] <from> <receiver> <unstake_quantity>
 ```
 
@@ -298,13 +298,13 @@ This operation can only be performed 30 days after completion of `undelegatebw` 
 No options required for this subcommand.
 
 ### Command
-```
+```sh
 $ cleos system claimbw <from> <receiver> <token_code>
 ```
 ### Examples
 'alice' credits the amount of staked tokens returned from 'bob' to a stake.
-```
-$ cleos system claimbw alice bob “CYBER”
+```sh
+$ cleos system claimbw alice bob "CYBER"
 ```
 
 ## System Listbw
@@ -319,13 +319,13 @@ This subcommand can be used to list delegated bandwidth.
  * `--json`, `-j` — Output in JSON format.
 
 ### Command
-```
+```sh
 $ cleos system listbw [OPTIONS] <account>
 ```
 
 ### Examples
-'alice` receives a list of users to whom she delegated bandwidth (staked tokens).
-```
+'alice' receives a list of users to whom she delegated bandwidth (staked tokens).
+```sh
 $ cleos system listbw alice
 ```
 
@@ -357,13 +357,13 @@ Name bidding subcommand.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system bidname [OPTIONS] <bidder> <newname> <bid>
 ```
 
 ### Examples
 'accountname1' bids *100* tokens to buy 'alice' name at an auction.
-```
+```sh
 $ cleos system bidname accountname1 alice "100.0000 CYBER"
 ```
 
@@ -379,11 +379,11 @@ This subcommand can be used to get bidname info.
  * `--json`, `-j` — Output in JSON format.
 
 ### Command
-```
+```sh
 $ cleos system [OPTIONS] <newname>
 ```
 ### Examples
-```
+```sh
 $ cleos system bidnameinfo alice
 ```
 
@@ -415,7 +415,7 @@ This subcommand can be used to set an account proxy level.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system setproxylvl [OPTIONS] <account> <level>
 ```
 
@@ -448,13 +448,13 @@ This subcommand can be used to register an account as a proxy (for voting).
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system regproxy [OPTIONS] <proxy>
 ```
 
 ### Examples
 'alice' registers as a proxy having level=1 and fee=50(%).
-```
+```sh
 $ cleos system regproxy --symbol=4,CYBER --level=1 --fee=5000 alice
 ```
 
@@ -485,13 +485,13 @@ Unregister an account as a proxy (for voting).
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system unregproxy [OPTIONS] <proxy>
 ```
 
 ### Examples
 'alice' stops registering as a proxy account.
-```
+```sh
 $ cleos system unregproxy --symbol=4,CYBER alice
 ```
 
@@ -508,13 +508,13 @@ This subcommand can be used to stake assets to gain resources.
  * `--beneficiary` *TEXT* — An account gaining resources.
 
 ### Command
-```
+```sh
 $ cleos system stake [OPTIONS] <account> <quantity>
 ```
 
 ### Examples
-```
- cleos system stake alice “100.0000 CYBER” --beneficiary=bob
+```sh
+ cleos system stake alice "100.0000 CYBER" --beneficiary=bob
 ```
 
 
@@ -546,6 +546,6 @@ This subcommand can be used to cancel a delayed transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos system canceldelay [OPTIONS] <canceling_account> <canceling_permission> <trx_id>
 ```

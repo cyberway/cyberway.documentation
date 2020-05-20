@@ -30,12 +30,12 @@ None.
  * `--to-console` — Print password to console.
 
 ### Command
-```
+```sh
 $ cleos wallet create [OPTIONS]
 ```
 
 ### Examples
-```
+```sh
 $ cleos wallet create --name=walletname1 --to-console
 ```
 
@@ -51,18 +51,18 @@ None.
  * `-n`, `--name` *TEXT* — The name of the wallet to open.
 
 ### Command
-```
+```sh
 $ cleos wallet open [OPTIONS]
 ```
 
 ### Examples
 *Example 1*
-```
+```sh
 $ cleos wallet open
 ```
 
 *Example 2*
-```
+```sh
 $ cleos wallet open --name=walletname1
 ```
 
@@ -83,18 +83,18 @@ None.
  * `-n`, `--name` *TEXT* — The name of the wallet to lock.
 
 ### Command
-```
+```sh
 $ cleos wallet lock [OPTIONS]
 ```
 
 ### Examples
 *Example 1*
-```
+```sh
 $ cleos wallet lock
 ```
 
 *Example 2*
-```
+```sh
 $ cleos wallet lock --name=walletname1
 ```
 
@@ -115,7 +115,7 @@ None.
 None.
 
 ### Command
-```
+```sh
 $ cleos wallet lock_all
 ```
 
@@ -137,13 +137,13 @@ None.
  * `--password` *TEXT* — The password returned by [wallet create](#wallet-create).
 
 ### Command
-```
+```sh
 $ cleos wallet unlock [OPTIONS]
 ```
 
 ### Examples
 To unlock a wallet, specify the password provided when it was created.
-```
+```sh
 $ cleos wallet unlock --name=walletname1 --password=XXXXXXXX
 ```
 
@@ -165,12 +165,12 @@ None.
  * `--private-key` *TEXT* — Private key in WIF format to import.
 
 ### Command
-```
+```sh
 $ cleos wallet import [OPTIONS]
 ```
 
 ### Examples
-```
+```sh
 $ cleos wallet import --name=walletname1 --private-key=3Rft...Uh6
 ```
 
@@ -187,12 +187,12 @@ This subcommand can be used to remove key from wallet.
  * `--password` *TEXT* — The password returned by [wallet create](#wallet-create).
 
 ### Command
-```
+```sh
 $ cleos wallet remove_key <key> [OPTIONS]
 ```
 
 ### Examples
-```
+```sh
 $ cleos wallet remove_key GLS8PE...rS3T --name=walletname1 --password=XXXXXXXX
 ```
 
@@ -208,12 +208,12 @@ This subcommand can be used to creates a key pair within the wallet so that you 
  * `-n`, `--name` *TEXT* — The name of the wallet to create key into.
 
 ### Command
-```
+```sh
 $ cleos wallet create_key [OPTIONS]
 ```
 
 ### Examples
-```
+```sh
 $ cleos wallet create_key K1 --name-walletname1
 ```
 ```
@@ -232,7 +232,7 @@ None.
 None.
 
 ### Command
-```
+```sh
 $ cleos wallet list
 ```
 
@@ -264,7 +264,7 @@ None.
 None.
 
 ### Command
-```
+```sh
 $ cleos wallet keys
 ```
 *Output*
@@ -277,7 +277,7 @@ $ cleos wallet keys
 ```
 
 ### Examples
-```
+```sh
 $ cleos wallet 
 ```
 
@@ -296,11 +296,11 @@ None.
  * `--password` *TEXT* — The password returned by wallet create.
 
 ### Command
-```
+```sh
 $ cleos wallet private_keys [OPTIONS]
 ```
 
 ### Examples
-```
+```sh
 $ cleos wallet private_keys --name-walletname1 --password=XXXXXXXX
 ```

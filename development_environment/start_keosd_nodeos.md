@@ -69,7 +69,7 @@ $ cleos wallet create --file wallet.pass
 
 The `keosd` service automatically locks storage if it is not in use. Storage can be unlocked using the command:
 ```sh
-cleos wallet unlock --password `sudo docker exec -ti keosd cat wallet.pass`
+$ cleos wallet unlock --password 'sudo docker exec -ti keosd cat wallet.pass'
 ```
 
 ### Import the private key

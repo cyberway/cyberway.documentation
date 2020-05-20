@@ -12,6 +12,6 @@ The subcommand can be used to sign a transaction.
  * `-p`, `--push-transaction` — Push transaction after signing.
 
 ### Command
-```
+```sh
 $ cleos sign [OPTIONS] <transaction>
 ```

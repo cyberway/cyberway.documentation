@@ -37,7 +37,7 @@ Push a transaction with a single action.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos push [OPTIONS] <account> <action> <data>
 ```
 
@@ -68,7 +68,7 @@ Push an arbitrary JSON transaction.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos push transaction [OPTIONS] <transaction>
 ```
 
@@ -86,6 +86,6 @@ No options required fot this subcommand.
 
 ### Command
 Pushes an array of arbitrary JSON transactions.
-```
+```sh
 $ cleos push transactions {<transaction1>...<transactionN>}
 ```
