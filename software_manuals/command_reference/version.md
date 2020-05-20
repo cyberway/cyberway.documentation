@@ -12,11 +12,11 @@ None.
 
 ### Usage
 Retrieve version information.
-```
+```sh
 $ cleos version
 ```
 
 Retrieve version information of the client
-```
+```sh
 $ cleos version client
 ```

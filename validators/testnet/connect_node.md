@@ -28,7 +28,7 @@ cleos wallet create --file wallet.pass
 ```
 In case of stopping the use of storage, the service `keosd` automatically blocks it. After this, the vault can be unlocked using the command:
 ```
-cleos wallet unlock --password `sudo docker exec -ti keosd cat wallet.pass`
+cleos wallet unlock --password 'sudo docker exec -ti keosd cat wallet.pass'
 ```
 
 **4.5 Import the private key**  

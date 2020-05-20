@@ -68,7 +68,7 @@ The parameter `min_own_staked` is a minimum amount of CYBER tokens required to b
 **Step_4**  Activate your keys:  
 
 ```
-   cleos push action cyber.stake setkey ‘{“account”:”<account name>”, “token_code”:”CYBER”, “signing_key”:”<  … >”}’ -p <account name>  
+   cleos push action cyber.stake setkey '{“account":"<account name>", "token_code":"CYBER", "signing_key":"<  … >"}' -p <account name>  
 ```
 
 **Step_5**  

@@ -45,36 +45,36 @@ The liquid balance of user tokens in `cyber.token` contract is reduced by the `q
 
 *Example:*   
 ```
-    cleos push action cyber.token transfer ‘[alice, cyber.stake, “100.0000 CYBER”] -p alice@active
+    cleos push action cyber.token transfer '[alice, cyber.stake, "100.0000 CYBER"] -p alice@active
 ```  
 User `alice` transfers 100 CYBER tokens to stake, due to which she can increase her activity on the network. The command is signed with the active key `alice@active`.  
 
 **Option_2.**  Token transfer to another user's stake.
 ```
-    cleos push action cyber.token transfer ‘[<user account>, cyber.stake, “quantity CYBER”, <recipient account>] -p <active key> 
+    cleos push action cyber.token transfer '[<user account>, cyber.stake, "quantity CYBER", <recipient account>]' -p <active key> 
 ```  
 The `user account` argument is a recipient of the staked tokens.  
 
 *Example:*   
 ```
-    cleos push action cyber.token transfer ‘[alice, cyber.stake, “100.0000 CYBER”, bob] -p alice@active
+    cleos push action cyber.token transfer '[alice, cyber.stake, "100.0000 CYBER", bob]' -p alice@active
 ```   
 User `alice` transfers 100 CYBER tokens to stake for user `bob`. In this case, the `alice` liquid balance will be reduced by the 100 CYBER. The `bob` balance in `cyber.stake` contract is increased by 100 staked tokens. The command is signed with the active key `alice@active`.
  
 **Option_3.**  Transfer tokens to a stake via using the "system stake" operation.
 ```
-cleos system stake <user account> “quantity CYBER”
+cleos system stake <user account> "quantity CYBER"
 ```
 
 *Example_1:*  Transfer tokens to a stake for yourself.  
 ```
-    cleos system stake alice “100.0000 CYBER”
+    cleos system stake alice "100.0000 CYBER"
 ``` 
 User `alice` transfers 100 CYBER tokens to stake. Unlike `transfer`, this operation does not require an active key signature.  
 
 *Example_2:*  Transfer tokens to a stake for another user.
 ```
-    cleos system stake alice “100.0000 CYBER” --beneficiary bob
+    cleos system stake alice "100.0000 CYBER" --beneficiary bob
 ``` 
 
 User `alice` transfers 100 CYBER tokens to stake for user` bob`. Unlike `transfer`, this operation does not require an active key signature.  
@@ -84,13 +84,13 @@ User `alice` transfers 100 CYBER tokens to stake for user` bob`. Unlike `transfe
 `withdraw` operation is intended to withdraw tokens from the stake to active state. This operation is executed by the smart contract `cyber.stake`.  
 
 ```
-	cleos push action cyber.stake withdraw <account name> “quantity CYBER”
+    cleos push action cyber.stake withdraw <account name> "quantity CYBER"
 ```  
 Tokens are withdrawn immediately without any delay. The withdrawal is executed if the remainder of user’s stake, taking into account the funds being withdrawn, as well as the funds delegated to other users, covers the costs of the resources used by the user.
 
 *Example:*   
 ```
-    cleos push action cyber.stake withdraw alice “100.0000 CYBER”
+    cleos push action cyber.stake withdraw alice "100.0000 CYBER"
 ```   
 
 After this operation is completed, user `alice` stake will decrease by 100 CYBER tokens. At the same time, active tokens will be credited to the `alice` account balance.  
@@ -100,7 +100,7 @@ After this operation is completed, user `alice` stake will decrease by 100 CYBER
  
 The operation is executed by the smart contract `cyber.stake`.
 ```
-    cleos push action cyber.stake delegateuse ‘[<delegator account>, <recipient account>, “quantity CYBER”] -p  <active key>
+    cleos push action cyber.stake delegateuse '[<delegator account>, <recipient account>, "quantity CYBER"]' -p  <active key>
 ```
 Arguments:  
   * `delegator account` — user delegating staked tokens.
@@ -110,13 +110,13 @@ Arguments:
 
 *Example_1:*  
 ```
-   cleos push action cyber.stake delegateuse ‘[alice, bob, “10.0000 CYBER”] -p  alice@active
+    cleos push action cyber.stake delegateuse '[alice, bob, "10.0000 CYBER"]' -p  alice@active
 ```  
 `Alice` user delegates 10 tokens to user` bob`. The operation is signed by the `alice` active key.  
 
 *Example_2:*   `delegatebw` operation can be executed using the specialized cleos command.
 ```
-cleos system delegatebw alice bob “10.0000 CYBER”
+    cleos system delegatebw alice bob "10.0000 CYBER"
 ```
 ### undelegatebw
 `undelegatebw` operation is intended to return delegated stake. 
@@ -126,7 +126,7 @@ This operation is performed in two stages:
 
 **Stage_1** `recalluse` operation can be executed to revoke a delegated stake:
 ```
-    cleos push action cyber.stake recalluse ‘[<delegator account>, <delegated stake recipient>, “quantity CYBER”] -p  <delegator’s active key>
+    cleos push action cyber.stake recalluse '[<delegator account>, <delegated stake recipient>, "quantity CYBER"]' -p  <delegator’s active key>
 ```
 *Example_1:*   
 ```
@@ -137,15 +137,15 @@ User `alice` revokes 10 tokens that were delegated to user` bob.` The operation 
 *Example_2:* 
 The operation `undelegatebw ` can also be executed using the specialized cleos command
 ```
-    cleos system undelegatebw alice bob “10.0000 CYBER”
+    cleos system undelegatebw alice bob "10.0000 CYBER"
 ```
 **Stage_2** `claim` operation can be executed to credit the returned amount of staked tokens to a stake:  
 ```
-    cleos push action cyber.stake claim ‘[alice, bob, “CYBER”] -p  alice@active
+    cleos push action cyber.stake claim '[alice, bob, "CYBER"]' -p  alice@active
 ```
 or execute the specialized cleos command
 ```
-   cleos system claimbw alice bob “CYBER”
+   cleos system claimbw alice bob "CYBER"
 ```  
 Stage_2 operations should only be performed 30 days after completion of stage_1 operations.
 

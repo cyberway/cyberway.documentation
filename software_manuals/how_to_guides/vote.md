@@ -16,7 +16,7 @@ Vote for a validator.
 *Option_1:* Vote yourself.
 `alice` votes for the`bob` validator and allocates 50 CYBER tokens for it:
 ```sh
-$ cleos system voteproducer prods alice bob “50.0000 CYBER”
+$ cleos system voteproducer prods alice bob "50.0000 CYBER"
 ```
 
 *Option_2:* Vote via a proxy account.
@@ -24,7 +24,7 @@ If you are unable to vote, you can entrust your vote to a proxy account that wil
 
 `alice` delegates  50 CYBER tokens to `bob` that is a proxy account:
 ```sh
-$ cleos system voteproducer prods alice bob “50.0000 CYBER”
+$ cleos system voteproducer prods alice bob "50.0000 CYBER"
 ```
 
 ### Useful links

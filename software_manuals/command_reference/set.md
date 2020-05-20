@@ -41,12 +41,12 @@ Create or update the code on an account.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos set code [OPTIONS] <account> [<code-file>]
 ```
 
 ### Examples
-```
+```sh
 $ cleos set code alice ./path/to/wasm
 ```
 
@@ -79,12 +79,12 @@ Create or update the contract on an account.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos set abi [OPTIONS] <account> [<abi-file>]
 ```
 
 ### Examples
-```
+```sh
 $ cleos set abi alice ./path/to/abi.abi
 ```
 
@@ -119,13 +119,13 @@ Create or update the contract on an account.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos set contract [OPTIONS] <account> [<contract-dir>] [<wasm-file>]
 ```
 
 ### Examples
 Deployind the stake contract.
-```
+```sh
 $ cleos set contract currency ../contracts/cyber.stake/stake.wasm ../contracts/cyber.stake/stake.abi
 ```
 
@@ -161,26 +161,26 @@ Set parameters dealing with account permissions.
 
 ### Command
 To modify the permissions of an account, you must have the authority over the account and the permission of which you are modifying.
-```
+```sh
 $ cleos set account permission [OPTIONS] <account> <permission> [<authority>] [<parent>]
 ```
 
 ### Examples
 *Example 1*  
 Associates a new key to the active permissions of an account.
-```
+```sh
 $ cleos set account permission test active '{"threshold" : 1, "keys" : [{"permission":{"key":"GLS7...L6T2s","permission":"active"},"weight":1}], "accounts" : [{"permission":{"account":"bob","permission":"active"},"weight":50}]}' owner
 ```
 
 *Example 2*  
 Modifies the same account permission, but removes the key set in the last example, and grants active authority of the @test account to another account.
-```
+```sh
 $ cleos set account permission test active '{"threshold" : 1, "keys" : [], "accounts" : [{"permission":{"account":"sandwich","permission":"active"},"weight":1},{"permission":{"account":"alice","permission":"active"},"weight":50}]}' owner
 ```
 
 *Example 3*  
 Demonstrates how to setup permissions for multisig.
-```
+```sh
 cleos set account permission test active '{"threshold" : 100, "keys" : [{"permission":{"key":"GLS7...L6T2s","permission":"active"},"weight":25}], "accounts" : [{"permission":{"account":"@sandwich","permission":"active"},"weight":75}]}' owner
 ```
 
@@ -213,17 +213,17 @@ Set parmaters dealing with account permissions.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos set action permission [OPTIONS] <account> <code> <type> <requirement>
 ```
 
 ### Examples
 Link a 'voteproducer' action to the 'voting' permissions
-```
+```sh
 $ cleos set action permission alice cyber.system voteproducer voting -p alice@voting
 ```
 
 Now can execute the transaction with the previously set permissions. 
-```
+```sh
 $ cleos system voteproducer approve alice someproducer -p alice@voting
 ```

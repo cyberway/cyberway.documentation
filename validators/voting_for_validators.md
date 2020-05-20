@@ -86,8 +86,8 @@ To become a candidate check our [brief guide](https://cyberway.gitbook.io/en/val
 A validator, as well as a candidate for validators, is required to set a `fee`, which will be allocated to him/her from the stake pool reward in the future.  An unreasonably high `fee` may reduce the number of users voting for the validator. On the contrary, an unreasonably low `fee` may not compensate for the validator's costs for node maintenance. Therefore, the validator should be most responsible for setting the commission.  
 
 To set `fee`, the validator can use the following `cleos` command:
-```
-cleos push action cyber.stake setproxyfee '{“account” : <account>, “token_code” :<token_code>, “fee” : <fee>}' -p <account>
+```sh
+    cleos push action cyber.stake setproxyfee '{"account" : <account>, "token_code" :<token_code>, "fee" : <fee>}' -p <account>
 ```
 
 Command line arguments:
@@ -96,29 +96,29 @@ Command line arguments:
   * `fee` — the amount of the commission indicated with an accuracy of hundredths of a percent. This parameter takes values «0-10000». The «0» value corresponds to «0 %», and «10000» corresponds to «100 %».  
 
 The example with setting the «7 %» `fee`  by `alice` validator:
-```
-cleos push action cyber.stake setproxyfee '{"account":"alice", "token_code":"CYBER", "fee":700}' -p alice
+```sh
+$ cleos push action cyber.stake setproxyfee '{"account":"alice", "token_code":"CYBER", "fee":700}' -p alice
 ```
 
 ### Setting proxy level  
 
 The validator as well as the candidate for validators must always remain at zero proxy level. You may use the following `cleos` command to configure the proxy level to zero:
-```
-cleos system setproxylvl <account> <level>
+```sh
+$ cleos system setproxylvl <account> <level>
 ```
 Command line arguments:
   * `account` — validator account.
   * `level` — the proxy level to be set. This parameters must always remain as «0».  
 
 The following example demonstrates the way the zero proxy level is configured for the user called `alice`:
-```
-cleos system setproxylvl alice 0
+```sh
+$ cleos system setproxylvl alice 0
 ```
 
 ### Setting public key  
 The validator must hold a public key (his own digital signature) for block signing. You may use the following `cleos` command to activate the validator key:
-```
-cleos push action cyber.stake setkey ‘{“account”:”<account>”, “token_code”:”CYBER”, “signing_key”:”<... digital signature...>”}’ -p <account>
+```sh
+$ cleos push action cyber.stake setkey '{"account":"<account>", "token_code":"CYBER", "signing_key":"<... digital signature...>"}' -p <account>
 ```
 Command line arguments:
   * `account` — validator to which the public key is set.
@@ -126,21 +126,21 @@ Command line arguments:
   * `signing_key` — public key (validator’s signature) to be set.  
 
 The following example demonstrates setting the public key "PW5Kewn9L...t42S9XCw2" by `alice` validator, which she will use when signing blocks:
-```
-cleos push action cyber.stake setkey ‘{“account”:”alice”, “token_code”:”CYBER”, “signing_key”:”GLS7M53j...6FAx8Y881”}’ -p alice
+```sh
+$ cleos push action cyber.stake setkey '{"account":"alice", "token_code":"CYBER", "signing_key":"GLS7M53j...6FAx8Y881"}' -p alice
 ```  
 
 ### Setting both public key and proxy level via one command
 The user also has the ability to set both the proxy level to zero and the public key simultaneously by using one command:
-```
-cleos system regproducer <account> <signing_key>  --min-own-stake <value>
+```sh
+$ cleos system regproducer <account> <signing_key>  --min-own-stake <value>
 ```
 
 Unlike the previous command, the optional argument “--min-own-stake \<value\>” can be set here, which specify the minimum number of staked tokens that a user must have in order to be a candidate for validators.  
 
 Example of declaring user `alice` as a validator candidate:
-```
-cleos system regproducer alice GLS7M53j...6FAx8Y881 --min-own-stake 500000000
+```sh
+$ cleos system regproducer alice GLS7M53j...6FAx8Y881 --min-own-stake 500000000
 ```
 
 
@@ -167,8 +167,8 @@ If the decision needs to be changed, or the number of staked tokens have to be d
 Regardless of reasons implied, a user not willing to participate in the voting for validators can use the services of a proxy account and entrust it with a right to vote. To do this, the user needs to delegate the staked Cyber tokens to a proxy account. 
 
 To delegate staked Cyber tokens to a proxy account, you can use the following `cleos` command:
-```
-cleos system voteproducer prods <user account> <proxy account> “quantity CYBER”
+```sh
+$ cleos system voteproducer prods <user account> <proxy account> “quantity CYBER”
 ```
 Command line arguments:
   * `user account` — the name of the account that delegates the steak (or part of the stake) to the proxy account.
@@ -177,8 +177,8 @@ Command line arguments:
   
 The example with the delegation of 100 CYBER Stake tokens to the `bob` proxy account by the `alice` user:
 
-```
-cleos system voteproducer prods alice bob “100.0000 CYBER” 
+```sh
+$ cleos system voteproducer prods alice bob “100.0000 CYBER” 
 ```
 
  
@@ -186,17 +186,17 @@ cleos system voteproducer prods alice bob “100.0000 CYBER”
 A user can declare himself a proxy account and vote for validators with the staked Cyber tokens. To become a proxy account, the user has to set a proxy level to "one" (note: only "one" can be set in the current implementation. in further implementations, the proxy account level can be 1, 2 or more).  
 
 To set the proxy account level, you can use the following `cleos` command:
-```
-cleos system setproxylvl <account> <level>
+```sh
+$ cleos system setproxylvl <account> <level>
 ```
 Command line arguments:
   * `user account` — the name of the account for which the proxy account level is set
   * `level` —  proxy level to be set
   * `active key` — the active key of the user
 
-The example with setting the proxy level “1” to a user with the `alice` name:”
-```
-cleos system setproxylvl alice 1
+The example with setting the proxy level "1" to a user with the `alice` name:
+```sh
+$ cleos system setproxylvl alice 1
 ```
 
 
@@ -204,8 +204,8 @@ cleos system setproxylvl alice 1
 To increase the number of staked tokens, it is necessary to convert CYBER tokens to the staked CYBER tokens.  
 
 For that you can use the following cleos command:
-```
-cleos system stake <user account> <quantity CYBER>
+```sh
+$ cleos system stake <user account> <quantity CYBER>
 ```
 Command line arguments:
   * `user account` — the name of the account that transfers tokens to the steak.
@@ -213,8 +213,8 @@ Command line arguments:
 
 The example with the transfer of 100 CYBER tokens to CYBER Stake tokens by user `alice`:
 
-```
-cleos system stake alice “100.0000 CYBER”
+```sh
+$ cleos system stake alice "100.0000 CYBER"
 ```
 
 ### The unvoting procedure (unstaking, or withdrawal of staked tokens)
@@ -226,8 +226,8 @@ A user can perform the reverse operation by converting staked CYBER tokens to CY
   * when on the account page, choose the validator you want to unvote and click the “Recall” button.  
 
 Next, convert the staked CYBER tokens to liquid ones. To do this, use the following command:
-```
-cleos push action cyber.stake withdraw ‘[<account>, <unstake quantity>]’ -p <account>
+```sh
+$ cleos push action cyber.stake withdraw '[<account>, <unstake quantity>]' -p <account>
 ```
 Command line arguments:
   * `account` — account name that converts CYBER Stake tokens to CYBER.
@@ -236,8 +236,8 @@ Command line arguments:
 Some staked CYBER tokens can be blocked for resources used that will be restored only within a certain time (for example, a month is spent on restoring Storage resources).  
 
 Example. The user `alice` converts 100 CYBER Stake tokens into CYBER tokens.
-```
-cleos push action cyber.stake withdraw ‘[alice, “100.0000 CYBER”]’ -p alice
+```sh
+$ cleos push action cyber.stake withdraw '[alice, "100.0000 CYBER"]' -p alice
 ```
 
 ## Conclusion

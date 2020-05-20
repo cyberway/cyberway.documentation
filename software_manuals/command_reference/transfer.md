@@ -29,12 +29,12 @@ The subcommand can be used to transfer tokens from account to account.
  * `--dont-declare-names` — Do not add `declarenames` action for resolved account names.
 
 ### Command
-```
+```sh
 $ cleos transfer [OPTIONS] <sender> <recipient> <amount> [<memo>]
 ```
 
 ### Examples
 'alice' transfers *100* CYBER to 'bob'.
-```
+```sh
 $ cleos transfer alice bob "100.0000 CYBER" "use for voting only"
 ```

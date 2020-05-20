@@ -14,10 +14,10 @@ Register an account in the system and delegate staked tokens to it so that this 
 ### Steps
 User `alice` creates the `bob` account name and transfers to him 100 CYBER tokens:
 ```sh
-$ cleos system newaccount alice bob “100.0000 CYBER”
+$ cleos system newaccount alice bob "100.0000 CYBER"
 ```
 
 If the `--transfer` flag is added to command line then staked tokens will irrevocably be transferred to created account:
 ```sh
-$ cleos system newaccount alice bob “100.0000 CYBER” --transfer
+$ cleos system newaccount alice bob "100.0000 CYBER" --transfer
 ```
