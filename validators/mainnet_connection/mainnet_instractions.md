@@ -62,15 +62,15 @@ The following instructions are for those users who want their node to be not onl
 
 ### 5.1 Deposit the minimal amount of staked tokens
 The validator should have a certain amount of staked tokens on his/her balance sheet. The minimum number of staked tokens should be not less than 50000.0000 CYBER. If such an amount is not on your balance sheet, you have to get the tokens first. To convert an amount of tokens to CYBER you can use the following command: 
-```
-cleos transfer <your account> cyber.stake <quantity>
+```sh
+$ cleos transfer <your account> cyber.stake <quantity>
 ```
 `quantity` — number of tokens being converted to CYBER ones.  
 
 ### 5.2 Specify the public and private keys in configuration file
 Specify your account name and both public and private keys in the configuration file `config.ini`. You can specify the keys that you received during registration, or generate new ones by executing the command:
-```
-cleos wallet create_key --to-console
+```sh
+$ cleos wallet create_key --to-console
 ```
 
 Set variables in the `/etc/cyberway/config.ini` file:
@@ -80,9 +80,9 @@ producer-name=<your account>
 ```  
 ### 5.3 Restart the node
 After making changes to the configuration file, you should restart the node:
-```
-sudo docker stop nodeos -t 120
-sudo docker-compose up -d
+```sh
+$ sudo docker stop nodeos -t 120
+$ sudo docker-compose up -d
 ```
 The argument `-t ` sets the time required to complete all processes.
 
@@ -91,8 +91,8 @@ A seed-node needs to get on the schedule list so it can produce blocks. The vali
 
 To register as a validator in the system, you can use the following command:
 To deposit the minimum amount of tokens on your staked-balance, you can use the following command:
-```
-cleos system regproducer <your account> <key digital signature> --min-own-stake 500000000
+```sh
+$ cleos system regproducer <your account> <key digital signature> --min-own-stake 500000000
 ```
 The argument `min_own_staked` is a minimum amount of CYBER tokens required to become a validator.  
 
@@ -107,35 +107,35 @@ In case of errors when the container is running, it is recommended to stop the s
 
 To stop the functioning of services you can execute:
 ```sh
-sudo docker-compose down
+$ sudo docker-compose down
 ```
 To remove `Docker volume`, you can use the following command:
 ```sh
-sudo docker volume rm cyberway-mongodb-data cyberway-nodeos-data
+$ sudo docker volume rm cyberway-mongodb-data cyberway-nodeos-data
 ```
 ## 7 Useful commands that can be applied to any kind of container
 
 ### 7.1 Connection with docker and running a container 
 ```sh
-sudo docker exec -ti nodeosd /bin/bash
+$ sudo docker exec -ti nodeosd /bin/bash
 ```
 ### 7.2 Obtaining the log file information about a container 
 ```sh
-sudo docker logs --tail 10 -f nodeosd
+$ sudo docker logs --tail 10 -f nodeosd
 ```
 ### 7.3 Connection to a node via cleos to check its operation
 ```sh
-sudo docker exec -ti nodeosd /opt/cyberway/bin/cleos
+$ sudo docker exec -ti nodeosd /opt/cyberway/bin/cleos
 ```
 ### 7.4 Start the containers 
 The command is executed from the directory where docker-compose.yml is located.
 ```sh
-sudo docker start nodeosd mongo
+$ sudo docker start nodeosd mongo
 ```
 ### 7.5 Stop the containers 
 The command is executed from the directory where docker-compose.yml is located.
 ```sh
-sudo docker stop nodeosd mongo
+$ sudo docker stop nodeosd mongo
 ```
 
 **Useful links:**  

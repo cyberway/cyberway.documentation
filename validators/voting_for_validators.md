@@ -63,18 +63,18 @@ The number of active validators changes upwards from 21 to 101 inclusive. The nu
     * a number of skipped blocks.
 
   * The funds from the annual issuance of tokens are distributed in the following proportions:
-    * 10% goes to reward pool for validators for block production;
-    * 20% goes to reward pool for workers;
-    * 70% goes to the stake pool that is distributed between validators and users that voted for them.
+    * 10 % goes to reward pool for validators for block production;
+    * 20 % goes to reward pool for workers;
+    * 70 % goes to the stake pool that is distributed between validators and users that voted for them.
 
   * Rewards to validators  are distributed in the following proportions: 
-    * 10% from the validators pool goes to a validator, as well as commissions that he/she sets, which are taken from the stake pool;
+    * 10 % from the validators pool goes to a validator, as well as commissions that he/she sets, which are taken from the stake pool;
     * the rest of the stake pool is distributed between the proxy and generic accounts that voted for this specific validator.
 
   * The CyberWay annual inflation depends on the number of staked tokens used in a voting for validators. The following token emission values are set in the current implementation:
-    * the inflation is 20% if the number of tokens in the vote does not exceed 25%;
-    * the  inflation is 10% if the number of tokens in the vote exceeds 75%;
-    * the inflation decreases linearly with an increase in the number of tokens used in voting from 25 to 75%.
+    * the inflation is 20 % if the number of tokens in the vote does not exceed 25 %;
+    * the  inflation is 10 % if the number of tokens in the vote exceeds 75 %;
+    * the inflation decreases linearly with an increase in the number of tokens used in voting from 25 to 75 %.
 
 
 
@@ -93,9 +93,9 @@ To set `fee`, the validator can use the following `cleos` command:
 Command line arguments:
   * `account` — validator account.
   * `token_code` — token symbol that make up the reward.
-  * `fee` — the amount of the commission indicated with an accuracy of hundredths of a percent. This parameter takes values «0-10000». The «0» value corresponds to «0 %», and «10000» corresponds to «100 %».  
+  * `fee` — the amount of the commission indicated with an accuracy of hundredths of a percent. This parameter takes values "0-10000". The "0" value corresponds to "0 %", and "10000" corresponds to "100 %".  
 
-The example with setting the «7 %» `fee`  by `alice` validator:
+The example with setting the "7 %" `fee`  by `alice` validator:
 ```sh
 $ cleos push action cyber.stake setproxyfee '{"account":"alice", "token_code":"CYBER", "fee":700}' -p alice
 ```
@@ -108,7 +108,7 @@ $ cleos system setproxylvl <account> <level>
 ```
 Command line arguments:
   * `account` — validator account.
-  * `level` — the proxy level to be set. This parameters must always remain as «0».  
+  * `level` — the proxy level to be set. This parameters must always remain as "0".  
 
 The following example demonstrates the way the zero proxy level is configured for the user called `alice`:
 ```sh
@@ -136,7 +136,7 @@ The user also has the ability to set both the proxy level to zero and the public
 $ cleos system regproducer <account> <signing_key>  --min-own-stake <value>
 ```
 
-Unlike the previous command, the optional argument “--min-own-stake \<value\>” can be set here, which specify the minimum number of staked tokens that a user must have in order to be a candidate for validators.  
+Unlike the previous command, the optional argument "--min-own-stake <value>" can be set here, which specify the minimum number of staked tokens that a user must have in order to be a candidate for validators.  
 
 Example of declaring user `alice` as a validator candidate:
 ```sh
@@ -168,7 +168,7 @@ Regardless of reasons implied, a user not willing to participate in the voting f
 
 To delegate staked Cyber tokens to a proxy account, you can use the following `cleos` command:
 ```sh
-$ cleos system voteproducer prods <user account> <proxy account> “quantity CYBER”
+$ cleos system voteproducer prods <user account> <proxy account> "quantity CYBER"
 ```
 Command line arguments:
   * `user account` — the name of the account that delegates the steak (or part of the stake) to the proxy account.
@@ -178,7 +178,7 @@ Command line arguments:
 The example with the delegation of 100 CYBER Stake tokens to the `bob` proxy account by the `alice` user:
 
 ```sh
-$ cleos system voteproducer prods alice bob “100.0000 CYBER” 
+$ cleos system voteproducer prods alice bob "100.0000 CYBER" 
 ```
 
  
@@ -223,7 +223,7 @@ A user can perform the reverse operation by converting staked CYBER tokens to CY
 
   * enter the explorer;
   * add the account name in the url;
-  * when on the account page, choose the validator you want to unvote and click the “Recall” button.  
+  * when on the account page, choose the validator you want to unvote and click the "Recall" button.  
 
 Next, convert the staked CYBER tokens to liquid ones. To do this, use the following command:
 ```sh
