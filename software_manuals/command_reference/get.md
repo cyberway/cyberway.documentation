@@ -433,8 +433,8 @@ $ cleos get table [OPTIONS] <account> <scope> <table>
 ```
 
 ### Examples
-Get the data from the *accounts* table for the *cyber.token* contract, for user *cyberio*,
-```sh
+Get the data from the *accounts* table for the *cyber.token* contract, for user *cyberio*.
+```
 $ cleos get table cyber.token cyberio accounts
 ```
 
