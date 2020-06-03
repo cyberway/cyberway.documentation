@@ -19,11 +19,11 @@ Create a multi-signature transaction for transferring funds from gls.worker acco
 
 Go to `explorer.cyberway.io/account/gls.worker`.  
  
-![gls.worker account data](./images/gls.worker-1.png)
+![](./images/gls.worker-1.png)
  
 In `Permissions` section open the field of active Golos leaders with `gls@witn.smajor` account rights.  
  
-![Golos active leaders](./images/leaders-2.png)
+![](./images/leaders-2.png)
  
 In the field `active`, account `gls.worker` has an authorization from `gls@active` - that is a list of active leaders. Copy a list of active leaders from `witn.smajor` to a separate place.  
  
@@ -38,8 +38,8 @@ For convenience, you can get and use the list of supported options.
 ```sh
 $ cyberway.cleos push action --help
 ```
- 
-![Result output](./images/options-4.png)
+*Output*  
+![](./images/options-4.png)
  
 Options are of particular importance: `-x`, `-s` and `-d`.  
 The command line looks like:
@@ -73,7 +73,7 @@ Convert list of actors to string `[{"account", "permission"}, … ,{"account", "
 **Step 4** Create the proposal.  
 Go to `explorer.cyberway.io/account/cyber.msig/contract`, open the propose tab and fill in the fields.  
  
-![Required fields](./images/proposal-6.png)
+![](./images/proposal-6.png)
  
   * `proposer` – an author of proposal, any user can be (`shwojevqcywn` in our example).
   * `proposal_name` – proposal name (`worker.trans` in our example).
@@ -86,15 +86,15 @@ Click `build transaction`.
 
 **Step 5** Sign the transaction with your private key and send a link to the transaction to Golos leaders.
  
-![Sign transaction with private key](./images/sign-transaction-7.png)
+![](./images/sign-transaction-7.png)
  
 **Step 6** Check the proposal.  
 Go to `explorer.cyberway.io/account/shwojevqcywn/proposals`.
 A list of proposals sent by the proposer account will appear, indicating block number and transaction (worker.trans).  
  
-![List of proposals](./images/checking-8.png)
+![](./images/checking-8.png)
  
  Click name `worker.trans` to get actual information about signing process.
  
-![Signing process](./images/status-9.png)
+![](./images/status-9.png)
  
