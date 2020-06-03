@@ -38,8 +38,8 @@ For convenience, you can get and use the list of supported options.
 ```sh
 $ cyberway.cleos push action --help
 ```
-*Output*  
-![](./images/options-4.png)
+ 
+![Output](./images/options-4.png)
  
 Options are of particular importance: `-x`, `-s` and `-d`.  
 The command line looks like:
@@ -73,7 +73,7 @@ Convert list of actors to string `[{"account", "permission"}, … ,{"account", "
 **Step 4** Create the proposal.  
 Go to `explorer.cyberway.io/account/cyber.msig/contract`, open the propose tab and fill in the fields.  
  
-![](./images/proposal-6.png)
+![Fields to fill](./images/proposal-6.png)
  
   * `proposer` – an author of proposal, any user can be (`shwojevqcywn` in our example).
   * `proposal_name` – proposal name (`worker.trans` in our example).
@@ -94,7 +94,7 @@ A list of proposals sent by the proposer account will appear, indicating block n
  
 ![](./images/checking-8.png)
  
- Click name `worker.trans` to get actual information about signing process.
+Click name `worker.trans` to get actual information about signing process.
  
 ![](./images/status-9.png)
  
