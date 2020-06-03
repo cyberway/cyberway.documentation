@@ -94,7 +94,7 @@ A list of proposals sent by the proposer account will appear, indicating block n
  
 ![](./images/checking-8.png)
  
-Click name `worker.trans` to get actual information about signing process.
+Click name `worker.trans` to get actual information about voting process.
  
 ![](./images/status-9.png)
  
