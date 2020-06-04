@@ -30,6 +30,7 @@ In the field `active`, account `gls.worker` has an authorization from `gls@activ
 ![List to keep](./images/leaders_selected-3.png)
  
 Signatures of these leaders will be necessary to sign proposal transaction.  
+  
 
 **Step 2** Create proposal transaction using `cleos`.  
 To prevent the transaction from becoming `expired` while signatures are being collected, you have to set the transaction expiretime, for example, *14* days that is *1209600* in seconds (*60×60×24×14=1209600*). The maximum allowable time is *45* days.  
@@ -46,6 +47,7 @@ The command line looks like:
 ```sh
 $ cyberway.cleos –u http://<node> push action –d –s –x <expiretime> cyber.token transfer '{<gls.worker>, <worker account> , <quantity>, <memo-comment>}' –p gls.worker –bandwidth-provider gls.worker/gls
 ```
+  
 *Example*
 ```sh
 $ cyberway.cleos –u http://seed-1:8888 push action –d –s –x 1209600 cyber.token transfer '{"from":"gls.worker", "to":"shwojevqcywn", "quantity":"1000.000 GOLOS", "memo":""}' –p gls.worker –bandwidth-provider gls.worker/gls
@@ -54,9 +56,11 @@ $ cyberway.cleos –u http://seed-1:8888 push action –d –s –x 1209600 cybe
  
 ![Transaction](./images/transaction-5.png)
  
-Copy the transaction output code to a separate place.
+Copy the transaction output code to a separate place.  
 
-**Step 3** Form a list of signatories.
+
+**Step 3** Form a list of signatories.  
+*Example*
 ```sh
 $ cyberway.cleos –u http://seed-1:8888 get account –j gls
 ```
@@ -64,13 +68,15 @@ From the result output, select and save the list of actors that will look like:
  
 ![Actors accounts](./images/actors-6.png)
  
-Convert list of actors to string `[{"account", "permission"}, … ,{"account", "permission"}]` :
+Convert list of actors to string form like a `[{"account", "permission"}, … ,{"account", "permission"}]`.  
+
 *Example*
 ```sh
 [{"actor": "lavnch3wug2o","permission: "active"},{"actor": "2cv2urmf2pud","permission: "active"}, ... ,{"actor": "rtvmqvzi5lvt","permission: "active"}] 
 ```
 
 **Step 4** Create the proposal.  
+*Example*  
 Go to `explorer.cyberway.io/account/cyber.msig/contract`, open the propose tab and fill in the fields.  
  
 ![Fields to fill](./images/proposal-6.png)
@@ -84,13 +90,16 @@ Go to `explorer.cyberway.io/account/cyber.msig/contract`, open the propose tab a
 Enter the proposer name in the authorization field.  
 Click `build transaction`.  
 
-**Step 5** Sign the transaction with your private key and send a link to the transaction to Golos leaders.
+**Step 5** Sign the transaction with your private key and send a link to the transaction to Golos leaders.  
+*Example*  
  
 ![](./images/sign-transaction-7.png)
- 
+  
+
 **Step 6** Check the proposal.  
-Go to `explorer.cyberway.io/account/shwojevqcywn/proposals`.
-A list of proposals sent by the proposer account will appear, indicating block number and transaction (worker.trans).  
+*Example*  
+Go to `explorer.cyberway.io/account/shwojevqcywn/proposals`.  
+The list of proposals sent by the proposer account will appear, indicating block number and transaction (worker.trans).  
  
 ![](./images/checking-8.png)
  
