@@ -13,6 +13,7 @@ Example:
 ```sh
 $ curl --request POST --url http://127.0.0.1:8888/v1/producer/create_snapshot
 ```
+
 *Output*
 ```sh
 snaphot-<hash>.bin
