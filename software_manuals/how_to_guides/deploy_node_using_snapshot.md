@@ -1,7 +1,7 @@
 # How To Obtain A Snapshot And Deploy A Node Using The Resulting Snapshot
 
 ### Goal
-Deploy a node using a system state snapshot.
+Deploy a node using its node state snapshot.
 
 ### Steps
 
