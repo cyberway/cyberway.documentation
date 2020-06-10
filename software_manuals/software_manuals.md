@@ -7,6 +7,7 @@
  * [cyberway.cdt:](https://doxygen-cdt.cyberway.io) Contract Development Toolkit is a suite of tools used to build contracts
 
 ## How To Guides
+ * [How To Ban An Unwanted Account](/software_manuals/how_to_guides/ban_account.md)
  * [How To Calculate Reward For An Author](/software_manuals/how_to_guides/calculate_reward_for_author.md)
  * [How To Calculate Reward For A Beneficiary](/software_manuals/how_to_guides/calculate_reward_for_beneficiary.md)
  * [How To Calculate Reward For A Curator](/software_manuals/how_to_guides/calculate_reward_for_curator.md)
