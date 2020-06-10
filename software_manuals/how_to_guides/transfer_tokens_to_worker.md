@@ -18,6 +18,7 @@ Create a multi-signature transaction for transferring funds from *gls.worker* ac
 **Step 1** Retrive a list of active leaders with the appropriate authority to create (as well as to sign) proposal transaction to pay a worker his work.  
 
 *Variant 1*  
+Retrive the list of active leaders using *JS*.  
 Go to `explorer.cyberway.io/account/gls.worker`.  
  
 ![](./images/gls.worker.page-1.png)
@@ -34,7 +35,7 @@ Signatures of these leaders will be necessary to sign proposal transaction.
   
 
 *Variant 2*  
-Also you can get the list of active leaders with the appropriate authority using *cleos* command line.
+Retrive the list of active leaders using *cleos* command line.  
 
 Get *gls.worker* authority:
 ```sh
@@ -100,6 +101,7 @@ Convert list of actors to string form like this one `[{"account", "permission"},
 
 **Step 4** Submit the proposal.  
 *Variant 1*  
+Submit the proposal using *JS*.  
 Go to `explorer.cyberway.io/account/cyber.msig/contract`, open the propose tab and fill the fields in.  
  
 ![Fields to fill](./images/proposal-6.png)
@@ -114,7 +116,7 @@ Enter the proposer name in the authorization field.
 Click `build transaction`.  
 
 *Variant 2*  
-You can also submit the proposal using *cleos* command line:
+Submit the proposal using *cleos* command line:
 ```sh
 cleos -u http://seed-1:8888 multisig propose_trx worker.trans permissions.json worker.trx shwojevqcywn -p shwojevqcywn
 ```
@@ -124,18 +126,20 @@ cleos -u http://seed-1:8888 multisig propose_trx worker.trans permissions.json w
 
 **Step 5** Sign the transaction with your private key and send a link to the transaction to Golos leaders.  
 *Variant 1*  
+Sign the transaction using *JS*.  
  
 ![](./images/sign-transaction-7.png)
  
 
 *Variant 2*  
-Also you can sign the transaction using *cleos* command line:
+Sign the transaction using *cleos* command line.
 ```sh
 cleos -u http://seed-1:8888 multisig approve shwojevqcywn worker.trans '{"actor":"shwojevqcywn", "permission":"active"}' -p shwojevqcywn
 ```
 
 **Step 6** Review the proposal.  
 *Variant 1*  
+Review the proposal using *JS*.  
 Go to `https://explorer.cyberway.io/account/shwojevqcywn/proposals`.  
 The list of proposals sent by the proposer account will appear, indicating block number and transaction (worker.trans). Leaders can sign the transaction using this link.  
  
@@ -146,7 +150,7 @@ Click name `worker.trans` to get actual information about voting process.
 ![](./images/status-9.png)
  
 *Variant 2*  
-Also you can review the proposal using *cleos* command line:
+Review the proposal using *cleos* command line:
 ```sh
 $ cleos -u http://seed-1:8888 multisig review shwojevqcywn worker.trans
 ```
