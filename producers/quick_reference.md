@@ -26,7 +26,7 @@
 ## Действия, которые необходимо выполнить
 
 **Шаг_1** На ноде создать рабочее пространство и исполнить:  
-```
+```sh
    git clone https://github.com/cyberway/cyberway.launch
    cd cyberway.launch
    sudo ./start_light.sh
@@ -40,13 +40,13 @@
 **Шаг_2**  
 В конфигурационном файле `config.ini` указать Ваше имя аккаунта, полученное при регистрации, и цифровую подпись публичного и личного ключей, также полученные при регистрации. Вы можете создать новые подписи ключей с помощью команды `cleos wallet create_key`. 
 
-```
+```sh
 signature-provider=<GLS7  … >=KEY:5j****
 producer-name=<имя аккаунта>
 ```  
  
 Затем исполните команды:  
-```
+```sh
    sudo dockerexec -ti nodeosd /bin/bash
    cleos wallet create --to-console
    cleos wallet import --private-key <active-key>
@@ -55,7 +55,7 @@ producer-name=<имя аккаунта>
 
 **Шаг_3**   
 CyberWay требует, чтобы минимальное количество токенов в состоянии стейка у валидаторов составляло не менее 50 000.0000 CYBER. Поэтому кандидату в валидатору необходимо выполнить команду:   
-```
+```sh
     cleos push action cyber.stake setminstaked '{"account" : "<имя аккаунта>", "token_code" : "CYBER", "min_own_staked" : 500000000}' -p <имя аккаунта>
 ```
 Параметр `min_own_staked` устанавливает минимальное значение.  
@@ -64,13 +64,13 @@ CyberWay требует, чтобы минимальное количество 
 
 **Шаг_4**  Активизируйте Ваши ключи:  
 
-```
-   cleos push action cyber.stake setkey ‘{“account”:”<имя аккаунта>”, “token_code”:”CYBER”, “signing_key”:”<  … >”}’ -p <имя аккаунта>  
+```sh
+   cleos push action cyber.stake setkey '{"account":"<имя аккаунта>", "token_code":"CYBER", "signing_key":"<  … >"}' -p <имя аккаунта>  
 ```
 
 **Шаг_5**  
 Если Ваш уровень прокси не является нулевым, Вам необходимо его установить. Нулевой  уровень прокси соответствует уровню валидатора CyberWay. Исполнить:  
-```
+```sh
     cleos push action cyber.stake setproxylvl '{"account" : "<имя аккаунта>", "token_code" : "CYBER", "level" : 0}' -p <имя аккаунта>
 ```  
  

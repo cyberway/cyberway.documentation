@@ -109,17 +109,17 @@
 **Вариант_2** (рекомендуемый)  
 Делегаты, которые желают выполнить процедуру транзита с использованием данных генезиса, сформированного командой Голос Кор, а также с минимальным количеством требуемых от них действий, должны:  
   1) загрузить содержимое репозитория `cyberway.launch` на ноду с помощью команды  
-```
-               git clone https://github.com/cyberway/cyberway.launch.git
+```sh
+    git clone https://github.com/cyberway/cyberway.launch.git
 ```
 
   2) проголосовать либо с помощью `cli_wallet`
-```
+```sh
 cli_wallet transit_to_cyberway <аккаунт делегата> true
 ```
 
  либо с помощью вызова скрипта  
-```
+```sh
 sudo ./transit.sh transit-approve
 ```
   3) запустить скрипт `start_light.sh`  

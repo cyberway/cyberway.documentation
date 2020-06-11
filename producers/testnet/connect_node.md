@@ -9,30 +9,30 @@ sudo docker run -ti -d --name keosd --net cyberway-net cyberway/cyberway:stable 
 
 **4.2 Запустить сервис cleos**  
 Прописать alias для запуска `cleos` в контейнере `keosd`:
-```
-alias cleos='sudo docker exec -ti keosd cleos --url http://nodeosd:8888 '
+```sh
+alias cleos='sudo docker exec -ti keosd cleos --url http://nodeosd:8888'
 ``` 
 
 **4.3 Проверить подключение к блокчейну**  
 Для проверики успешного подключения к блокчейну необходимо исполнить команду:
-```
+```sh
 cleos get info
 ```
 Подключение считается успешным, если во время выполнении команды не появлялись сообщения об ошибках.  
  
 **4.4 Создать хранилище**  
 Создать хранилище для личных ключей:
-```
+```sh
 cleos wallet create --file wallet.pass
 ```
 В случае прекращения использования хранилища, сервис `keosd` автоматически его блокирует. После этого хранилище может быть разблокировано с помощью команды:
-```
-cleos wallet unlock --password `sudo docker exec -ti keosd cat wallet.pass`
+```sh
+cleos wallet unlock --password 'sudo docker exec -ti keosd cat wallet.pass'
 ```
 
 **4.5 Импортировать личный ключ**  
 Импортировать личный ключ с помощью команды:
-```
+```sh
 cleos wallet import --private-key <private-key>
 ```
 
