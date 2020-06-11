@@ -87,8 +87,8 @@
 Валидатор, а также кандидат в валидаторы, устанавливают размер комиссии `fee`, которая будет отчисляться им от поступившей суммы вознаграждения. Остальная часть суммы вознаграждения будет распределяться между всеми пользователями, которые за них проголосовали. Необоснованно завышенная комиссия может уменьшить количество пользователей, желающих проголосовать за валидатора. Напротив, необоснованно заниженная комиссия может не восполнить затраты валидатора на обслуживание им ноды. Поэтому к заданию размера комиссии `fee` валидатору или кандидату в валидаторы следует подходить наиболее ответственно. 
 
 Чтобы установить размер комиссии, валидатор может воспользоваться следующей командой `cleos`:
-```
-cleos push action cyber.stake setproxyfee '{“account” : <account>, “token_code” :<token_code>, “fee” : <fee>}' -p <account>
+```sh
+cleos push action cyber.stake setproxyfee '{"account" : <account>, "token_code" :<token_code>, "fee" : <fee>}' -p <account>
 ```  
 Аргументы командной строки:
   * `account` — аккаунт валидатора.
@@ -96,13 +96,13 @@ cleos push action cyber.stake setproxyfee '{“account” : <account>, “token_
   * `fee` — размер комиссии, указанный с точностью до сотых долей процента. Параметр принимает значения от «0» до «10000» включительно. Значение «0» соответствует «0 %», а значение «10000» соответствует «100 %».  
 
 Пример с установкой комиссии в размере «7 %» валидатором `alice`:
-```
+```sh
 cleos push action cyber.stake setproxyfee '{"account":"alice", "token_code":"CYBER", "fee":700}' -p alice
 ``` 
 
 ### Установка нулевого уровня прокси-аккаунта  
 Валидатор, а также кандидат в валидаторы должны иметь нулевой уровень прокси-аккаунта. Для установки нулевого уровня прокси-аккаунта, можно воспользоваться следующей командой `cleos`: 
-```
+```sh
 cleos system setproxylvl <account> <level>
 ```
 Аргументы командной строки:
@@ -110,14 +110,14 @@ cleos system setproxylvl <account> <level>
   * `level` — уровень прокси-аккаунта. Данный параметр должен принимать значение «0».  
 
 Пример с установкой нулевого уровня прокси-аккаунта для пользователя `alice`, у которой имеются токены с символом «4»:
-```
+```sh
 cleos system setproxylvl alice 0
 ```
 
 ### Активизация публичного ключа  
 Валидатор обязан иметь собственный публичный ключ для подписания создаваемых им блоков. Для активизации публичного ключа валидатора можно воспользоваться следующей командой `cleos`: 
-```
-cleos push action cyber.stake setkey ‘{“account”:”<account>”, “token_code”:”CYBER”, “signing_key”:”<... digital signature...>”}’ -p <account>
+```sh
+cleos push action cyber.stake setkey '{"account":"<account>", "token_code":"CYBER", "signing_key":"<... digital signature...>"}' -p <account>
 ```
 Аргументы командной строки:
   * `account` — аккаунт валидатора, для которого активизируется публичный ключ.
@@ -127,19 +127,19 @@ cleos push action cyber.stake setkey ‘{“account”:”<account>”, “token
 
 Пример активизации публичного ключа для валидатора `alice`:
 
-```
-cleos push action cyber.stake setkey ‘{“account”:”alice”, “token_code”:”CYBER”, “signing_key”:”GLS7M53j...6FAx8Y881”}’ -p alice
+```sh
+cleos push action cyber.stake setkey '{"account":"alice", "token_code":"CYBER", "signing_key":"GLS7M53j...6FAx8Y881"}' -p alice
 ```  
 
 ### Упрощенный способ установки прокси-уровня и активизации публичного ключа  
 Пользователь также имеет возможность одновременно установить нулевой прокси уровень и публичный ключ, используя всего одну команду:
-```
+```sh
 cleos system regproducer <account> <signing_key> --min-own-stake <value>
 ```
 В отличие от предыдущей команды здесь задается аргумент  “--min-own-stake <value>”, который устанавливает минимально допустимое количество застейканных токенов, которое должен иметь пользователь, чтобы быть кандидатом в валидаторы. Этот аргумент является произвольным и может быть опущен.
 
 Пример объявления пользователя `alice` кандидатом в валидаторы:
-```
+```sh
 cleos system regproducer alice GLS7M53j...6FAx8Y881 --min-own-stake 500000000
 ```
 
@@ -162,8 +162,8 @@ cleos system regproducer alice GLS7M53j...6FAx8Y881 --min-own-stake 500000000
 Пользователь, который по какой-либо причине не принимает участие в голосовании за валидаторов, может воспользоваться услугами прокси-аккаунта и доверить ему право голоса. Для этого пользователю необходимо делегировать застейканные токены CYBER Stake прокси-аккаунту.  
 
 Для делегирования токенов CYBER Stake прокси-аккаунту можно воспользоваться следующей командой cleos:
-```
-cleos system voteproducer prods <user account> <proxy account> “quantity CYBER” 
+```sh
+cleos system voteproducer prods <user account> <proxy account> "quantity CYBER" 
 ```
 Аргументы командной строки:
   * `user account` — имя аккаунта, который делегирует стейк (или долю стейка) прокси-аккаунту.
@@ -171,15 +171,15 @@ cleos system voteproducer prods <user account> <proxy account> “quantity CYBER
   * `quantity CYBER` — количество делегируемых токенов, которыми прокси-аккаунт может воспользоваться при голосовании.  
 
 Пример с делегированием 100 токенов CYBER Stake прокси-аккаунту `bob` от пользователя `alice`:
-```
-cleos system voteproducer prods alice bob “100.0000 CYBER” 
+```sh
+cleos system voteproducer prods alice bob "100.0000 CYBER" 
 ``` 
  
 ### Объявление себя прокси-аккаунтом
 Пользователь может сам объявить себя прокси-аккаунтом и затем голосовать за валидаторов делегированными ему застейканными токенами CYBER Stake. Для получения статуса прокси-аккаунта необходимо пользователю установить уровень прокси-аккаунта равным единице (это в текущей реализации. В последующих реализациях уровень прокси-аккаунта может быть 1, 2 и более).  
 
 Для установки уровня прокси-аккаунта можно воспользоваться следующей командой cleos:
-```
+```sh
 cleos system setproxylvl <account> <level>
 ```
 Аргументы командной строки:
@@ -187,7 +187,7 @@ cleos system setproxylvl <account> <level>
   * `level` — устанавливаемый прокси-уровень.  
 
 Пример с установкой прокси-уровня «1» пользователю с именем `alice`:
-```
+```sh
 cleos system setproxylvl alice 1
 ```
 
@@ -196,7 +196,7 @@ cleos system setproxylvl alice 1
 Для увеличения количества застейканных токенов, необходимо конвертировать токены  CYBER в CYBER Stake.  
 
 Для конвертации ликвидных токенов в состояние CYBER Stake можно воспользоваться следующей командой cleos:
-```
+```sh
 cleos system stake <user account> <quantity CYBER>
 ```
 Аргументы командной строки:
@@ -204,7 +204,7 @@ cleos system stake <user account> <quantity CYBER>
   * `quantity CYBER` — количество переводимых токенов.  
 
 Пример с переводом 100 токенов CYBER в токены CYBER Stake пользователем `alice`:
-```
+```sh
 cleos system stake alice 100.0000 CYBER
 ```
 
@@ -217,8 +217,8 @@ cleos system stake alice 100.0000 CYBER
   * на странице аккаунта нажать кнопку «Recall» напротив того аккаунта, с которого требуется снять голоса.
 
 Далее выполнить конвертацию токенов CYBER Stake в CYBER. Для этого можно воспользоваться следующей командой:
-```
-cleos push action cyber.stake withdraw ‘[<account>, <unstake quantity>]’ -p <account>
+```sh
+cleos push action cyber.stake withdraw '[<account>, <unstake quantity>]' -p <account>
 ```
 Аргументы командной строки:
   * `account` — имя аккаунта, который выводит токены из состояния стейка.
@@ -227,8 +227,8 @@ cleos push action cyber.stake withdraw ‘[<account>, <unstake quantity>]’ -p 
 При этом часть токенов CYBER Stake может быть заблокирована за использованные ресурсы, которые будут восстановлены только в течение определенного времени (например, на восстановление ресурсов Storage отводится месяц).  
 
 Пример с конвертацией 100 токенов CYBER Stake в токены CYBER пользователем `alice`:
-```
-cleos push action cyber.stake withdraw ‘[alice, “100.0000 CYBER”]’ -p alice
+```sh
+cleos push action cyber.stake withdraw '[alice, "100.0000 CYBER"]' -p alice
 ```
 
 ## Заключение

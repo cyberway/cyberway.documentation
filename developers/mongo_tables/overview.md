@@ -35,9 +35,9 @@ $ use _CYBERWAY_<contract_name> db.<collection_name>.find().pretty()
 Структура документов имеет следующий вид:
 ```
 "_id" : ObjectId("уникальный номер"),
-“Object 1”: { ... },
+"Object 1": { ... },
 ...
-“Object N”: { ... },
+"Object N": { ... },
 "_SERVICE_" : {
       "scope" : "имя аккаунта",
       "rev" : <номер ревизии>,
