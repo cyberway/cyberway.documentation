@@ -65,7 +65,7 @@
     * [Transfer](/software_manuals/command_reference/transfer.md)
     * [Version](/software_manuals/command_reference/version.md)
     * [Wallet](/software_manuals/command_reference/wallet.md)
-  * [explorer_command_reference](/software_manuals/explorer_command_reference.md)
+  * [Explorer Command Reference](/software_manuals/explorer_command_reference.md)
     * [How To Check Your Balance](/software_manuals/explorer_command_reference/check_balance.md)
     * [How To Find Out Account ID](/software_manuals/explorer_command_reference/user_id.md)
     * [How To Convert *Golos* To *Golos Power* And Vice Versa](/software_manuals/explorer_command_reference/convert_golos.md)

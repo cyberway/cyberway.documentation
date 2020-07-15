@@ -6,12 +6,12 @@ Check your token balance.
 ## Steps
 The operation can be performed in two ways - using the site `golos.io` and using explorer `cyberway.io`.
 
-### Way 1: Check your balance using the site `golos.io`
+### Way 1: Check your balance using the site golos.io
 
-**Step 1.1**  
+#### Step 1.1
 Go to the page `https://golos.io/<account name>`. Let the account name is *golos*.  
 
-**Step 1.2**  
+#### Step 1.2
 Open *wallet* tab. The types of tokens available on account balance will be shown in the left menu.  
 
 ![](./images/wallet_menu.png)
@@ -24,14 +24,14 @@ The fields at the top of menu indicate actions that can be performed by your acc
 
 *Awaiting* field is number and type of tokens in the state of illiquid.
 
-### Way 2: Check your balance using explorer `cyberway.io`
+### Way 2: Check your balance using explorer cyberway.io
 
-**Step 2.1**  
+#### Step 2.1
 Go to the page `https://explorer.cyberway.io/`and specify account name. Please note that different names may be assigned to accounts depending on dApps. Let it i *andreypf*.  
 
 ![](./images/explorer_cyberway.png)
 
-**Step 2.2*  
+#### Step 2.2
 In window that opens, all information about this account will be displayed, including balance.  
 
 ![](./images/explorer_balance.png)
