@@ -19,13 +19,12 @@ In menu that opens, select action `transfer` and fill in the fields.
 
 ![](./images/transfer.png)
 
-In the `from` and `to` fields, you must specify the identifier of your account and the recipient's account, respectively. If you are unsure of the recipient account ID, you need to get it directly from the recipient user.  
-
-In the field `quantity` it is necessary to set the number of funds transferred, taking into account the required accuracy. For *GOLOS* tokens, you must specify three numbers after the point, for *CYBER* - four.  
-
-`Memo` field is optional to leave a comment.  
-
-In the field `authorization` you must specify the same identifier of your account.
+**Fields:**
+ * `from` - the identifier of your account.
+ * `to` - the recipient's account. If you are unsure of the recipient account ID, you need to get it directly from the recipient user.
+ * `quantity` - the number of funds transferred, taking into account the required accuracy. For *GOLOS* tokens, you must specify three numbers after the point, for *CYBER* - four.
+ * `Memo` - field is optional to leave a comment.
+ * `authorization` - the same identifier of your account.
 
 ### Step 3
 Click `Build transaction`.
