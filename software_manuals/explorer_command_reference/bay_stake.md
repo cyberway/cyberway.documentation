@@ -21,15 +21,12 @@ Choose the tab `transfer` and fill in fields.
 
 ![](./images/bay_stake.png)
 
-In the field `from`, you have specify the identifier of your account.  
-
-Recipient is the contract `cyber.token`.  
-
-In the field `quantity` it is necessary to set the number of funds transferred, taking into account the required accuracy. For *CYBER* tokens, you must specify four numbers after the point.  
-
- In `memo` field you have to specify ID of account-recipient. Tokens will be transferred to steak of this account.  
-
-In the field `authorization` you must specify the same identifier of your account.  
+**Fields:**
+ * `from` - the identifier of your account.
+ * `to`- recipient, the contract `cyber.token`.
+ * `quantity` - the number of funds transferred, taking into account the required accuracy. For *CYBER* tokens, you must specify four numbers after the point.
+ * `memo` - field is left blank (or your account)if the stake is bought for itself. If the staked tokens are transferred to another account, you have to specify ID of account-recipient. Tokens will be transferred to steak of that account.
+ * `authorization` - the same identifier of your account.
 
 ### Step 4
 Click `Build transaction`.  
